@@ -20,5 +20,3 @@ Finally, open [http://localhost:3001](http://localhost:3001) in your browser.
 ## License
 
 Content in the `src/pages` folder are licensed under Apache License 2.0.
-# gimlet-documentation
-# gimlet-documentation
