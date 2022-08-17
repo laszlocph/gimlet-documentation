@@ -1,0 +1,7 @@
+@import 'tailwindcss/base';
+@import './fonts.css';
+@import './docsearch.css';
+@import './prism.css';
+@import './helm-ui.css';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
