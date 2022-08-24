@@ -28,14 +28,14 @@ export function Hero() {
         <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-y-16 gap-x-8 px-4 lg:max-w-8xl lg:grid-cols-2 lg:px-8 xl:gap-x-16 xl:px-12">
           <div className="relative z-10 md:text-center lg:text-left">
             <div className="relative">
-              <p className="inline bg-gradient-to-r from-pink-400 to-orange-500 bg-clip-text font-display text-4xl lg:text-5xl tracking-tight text-transparent">
+              <h1 className="inline bg-gradient-to-r from-pink-400 to-orange-500 bg-clip-text font-display text-4xl lg:text-5xl tracking-tight text-transparent">
                 Your paved path to Kubernetes.
-              </p>
-              <p className="mt-3 text-xl lg:text-2xl tracking-tight text-gray-300">
+              </h1>
+              <h2 className="mt-3 text-xl lg:text-2xl tracking-tight text-gray-300">
                 Turn your cluster into an application platform built on open standards. Deploy without the steep learning curve.
-              </p>
-              <p className="mt-3 text-xl lg:text-2xl tracking-tight text-gray-300">100% open-source.
-              </p>
+              </h2>
+              <h2 className="mt-3 text-xl lg:text-2xl tracking-tight text-gray-300">100% open-source.
+              </h2>
               <div className="mt-8 flex space-x-4 md:justify-center lg:justify-start">
                 <ButtonLink href="/docs">Get Started</ButtonLink>
               </div>
