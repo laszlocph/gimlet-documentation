@@ -16,6 +16,14 @@ gimlet --version
 
 ## Installing Gimlet
 
+### Prerequisites
+
+- A [https://github.com](https://github.com) personal or organization account
+- A Kubernetes cluster
+- A domain name
+
+### Oneliner
+
 The following oneliner kickstarts the Gimlet installer.
 
 ```bash
