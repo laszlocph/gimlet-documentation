@@ -33,7 +33,7 @@ curl -L -s https://get.gimlet.io | bash -s staging.mycompany.com [my-github-org]
 The installer initiates a gitops environment and puts Gimlet into its gitops repository. This way Gimlet itself is managed by gitops.
 
 {% callout title="Installing under a Github Organization" %}
-The installer creates a Github application under your Github account by default. If you set a second parameter for the script, it will create the Github Application under the specified Github Organization.
+The installer creates a Github application under your personal Github account by default. If you set a second parameter for the script, it will create the Github Application under the specified Github Organization.
 {% /callout %}
 
 {% callout title="You are not granting any third-party access" %}
