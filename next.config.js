@@ -63,6 +63,17 @@ const redirects = {
         destination: '/concepts/components',
         permanent: true,
       },
+
+      {
+        source: '/concepts/onechart-concepts/',
+        destination: '/docs/onechart-reference',
+        permanent: true,
+      },
+      {
+        source: '/concepts/onechart-concepts',
+        destination: '/docs/onechart-reference',
+        permanent: true,
+      },
     ];
   },
 };
