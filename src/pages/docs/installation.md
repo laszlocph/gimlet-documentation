@@ -43,8 +43,12 @@ The installer will ask for OAuth permissions. Keep in mind that you are granting
 {% callout title="Pleasing OAuth's security measures" %}
 The installer needs to run under the same host name as where Gimlet will operate once it is installed.
 
-For this reason you will create a temporary host file entry to be able to mimic the currently not yet existing domain name.
+For this reason
+
+- you will create a temporary host file entry to be able to mimic the currently not yet existing domain name.
 This is also true for the port: the installer needs to run on port 443, therefore you have to run the installer as root.
+
+- you will also need to bypass the browser's security defaults. In Firefox you have to click *Advanced > Accept Risk and Continue* in Chrome, you have to type "thisisunsafe" when you are faced with a security warning.
 {% /callout %}
 
 ### Captioned video walkthrough
