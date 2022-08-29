@@ -18,9 +18,10 @@ gimlet --version
 
 ### Prerequisites
 
-- A [https://github.com](https://github.com) personal or organization account
-- A Kubernetes cluster
-- A domain name
+- A [https://github.com](https://github.com) personal or organization account.
+- A Kubernetes cluster.
+  - The cluster should be publicly accessible for CertManager and Github webhooks to work.
+- A domain name.
 
 ### Oneliner
 
