@@ -29,12 +29,12 @@ export function Hero() {
           <div className="relative z-10 md:text-center lg:text-left">
             <div className="relative">
               <h1 className="inline bg-gradient-to-r from-pink-400 to-orange-500 bg-clip-text font-display text-4xl lg:text-5xl tracking-tight text-transparent">
-                Your paved path to Kubernetes.
+                A boost for platform teams.
               </h1>
               <h2 className="mt-3 text-xl lg:text-2xl tracking-tight text-gray-300">
-                Turn your cluster into an application platform built on open standards. Deploy without the steep learning curve.
+                Provide a paved path for developers from day one, focus on your advanced platform needs instead of the tablestakes.
               </h2>
-              <h2 className="mt-3 text-xl lg:text-2xl tracking-tight text-gray-300">100% open-source.
+              <h2 className="mt-3 text-xl lg:text-2xl tracking-tight text-gray-300">100% open-source, built on open standards and abstractions with escape hatches in mind.
               </h2>
               <div className="mt-8 flex space-x-4 md:justify-center lg:justify-start">
                 <ButtonLink href="/docs">Get Started</ButtonLink>
