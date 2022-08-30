@@ -19,7 +19,7 @@ Finally, open [http://localhost:3001](http://localhost:3001) in your browser.
 
 ## Set up your environment
 
-You'll need to set your Algolia application ID and admin API key as environment variables. If you don't have an Algolia account, you need to [https://www.algolia.com/pricing/](create one).
+You'll need to set your Algolia application ID and admin API key as environment variables. If you don't have an Algolia account, you need to [create one](https://www.algolia.com/pricing/).
 
 Overwrite .env.local file with the following two variables:
 
@@ -35,8 +35,8 @@ NEXT_PUBLIC_DOCSEARCH_APP_ID=<APP_ID>
 NEXT_PUBLIC_DOCSEARCH_API_KEY=<SEARCH_ONLY_API_KEY>
 NEXT_PUBLIC_DOCSEARCH_INDEX_NAME=gimlet
 ```
-
-You can run a crawl from the packaged Docker image to crawl your website. You will need to [https://github.com/stedolan/jq/wiki/Installation](install jq, a lightweight command-line JSON processor)
+https://github.com/stedolan/jq/wiki/Installation
+You can run a crawl from the packaged Docker image to crawl your website. You will need to [install jq, a lightweight command-line JSON processor](https://github.com/stedolan/jq/wiki/Installation)
 
 Run the command:
 
