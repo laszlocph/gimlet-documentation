@@ -5,9 +5,9 @@ import Router from 'next/router'
 import { DocSearchModal, useDocSearchKeyboardEvents } from '@docsearch/react'
 
 const docSearchConfig = {
-  appId: process.env.NEXT_PUBLIC_DOCSEARCH_APP_ID,
-  apiKey: process.env.NEXT_PUBLIC_DOCSEARCH_API_KEY,
-  indexName: process.env.NEXT_PUBLIC_DOCSEARCH_INDEX_NAME,
+  appId: "DV3EU4XAIN",
+  apiKey: "709b5bf1c75b2aa5309ea728f10e3d03",
+  indexName: "gimlet",
 }
 
 function Hit({ hit, children }) {
