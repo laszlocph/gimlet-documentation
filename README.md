@@ -35,7 +35,7 @@ NEXT_PUBLIC_DOCSEARCH_APP_ID=<APP_ID>
 NEXT_PUBLIC_DOCSEARCH_API_KEY=<SEARCH_ONLY_API_KEY>
 NEXT_PUBLIC_DOCSEARCH_INDEX_NAME=gimlet
 ```
-https://github.com/stedolan/jq/wiki/Installation
+
 You can run a crawl from the packaged Docker image to crawl your website. You will need to [install jq, a lightweight command-line JSON processor](https://github.com/stedolan/jq/wiki/Installation)
 
 Run the command:
