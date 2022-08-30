@@ -41,7 +41,7 @@ You can run a crawl from the packaged Docker image to crawl your website. You wi
 Run the command:
 
 ```bash
-docker run -it --env-file=.env.local -e "CONFIG=$(shell ./config.json | jq -r tostring)" algolia/docsearch-scraper
+docker run -it --env-file=.env.local -e "CONFIG=$(cat ./config.json | jq -r tostring)" algolia/docsearch-scraper
 ```
 
 ## License
