@@ -17,32 +17,31 @@ npm run dev
 
 Finally, open [http://localhost:3001](http://localhost:3001) in your browser.
 
-## Set up your environment
+## Search index generation
 
-You'll need to set your Algolia application ID and admin API key as environment variables. If you don't have an Algolia account, you need to [create one](https://www.algolia.com/pricing/).
+We use Algolia for search.
 
-Overwrite .env.local file with the following two variables:
+### Automatic index generation
+
+A Github Action runs daily that regenerates the search index from the live gimlet.io site.
+
+### Running search index generation locally
+
+First you need to put the Algolia admin keys to the `.env.local` file.
+Obtain the admin key from the Gimlet maintainers.
 
 ```bash
 APPLICATION_ID=<APP_ID>
 API_KEY=<ADMIN_API_KEY>
 ```
 
-Replace all of the environment variables based on your Algolia application in .env:
-
-```bash
-NEXT_PUBLIC_DOCSEARCH_APP_ID=<APP_ID>
-NEXT_PUBLIC_DOCSEARCH_API_KEY=<SEARCH_ONLY_API_KEY>
-NEXT_PUBLIC_DOCSEARCH_INDEX_NAME=gimlet
-```
-
-You can run a crawl from the packaged Docker image to crawl your website. You will need to [install jq, a lightweight command-line JSON processor](https://github.com/stedolan/jq/wiki/Installation)
-
-Run the command:
+Then run the following oneliner:
 
 ```bash
 docker run -it --env-file=.env.local -e "CONFIG=$(cat ./config.json | jq -r tostring)" algolia/docsearch-scraper
 ```
+
+If you don't have jq, install it here: [install jq, a lightweight command-line JSON processor](https://github.com/stedolan/jq/wiki/Installation)
 
 ## License
 
