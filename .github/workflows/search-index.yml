@@ -1,0 +1,26 @@
+name: 🤩 Generating search index
+on:
+  push:
+    branches:
+      - '*'
+
+#on:
+#  schedule:
+#    - cron:  '0 18 * * *'
+
+jobs:
+  test:
+    name: Generating search index
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🤩 Generating search index from the live gimlet.io site
+      run: |
+        cat << EOF > .env.local
+        APPLICATION_ID=$APP_ID
+        API_KEY=$ADMIN_API_KEY
+        EOF
+
+        docker run -it --env-file=.env.local -e "CONFIG=$(cat ./config.json | jq -r tostring)" algolia/docsearch-scraper
+      with:
+        APP_ID: ${{ secrets.APP_ID }}
+        ADMIN_API_KEY: ${{ secrets.ADMIN_API_KEY }}
