@@ -21,6 +21,6 @@ jobs:
         EOF
 
         docker run -it --env-file=.env.local -e "CONFIG=$(cat ./config.json | jq -r tostring)" algolia/docsearch-scraper
-      with:
+      env:
         APP_ID: ${{ secrets.APP_ID }}
         ADMIN_API_KEY: ${{ secrets.ADMIN_API_KEY }}
