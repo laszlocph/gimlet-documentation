@@ -529,6 +529,26 @@ EOF
 helm template my-release onechart/onechart -f values.yaml
 ```
 
+## Resources
+
+```bash
+cat << EOF > values.yaml
+image:
+  repository: debian
+  tag: stable-slim
+
+resources:
+  limits:
+    cpu: "2000m"
+    memory: "2000Mi"
+  requests:
+    cpu: "200m"
+    memory: "500Mi"
+EOF
+
+helm template my-release onechart/onechart -f values.yaml
+```
+
 ## Cron Job
 
 OneChart settings for deploying a cron job:
