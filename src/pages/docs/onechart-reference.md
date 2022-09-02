@@ -179,8 +179,6 @@ secretName: my-custom-secret
 You may use OneChart's `fileSecrets` feature to
 provide your application with long form secrets: SSH keys, or json files that are typically used as service account keys on Google Cloud.
 
-Just make sure to keep this config out of git - strictly on your laptop - as secrets are plain text.
-
 ```yaml
 image:
   repository: nginx
@@ -201,6 +199,21 @@ fileSecrets:
 
 - The above snippet will create a Kubernetes Secret object with two entries
 - This secret is mounted to the `/google-account-key` and produce two files: `key.json` and `another.json`
+
+An advanced version of mounting file secrets into pods, and doing it in a secure way is to use the `sealedFileSecrets` field. The behavior is identical to `fileSecrets`, it just uses a sealed secret as the content of the file:
+
+```yaml
+image:
+  repository: nginx
+  tag: 1.19.3
+
+sealedFileSecrets:
+  - name: google-account-key
+    path: /google-account-key
+    filesToMount:
+      - name: key.json
+        source: AgA/7BnNhSkZAzbMqxMDidxK[...]
+```
 
 ### Using encrypted secret values
 
