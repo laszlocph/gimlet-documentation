@@ -15,7 +15,7 @@ export function TheProblem() {
                   I&apos;m also a member of cloud native communities, and what everybody confirmed to me is that platform building efforts, although incremental in nature, take multiple person to build and then maintain.
                   Covering deployment and dev guard rails first, only years in the project they reach the much sought after multi-cluster failover usecases.
                   <br /><br />If you can resist the urge to build everything in-house and give Gimlet a chance,
-                  you will realize that your use-case is not that unique after all. Go try Gimlet for size and see how much your team will appreciate it, and see how easy it is to further extend.
+                  you will see how much your team appreciates it, and how easy it is to further extend.
                 </p>
               </blockquote>
               <figcaption className="mt-6 flex items-center justify-center space-x-4 text-left">
@@ -27,7 +27,7 @@ export function TheProblem() {
                 />
                 <div>
                   <div className="text-slate-900 font-semibold dark:text-white">Laszlo Fogas</div>
-                  <div className="mt-0.5 text-sm leading-6">Maker of Gimlet</div>
+                  <div className="mt-0.5 text-sm leading-6">Founder of Gimlet</div>
                 </div>
               </figcaption>
             </figure>
