@@ -95,6 +95,7 @@ To upgrade only flux, but not regenerating the deploykey, and not generating/upd
 ```
 gimlet gitops upgrade \
   --env staging \
+  --gitops-repo-url git@github.com:somewhere/overt-the.git \
   --no-deploykey \
   --no-kustomization
 ```
