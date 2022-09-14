@@ -40,26 +40,29 @@ curl -L -s https://get.gimlet.io | bash -s trial
 
 ### Step 1: Creating a Github Application
 
-First, the installer creates a Github Application to manage Gimlet all access with it.
+First, the installer creates a Github Application to manage all Gimlet access with it.
 
 ![Creating a Github application](https://images.tango.us/public/screenshot_e090274e-ea94-4621-b6f0-b7a770d6815b.png?crop=focalpoint&fit=crop&fp-x=0.4999&fp-y=0.2487&fp-z=3.1368&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=3840%3A1960)
 
+{% callout title="Installing Gimlet for your company" %}
+The application is created under your personal Github account by default. If you install Gimlet for your company, and you are a Github administrator, you can set a second parameter for the installer script. The installer will use this organization name to host the application: `curl -L -s https://get.gimlet.io | bash -s trial myGithubOrg`.
 
-The application is created under your personal Github account by default. If you install Gimlet for your company, and you are a Github administrator, you can set a second parameter for the installer script. The installer will use this organization name to host the application: `curl -L -s https://get.gimlet.io | bash -s trial myGithubOrg`. You also have the possibility to later move the application from your personal Github to the company Github account.
+You also have the possibility to later move the application from your personal Github to the company Github account.
+{% /callout %}
 
-You also have to install the newly created Github Application and select what repositories Gimlet should have access to. It is most convenient to allow all repositories. If you prefer a smaller set of repositories, select a few application repositories you want deploy with Gimlet and remember to extend the repository list if you want to roll out Gimlet for new apps.
+Now, install the newly created Github Application and select what repositories Gimlet should have access to. It is most convenient to allow all repositories. If you prefer a smaller set of repositories, select a few application repositories you want deploy with Gimlet and remember to extend the repository list if you want to roll out Gimlet for new apps.
 
 ![Step 3 screenshot](https://images.tango.us/public/edited_image_3c1732d7-a923-47d7-bea8-fc69190d5e57.png?crop=focalpoint&fit=crop&fp-x=0.4969&fp-y=0.5822&fp-z=2.2336&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=3840%3A1960)
 
-As a final step, you also need to authorize the newly created application. Keep in mind that you are granting this access to your own Github Application. You are not granting any third-party nor the Gimlet creators any access.
+As a final step, you also need to authorize the newly created application. Keep in mind that you are granting this access to your own Github Application. You are not granting any access to any third-party nor the Gimlet creators.
 
 ![Step 4 screenshot](https://images.tango.us/public/screenshot_395e38bc-d9a5-4ef0-8cd9-7a3aeb23d8aa.png?crop=focalpoint&fit=crop&fp-x=0.4947&fp-y=0.5477&fp-z=2.2108&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=3840%3A1960)
 
 ### Step 2: Bootstrapping a gitops environment
 
-In this step you have to provide some information about the environment you are creating. Gimlet also puts Gimlet resources in a gitops environment so they don't stand above all things.
+You have to provide some information about the environment you are creating in this step. Gimlet puts Gimlet resources in a gitops environment so it is part of the gitops automation. Gimlet does not have a special place in your infrastructure, even though it manages gitops, it is also part of it.
 
-You need to name the environment in this step and set the approach to structure gitops resources. By default, Gimlet uses two gitops repositories [by convention](/concepts/gitops-conventions), one for infrastructure components, one for application deployments.
+You need to name the environment and set the approach to structure gitops resources. By default, Gimlet uses two gitops repositories per environment [by convention](/concepts/gitops-conventions), one for infrastructure components, one for application deployments.
 
 ![Step 2 screenshot](https://images.tango.us/public/edited_image_374cd8b6-0385-48db-b8d1-e7ac7c4246da.png?crop=focalpoint&fit=crop&fp-x=0.5000&fp-y=0.5000&fp-z=1.0000&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=2176%3A662)
 
@@ -94,7 +97,7 @@ If you prefer to use an existing database, set the access parameters under:
 - *Gimlet > Gimlet Dashboard > Config > Postgresql settings*
 - *Gimlet > Gimletd > Config > Postgresql settings*
 
-#### Using an existing ingress controlelr
+#### Using an existing ingress controller
 
 Turn the Nginx component off. You may need to manually edit yaml manifests in the gitops repository for the right ingress class.
 
