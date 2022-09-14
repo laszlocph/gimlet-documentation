@@ -123,7 +123,7 @@ export default function App({ Component, pageProps }) {
   const router = useRouter()
   const currentUrl = "https://gimlet.io" + router.pathname;
 
-  let description = "Your paved path to Kubernetes"
+  let description = "A boost for platform teams"
   if (pageProps.markdoc?.frontmatter.description) {
     description = pageProps.markdoc?.frontmatter.description
   }

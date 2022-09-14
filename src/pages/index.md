@@ -1,3 +1,3 @@
 ---
-description: Your paved path to Kubernetes
+description: A boost for platform teams
 ---
