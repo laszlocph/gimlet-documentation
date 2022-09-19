@@ -4,7 +4,6 @@ import { useRouter } from 'next/router'
 import clsx from 'clsx'
 
 import { HomePage } from '@/components/HomePage'
-import { EventsPage } from '@/components/EventsPage'
 import { MobileNavigation } from '@/components/MobileNavigation'
 import { Navigation } from '@/components/Navigation'
 import { Prose } from '@/components/Prose'
