@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { useRouter } from 'next/router'
 import clsx from 'clsx'
 
 import { HomePage } from '@/components/HomePage'
+import { EventsPage } from '@/components/EventsPage'
 import { MobileNavigation } from '@/components/MobileNavigation'
 import { Navigation } from '@/components/Navigation'
 import { Prose } from '@/components/Prose'
@@ -14,7 +14,7 @@ import { ThemeSelector } from '@/components/ThemeSelector'
 function Header({ navigation }) {
   let [isScrolled, setIsScrolled] = useState(false)
   let router = useRouter()
-  let isHomePage = router.pathname === '/'
+  let isDocsPage = router.pathname.startsWith('/docs')
 
   useEffect(() => {
     function onScroll() {
@@ -50,17 +50,34 @@ function Header({ navigation }) {
           </a>
         </Link>
       </div>
-      { !isHomePage &&
+     
       <div className="-my-5 mr-6 sm:mr-8 md:mr-0">
+        { isDocsPage &&
         <Search />
-      </div>
-      }
-      <div className="relative flex basis-0 justify-end space-x-6 sm:space-x-8 md:flex-grow">
-        <ul className="hidden sm:block flex items-center space-x-8 text-slate-700 font-semibold text-sm leading-6 dark:text-slate-200">
+        }
+        { !isDocsPage &&
+        <ul className="hidden sm:flex space-x-8 text-slate-700 font-semibold text-lg dark:text-slate-200">
           <li>
             <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/docs">Docs</a>
           </li>
+          <li>
+            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/events">Events</a>
+          </li>
         </ul>
+        }
+      </div>
+      
+      <div className="relative flex basis-0 justify-end space-x-6 sm:space-x-8 md:flex-grow">
+        { isDocsPage &&
+        <ul className="hidden sm:flex items-center space-x-4 text-slate-700 font-semibold text-sm leading-6 dark:text-slate-200">
+          <li>
+            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/docs">Docs</a>
+          </li>
+          <li>
+            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/events">Events</a>
+          </li>
+        </ul>
+        }
         <ThemeSelector className="relative z-10" />
         <Link href="https://github.com/gimlet-io/gimlet">
           <a className="group">
@@ -81,7 +98,10 @@ function Header({ navigation }) {
 
 export function Layout({ children, title, navigation, tableOfContents }) {
   let router = useRouter()
+  let isDocsPage = router.pathname.startsWith('/docs')
+  let isEventsPage = router.pathname.startsWith('/events')
   let isHomePage = router.pathname === '/'
+
   let allLinks = navigation.flatMap((section) => section.links)
   let linkIndex = allLinks.findIndex((link) => link.href === router.pathname)
   let previousPage = allLinks[linkIndex - 1]
@@ -107,7 +127,31 @@ export function Layout({ children, title, navigation, tableOfContents }) {
 
       {isHomePage && <HomePage />}
 
-      {!isHomePage &&
+      {isEventsPage &&
+      <div className="relative mx-auto flex max-w-6xl justify-center sm:px-2 lg:px-8 xl:px-12">
+        <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">
+          <article>
+            {(title || section) && (
+              <header className="mb-9 space-y-1">
+                {section && (
+                  <p className="font-display text-sm font-medium text-sky-500">
+                    {section.title}
+                  </p>
+                )}
+                {title && (
+                  <h1 className="font-display text-3xl tracking-tight text-slate-900 dark:text-white">
+                    {title}
+                  </h1>
+                )}
+              </header>
+            )}
+            <Prose>{children}</Prose>
+          </article>
+        </div>
+      </div>
+      }
+
+      {isDocsPage &&
       <div className="relative mx-auto flex max-w-8xl justify-center sm:px-2 lg:px-8 xl:px-12">
         <div className="hidden lg:relative lg:block lg:flex-none">
           <div className="absolute inset-y-0 right-0 w-[50vw] bg-slate-50 dark:hidden" />

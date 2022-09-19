@@ -1,6 +1,8 @@
 import { Callout } from '@/components/Callout'
 import { LinkGrid } from '@/components/LinkGrid'
 import { Video } from '@/components/Video'
+import { Event } from '@/components/Event'
+import { Signup } from '@/components/Signup'
 
 const tags = {
   callout: {
@@ -20,6 +22,20 @@ const tags = {
       src: { type: String },
     },
     render: Video,
+  },
+  event: {
+    attributes: {
+      name: { type: String },
+      image: { type: String },
+      link: { type: String },
+    },
+    render: Event,
+  },
+  signup: {
+    attributes: {
+      id: { type: String },
+    },
+    render: Signup,
   },
   figure: {
     selfClosing: true,
