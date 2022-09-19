@@ -99,7 +99,7 @@ function Header({ navigation }) {
 export function Layout({ children, title, navigation, tableOfContents }) {
   let router = useRouter()
   let isDocsPage = router.pathname.startsWith('/docs')
-  let isEventsPage = router.pathname === '/events'
+  let isEventsPage = router.pathname.startsWith('/events')
   let isHomePage = router.pathname === '/'
 
   let allLinks = navigation.flatMap((section) => section.links)
@@ -126,7 +126,30 @@ export function Layout({ children, title, navigation, tableOfContents }) {
       <Header navigation={navigation} />
 
       {isHomePage && <HomePage />}
-      {isEventsPage && <EventsPage />}
+
+      {isEventsPage &&
+      <div className="relative mx-auto flex max-w-6xl justify-center sm:px-2 lg:px-8 xl:px-12">
+        <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">
+          <article>
+            {(title || section) && (
+              <header className="mb-9 space-y-1">
+                {section && (
+                  <p className="font-display text-sm font-medium text-sky-500">
+                    {section.title}
+                  </p>
+                )}
+                {title && (
+                  <h1 className="font-display text-3xl tracking-tight text-slate-900 dark:text-white">
+                    {title}
+                  </h1>
+                )}
+              </header>
+            )}
+            <Prose>{children}</Prose>
+          </article>
+        </div>
+      </div>
+      }
 
       {isDocsPage &&
       <div className="relative mx-auto flex max-w-8xl justify-center sm:px-2 lg:px-8 xl:px-12">
