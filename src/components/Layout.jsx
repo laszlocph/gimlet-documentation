@@ -97,7 +97,7 @@ function Header({ navigation }) {
 
 export function Layout({ children, title, navigation, tableOfContents }) {
   let router = useRouter()
-  let isDocsPage = router.pathname.startsWith('/docs')
+  let isDocsPage = router.pathname.startsWith('/docs') || router.pathname.startsWith('/concepts')
   let isEventsPage = router.pathname.startsWith('/events')
   let isHomePage = router.pathname === '/'
 
