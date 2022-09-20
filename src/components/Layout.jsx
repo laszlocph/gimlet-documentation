@@ -13,7 +13,7 @@ import { ThemeSelector } from '@/components/ThemeSelector'
 function Header({ navigation }) {
   let [isScrolled, setIsScrolled] = useState(false)
   let router = useRouter()
-  let isDocsPage = router.pathname.startsWith('/docs')
+  let isDocsPage = router.pathname.startsWith('/docs') || router.pathname.startsWith('/concepts')
 
   useEffect(() => {
     function onScroll() {
