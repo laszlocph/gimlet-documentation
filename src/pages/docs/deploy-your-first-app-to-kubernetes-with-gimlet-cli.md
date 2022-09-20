@@ -18,7 +18,7 @@ This is the command line variation of the [Deploy your first app to Kubernetes](
 ## Install the Gimlet CLI
 
 ```bash
-curl -L https://github.com/gimlet-io/gimlet/releases/download/cli-v0.16.0/gimlet-$(uname)-$(uname -m) -o gimlet
+curl -L https://github.com/gimlet-io/gimlet/releases/download/cli-v0.17.0/gimlet-$(uname)-$(uname -m) -o gimlet
 chmod +x gimlet
 sudo mv ./gimlet /usr/local/bin/gimlet
 gimlet --version
