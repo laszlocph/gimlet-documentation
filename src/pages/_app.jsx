@@ -116,6 +116,11 @@ export default function App({ Component, pageProps }) {
     pageTitle = `Gimlet - ${pageProps.markdoc?.frontmatter.title}`
   }
 
+  let image = "https://gimlet.io/logosocial.png"
+  if (pageProps.markdoc?.frontmatter.image) {
+    image = pageProps.markdoc?.frontmatter.image
+  }
+
   let tableOfContents = pageProps.markdoc?.content
     ? collectHeadings(pageProps.markdoc.content)
     : []
@@ -142,7 +147,7 @@ export default function App({ Component, pageProps }) {
 
         <meta content={pageTitle} property="og:title"/>
         <meta content="website" property="og:type" />
-        <meta content="https://gimlet.io/logosocial.png" property="og:image" />
+        <meta content={image} property="og:image" />
         <meta content={description} property="og:description" />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -150,7 +155,7 @@ export default function App({ Component, pageProps }) {
         <meta name="twitter:creator" content="@gimlet_io" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content="https://gimlet.io/logosocial.png" />
+        <meta name="twitter:image" content={image} />
 
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
