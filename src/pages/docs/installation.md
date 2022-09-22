@@ -62,15 +62,15 @@ If you use the built in Traefik ingress controller, make sure the Nginx componen
 
 #### Docker Desktop
 
-Docker Desktop doesn't require special handling, therefor leave everything at default.
+Leave everything at default.
 
 #### Minikube
 
-TODO
+Leave everything at default.
 
 #### kind
 
-TODO
+Leave everything at default.
 
 ## Kickstarting the gitops automation
 
@@ -80,19 +80,49 @@ Once the boorstrapping is done, you have two new git repositories to store manif
 
 Follow the instructions to kickstart the automation: add deploy keys, and run *kubectl* commands.
 
-Once you did all those, close the browser tab, and return to the terminal to finalize the install. The installer script is going to check the deployed applications.
+Once you performed all the instructions, close the browser tab, and return to the terminal to finalize the install.
+
+The installer script is going to check the gitops automation and if Gimlet is installed yet.
+
+```
+🧐 Waiting for all four gitops kustomizations become ready, ctrl+c to abort
+$ kubectl get kustomizations.kustomize.toolkit.fluxcd.io -A
+NAMESPACE     NAME                                                         AGE   READY     STATUS
+flux-system   gitops-repo-laszlocph-gitops-minikube-1-apps                 31s   False     dependency 'flux-system/gitops-repo-laszlocph-gitops-minikube-1-apps-dependencies' is not ready
+flux-system   gitops-repo-laszlocph-gitops-minikube-1-apps-dependencies    31s   True      Applied revision: main/0195aaac0aa83c5e08c06a8b22c5f3d79ffbad06
+flux-system   gitops-repo-laszlocph-gitops-minikube-1-infra                53s   Unknown   reconciliation in progress
+flux-system   gitops-repo-laszlocph-gitops-minikube-1-infra-dependencies   53s   True      Applied revision: main/c7310c84029bef0dca8a3c081e5006fb736ad14b
+
+ ✅ Gitops loop is healthy
+
+ 🧐 Waiting for Gimlet to start up in the cluster, ctrl+c to abort
+$ kubectl get pods -n infrastructure | grep gimlet
+NAME                                        READY   STATUS    RESTARTS      AGE
+gimlet-agent-848b6f6dd5-t764c               1/1     Running   1 (31s ago)   43s
+gimlet-dashboard-855b799c67-fwvjr           0/1     Running   1 (20s ago)   42s
+gimletd-79dc5d546c-ksdfn                    0/1     Running   1 (15s ago)   42s
+postgresql-0                                1/1     Running   0             34s
+
+ ✅ Gimlet is up
+
+```
+
 
 TODO what you need to see.
 
 ## Accessing Gimlet
 
-TODO: lock in the trial domain in get.sh
-
 You were accessing the installer on the [http://gimlet.trial:9000](http://gimlet.trial:9000) address. Now that the installer is stopped, you will reuse this address to access the Gimlet dashboard.
 
 The `/etc/hosts` file entry already exists, you only need to forward the ingress controller to your local port 9000 to make Gimlet accessible on [http://gimlet.trial:9000](http://gimlet.trial:9000).
 
-#### k3s/k3d or Rancher Desktop
+#### k3s/k3d
+
+```
+kubectl port-forward -n kube-system svc/traefik 9000:80
+```
+
+#### Rancher Desktop
 
 ```
 kubectl port-forward -n kube-system svc/traefik 9000:80
@@ -106,7 +136,15 @@ kubectl port-forward -n infrastructure svc/ingress-nginx-controller 9000:80
 
 #### Minikube
 
+```
+kubectl port-forward -n infrastructure svc/ingress-nginx-controller 9000:80
+```
+
 #### kind
+
+```
+kubectl port-forward -n infrastructure svc/ingress-nginx-controller 9000:80
+```
 
 ## Third party services to access Gimlet
 
