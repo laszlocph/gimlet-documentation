@@ -30,13 +30,34 @@ You will access the dashboard with a kubectl port-forward command after installa
     - CIVO Cloud
 
 
-### Oneliner
+### Starting the installer
+
+#### Option 1: Oneliner
+
+It is a generic method to install Gimlet. For more specialized paths, check other options under [Starting the installer](#starting-the-installer).
 
 The following oneliner kickstarts the Gimlet installer.
 
 ```bash
 curl -L -s https://get.gimlet.io | bash -s trial
 ```
+
+#### Option 2: From the CIVO Cloud Marketplace
+
+Use this method if you prefer to install Gimlet from the CIVO Marketplace, alongside with the built-in Traefik ingress controller from the CIVO Marketplace.
+
+{% callout title="If you prefer a gitops managed ingress controller" %}
+If you prefer a gitops managed ingress controller, start the installer with the [Option 1: Oneliner](#option-1-oneliner) installation method and do not install Gimlet from the CIVO Marketplace nor the built-in Traefik ingress controller from the CIVO Marketplace either.
+{% /callout %}
+
+Install Gimlet from the CIVO Marketplace, then run the following commands to access the installer.
+
+```
+sudo sh -c 'echo 127.0.0.1 gimlet.trial >> /etc/hosts'
+kubectl port-forward -n kube-system ds/traefik 9000:80
+```
+
+Visit [http://gimlet.trial](http://gimlet.trial:9000) in your browser, then proceed to [Step 1: Creating a Github Application](#step-1-creating-a-github-application).
 
 ### Step 1: Creating a Github Application
 
