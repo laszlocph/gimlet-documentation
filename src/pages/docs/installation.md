@@ -107,9 +107,6 @@ postgresql-0                                1/1     Running   0             34s
 
 ```
 
-
-TODO what you need to see.
-
 ## Accessing Gimlet
 
 You were accessing the installer on the [http://gimlet.trial:9000](http://gimlet.trial:9000) address. Now that the installer is stopped, you will reuse this address to access the Gimlet dashboard.
