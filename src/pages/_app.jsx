@@ -11,7 +11,6 @@ const navigation = [
     title: 'Introduction',
     links: [
       { title: 'Getting started', href: '/docs' },
-      { title: 'Installation', href: '/docs/installation' },
     ],
   },
   {
@@ -21,6 +20,16 @@ const navigation = [
       { title: 'Gitops conventions', href: '/concepts/gitops-conventions' },
       { title: 'ClickOps', href: '/concepts/clickops' },
       { title: 'Escape hatches', href: '/concepts/escape-hatches' },
+    ],
+  },
+  {
+    title: 'Installation',
+    links: [
+      { title: 'Installing Gimlet CLI', href: '/docs/installing-gimlet-cli' },
+      { title: 'Installing Gimlet on a local cluster', href: '/docs/installation' },
+      { title: 'Installing Gimlet on CIVO Cloud', href: '/docs/installing-gimlet-on-civo-cloud' },
+      { title: 'Installing Gimlet on any Kubernetes cluster', href: '/docs/installing-gimlet-on-any-kubernetes-cluster' },
+
     ],
   },
   {
