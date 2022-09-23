@@ -28,7 +28,7 @@ const navigation = [
       { title: 'Installing Gimlet CLI', href: '/docs/installing-gimlet-cli' },
       { title: 'Installing Gimlet on a local cluster', href: '/docs/installation' },
       { title: 'Installing Gimlet on CIVO Cloud', href: '/docs/installing-gimlet-on-civo-cloud' },
-      { title: 'Installing Gimlet on any public Cloud', href: '/docs/installing-gimlet-on-any-public-cloud' },
+      { title: 'Installing Gimlet on any Kubernetes cluster', href: '/docs/installing-gimlet-on-any-kubernetes-cluster' },
 
     ],
   },

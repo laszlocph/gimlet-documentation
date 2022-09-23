@@ -168,8 +168,6 @@ Gimlet Dashboard should know about where it is hosted. Update the *Gimlet > Giml
 
 Enable the Cert-Manager component under *Infrastructure Components > Ingress > CertManager*.
 
-If you have Cert-Manager in your cluster already, you can skip this step.
-
 ### Write changes to the gitops repo
 
 Press *Infrastructure Components > Save components* and watch the gitops commit manifest on the cluster.
