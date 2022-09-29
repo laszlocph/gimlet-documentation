@@ -22,5 +22,6 @@ You will learn about
 
 We will start 12PM (noon) CET sharp, and we finish when we finish.
 
-{% signup id="af751ce151" %}
-{% /signup %}
+## Recording
+
+{% video src="https://www.youtube-nocookie.com/embed/CPOAc95MhT4" /%}
