@@ -32,9 +32,9 @@ export function Hero() {
                 A boost for platform teams.
               </h1>
               <h2 className="mt-3 text-xl lg:text-2xl tracking-tight text-gray-300">
-                Gimlet provides a paved path to Kubernetes from day one, so you can focus on advanced platform needs instead of the tablestakes.
+                Gimlet is a gitops based internal developer platform that provides a paved path to Kubernetes from day one, so you can focus on advanced platform needs instead of the tablestakes.
               </h2>
-              <h2 className="mt-3 text-xl lg:text-2xl tracking-tight text-gray-300">100% open-source, built on open standards and abstractions with escape hatches in mind.
+              <h2 className="mt-3 text-xl lg:text-2xl tracking-tight text-gray-300">100% open-source, built on open standards and abstractions with escape hatches in mind for extensibility.
               </h2>
               <div className="mt-8 flex space-x-4 md:justify-center lg:justify-start">
                 <ButtonLink href="/docs">Get Started</ButtonLink>
