@@ -58,7 +58,7 @@ kubectl apply -f /home/laszlo/projects/deleteme/flux/gitops-repo-gimlet-io-tutor
          Happy Gitopsing🎊
 ```
 
-{% callout title="Not sure how to add a deploy key?" %}
+{% callout id="add-deploy-key-to-gitops-repo" title="Not sure how to add a deploy key?" %}
 You need to authorize Flux to fetch the contents from Github by creating a read-only deploy key in your gitops repository.
 
 - Open GitHub, navigate to your repository, and under *Settings > Deploy* keys click on *Add deploy key*
