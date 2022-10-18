@@ -62,6 +62,9 @@ function Header({ navigation }) {
           <li>
             <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/events">Events</a>
           </li>
+          <li>
+            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/blog">Blog</a>
+          </li>
         </ul>
         }
       </div>
@@ -74,6 +77,9 @@ function Header({ navigation }) {
           </li>
           <li>
             <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/events">Events</a>
+          </li>
+          <li>
+            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/events">Blog</a>
           </li>
         </ul>
         }
@@ -99,6 +105,7 @@ export function Layout({ children, title, navigation, tableOfContents }) {
   let router = useRouter()
   let isDocsPage = router.pathname.startsWith('/docs') || router.pathname.startsWith('/concepts')
   let isEventsPage = router.pathname.startsWith('/events')
+  let isBlogPage = router.pathname.startsWith('/blog')
   let isHomePage = router.pathname === '/'
 
   let allLinks = navigation.flatMap((section) => section.links)
@@ -126,7 +133,7 @@ export function Layout({ children, title, navigation, tableOfContents }) {
 
       {isHomePage && <HomePage />}
 
-      {isEventsPage &&
+      {(isEventsPage || isBlogPage) &&
       <div className="relative mx-auto flex max-w-6xl justify-center sm:px-2 lg:px-8 xl:px-12">
         <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">
           <article>

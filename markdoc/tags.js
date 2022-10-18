@@ -2,6 +2,7 @@ import { Callout } from '@/components/Callout'
 import { LinkGrid } from '@/components/LinkGrid'
 import { Video } from '@/components/Video'
 import { Event } from '@/components/Event'
+import { Post } from '@/components/Post'
 import { Signup } from '@/components/Signup'
 
 const tags = {
@@ -30,6 +31,15 @@ const tags = {
       link: { type: String },
     },
     render: Event,
+  },
+  post: {
+    attributes: {
+      name: { type: String },
+      image: { type: String },
+      link: { type: String },
+      date: { type: String },
+    },
+    render: Post,
   },
   signup: {
     attributes: {

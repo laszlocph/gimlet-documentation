@@ -32,39 +32,6 @@ const redirects = {
       },
 
       {
-        source: '/blog/how-to-implement-a-gitops-platform-with-flux-and-kustomize/',
-        destination: '/docs/bootstrap-gitops-automation-with-gimlet-cli',
-        permanent: true,
-      },
-      {
-        source: '/blog/how-to-implement-a-gitops-platform-with-flux-and-kustomize',
-        destination: '/docs/bootstrap-gitops-automation-with-gimlet-cli',
-        permanent: true,
-      },
-
-      {
-        source: '/blog/how-to-implement-a-gitops-platform-with-flux-and-helm/',
-        destination: '/docs/bootstrap-gitops-automation-with-gimlet-cli',
-        permanent: true,
-      },
-      {
-        source: '/blog/how-to-implement-a-gitops-platform-with-flux-and-helm',
-        destination: '/docs/bootstrap-gitops-automation-with-gimlet-cli',
-        permanent: true,
-      },
-      
-      {
-        source: '/blog/gimletd-the-gitops-release-manager/',
-        destination: '/concepts/components',
-        permanent: true,
-      },
-      {
-        source: '/blog/gimletd-the-gitops-release-manager',
-        destination: '/concepts/components',
-        permanent: true,
-      },
-
-      {
         source: '/concepts/onechart-concepts/',
         destination: '/docs/onechart-reference',
         permanent: true,
