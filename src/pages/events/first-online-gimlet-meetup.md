@@ -1,7 +1,7 @@
 ---
 title: First ever Gimlet online meetup
 description: "On this occasion, we try a new format: an online meetup. You can watch silently, or ask questions, it is up to you!"
-image: https://gimlet.io/meetup1.png
+image: https://gimlet.io/meetup2.png
 ---
 
 ![First ever Gimlet online meetup](/meetup1.png)

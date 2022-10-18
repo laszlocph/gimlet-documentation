@@ -4,7 +4,7 @@ export function Signup({ id }) {
     return (
       <Script 
       data-uid={id}
-      src="https://deft-producer-8360.ck.page/af751ce151/index.js"
+      src={`https://deft-producer-8360.ck.page/${id}/index.js`}
       strategy="afterInteractive"
       onLoad={()=>{
         const form = document.getElementsByTagName("form")[0];
