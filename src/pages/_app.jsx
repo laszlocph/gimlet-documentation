@@ -183,6 +183,7 @@ export default function App({ Component, pageProps }) {
         navigation={navigation}
         title={title}
         tableOfContents={tableOfContents}
+        pageProps={pageProps}
       >
         <Component {...pageProps} />
       </Layout>

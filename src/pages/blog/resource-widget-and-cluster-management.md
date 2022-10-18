@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Resource widget and cluster management
-date: 2020-06-18
+date: "2020-06-18"
 excerpt: This week's update is about resource management. Learn about the new CPU/Memory widgets and how you can configure them appropriately to keep cluster resources in check.
 topic: Product Updates
 tags: [posts]

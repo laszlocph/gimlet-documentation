@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Mirroring environments with gitops and Kyverno"
-date: 2021-04-26
+date: "2021-04-26"
 description: See how you can mirror complete environments with gitops and rewrite host names with Kyverno's mutating admission controllers.
 topic: Ecosystem
 image: gitops-kyverno2.png
@@ -9,9 +9,6 @@ image_author: Paweł Czerwiński
 image_url: https://unsplash.com/photos/bRwM14s-XcE
 tags: [posts]
 ---
-
-![Paweł Czerwiński - https://unsplash.com/photos/bRwM14s-XcE](/gitops-kyverno2.png)
-
 
 One of the benefits of gitops that we often cite is the ability to recreate environments in case of a disaster recovery situation.
 

@@ -1,6 +1,6 @@
 ---
 title: The last-mile problem with Kubernetes
-date: 2020-06-23
+date: "2020-06-23"
 image: randy-laybourne-06P0tprVDvY-unsplash.jpg
 image_author: Randy Laybourne
 image_url: https://unsplash.com/photos/06P0tprVDvY

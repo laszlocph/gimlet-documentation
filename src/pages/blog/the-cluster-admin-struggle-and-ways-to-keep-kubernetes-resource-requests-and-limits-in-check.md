@@ -1,14 +1,12 @@
 ---
 layout: post
 title: The cluster admin struggle, and ways to keep Kubernetes Resource Requests and Limits in check
-date: 2020-06-15
+date: "2020-06-15"
 image: pascal-meier-2hkYgCchEhk-unsplash.jpg
 image_author: Pascal Meier
 image_url: https://unsplash.com/photos/2hkYgCchEhk
 description: Learn how you can teach and remind developers of setting good Kubernetes Resource Requests and Limits. Enforce it if you must, and a bonus. 
 ---
-
-![Pascal Meier - https://unsplash.com/photos/2hkYgCchEhk](/pascal-meier-2hkYgCchEhk-unsplash.jpg)
 
 There are only a few things to know about requests and limits, really.
 

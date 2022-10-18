@@ -1,14 +1,12 @@
 ---
 layout: post
 title: How to implement a gitops platform with Flux and Helm
-date: 2020-06-09
+date: "2020-06-09"
 image: leafs.jpg
 image_author:  Phil Hearing
 image_url: 
 description: In this blog post you will learn how to implement a gitops platform at your company, using Flux and Helm.
 ---
-
-![Phil Hearing - https://unsplash.com/photos/KH9_FVZmmb4w](/leafs.jpg)
 
 **5th July, 2021 UPDATE**
 

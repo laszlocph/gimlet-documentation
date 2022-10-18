@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to implement a gitops platform with Flux and Kustomize
-date: 2020-06-08
+date: "2020-06-08"
 image: mountain.jpg
 image_author: Massimiliano Morosinotto
 image_url: 
@@ -10,8 +10,6 @@ description: |
 topic: Ecosystem
 tags: [posts]
 ---
-
-![Massimiliano Morosinotto - https://unsplash.com/photos/3i5PHVp1Fkw](/mountain.jpg)
 
 **5th July, 2021 UPDATE**
 
