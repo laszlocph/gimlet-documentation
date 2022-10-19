@@ -5,11 +5,11 @@ description: A green build used to mean a successful deploy. But then gitops cam
 image: gitops-broke-cicd.jpg
 ---
 
-For a decade, a green CI/CD build meant that everything is fine. Code is tested, deployed, you can move on with your day.
+For a decade, a green CI/CD build meant that everything is fine, code is tested, deployed, and you can move on with your day.
 
 This is what we gave up when we adopted Flux. It wasn't for nothing, but with giving up the *green build means a sucessful deploy* heuristic, it became harder to figure out whether our code is deployed yet.
 
-Flux runs in our Kubernetes clusters in a distributed fashion: one Flux in each cluster. This architecture has benefits, but the drawback is, we cannot ask a a central Flux to see our code is deployed.
+Flux runs in our Kubernetes clusters in a distributed fashion: one Flux in each cluster. This architecture has benefits, but the drawback is, we cannot ask a a central Flux instance to see if our code is deployed.
 
 When using Flux, how do you know if your code is deployed?
 
@@ -29,8 +29,7 @@ Our clients are big Flux CD users.
 
 ![CICD and Flux](/flux-cicd.jpg)
 
-
-Looks simple enough, but there is one thing that the diagram doesn't communicate well. The CI/CD pipeline is done after step three, and Flux applies the changes in step four asynchronously.
+Looks simple enough, but there is one thing that the diagram doesn't communicate well. The CI/CD pipeline is finished after step three, Flux applies the changes in step four asynchronously.
 
 While Flux notifies developers once it applied the changes, CI/CD at step three returns green and developers must match up notifications with builds in their heads. We lost the *green build means a sucessful deploy* heuristic.
 
@@ -80,7 +79,9 @@ spec:
     name: -gitops-brain
 ```
 
-There is one more thing to set in Flux. By default Flux does not wait for the applied resources to come up healthy. It applies them and notifies all providers that it has done its job. To make Flux wait for all resource healthchecks to pass, we must set the `wait: true` flag on the `Kustomization` CRD:
+There is one more thing to set in Flux. By default Flux does not wait for the applied resources to come up healthy. It applies them and notifies all providers that it has done its job, except this does not mean that deployment is done.
+
+To make Flux wait for all resource healthchecks to pass, we must set the `wait: true` flag on the `Kustomization` CRD:
 
 ```yaml
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
@@ -99,12 +100,68 @@ spec:
   validation: client
 ```
 
-These yaml changes and a standalone webhook processor, the gitops brain, is what it takes to piece the *green build means a sucessful deploy* heuristic back together when using Flux.
+The yaml changes and the standalone webhook processor, the gitops brain, is what it takes to piece the *green build means a sucessful deploy* heuristic back together when using Flux.
 
-Interested how we did it?
+## What is up with ArgoCD and other gitops controllers?
 
-## How we pieced it back together?
+Flux is not unique with its distributed approach. It has some nice characteristics, like not having to store all cluster credentials in a central server, but ArgoCD supports better this particular usecase. Its centralized architecture allows it to determine easily the state of the gitops sync.
 
+From the CI/CD pipeline, you can ask ArgoCD whether the sync is done using the `argo app sync` command followed by the `argo app wait` commands. The wait command will halt the execution until the terminal state is known.
 
-## What is up with Argo and other gitops controllers?
+Other distributed gitops controllers face similar challenges without a central orchestrator who can serve the role of the *gitops brain*. At Gimlet, we also added a centralized layer on top of FluxCD to better support the CI/CD usecase.
 
+## How we pieced it back together at Gimlet?
+
+Besides the Flux yaml pieces, we also added a centralized layer on top of FluxCD, *the gitops brain*, to better support the CI/CD usecase.
+
+To be more precise, we already had one: Gimlet factored the gitops related logic to Gimletd, Gimlet's release menager component. So when we needed a service for Flux to notify about gitops applies, we knew what to use.
+
+With Gimletd the flow looks like this:
+
+![CICD and Flux and Gimletd](/flux-cicd-gimletd.png)
+
+1) 
+2)
+3) To roll out the new artifact CI/CD asks Gimletd to make changes to the gitops configuration repository to point to the new docker image. CI also starts polling Gimletd for the deployment status.
+4) 
+5)
+6) Flux sends a notification to Gimletd that it applied the change
+7) CI/CD polling gets a final answer about the deployment status and returns green (or red).
+
+In the CI/CD pipeline we used plugins that are available in Gimlet. For Github Actions the pipeline looks like the following:
+
+```yaml
+  deploy-staging:
+    name: 🚀 Deploy / Staging
+    runs-on: ubuntu-latest
+    needs:
+    - "docker-build"
+    if: github.ref == 'refs/heads/main'
+    environment: staging
+    steps:
+    - name: ⬇️ Check out
+      uses: actions/checkout@v3.1.0
+      with:
+        fetch-depth: 1
+    - name: 🚀 Deploy / Staging
+      uses: gimlet-io/gimlet-artifact-shipper-action
+      with:
+        DEPLOY: "true"
+        ENV: "staging"
+        APP: "gais"
+      env:
+        GIMLET_SERVER: ${{ secrets.GIMLET_SERVER }}
+        GIMLET_TOKEN: ${{ secrets.GIMLET_TOKEN }}
+```
+
+Which is using two Gimlet CLI commands: `gimlet release make` and `gimlet release track` underneath.
+
+## And that's a wrap
+
+Being distributed often poses managebility issues that are straightforward in centralized architectures.
+
+If you are building a development platform on top of gitops and Flux CD, the demonstrated yaml pieces and a webhook processor is what you need to build to return to the traditional semantics of the green build.
+
+If you ever want to get a boost in your efforts we would be pleased if you try Gimlet for size. We try to make it polished for non devops people, but not limiting for the experts.
+
+Onwards!

@@ -2,7 +2,7 @@
 title: Blog
 ---
 
-{% post name="How gitops broke the CI/CD feedback loop, and how we pieced it back together" image="gitops-broke-cicd.jpg" link="/blog/how-gitops-broke-the-cicd-feedback-loop-and-how-we-pieced-it-back-together" date="2022-10-20" %}
+{% post name="How Flux broke the CI/CD feedback loop, and how we pieced it back together" image="gitops-broke-cicd.jpg" link="/blog/how-flux-broke-the-cicd-feedback-loop-and-how-we-pieced-it-back-together" date="2022-10-20" %}
 A green build used to mean a successful deploy. But then gitops came and broke this heuristic.
 {% /post %}
 
