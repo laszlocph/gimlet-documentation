@@ -178,7 +178,7 @@ export function Layout({ children, title, navigation, tableOfContents, pageProps
                   <h1 className="font-display text-3xl tracking-tight text-slate-900 dark:text-white mb-2">
                     {title}
                   </h1>
-                  <div>{date}</div>
+                  <div className="text-slate-900 dark:text-white">{date}</div>
                   </>
                 )}
               </header>
@@ -186,7 +186,7 @@ export function Layout({ children, title, navigation, tableOfContents, pageProps
             {image &&
             <img alt={`${imageAuthor - imageURL}`} src={`/${image}`} />
             }
-            <Prose>{children}</Prose>
+            <Prose className="mt-16">{children}</Prose>
           </article>
         </div>
       </div>

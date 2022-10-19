@@ -2,6 +2,10 @@
 title: Blog
 ---
 
+{% post name="How gitops broke the CI/CD feedback loop, and how we pieced it back together" image="gitops-broke-cicd.jpg" link="/blog/how-gitops-broke-the-cicd-feedback-loop-and-how-we-pieced-it-back-together" date="2022-10-20" %}
+A green build used to mean a successful deploy. But then gitops came and broke this heuristic.
+{% /post %}
+
 {% post name="Are you sure none of your containers run as root?" image="introducing-kyverno.png" link="/blog/are-you-sure-none-of-your-containers-run-as-root" date="2021-11-24" %}
 The Kyverno policy engine just arrived in Gimlet Stack. Let's see how you can be certain that none of the containers run as root in your Kubernetes cluster.
 {% /post %}
