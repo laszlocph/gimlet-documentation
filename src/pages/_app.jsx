@@ -156,7 +156,7 @@ export default function App({ Component, pageProps }) {
 
         <meta content={pageTitle} property="og:title"/>
         <meta content="website" property="og:type" />
-        <meta content={image} property="og:image" />
+        <meta content={`https://gimlet.io/${image}`} property="og:image" />
         <meta content={description} property="og:description" />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -164,7 +164,7 @@ export default function App({ Component, pageProps }) {
         <meta name="twitter:creator" content="@gimlet_io" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={image} />
+        <meta name="twitter:image" content={`https://gimlet.io/${image}`} />
 
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
