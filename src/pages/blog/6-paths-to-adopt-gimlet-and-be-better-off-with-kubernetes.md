@@ -34,20 +34,20 @@ Gimlet has three components today:
 
 ### OneChart
 
-[OneChart](/onechart/getting-started) is a generic Helm chart that supports the typical web service deployment patterns.
+[OneChart](/docs/onechart-reference) is a generic Helm chart that supports the typical web service deployment patterns.
 
 Authoring a Kubernetes application manifest is reduced to setting the parts that are unique to the application itself. No more boilerplate.
 
 ### Gimlet CLI
 
-[Gimlet CLI](/gimlet-cli/getting-started) is the glue between all Gimlet components, but it also warrants for existence on its own. 
+[Gimlet CLI](https://gimlet.io/docs/deploy-your-first-app-to-kubernetes-with-gimlet-cli) is the glue between all Gimlet components, but it also warrants for existence on its own. 
 There are workflows that can be only carried out with Gimlet CLI.
 
 You typically use Gimlet CLI on your laptop, or in CI, but also it is the tool to drive many of GimletD's workflows.
 
 ### GimletD
 
-[GimletD](/gimletd/getting-started) is the gitops release manager. It builds on the concepts, conventions and workflows that Gimlet CLI introduced and extends it with a centralized approach for managing releases.
+[GimletD](https://gimlet.io/docs/deploy-your-first-app-to-kubernetes-with-gimlet-cli) is the gitops release manager. It builds on the concepts, conventions and workflows that Gimlet CLI introduced and extends it with a centralized approach for managing releases.
 
 It allows for policy based deploys and advanced authorization settings. It also packs all release automation logic that used to be scattered in CI pipelines.
 
@@ -135,7 +135,7 @@ It both allows strict control over releases, and flexibility to rewire the relea
 And by capturing all release logic, it factors out a large amount of scripting work from CI pipelines into a
 standardized toolchain.
 
-Read more about GimletD's concepts [here](/gimletd/concepts/).
+Read more about GimletD's concepts [here](/concepts/components).
 
 ## And that makes it six adoption patterns for Gimlet
 
