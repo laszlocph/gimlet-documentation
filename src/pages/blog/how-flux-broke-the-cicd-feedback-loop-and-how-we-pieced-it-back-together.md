@@ -52,7 +52,7 @@ Factoring in this new standalone component, let's call it the *gitops brain*, he
 
 ![CICD and Flux](/flux-cicd-gitops-brain.jpg)
 
-To configure Flux to notify the gitops brain we need a couple of CRDs on the cluster. `Provider` to configure the gitops brain access details, and an `Alert` to configure what to alert on.
+To configure Flux to notify the gitops brain we need a couple of CRDs on the cluster. `Provider` to configure the gitops brain access details, and an `Alert` to configure when to notify the `Provider`.
 
 ```yaml
 apiVersion: notification.toolkit.fluxcd.io/v1beta1
@@ -104,7 +104,7 @@ The yaml changes and the standalone webhook processor, the gitops brain, is what
 
 ## What is up with ArgoCD and other gitops controllers?
 
-Flux is not unique with its distributed approach. It has some nice characteristics, like not having to store all cluster credentials in a central server, but ArgoCD supports better this particular usecase. Its centralized architecture allows it to determine easily the state of the gitops sync.
+Flux is not unique with its distributed approach. It has some nice characteristics, like not having to store all cluster credentials in a central server, but ArgoCD supports this particular usecase better. Its centralized architecture allows it to determine easily the state of the gitops sync.
 
 From the CI/CD pipeline, you can ask ArgoCD whether the sync is done using the `argocd app sync --async` command followed by the `argocd app wait --sync --health` commands. The wait command will halt the execution until the terminal state is known.
 
@@ -154,7 +154,7 @@ In the CI/CD pipeline we used plugins that are available in Gimlet. For Github A
         GIMLET_TOKEN: ${{ secrets.GIMLET_TOKEN }}
 ```
 
-Which is using two Gimlet CLI commands: `gimlet release make` and `gimlet release track` underneath.
+The plugin is using two Gimlet CLI commands: `gimlet release make` and `gimlet release track` underneath. Similarly to the ArgoCD semantics.
 
 ## And that's a wrap
 
@@ -162,6 +162,6 @@ Being distributed often poses manageability issues that are straightforward in c
 
 If you are building a development platform on top of gitops and Flux CD, the demonstrated yaml pieces and a webhook processor is what you need to build to return to the traditional semantics of the green build.
 
-If you ever want to get a boost in your efforts we would be pleased if you try Gimlet for size. We try to make it polished for non devops people, but not limiting it for the experts.
+Let us know how you solved this issue at your company!
 
 Onwards!
