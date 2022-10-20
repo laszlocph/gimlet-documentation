@@ -1,15 +1,15 @@
 ---
 title: "How Flux broke the CI/CD feedback loop, and how we pieced it back together"
 date: "2022-10-20"
-description: A green build used to mean a successful deploy. But then gitops came and broke this heuristic.
+description: A green build used to mean a successful deployment. But then gitops came and broke this heuristic.
 image: gitops-broke-cicd.jpg
 ---
 
 For a decade, a green CI/CD build meant that everything is fine, code is tested, deployed, and you can move on with your day.
 
-This is what we gave up when we adopted Flux. It wasn't for nothing, but with giving up the *green build means a sucessful deploy* heuristic, it became harder to figure out whether our code is deployed yet.
+This is what we gave up when we adopted Flux. It wasn't for nothing, but with giving up the *green build means a successful deploy* heuristic, it became harder to figure out whether our code is deployed yet.
 
-Flux runs in our Kubernetes clusters in a distributed fashion: one Flux in each cluster. This architecture has benefits, but the drawback is, we cannot ask a a central Flux instance to see if our code is deployed.
+Flux runs in our Kubernetes clusters in a distributed fashion: one Flux in each cluster. This architecture has benefits, but the drawback is, we cannot ask a central Flux instance to see if our code is deployed.
 
 When using Flux, how do you know if your code is deployed?
 
@@ -31,7 +31,7 @@ Our clients are big Flux CD users.
 
 Looks simple enough, but there is one thing that the diagram doesn't communicate well. The CI/CD pipeline is finished after step three, Flux applies the changes in step four asynchronously.
 
-While Flux notifies developers once it applied the changes, CI/CD at step three returns green and developers must match up notifications with builds in their heads. We lost the *green build means a sucessful deploy* heuristic.
+While Flux notifies developers once it applied the changes, CI/CD at step three returns green and developers must match up notifications with builds in their heads. We lost the *green build means a successful deploy* heuristic.
 
 The question is, can we get it back?
 
@@ -39,7 +39,7 @@ The question is, can we get it back?
 
 The short answer is yes. Flux has a generic webhook notification system, so it can report back the synchronized state.
 
-The problem is, CI runs only on-demand, so you have to have a standalone service that accepts these webhooks. This is also the service what the CI/CD pipeline can poll to get the state of the deployment.
+The problem is, CI runs only on-demand, so you have to have a standalone service that accepts these webhooks. This is also the service that the CI/CD pipeline can poll to get the state of the deployment.
 
 Factoring in this new standalone component, let's call it the *gitops brain*, here is how the modified flow looks:
 
@@ -81,7 +81,7 @@ spec:
 
 There is one more thing to set in Flux. By default Flux does not wait for the applied resources to come up healthy. It applies them and notifies all providers that it has done its job, except this does not mean that deployment is done.
 
-To make Flux wait for all resource healthchecks to pass, we must set the `wait: true` flag on the `Kustomization` CRD:
+To make Flux wait for all resource health checks to pass, we must set the `wait: true` flag on the `Kustomization` CRD:
 
 ```yaml
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
@@ -100,13 +100,13 @@ spec:
   validation: client
 ```
 
-The yaml changes and the standalone webhook processor, the gitops brain, is what it takes to piece the *green build means a sucessful deploy* heuristic back together when using Flux.
+The yaml changes and the standalone webhook processor, the gitops brain, is what it takes to piece the *green build means a successful deploy* heuristic back together when using Flux.
 
 ## What is up with ArgoCD and other gitops controllers?
 
 Flux is not unique with its distributed approach. It has some nice characteristics, like not having to store all cluster credentials in a central server, but ArgoCD supports better this particular usecase. Its centralized architecture allows it to determine easily the state of the gitops sync.
 
-From the CI/CD pipeline, you can ask ArgoCD whether the sync is done using the `argo app sync` command followed by the `argo app wait` commands. The wait command will halt the execution until the terminal state is known.
+From the CI/CD pipeline, you can ask ArgoCD whether the sync is done using the `argocd app sync --async` command followed by the `argocd app wait --sync --health` commands. The wait command will halt the execution until the terminal state is known.
 
 Other distributed gitops controllers face similar challenges without a central orchestrator who can serve the role of the *gitops brain*. At Gimlet, we also added a centralized layer on top of FluxCD to better support the CI/CD usecase.
 
@@ -114,7 +114,7 @@ Other distributed gitops controllers face similar challenges without a central o
 
 Besides the Flux yaml pieces, we also added a centralized layer on top of FluxCD, *the gitops brain*, to better support the CI/CD usecase.
 
-To be more precise, we already had one: Gimlet factored the gitops related logic to Gimletd, Gimlet's release menager component. So when we needed a service for Flux to notify about gitops applies, we knew what to use.
+To be more precise, we already had one: Gimlet factored the gitops related logic to Gimletd, Gimlet's release manager component. So when we needed a service for Flux to notify about gitops applies, we knew what to use.
 
 With Gimletd the flow looks like this:
 
@@ -158,10 +158,10 @@ Which is using two Gimlet CLI commands: `gimlet release make` and `gimlet releas
 
 ## And that's a wrap
 
-Being distributed often poses managebility issues that are straightforward in centralized architectures.
+Being distributed often poses manageability issues that are straightforward in centralized architectures.
 
 If you are building a development platform on top of gitops and Flux CD, the demonstrated yaml pieces and a webhook processor is what you need to build to return to the traditional semantics of the green build.
 
-If you ever want to get a boost in your efforts we would be pleased if you try Gimlet for size. We try to make it polished for non devops people, but not limiting for the experts.
+If you ever want to get a boost in your efforts we would be pleased if you try Gimlet for size. We try to make it polished for non devops people, but not limiting it for the experts.
 
 Onwards!
