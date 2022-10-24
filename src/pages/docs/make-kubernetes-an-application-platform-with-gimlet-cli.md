@@ -28,7 +28,7 @@ If you don't have one we recommend using k3d on your laptop. If you do so, make 
 ## Install the Gimlet CLI
 
 ```bash
-curl -L https://github.com/gimlet-io/gimlet/releases/download/cli-v0.17.0/gimlet-$(uname)-$(uname -m) -o gimlet
+curl -L https://github.com/gimlet-io/gimlet/releases/download/cli-v0.18.0/gimlet-$(uname)-$(uname -m) -o gimlet
 chmod +x gimlet
 sudo mv ./gimlet /usr/local/bin/gimlet
 gimlet --version
