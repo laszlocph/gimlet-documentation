@@ -29,6 +29,7 @@ const tags = {
       name: { type: String },
       image: { type: String },
       link: { type: String },
+      date: { type: String },
     },
     render: Event,
   },
