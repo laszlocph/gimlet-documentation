@@ -23,5 +23,6 @@ This event will be a meetup, which means we are looking forward to hearing your 
 
 We're scheduled for 60 minutes, but we will be sticking around until all questions have been answered.
 
-{% signup id="2560c4dc05" %}
-{% /signup %}
+## Recording
+
+{% video src="https://www.youtube-nocookie.com/embed/SKywJkH7mCQ" /%}
