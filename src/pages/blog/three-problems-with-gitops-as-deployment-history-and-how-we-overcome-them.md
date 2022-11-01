@@ -5,7 +5,7 @@ date: "2020-11-01"
 image: leafs.jpg
 image_author:  Phil Hearing
 image_url: 
-description: In this blog post you will learn how to implement a gitops platform at your company, using Flux and Helm.
+description: Our finding is that this git history is too sparse and noisy at the same time to be used for anything practical without tooling. In this blog post we describe three problems we experienced once we adopted gitops and Flux CD, and what measures we implemented in Gimlet to overcome them.
 ---
 
 One often mentioned property of gitops is that it gives you a deployment history by nature. As you keep updating your desired deployment state in git, it builds up to a trail of changes that you can use to tell what version was deployed at a given time.
