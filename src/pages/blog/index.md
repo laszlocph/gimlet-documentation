@@ -2,6 +2,12 @@
 title: Blog
 ---
 
+{% post name="Three problems with GitOps as deployment history, and how we overcome them" image="gitops-broke-cicd.jpg" link="/blog/three-problems-with-gitops-as-deployment-history-and-how-we-overcome-them" date="2022-11-01" %}
+One of gitops's often mentioned property is that it gives you a deployment history by nature. Our finding is that this deployment history is too noisy to be used as anything practical without tooling.
+
+In this blog post we describe three problems we experienced once we adopted gitops and Flux CD and what measures we implemented in Gimlet to overcome them. You may face similar issues in your own gitops platform implementation and this blog post can give you ideas about how to solve them.
+{% /post %}
+
 {% post name="How Flux broke the CI/CD feedback loop, and how we pieced it back together" image="gitops-broke-cicd.jpg" link="/blog/how-flux-broke-the-cicd-feedback-loop-and-how-we-pieced-it-back-together" date="2022-10-20" %}
 A green build used to mean a successful deploy. But then gitops came and broke this heuristic.
 {% /post %}
