@@ -113,5 +113,24 @@ With this issue, we arrived at problem three: speed.
 
 ## Problem three: traversing the git history is slow
 
-Git was made for a specific usecase and depending the language library you use, speed can be an issue. The `git` binary that you use as a developer is very well optimized code, and chances are that the library available for your language will be much slower.
+Git was made for a specific usecase and depending the language library you use, speed can be an issue. The `git` binary that you use on the terminal is very well optimized code, and chances are that the library available for your language will be much slower. So the tooling you build is going to be much slower in constructing specific git histories.
 
+Answering questions like:
+- What was the last ten versions deployed from this service?
+- What changes were made on production last Monday?
+- What was the last ten deploys by Alice?
+- What was the last ten deploys from repository X?
+
+from hundreds, or thousands of commits made every week, may pose performance issues for your tooling.
+
+## Closing up
+
+You may wonder that with the issues listed with gitops, is it really an approach to follow?
+
+Our answer is yes.
+
+Git is not a database but we try to use it as one, so certain usecase are hard. That's why we say at Gimlet that gitops benefits from a platform heavily and we woud not use it without proper tooling.
+
+But we like the incremental nature of gitops, that each change is a commit, it makes debugging issues a lot easier. Having the possibility to look at the gitops repository at any moment, gives us a level of transparency that is not matched by any other deployment approach we tried.
+
+Onwards!
