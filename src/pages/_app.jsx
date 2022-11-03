@@ -120,9 +120,16 @@ import { useRouter } from 'next/router'
 export default function App({ Component, pageProps }) {
   let title = pageProps.markdoc?.frontmatter.title
 
+  const router = useRouter()
+  let isBlogPage = router.pathname.startsWith('/blog')
+
   let pageTitle = 'Gimlet'
   if (pageProps.markdoc?.frontmatter.title) {
-    pageTitle = `Gimlet - ${pageProps.markdoc?.frontmatter.title}`
+    if (isBlogPage) {
+      pageTitle = pageProps.markdoc?.frontmatter.title}
+    } else {
+      pageTitle = `Gimlet - ${pageProps.markdoc?.frontmatter.title}`
+    }
   }
 
   let image = "https://gimlet.io/logosocial.png"
@@ -134,7 +141,6 @@ export default function App({ Component, pageProps }) {
     ? collectHeadings(pageProps.markdoc.content)
     : []
 
-  const router = useRouter()
   const currentUrl = "https://gimlet.io" + router.pathname;
 
   let description = "The fastest way to get a gitops platform on Flux and Kubernetes."
