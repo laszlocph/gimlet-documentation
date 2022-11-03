@@ -163,7 +163,7 @@ export function Layout({ children, title, navigation, tableOfContents, pageProps
       }
 
       {isBlogPage &&
-      <div className="relative mx-auto flex max-w-6xl justify-center sm:px-2 lg:px-8 xl:px-12">
+      <div className="relative mx-auto flex max-w-4xl justify-center sm:px-2 lg:px-8 xl:px-12">
         <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">
           <article>
             {(title || section) && (
@@ -184,7 +184,7 @@ export function Layout({ children, title, navigation, tableOfContents, pageProps
               </header>
             )}
             {image &&
-            <img alt={`${imageAuthor - imageURL}`} src={`/${image}`} />
+            <img alt={`${imageAuthor - imageURL}`} src={`/${image}`} className="h-96 object-contain w-full"/>
             }
             <Prose className="mt-16">{children}</Prose>
           </article>
