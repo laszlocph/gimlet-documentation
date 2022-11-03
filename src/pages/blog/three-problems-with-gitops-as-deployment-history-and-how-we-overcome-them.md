@@ -1,11 +1,9 @@
 ---
 layout: post
 title: Three problems with GitOps as deployment history, and how we overcome them
-date: "2020-11-01"
-image: leafs.jpg
-image_author:  Phil Hearing
-image_url: 
-description: Our finding is that this git history is too sparse and noisy at the same time to be used for anything practical without tooling. In this blog post we describe three problems we experienced once we adopted gitops and Flux CD, and what measures we implemented in Gimlet to overcome them.
+date: "2022-11-01"
+image: dalle-bike.png
+description: Our finding is that the gitops history is too sparse and noisy to be used for anything practical without tooling. In this blog post we describe three problems we experienced once we adopted gitops and Flux CD, and what measures we implemented in Gimlet to overcome them.
 ---
 
 One often mentioned property of gitops is that it gives you a deployment history by nature. As you keep updating your desired deployment state in git, it builds up to a trail of changes that you can use to tell what version was deployed at a given time.

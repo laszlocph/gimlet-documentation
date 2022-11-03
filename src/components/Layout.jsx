@@ -184,7 +184,7 @@ export function Layout({ children, title, navigation, tableOfContents, pageProps
               </header>
             )}
             {image &&
-            <img alt={`${imageAuthor - imageURL}`} src={`/${image}`} className="h-96 object-cover w-full"/>
+            <img alt={`${imageAuthor - imageURL}`} src={`/${image}`} className="h-96 object-contain w-full"/>
             }
             <Prose className="mt-16">{children}</Prose>
           </article>
