@@ -126,7 +126,7 @@ export default function App({ Component, pageProps }) {
   let pageTitle = 'Gimlet'
   if (pageProps.markdoc?.frontmatter.title) {
     if (isBlogPage) {
-      pageTitle = pageProps.markdoc?.frontmatter.title}
+      pageTitle = pageProps.markdoc?.frontmatter.title
     } else {
       pageTitle = `Gimlet - ${pageProps.markdoc?.frontmatter.title}`
     }
