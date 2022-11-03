@@ -29,15 +29,15 @@ export function Hero() {
           <div className="relative z-10 md:text-center lg:text-left">
             <div className="relative">
               <h1 className="inline bg-gradient-to-r from-pink-400 to-orange-500 bg-clip-text font-display text-4xl lg:text-5xl tracking-tight text-transparent">
-                A boost for platform teams.
+                The fastest way to get a gitops platform on Flux and Kubernetes.
               </h1>
               <h2 className="mt-3 text-xl lg:text-2xl tracking-tight text-gray-300">
-                Gimlet is a gitops based internal developer platform that provides a paved path to Kubernetes from day one, so you can focus on advanced platform needs instead of the tablestakes.
+                Gimlet is a gitops based internal developer platform that provides a paved path to Kubernetes, so you can focus on advanced platform needs, instead of the tablestakes.
               </h2>
-              <h2 className="mt-3 text-xl lg:text-2xl tracking-tight text-gray-300">100% open-source, built on open standards and abstractions with escape hatches in mind for extensibility.
+              <h2 className="mt-3 text-xl lg:text-2xl tracking-tight text-gray-300">100% open-source, built on open standards and abstractions with great extensibility.
               </h2>
               <div className="mt-8 flex space-x-4 md:justify-center lg:justify-start">
-                <ButtonLink href="/docs">Get Started</ButtonLink>
+                <ButtonLink href="/docs/installation">Install it now! It's 100% open-source.</ButtonLink>
               </div>
             </div>
           </div>
