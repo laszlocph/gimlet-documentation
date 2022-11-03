@@ -16,15 +16,15 @@ In this blog post we describe three problems we experienced once we adopted gito
 
 Let's dive into problem one, shall we?
 
-## Problem one: gitops is a technical history and it is not what developers care about the most
+## Problem one: gitops is a technical history and it is not what developers care about
 
-What developers care about the most is to know if their code is deployed. But all gitops tells them is how the image tag changed from one hash to another. Not very helpful.
+What developers care about is to know if their code is deployed. But all gitops tells them is how the image tag changed from one hash to another. Not very helpful.
 
 ![But all gitops tells them is how the image tag changed from one hash to another. Not very helpful.](/image-change.png)
 
 What we all imagined when gitops talked about an auditlog, is to know what code was deployed and by whom at any given time.
 
-But all we have is a trail of yaml changes, that does not know much about the code version that was delivered. It captures Kubernetes specific changes well, like a change in used CPU or memory, or an environment variable change, but it does not know about code version information what developers want to know about.
+But all we have is a trail of yaml changes, that does not know much about the code version that was delivered. It captures Kubernetes specific changes well, like a change in required CPU or an environment variable, but it does not know much about code version, the information what developers want to know the most.
 
 Ideally, as developers, we want to know the
 - the reference to the commit or pull request that was merged and deployed
@@ -32,32 +32,36 @@ Ideally, as developers, we want to know the
 - who was the creator of the commit
 - who deployed it
 
-with any additonal meta information that may help us in resolving an incident. As 80% [1] percent of issues are introduced with code changes, getting to know the largest possible context of each change could be material in our MTTR.
+with any possible additonal meta information that may help us in resolving an incident. As 70% percent of issues are introduced with code changes as per the [Google SRE book](https://sre.google/sre-book/introduction/), getting to know the largest possible context for each change could be material in our MTTR - or mean time to repair.
 
-But the gitops history is not able to tell any of this. Unable to tell what was deployed, and often unable to even tell who started the deploy, as most gitops changes are made by bot accounts. This is not an auditlog.
+But the gitops history is not able to tell us any of this.
+
+Unable to tell what was deployed, and often unable to even tell who started the deploy, as most gitops changes are made by bot accounts. This is not an auditlog.
 
 But we can make it one.
 
 ## Storing context information with gitops commits
 
-To make a real deployment history out of the gitops commits, at Gimlet, we store additional meta information with each gitops commit. Besides the yaml changes, we store a `release.json` file with each gitops commit made.
+To make gitops commits a real deployment history, at Gimlet, we store additional meta information with each commit. Besides the yaml changes, we store a `release.json` file with each gitops commit our tooling makes.
 
-This file is ignored by Flux CD, so it does not interfere with the Kubernetes deployment, and contains the necessairy information to quickly reconstruct a deployment history out of gitops commits. The key here is quickly, as it is a denormalized form of meta data that otherwise could be obtained through the references in the deployed manifest.
+This file is ignored by Flux CD, so it does not interfere with the Kubernetes deployment, and contains the necessairy information to quickly reconstruct a deployment history out of gitops commits.
 
-The `release.json` file is the serialized form of the `Release` struct of the Golang `github.com/gimlet-io/gimlet-cli/pkg/dx` package.
+The key here is quickly, as it is a denormalized form of meta data that otherwise could be obtained through the references in the deployed manifest.
+
+The `release.json` file is the serialized form of the Golang `Release` struct of the `github.com/gimlet-io/gimlet-cli/pkg/dx` package.
 
 
 ```go
 type Release struct {
-	App string
-	Env string
+	App         string
+	Env         string
 	ArtifactID  string
 	TriggeredBy string
-	Version *Version
-	GitopsRef  string
-	GitopsRepo string
-	Created    int64
-	RolledBack bool
+	Version     *Version
+	GitopsRef   string
+	GitopsRepo  string
+	Created     int64
+	RolledBack  bool
 }
 
 type Version struct {
@@ -78,40 +82,40 @@ type Version struct {
 }
 ```
 
-With this information available for every gitops commit, we can display the right context for each commit in Gimlet, and you can do it too in your own platform if you decide to build one. Gimlet is a gitops based developer platform built on top of Flux, making it easier to work with gitops and Kubernetes.
+With this information available for every gitops commit, we can display the right context for each commit in Gimlet, and you can do it too in your own platform if you decide to build one.
 
-With Gimlet CLI:
+Gimlet is a gitops based internal developer platform, and probably the fastest way to get a gitops platform on top of Flux and Kubernetes. With the release meta information stored in the gitops repository, getting the deployment history with the gimlet command line tool is reduced to the following command:
 
 ```
 $ gimlet release list --env staging --app demo-app --limit 1
 demo-app -> staging @0342ccba7fe85c35154d96e396589feeda803b7d  (3 hours ago)
-  d4f3846f - Major change (3 hours ago) Laszlo Fogas
+  d4f3846f - Major change (4 hours ago) by Laszlo Fogas
   gimlet-io/demo-app@main https://github.com/gimlet-io/demo-app/commit/d4f3846f2391215e529ed57b59621723619ba625
 ```
 
-and on the Gimlet Dashboard:
+and similarly on the Gimlet Dashboard:
 
 ![Deployment history](/deployment-history.png)
 
-Now that every gitops commit has the right context, let's address the next problem.
+Now that we have a proper deployment history, let's address the next problem.
 
 ## Problem two: gitops history is not a straight line
 
-As a developer, you typically work with one service. But in a gitops repository we often store manifests for many services, thus looking at the git history of one service is not a straight line, but a rather sparse one.
+As a developer, you typically work with one service. But in the gitops repository we often store manifests for many services, thus looking at the git history of one service is not a straight line of git commits, but a rather sparse line.
 
-The approach to reconstruct history for a single service depends on the folder strategy you use in the gitops repository.
+The approach to reconstruct the deployment history for a single service depends on the folder strategy you use in the gitops repository.
+
+Since the gitops repository structure is not prescribed by gitops, you can end up with a rather difficult task. This is a factor to consider when you design your gitops folder strategy, and it affects greatly your ability to construct the gitops history for a single service.
 
 At Gimlet, [we use folders](/concepts/gitops-conventions) to separate services from one another. With manifests stored under a specific path, getting the gitops history of one service is rather easy with the `git` command line tool: the `git log -- path/to/service` command returns the git commit history of the specified folder
 
-But if you use Kustomize overlays to render the service manifests, constructing the history of a single service can become much more difficult as you need to factor in changes in base layers that are scattered in multiple folders.
-
-This is a factor to consider when you design your gitops folder strategy, and it affects greatly your ability to construct the gitops history for a single service.
-
-Even though at Gimlet our approach makes the problem solvable with a git one-liner, we implement our tooling in Golang, where the de-facto git library is far from great in the task. We use [go-git](https://github.com/go-git/go-git) and to get the history of a path, it traverses the git commit tree and checks changeset to see if the changed files are on the path where our service is. And it does it at a rather slow pace, orders of magnitude slower than the `git` binary.
-
-With this issue, we arrived at problem three: speed.
+But if you use Kustomize overlays to render the service manifests, constructing the history of a single service can become much more difficult as you need to factor in changes in base layers as well that are scattered to multiple folders.
 
 ## Problem three: traversing the git history is slow
+
+Even though at Gimlet our approach makes the problem solvable with a git one-liner, we implement our tooling in Golang, where the de-facto git library is far from great at the task. We use [go-git](https://github.com/go-git/go-git) and to get the history of a path it traverses the git commit tree and checks the changed files in each commit to see if they are on the path where our service is. And it does it at a rather slow pace, orders of magnitude slower than the `git` binary.
+
+With this issue, we arrived at problem three: speed.
 
 Git was made for a specific usecase and depending the language library you use, speed can be an issue. The `git` binary that you use on the terminal is very well optimized code, and chances are that the library available for your language will be much slower. So the tooling you build is going to be much slower in constructing specific git histories.
 
@@ -129,8 +133,8 @@ You may wonder that with the issues listed with gitops, is it really an approach
 
 Our answer is yes.
 
-Git is not a database but we try to use it as one, so certain usecase are hard. That's why we say at Gimlet that gitops benefits from a platform heavily and we woud not use it without proper tooling.
+Git is not a database but we try to use it as one, so certain usecase are hard. That's why we say at Gimlet that gitops heavily benefits from a platform. We would not use it without proper tooling.
 
-But we like the incremental nature of gitops, that each change is a commit, it makes debugging issues a lot easier. Having the possibility to look at the gitops repository at any moment, gives us a level of transparency that is not matched by any other deployment approach we tried.
+But we like the incremental nature of gitops. As each change is a commit of text files, it makes debugging issues a lot easier. Having the possibility to look at the gitops repository at any moment, gives a level of transparency that is not matched by any other deployment approach we tried.
 
 Onwards!
