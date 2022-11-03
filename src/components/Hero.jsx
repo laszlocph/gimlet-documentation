@@ -37,7 +37,7 @@ export function Hero() {
               <h2 className="mt-3 text-xl lg:text-2xl tracking-tight text-gray-300">100% open-source, built on open standards and abstractions with great extensibility.
               </h2>
               <div className="mt-8 flex space-x-4 md:justify-center lg:justify-start">
-                <ButtonLink href="/docs/installation">Install it now! It's 100% open-source.</ButtonLink>
+                <ButtonLink href="/docs/installation">Install it now! It&apos;s 100% open-source.</ButtonLink>
               </div>
             </div>
           </div>
