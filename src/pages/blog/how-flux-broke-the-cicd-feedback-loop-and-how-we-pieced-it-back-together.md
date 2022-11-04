@@ -165,3 +165,5 @@ If you are building a development platform on top of gitops and Flux CD, the dem
 Let us know how you solved this issue at your company!
 
 Onwards!
+
+ps.: we love gitops, but know it is not without problems. Here is another issue where we think gitops can use some platform love: [Three problems with GitOps as deployment history, and how we overcome them](/blog/three-problems-with-gitops-as-deployment-history-and-how-we-overcome-them)

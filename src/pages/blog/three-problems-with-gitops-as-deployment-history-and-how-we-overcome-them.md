@@ -136,3 +136,5 @@ Git is not a database but we try to use it as one, so certain usecase are hard. 
 But we like the incremental nature of gitops. As each change is a commit of text files, it makes debugging issues a lot easier. Having the possibility to look at the gitops repository at any moment, gives a level of transparency that is not matched by any other deployment approach we tried.
 
 Onwards!
+
+ps.: we love gitops, but know it is not without problems. Here is another issue where we think gitops can use some platform love: [How Flux broke the CI/CD feedback loop, and how we pieced it back together](/blog/how-flux-broke-the-cicd-feedback-loop-and-how-we-pieced-it-back-together)
