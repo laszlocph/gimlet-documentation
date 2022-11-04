@@ -2,7 +2,7 @@
 layout: post
 title: Three problems with GitOps as deployment history, and how we overcome them
 date: "2022-11-01"
-image: dalle-cog.png
+image: three-problems-with-gitops.png
 description: Our finding is that the gitops history is too sparse and noisy to be used for anything practical without tooling. In this blog post we describe three problems we experienced once we adopted gitops and Flux CD, and what measures we implemented in Gimlet to overcome them.
 ---
 
