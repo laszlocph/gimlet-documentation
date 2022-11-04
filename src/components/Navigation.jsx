@@ -8,6 +8,44 @@ export function Navigation({ navigation, className }) {
   return (
     <nav className={clsx('text-base lg:text-sm', className)}>
       <ul className="space-y-9">
+        <ul>
+        <li key="docs" className="relative">
+          <Link href="/docs">
+            <a
+              className="block w-full font-bold before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-600 hover:before:block dark:text-slate-400 dark:before:bg-slate-700 dark:hover:text-slate-300"
+            >
+              Docs
+            </a>
+          </Link>
+        </li>
+        <li key="events" className="relative">
+          <Link href="/events">
+            <a
+              className="block w-full font-bold before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-600 hover:before:block dark:text-slate-400 dark:before:bg-slate-700 dark:hover:text-slate-300"
+            >
+              Events
+            </a>
+          </Link>
+        </li>
+        <li key="blog" className="relative">
+          <Link href="/blog">
+            <a
+              className="block w-full font-bold before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-600 hover:before:block dark:text-slate-400 dark:before:bg-slate-700 dark:hover:text-slate-300"
+            >
+              Blog
+            </a>
+          </Link>
+        </li>
+        <li key="jobs" className="relative">
+          <Link href="https://github.com/gimlet-io/#jobs">
+            <a
+              className="block w-full font-bold before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-600 hover:before:block dark:text-slate-400 dark:before:bg-slate-700 dark:hover:text-slate-300"
+            >
+              Jobs
+            </a>
+          </Link>
+        </li>
+        </ul>
         {navigation.map((section) => (
           <li key={section.title}>
             <h2 className="font-display font-medium text-slate-900 dark:text-white">
