@@ -69,9 +69,8 @@ export function Hero() {
           <div className="mx-auto mt-8 w-full items-center px-4 lg:px-8 xl:px-12 h-96 lg:h-64">
           <div>
             <div className="relative pl-2 py-4 bg-white hover:bg-gray-100 rounded">
-              <img src="/arrow.svg" className="absolute right-0 top-0 -mt-20 mr-16 md:-mr-6 w-32 block dark:hidden" />
-              <img src="/arrow-white.svg" className="absolute right-0 top-0 -mt-20 mr-16 md:-mr-6 w-32 hidden dark:block" />
-              <span className="absolute right-0 top-0 -mt-16 mr-0 md:-mr-24 w-24 font-mono font-bold text-xs dark:text-slate-100">Deploy this commit!</span>
+              <img src="/arrow-white.svg" className="absolute right-0 top-0 -mt-20 mr-16 md:-mr-6 w-32 block" />
+              <span className="absolute right-0 top-0 -mt-16 mr-0 md:-mr-24 w-24 font-mono font-bold text-xs text-slate-100">Deploy this commit!</span>
               <div className="relative flex items-start space-x-3">
                 <div className="relative">
                   <img
