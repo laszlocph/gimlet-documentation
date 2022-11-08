@@ -23,7 +23,6 @@ export function ClickOps() {
       }, 1000);
 
     }, 1500);
-
   }
 
   return (
@@ -76,7 +75,7 @@ export function ClickOps() {
                         Laszlo Fogas
                       </span>
                       <span className="ml-1">committed</span>
-                      <span>2 hours ago</span>
+                      <span className="ml-1">2 hours ago</span>
                     </p>
                   </div>
                 </div>
