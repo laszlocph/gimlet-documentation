@@ -80,7 +80,7 @@ Gimlet environments are served with wildcard DNS entries, so `$app.$env.yourcomp
 
 ### Save your deployment configuration
 
-When you hit save, a file will be placed in your application source code. It follows the convention of `.gimlet/$env-$app.yaml` so in our case `.gimlet/staging-demo-app.yaml` will hold the configuration that we just set in the UI.
+When you hit save, a file will be placed in your application source code. It will hold the configuration that we just set on the UI and will be named `.gimlet/staging-demo-app.yaml` as it follows the `.gimlet/$env-$app.yaml` naming convention.
 
 Hit *Save* now. The changes you make on the dashboard are always backed by a git commit. This is ClickOps 🙌
 
@@ -90,23 +90,19 @@ Hit *Save* now. The changes you make on the dashboard are always backed by a git
 Every time you save the configuration, you can inspect the diff of the environment configuration file in Gimlet.
 {% /callout %}
 
-
 ## Integrate CI with Gimlet
 
-Your CI workflow builds a container image at the end of the build.
+CI pipelines lint, test, build and then deploy applications.
 
-Gimlet needs to know about these releasable artifacts so it can orchestrate the releases. For this purpose let's add a step in your CI workflow and ship the artifact information to Gimlet.
-
-
-
+Gimlet [assumes the gitops deployment tasks](/concepts/integration-to-ci) from your CI pipeline and runs them centralized. CI pipelines can call the Gimlet API to deploy, no need to script the deploy in CI.
 
 ### Integrate Github Actions
 
-In order to integrate Github Actions with Gimlet, you have to ship artifact information to Gimlet once your deploy artifact is built. Your deploy artifact is your built container image and you do the shipping with the Gimlet Artifact Shipper Action. It ships meta information of the container image and the build process.
+In order to integrate Github Actions with Gimlet, you need to add the Gimlet Github Action in your CI pipeline to deploy your application.
 
-To ship the artifact information, add an additional step in your job definition, using the Gimlet Artifact Shipper Action. Place it in the workflow where you've built the container image. Typically righ after the image build step.
+You typically add this after your docker image build step, where you would normally place the deploy step in your pipeline.
 
-In this tutorial the build workflow looks like the following once the artifact shipper action is added:
+Gimlet doesn't take control of your CI workflow, you can keep oragnizing your CI pipelines as you desire and call Gimlet's API whenever you need to perform a gitops operation.
 
 ```yaml
 name: Build
@@ -140,55 +136,51 @@ jobs:
         push: true
         tags: |
           ghcr.io/gimlet-io/demo-app:${{ github.sha }}
-    - name: Gimlet Artifact Shipper Action
-      uses: gimlet-io/gimlet-artifact-shipper-action@v0.7.1
+    - name: 🚀 Deploy / Staging
+      uses: gimlet-io/gimlet-artifact-shipper-action@v0.8.0
+      with:
+        DEPLOY: "true"
+        ENV: "staging"
+        APP: "demo-app"
       env:
         GIMLET_SERVER: ${{ secrets.GIMLET_SERVER }}
         GIMLET_TOKEN: ${{ secrets.GIMLET_TOKEN }}
 ```
 
-
 ### Integrate CircleCI
 
-In order to integrate CircleCI with Gimlet, you have to ship artifact information to Gimlet once your deploy artifact is built. Your deploy artifact is your built container image and you do the shipping with the Gimlet CircleCI Orb. It ships meta information of the container image and the build process.
+In order to integrate with CircleCI, you need to add the Gimlet CircleCI Orb in your CI pipeline to deploy your application.
 
-To ship the artifact information, add an additional step in your workflow definition, using the Gimlet CircleCI Orb. Place it in the workflow where you've built the container image. Typically righ after the image build job.
+You typically add this after your docker image build step, where you would normally place the deploy step in your pipeline.
 
-In this tutorial the build workflow looks like the following once the artifact shipper job is added:
+Gimlet doesn't take control of your CI workflow, you can keep oragnizing your CI pipelines as you desire and call Gimlet's API whenever you need to perform a gitops operation.
 
 ```yaml
 version: 2.1
 orbs:
-  gimlet: gimlet-io/circleci-orb@3.0.1
+  gimlet: gimlet-io/circleci-orb@4.0.0
+
 workflows:
-  build:
+  master-build:
     jobs:
-      - build_and_test:
-          filters:
-            branches:
-              only:
-                - main
-      - build_docker_image:
-          context:
-            - GithubCR
-          filters:
-            branches:
-              only:
-                - main
+      - test: {}
+      - build_docker:
           requires:
-            - build_and_test
+            - test
       - gimlet/gimlet-artifact-push:
+          name: 🚀 Deploy / Staging
           context:
             - Gimlet
+          deploy: "true"
+          env: "staging"
+          app: "demo-app"
           requires:
-            - build_docker_image
+            - build_docker
 ```
 
-The `Gimlet` [Context](https://circleci.com/docs/contexts) holds two environment variables in this example: `GIMLET_SERVER` and `GIMLET_TOKEN`.
+### Obtain Gimlet API credentials
 
-### Gimlet API credentials
-
-For the shipper to ship artifact information (remember it is container and CI metadata) it needs access to the Gimlet API. You need to set two secrets `GIMLET_SERVER` and `GIMLET_TOKEN`.
+For the CI deploy steps to work, you need to provide access to the Gimlet API. You need to set two secrets `GIMLET_SERVER` and `GIMLET_TOKEN`.
 
 - Set `GIMLET_SERVER` to https://gimletd.<<yourcompany.com>>
 - Set `GIMLET_TOKEN` to a Gimlet API key
@@ -197,25 +189,31 @@ To create a Gimlet API key navigate to *Profile* > *Create a new user* in Gimlet
 
 ![Step 2 screenshot](https://images.tango.us/public/screenshot_f01e4201-f15b-4562-8201-4230c685169f.png?crop=focalpoint&fit=crop&fp-x=0.4961&fp-y=0.8102&fp-z=1.2375&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=3840%3A1960)
 
+## Make a dummy commit to see it deploy
 
-## Deploy
+Push a dummy commit once you made the changes to your CI pipeline.
 
-Once you added the artifact shipper in your CI workflow, every commit that has built an artifact will be deployable in Gimlet.
+CI will call the Gimlet API, and Gimlet will make a gitops based deploy of your application. You can track the CI step output for details.
 
-![Step 1 screenshot](https://images.tango.us/public/edited_image_a6e4652d-8775-4353-87e5-5ff4bc1b276b.png?crop=focalpoint&fit=crop&fp-x=0.5000&fp-y=0.5000&fp-z=1.0000&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=2405%3A255)
+```
+Deploying..
+Deployment ID is: ff11eb64-2f94-49c3-ac07-e9274735096c
+👉 Request (ff11eb64-2f94-49c3-ac07-e9274735096c) is new 
+	⏳ The release is not processed yet...
+👉 Request (ff11eb64-2f94-49c3-ac07-e9274735096c) is processed 
+	📖 demo-app -> staging, gitops hash 176da9babbd7647fc68f3c5268a86a1d5fc6669a, status is NotReconciled
+👉 Request (ff11eb64-2f94-49c3-ac07-e9274735096c) is processed 
+	📖 demo-app -> staging, gitops hash 176da9babbd7647fc68f3c5268a86a1d5fc6669a, status is DependencyNotReady
+👉 Request (ff11eb64-2f94-49c3-ac07-e9274735096c) is processed 
+	📖 demo-app -> staging, gitops hash 176da9babbd7647fc68f3c5268a86a1d5fc6669a, status is ReconciliationSucceeded
+```
 
-{% callout title="Can't see a deploy button on your commit?" %}
-The deploy button becomes available for commits that CI has shipped an artifact for. If you don't see the deploy button, check your CI workflow and see if the shipper was successful.
+Gimlet processed the deploy reuqest and generated a gitops commit with hash `176da9babbd7647fc68f3c5268a86a1d5fc6669a`. Then the CI step waited until the gitops commit was applied on the cluster by Flux:
+
+You should see the deployed resources in Kubernetes, and you can also cross-reference the generated gitops commit (With hash `176da9babbd7647fc68f3c5268a86a1d5fc6669a` in the logs above) in the gitops repository.
+
+{% callout title="Can't see the deployed application?" %}
+You can [debug](/docs/bootstrap-gitops-automation-with-gimlet-cli#verify-the-gitops-automation) the gitops automation to see what went wrong.
 {% /callout %}
 
 
-To make an ad-hoc deployment, let's finish this tutorial by clicking the *Deploy* dropdown on the latest commit and deploy the commit on staging.
-
-
-The rollout widget displays references to the gitops commits that Gimlet made to fulfill your deploy request, 
-
-![Step 3 screenshot](https://images.tango.us/public/screenshot_037a06c8-0ea1-45ee-8137-312a920d59c7.png?crop=focalpoint&fit=crop&fp-x=0.8464&fp-y=0.1156&fp-z=2.0741&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=3840%3A1960)
-
-and you can see your newly deployed application on the Gimlet dashboard:
-
-![Step 4 screenshot](https://images.tango.us/public/edited_image_6448f571-142f-4d34-942a-8030b74d4aab.png?crop=focalpoint&fit=crop&fp-x=0.5000&fp-y=0.5000&fp-z=1.0000&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=2508%3A737)

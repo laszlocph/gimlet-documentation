@@ -32,6 +32,9 @@ Gimlet CLI is a command line tool with the same power as the Gimlet Dashboard.
 - Initiate and manage gitops environments
 - Render manifests locally for debug purposes
 
+## CI
+Your CI/CD pipelines implemented with your preferred provider. Gimlet fits into your existing pipelines, replacing your deploy steps. See how [How Gimlet integrates to CI workflows](/concepts/integration-to-ci).
+
 ## Gimlet Agent
 Gimlet Agent runs in your Kubernetes clusters. It collects realtime information about your deployments, and forwards it to the Gimlet Dashboard.
 
@@ -48,3 +51,4 @@ A completely normal git repositories with the role to hold all Kubernetes resour
 
 ## Application repositories
 Where your application source code lives.
+

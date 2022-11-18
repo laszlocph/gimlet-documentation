@@ -20,6 +20,7 @@ const navigation = [
       { title: 'Gitops conventions', href: '/concepts/gitops-conventions' },
       { title: 'ClickOps', href: '/concepts/clickops' },
       { title: 'Escape hatches', href: '/concepts/escape-hatches' },
+      { title: 'Integration to CI', href: '/concepts/integration-to-ci' },
     ],
   },
   {
@@ -45,6 +46,7 @@ const navigation = [
     title: 'Advanced guides',
     links: [
       { title: 'Managing deployment configs', href: '/docs/how-to-manage-deployment-configs' },
+      { title: 'Ad-hoc deploys', href: '/docs/ad-hoc-deploys' },
       { title: 'Policy-based releases', href: '/docs/policy-based-releases' },
       { title: 'Configuring preview environments', href: '/docs/how-to-configure-preview-environments' },
       { title: 'Managing secrets', href: '/docs/how-to-manage-secrets' },
@@ -62,6 +64,7 @@ const navigation = [
       { title: 'Gimlet Dashboard configuration reference', href: '/docs/gimlet-dashboard-configuration-reference' },
       { title: 'Gimletd configuration reference', href: '/docs/gimletd-configuration-reference' },
       { title: 'Gimlet Agent configuration reference', href: '/docs/gimlet-agent-configuration-reference' },
+      { title: 'CI integration', href: '/docs/ci-integration' },
     ],
   },
   {
