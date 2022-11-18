@@ -10,7 +10,7 @@ Gimlet assumes the gitops deployment tasks from your CI pipeline and runs them i
 Gimlet is able to perform the gitops deployment tasks centrally, as once you added the Gimlet deploy step in your CI workflow, CI passes a large chunk of metadata (called the Gimlet artifact) to the Gimlet API, so Gimlet knows everything about the commit to deploy it.
 
 There are two modes of operation in Gimlet's CI integration:
-- you can use it as a deploy API. You can keep oragnizing your CI pipelines as you desire and call Gimlet's deploy API whenever you need to perform a gitops operation.
+- you can use it as a deploy API. You can keep organizing your CI pipelines as you desire and call Gimlet's deploy API whenever you need to perform a gitops operation.
 - or you can use Gimlet as a release manager. This mode of operation you use CI only to build your software, then delegate deploy actions to Gimlet's policy engine.
 
 The default is using Gimlet as a deploy API.
@@ -27,7 +27,7 @@ In order to integrate Github Actions with Gimlet, you need to add the Gimlet Git
 
 You typically add this after your docker image build step, where you would normally place the deploy step in your pipeline.
 
-Gimlet doesn't take control of your CI workflow, you can keep oragnizing your CI pipelines as you desire and call Gimlet's API whenever you need to perform a gitops operation.
+Gimlet doesn't take control of your CI workflow, you can keep organizing your CI pipelines as you desire and call Gimlet's API whenever you need to perform a gitops operation.
 
 ```yaml
 name: Build
@@ -78,7 +78,7 @@ In order to integrate with CircleCI, you need to add the Gimlet CircleCI Orb in 
 
 You typically add this after your docker image build step, where you would normally place the deploy step in your pipeline.
 
-Gimlet doesn't take control of your CI workflow, you can keep oragnizing your CI pipelines as you desire and call Gimlet's API whenever you need to perform a gitops operation.
+Gimlet doesn't take control of your CI workflow, you can keep organizing your CI pipelines as you desire and call Gimlet's API whenever you need to perform a gitops operation.
 
 ```yaml
 version: 2.1
@@ -120,7 +120,7 @@ To create a Gimlet API key navigate to *Profile* > *Create a new user* in Gimlet
 
 Push a dummy commit once you made the changes to your CI pipeline.
 
-CI will call the Gimlet API, and Gimlet will make a gitops based deploy of your application. You can track the CI step output for details.
+CI will call the Gimlet API, and Gimlet will make a gitops based deployment of your application. You can track the CI step output for details.
 
 ```
 Deploying..
@@ -135,7 +135,7 @@ Deployment ID is: ff11eb64-2f94-49c3-ac07-e9274735096c
 	📖 demo-app -> staging, gitops hash 176da9babbd7647fc68f3c5268a86a1d5fc6669a, status is ReconciliationSucceeded
 ```
 
-Gimlet processed the deploy reuqest and generated a gitops commit with hash `176da9babbd7647fc68f3c5268a86a1d5fc6669a`. Then the CI step waited until the gitops commit was applied on the cluster by Flux:
+Gimlet processed the deploy request and generated a gitops commit with hash `176da9babbd7647fc68f3c5268a86a1d5fc6669a`. Then the CI step waited until the gitops commit was applied on the cluster by Flux:
 
 You should see the deployed resources in Kubernetes, and you can also cross-reference the generated gitops commit (With hash `176da9babbd7647fc68f3c5268a86a1d5fc6669a` in the logs above) in the gitops repository.
 
@@ -147,7 +147,7 @@ You can [debug](/docs/bootstrap-gitops-automation-with-gimlet-cli#verify-the-git
 
 Once you [added the Gimlet deploy step in your CI workflow](/docs/deploy-your-first-app-to-kubernetes#integrate-ci-with-gimlet), every commit becomes deployable in Gimlet - given that CI has built the commit and the workflow reached the Gimlet step.
 
-This is possible as in the Gimlet step, CI passed a large chunk of metadata (called the Gimlet artifact) to the Gimlet API, and Gimlet knows everything about the commit to deploy it.
+This is possible as in the Gimlet step, CI passes a large chunk of metadata (called the Gimlet artifact) to the Gimlet API, and Gimlet knows everything about the commit to deploy it.
 
 With this mechanism, you can configure the CI integration in a way that it only ships the Gimlet artifact, to let Gimlet know that there is a releasable software version available, and let Gimlet decide what to do with it.
 

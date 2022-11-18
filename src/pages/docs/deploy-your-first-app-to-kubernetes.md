@@ -102,7 +102,7 @@ In order to integrate Github Actions with Gimlet, you need to add the Gimlet Git
 
 You typically add this after your docker image build step, where you would normally place the deploy step in your pipeline.
 
-Gimlet doesn't take control of your CI workflow, you can keep oragnizing your CI pipelines as you desire and call Gimlet's API whenever you need to perform a gitops operation.
+Gimlet doesn't take control of your CI workflow, you can keep organizing your CI pipelines as you desire and call Gimlet's API whenever you need to perform a gitops operation.
 
 ```yaml
 name: Build
@@ -153,7 +153,7 @@ In order to integrate with CircleCI, you need to add the Gimlet CircleCI Orb in 
 
 You typically add this after your docker image build step, where you would normally place the deploy step in your pipeline.
 
-Gimlet doesn't take control of your CI workflow, you can keep oragnizing your CI pipelines as you desire and call Gimlet's API whenever you need to perform a gitops operation.
+Gimlet doesn't take control of your CI workflow, you can keep organizing your CI pipelines as you desire and call Gimlet's API whenever you need to perform a gitops operation.
 
 ```yaml
 version: 2.1
@@ -193,7 +193,7 @@ To create a Gimlet API key navigate to *Profile* > *Create a new user* in Gimlet
 
 Push a dummy commit once you made the changes to your CI pipeline.
 
-CI will call the Gimlet API, and Gimlet will make a gitops based deploy of your application. You can track the CI step output for details.
+CI will call the Gimlet API, and Gimlet will make a gitops based deployment of your application. You can track the CI step output for details.
 
 ```
 Deploying..
@@ -208,7 +208,7 @@ Deployment ID is: ff11eb64-2f94-49c3-ac07-e9274735096c
 	📖 demo-app -> staging, gitops hash 176da9babbd7647fc68f3c5268a86a1d5fc6669a, status is ReconciliationSucceeded
 ```
 
-Gimlet processed the deploy reuqest and generated a gitops commit with hash `176da9babbd7647fc68f3c5268a86a1d5fc6669a`. Then the CI step waited until the gitops commit was applied on the cluster by Flux:
+Gimlet processed the deploy request and generated a gitops commit with hash `176da9babbd7647fc68f3c5268a86a1d5fc6669a`. Then the CI step waited until the gitops commit was applied on the cluster by Flux:
 
 You should see the deployed resources in Kubernetes, and you can also cross-reference the generated gitops commit (With hash `176da9babbd7647fc68f3c5268a86a1d5fc6669a` in the logs above) in the gitops repository.
 

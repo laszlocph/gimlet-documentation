@@ -6,7 +6,7 @@ description: You will learn how to create release policies that are triggered on
 
 Once you [added the Gimlet deploy step in your CI workflow](/docs/deploy-your-first-app-to-kubernetes#integrate-ci-with-gimlet), every commit becomes deployable in Gimlet - given that CI has built the commit and the workflow reached the Gimlet step.
 
-This is possible as in the Gimlet step, CI passed a large chunk of metadata (called the Gimlet artifact) to the Gimlet API, and Gimlet knows everything about the commit to deploy it.
+This is possible as in the Gimlet step, CI passes a large chunk of metadata (called the Gimlet artifact) to the Gimlet API, and Gimlet knows everything about the commit to deploy it.
 
 With this mechanism, you can go one step further and configure the CI integration in a way that it only ships the Gimlet artifact, to let Gimlet know that there is a releasable software version available, and let Gimlet decide what to do with it.
 

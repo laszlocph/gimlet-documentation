@@ -5,7 +5,7 @@ description: Once you added the Gimlet deploy step in your CI workflow, every co
 
 Once you [added the Gimlet deploy step in your CI workflow](/docs/deploy-your-first-app-to-kubernetes#integrate-ci-with-gimlet), every commit becomes deployable in Gimlet - given that CI has built the commit and the workflow reached the Gimlet step.
 
-This is possible as in the Gimlet step CI passed a large chunk of metadata (called the Gimlet artifact) to the Gimlet API, and Gimlet knows everything about the commit to perform an ad-hoc deploy.
+This is possible as in the Gimlet step CI passes a large chunk of metadata (called the Gimlet artifact) to the Gimlet API, and Gimlet knows everything about the commit to perform an ad-hoc deploy.
 
 ## Making ad-hoc deploys from the dashboard
 
