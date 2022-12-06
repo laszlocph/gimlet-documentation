@@ -166,9 +166,9 @@ values:
   replicas: 1
   image:
     repository: ghcr.io/podtato-head/podtatoserver
-    tag: "{{ .GITHUB_SHA }}"
+    tag: "{{ .SHA }}"
   gitRepository: laszlocph/gimletd-test-repo
-  gitSha: "{{ .GITHUB_SHA }}"
+  gitSha: "{{ .SHA }}"
 ```
 
 The above snippet has a cleanup section that is triggered 

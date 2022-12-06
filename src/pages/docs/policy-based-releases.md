@@ -74,7 +74,7 @@ values:
   image:
     repository: myapp
 -    tag: 1.1.0
-+    tag:  "{{ .GITHUB_SHA }}"
++    tag:  "{{ .SHA }}"
   ingress:
     host: myapp.staging.mycompany.com
     tlsEnabled: true

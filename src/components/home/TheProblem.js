@@ -1,5 +1,5 @@
 
-export function TheProblem() {
+export function Message() {
   return (
     <div className="dark:bg-stone-700 py-16 lg:py-32">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 md:px-8 text-gray-600 dark:text-gray-300">

@@ -13,6 +13,8 @@ const footerNav = [
       { title: 'Gitops conventions', href: '/concepts/gitops-conventions' },
       { title: 'ClickOps', href: '/concepts/clickops' },
       { title: 'Escape hatches', href: '/concepts/escape-hatches' },
+      { title: 'Integration to CI', href: '/concepts/integration-to-ci' },
+      { title: 'Gimlet compared to...', href: '/concepts/compared-to' },
     ],
   },
   {

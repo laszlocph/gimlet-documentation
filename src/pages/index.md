@@ -1,3 +1,3 @@
 ---
-description: A boost for platform teams
+description: The fastest way to get a gitops platform on Flux and Kubernetes.
 ---

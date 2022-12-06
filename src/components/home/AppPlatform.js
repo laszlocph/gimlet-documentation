@@ -70,19 +70,19 @@ export function AppPlatform() {
 
   return (
     <section id="app-platform" className="relative">
-      <div className="bg-orange-100 dark:bg-amber-900 py-8 lg:py-16">
+      <div className="dark:bg-stone-700 py-8 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
           <svg
             fill="none"
             aria-hidden="true"
-            className="text-orange-400 dark:text-amber-600 h-8 w-8"
+            className="text-slate-400 dark:text-stone-400 h-8 w-8"
             stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"
           >
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <path d="M7 16a4.6 4.4 0 0 1 0 -9a5 4.5 0 0 1 11 2h1a3.5 3.5 0 0 1 0 7h-12"></path>
             <line x1="5" y1="20" x2="19" y2="20"></line>
           </svg>
-          <h2 className="mt-2 font-semibold text-orange-500 dark:text-amber-600">
+          <h2 className="mt-2 font-semibold text-slate-500 dark:text-stone-400">
             Application Platform
           </h2>
           <p className="mt-4 text-3xl sm:text-4xl text-slate-900 font-extrabold tracking-tight dark:text-slate-50">
@@ -107,7 +107,7 @@ export function AppPlatform() {
             <span className="absolute right-0 top-0 mr-32 -mt-4 w-32 font-mono font-bold text-xs dark:text-slate-100 hidden md:block">Enable for free SSL certificates!</span>
             {categories}
             <div className="relative">
-              <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent to-orange-100 dark:to-amber-900"></div>
+              <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent to-white dark:to-stone-700"></div>
               <h2 className="text-lg">🔢 Metrics</h2>
               <div className="w-32 px-2 overflow-hidden">
                 <div className="bg-gray-200 filter grayscale">

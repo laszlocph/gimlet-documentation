@@ -25,7 +25,7 @@ export function Configuration() {
             Declarative environment configuration.
           </p>
           <div className="mt-4 max-w-3xl space-y-6 text-gray-600 dark:text-gray-300">
-            Declare your staging and production configs in your application repository.
+            Declare your staging and production configs in your application source code.
             Reference any Helm chart, add plain K8s manifests, or use Kustomize patches for postprocessing.
             <br />The Gimlet manifest also supports variables.
           </div>
@@ -50,7 +50,7 @@ values:
   containerPort: 9000
   image:
     repository: ghcr.io/gimlet-io/test-app
-    tag: "{{ .GITHUB_SHA }}"
+    tag: "{{ .SHA }}"
   ingress:
     ingressClassName: nginx
     host: "test-app.staging.turbopizza.net"`,
@@ -68,7 +68,7 @@ values:
   containerPort: 9000
   image:
     repository: ghcr.io/gimlet-io/test-app
-    tag: "{{ .GITHUB_SHA }}"
+    tag: "{{ .SHA }}"
   ingress:
     ingressClassName: nginx
     host: "test-app.turbopizza.net"

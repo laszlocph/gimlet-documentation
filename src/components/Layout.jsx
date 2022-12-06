@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import clsx from 'clsx'
 
 import { HomePage } from '@/components/HomePage'
+import { PricingPage } from '@/components/Pricing'
 import { MobileNavigation } from '@/components/MobileNavigation'
 import { Navigation } from '@/components/Navigation'
 import { Prose } from '@/components/Prose'
@@ -60,6 +61,9 @@ function Header({ navigation }) {
             <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/docs">Docs</a>
           </li>
           <li>
+            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/pricing">Pricing</a>
+          </li>
+          <li>
             <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/events">Events</a>
           </li>
           <li>
@@ -79,13 +83,25 @@ function Header({ navigation }) {
             <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/docs">Docs</a>
           </li>
           <li>
+            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/pricing">Pricing</a>
+          </li>
+          <li>
             <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/events">Events</a>
           </li>
           <li>
             <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/events">Blog</a>
           </li>
+          <li>
+            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="https://github.com/gimlet-io#jobs">Jobs</a>
+          </li>
         </ul>
         }
+        
+        {/* { !isDocsPage &&
+        <a href="https://app.gimlet.io" className="inline-block rounded-lg px-3 py-1.5 text-sm font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20">Log in</a>
+        } */}
+       
+        <>
         <ThemeSelector className="relative z-10" />
         <Link href="https://github.com/gimlet-io/gimlet">
           <a className="group">
@@ -99,6 +115,8 @@ function Header({ navigation }) {
             </svg>
           </a>
         </Link>
+        </>
+        
       </div>
     </header>
   )
@@ -109,6 +127,7 @@ export function Layout({ children, title, navigation, tableOfContents, pageProps
   let isDocsPage = router.pathname.startsWith('/docs') || router.pathname.startsWith('/concepts')
   let isEventsPage = router.pathname.startsWith('/events')
   let isBlogPage = router.pathname.startsWith('/blog')
+  let isPricingPage = router.pathname === '/pricing'
   let isHomePage = router.pathname === '/'
 
   let allLinks = navigation.flatMap((section) => section.links)
@@ -140,6 +159,7 @@ export function Layout({ children, title, navigation, tableOfContents, pageProps
       <Header navigation={navigation} />
 
       {isHomePage && <HomePage />}
+      {isPricingPage && <PricingPage />}
 
       {isEventsPage &&
       <div className="relative mx-auto flex max-w-6xl justify-center sm:px-2 lg:px-8 xl:px-12">

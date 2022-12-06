@@ -300,25 +300,25 @@ export function YamlAuthoring() {
 
   return (
     <section id="yaml-authoring" className="relative">
-      <div className="bg-rose-100 dark:bg-rose-900 py-8 lg:py-16">
+      <div className="dark:bg-stone-700 py-8 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
           <svg
             fill="none"
             aria-hidden="true"
-            className="text-rose-400 dark:text-rose-600 h-8 w-8"
+            className="text-slate-400 dark:text-stone-400 h-8 w-8"
             stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
           </svg>
-          <h2 className="mt-2 font-semibold text-rose-500 dark:text-rose-600">
+          <h2 className="mt-2 font-semibold text-slate-500 dark:text-stone-400">
             Yaml Authoring
           </h2>
           <p className="mt-4 text-3xl sm:text-4xl text-slate-900 font-extrabold tracking-tight dark:text-slate-50">
-            <Widont>Reduce the boilerplate.</Widont>
+            <Widont>No boilerplate.</Widont>
           </p>
           <div className="mt-4 max-w-3xl space-y-6 text-gray-600 dark:text-gray-300">
             Our generic Helm chart allows you to write only a minimal configuration.
-            All common web application usecases are covered so you don&apos;t have to look up the Kubernetes documentation,
+            All common web application usecases are covered so you don&apos;t have to look up the Kubernetes documentation
             or blog posts every turn. Plus you can make sure that your application yamls are following a common blueprint.
           </div>
           <div className='mt-8'>
@@ -330,7 +330,7 @@ export function YamlAuthoring() {
           <div className="relative lg:translate-x-8 z-10">
             <img src="/arrow.svg" className="absolute right-0 top-0 -mt-16 mr-32 lg:mr-64 w-24 block dark:hidden" />
             <img src="/arrow-white.svg" className="absolute right-0 top-0 -mt-16 mr-32 lg:mr-64 w-24 hidden dark:block" />
-            <span className="absolute right-0 top-0 -mt-14 mr-4 lg:mr-36 w-32 font-mono font-bold text-xs dark:text-slate-100">What devs write</span>
+            <span className="absolute right-0 top-0 -mt-14 mr-4 lg:mr-36 w-32 font-mono font-bold text-xs dark:text-slate-100">What you write</span>
             {!varsAdded &&
               <>
                 <button

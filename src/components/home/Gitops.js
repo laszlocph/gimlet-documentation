@@ -38,9 +38,6 @@ export function Gitops() {
             <ButtonLink href="/concepts/gitops-conventions" variant="secondary">Learn more</ButtonLink>
           </div>
         </div>
-
-        <div className="mx-auto max-w-2xl items-center px-4 lg:max-w-8xl lg:px-8 xl:px-12">
-        </div>
       </div>
     </section>
   )
