@@ -34,7 +34,7 @@ const tiers = [
     href: 'https://forms.reform.app/p5JfBA/early-access/nbZ6Go',
     priceMonthly: "$?/mo",
     priceYearly: "$?/year",
-    description: 'Things are getting serious. Let&apos;s roll out Gimlet for your growing team. 🚀',
+    description: 'Things are getting serious. Let\'s roll out Gimlet for your growing team. 🚀',
     includedFeatures: [
       'All Gimlet fearures.',
       'Unlimited users.',
