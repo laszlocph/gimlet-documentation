@@ -89,7 +89,7 @@ function Header({ navigation }) {
             <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/events">Events</a>
           </li>
           <li>
-            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/events">Blog</a>
+            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/blog">Blog</a>
           </li>
           <li>
             <a className="hover:text-orange-500 dark:hover:text-orange-400" href="https://github.com/gimlet-io#jobs">Jobs</a>
