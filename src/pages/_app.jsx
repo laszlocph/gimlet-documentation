@@ -136,7 +136,7 @@ export default function App({ Component, pageProps }) {
     }
   }
 
-  let image = "https://gimlet.io/logosocial.png"
+  let image = "logosocial.png"
   if (pageProps.markdoc?.frontmatter.image) {
     image = pageProps.markdoc?.frontmatter.image
   }
