@@ -10,8 +10,8 @@ const tiers = [
     priceYearly: "Free",
     description: 'The perfect tier to automate your blog or test-drive Gimlet without commitments.',
     includedFeatures: [
-      'All Gimlet fearures.',
-      'Unlimited users.',
+      'All Gimlet features.',
+      'Unlimited users.', 
       '1 deployed service.',
       'Community support.'
     ],
@@ -23,7 +23,7 @@ const tiers = [
     priceYearly: "$?/year",
     description: 'Use Gimlet to deploy your MVP. Upgrade when you build more services.',
     includedFeatures: [
-      'All Gimlet fearures.',
+      'All Gimlet features.',
       'Unlimited users.',
       'Up to 5 deployed services.',
       'Community support.'
@@ -36,10 +36,10 @@ const tiers = [
     priceYearly: "$?/year",
     description: 'Things are getting serious. Let\'s roll out Gimlet for your growing team. 🚀',
     includedFeatures: [
-      'All Gimlet fearures.',
+      'All Gimlet features.',
       'Unlimited users.',
       'Up to 50 deployed services.',
-      'Slack support in businness-hours.',
+      'Slack support in business-hours.',
       'Custom scale-out plan.',
     ],
   },
@@ -50,7 +50,7 @@ const tiers = [
     priceYearly: "Get in touch",
     description: 'We probably know each other by name at this point.',
     includedFeatures: [
-      'All Gimlet fearures.',
+      'All Gimlet features.',
       'Unlimited users.',
       'Unlimited services.',
       '24/7 Slack support.',
