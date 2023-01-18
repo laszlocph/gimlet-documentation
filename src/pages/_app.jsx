@@ -147,7 +147,7 @@ export default function App({ Component, pageProps }) {
 
   const currentUrl = "https://gimlet.io" + router.pathname;
 
-  let description = "The fastest way to get a gitops platform on Flux and Kubernetes."
+  let description = "Need to deploy to Kubernetes, but not sure how to put things together? We got you covered. Gimlet is a gitops based developer platform that gives you the best of open-source out of the box."
   if (pageProps.markdoc?.frontmatter.description) {
     description = pageProps.markdoc?.frontmatter.description
   }
