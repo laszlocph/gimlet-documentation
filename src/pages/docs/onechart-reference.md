@@ -155,7 +155,7 @@ How the Kubernetes `Secret` object gets on the cluster, remains your task.
 For testing purposes you can put the secret in your cluster with this command:
 
 ```bash
-kubectl create secret generic my-release \                                                            
+kubectl create secret generic my-release \
   --from-literal=SECRET1="my secret" \
   --from-literal=SECRET2="another secret"
 ```
