@@ -2,6 +2,15 @@
 title: Blog
 ---
 
+{% post name="Options for Kubernetes pod autoscaling" image="autoscaling.png" link="/blog/options-for-kubernetes-pod-autoscaling" date="2023-01-23" %}
+The Gimlet.io team put together this blog to show common usecases of autoscaling:
+- based on CPU
+- custom Prometheus metrics
+- and RabbitMQ queue length.
+
+Furthermore, we are aiming to clear up the differences between the Horizontal Pod Autoscaler (HPA), the Prometheus Adapter and KEDA.
+{% /post %}
+
 {% post name="Announcing the Gimlet SaaS Early Access" image="saas-early-access.png" link="/blog/announcing-the-gimlet-saas-early-access" date="2022-12-05" %}
 We have something really exciting to share with you: Gimlet is going SaaS. In other words, you will be able to use Gimlet's unparalleled Kubernetes deploy experience with even fewer clicks than before.
 {% /post %}
