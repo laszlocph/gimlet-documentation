@@ -325,7 +325,7 @@ export function YamlAuthoring() {
             <ButtonLink
               href="/docs/onechart-reference"
               variant="secondary"
-              onClick={() => Fathom.trackGoal('HOME_FEATURE_YAML_AUTHORING', 0)}
+              onClick={() => Fathom.trackGoal('28PPDOXC', 0)}
               >
               Learn more</ButtonLink>
           </div>
@@ -340,7 +340,7 @@ export function YamlAuthoring() {
               <>
                 <button
                   onClick={() => {
-                    fathom.trackGoal('HOME_FEATURE_YAML_AUTHORING_GIMMICK', 0);
+                    fathom.trackGoal('RRWFNTQJ', 0);
                     setVarsAdded(true)
                     setCode(withVars)
                     setHelm(helmWithVars)

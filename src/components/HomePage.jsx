@@ -35,7 +35,7 @@ export function HomePage({ className, tabs, code, language }) {
             <a
               href="https://forms.reform.app/p5JfBA/early-access/nbZ6Go"
               className="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white hover:bg-indigo-700"
-              onClick={() => {console.log("tracking");trackGoal('HOME_BOTTOM_SAAS_EARLY_ACCESS', 0)}}
+              onClick={() => {console.log("tracking");trackGoal('EWFJPYJE', 0)}}
             >
               Sign up for our SaaS Early Access
             </a>
@@ -44,7 +44,7 @@ export function HomePage({ className, tabs, code, language }) {
             <a
               href="/docs/installation"
               className="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-100 px-5 py-3 text-base font-medium text-indigo-700 hover:bg-indigo-200"
-              onClick={() => {console.log("tracking");trackGoal('HOME_BOTTOM_SELF_HOST', 0)}}
+              onClick={() => {console.log("tracking");trackGoal('VH3DKGAT', 0)}}
             >
               Or self-host Gimlet
             </a>

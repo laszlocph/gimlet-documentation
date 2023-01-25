@@ -10,7 +10,7 @@ export function ClickOps() {
   const [applied, setApplied] = useState(false)
 
   const deploy = () => {
-    fathom.trackGoal('HOME_FEATURE_CLICKOPS_GIMMICK', 0);
+    fathom.trackGoal('YHV0VELM', 0);
     setDeploying(true);
 
     setTimeout(() => {
@@ -52,7 +52,7 @@ export function ClickOps() {
             <ButtonLink
               href="/concepts/clickops"
               variant="secondary"
-              onClick={() => Fathom.trackGoal('HOME_FEATURE_CLICKOPS', 0)}
+              onClick={() => Fathom.trackGoal('0OUK1YSW', 0)}
               >
               Learn more</ButtonLink>
           </div>
