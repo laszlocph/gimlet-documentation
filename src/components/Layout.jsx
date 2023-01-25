@@ -199,7 +199,7 @@ export function Layout({ children, title, navigation, tableOfContents, pageProps
       }
 
       {isBlogPage &&
-      <div className="relative mx-auto flex max-w-4xl justify-center sm:px-2 lg:px-8 xl:px-12">
+      <div className="relative mx-auto flex max-w-6xl justify-center sm:px-2 lg:px-8 xl:px-12">
         <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">
           <article>
             {(title || section) && (
@@ -238,6 +238,92 @@ export function Layout({ children, title, navigation, tableOfContents, pageProps
             }
             <Prose className="mt-16">{children}</Prose>
           </article>
+          {isBlogSubPage &&
+          <>
+            <div className="relative py-16">
+              <div className="absolute inset-0 flex items-center" aria-hidden="true">
+                <div className="w-full border-t border-gray-300" />
+              </div>
+            </div>
+            <h3 className='font-medium text-lg'>More from our blog</h3>
+            <div className='flex mt-8'>
+              <img src="/saas-early-access.png" class="w-48 object-contain"></img>
+              <div className='ml-2'>
+                <h2 class="mb-2 font-medium underline"><a href="/blog/announcing-the-gimlet-saas-early-access">Announcing the Gimlet SaaS Early Access</a></h2>
+                <div class="prose mt-2.5 text-gray-600 dark:text-gray-300 leading-tight"><p>We have something really exciting to share with you: Gimlet is going SaaS. In other words, you will be able to use Gimlet's unparalleled Kubernetes deploy experience with even fewer clicks than before.</p></div>
+              </div>
+            </div>
+            <div className='flex mt-8'>
+              <img src="/gitops-broke-cicd.jpg" class="w-48 object-contain"></img>
+              <div className='ml-2'>
+                <h2 class="mb-2 font-medium underline"><a href="/blog/how-flux-broke-the-cicd-feedback-loop-and-how-we-pieced-it-back-together">How Flux broke the CI/CD feedback loop, and how we pieced it back together</a></h2>
+                <div class="prose mt-2.5 text-gray-600 dark:text-gray-300 leading-tight"><p>A green build used to mean a successful deploy. But then gitops came and broke this heuristic.</p></div>
+              </div>
+            </div>
+            <div className='flex mt-8'>
+              <img src="/introducing-kyverno.png" class="w-48 object-contain"></img>
+              <div className='ml-2'>
+                <h2 class="mb-2 font-medium underline"><a href="/blog/are-you-sure-none-of-your-containers-run-as-root">Are you sure none of your containers run as root?</a></h2>
+                <div class="prose mt-2.5 text-gray-600 dark:text-gray-300 leading-tight"><p>The Kyverno policy engine just arrived in Gimlet Stack. Let's see how you can be certain that none of the containers run as root in your Kubernetes cluster.</p></div>
+              </div>
+            </div>
+
+            
+
+          </>
+          }
+        </div>
+        <div className="hidden xl:sticky xl:top-[4.5rem] xl:block xl:h-[calc(100vh-4.5rem)] xl:flex-none xl:overflow-y-auto xl:py-16">
+          <nav aria-labelledby="on-this-page-title" className="w-56">
+            {tableOfContents.length > 0 && (
+              <>
+                <h2
+                  id="on-this-page-title"
+                  className="font-display text-sm font-medium text-slate-900 dark:text-white"
+                >
+                  On this page
+                </h2>
+                <ul className="mt-4 space-y-3 text-sm">
+                  {tableOfContents.map((section) => (
+                    <li key={section.id}>
+                      <h3>
+                        <Link href={`#${section.id}`}>
+                          <a
+                            className={clsx(
+                              isActive(section)
+                                ? 'text-sky-500'
+                                : 'font-normal text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300'
+                            )}
+                          >
+                            {section.title}
+                          </a>
+                        </Link>
+                      </h3>
+                      {section.children.length > 0 && (
+                        <ul className="mt-2 space-y-3 pl-5 text-slate-500 dark:text-slate-400">
+                          {section.children.map((subSection) => (
+                            <li key={subSection.id}>
+                              <Link href={`#${subSection.id}`}>
+                                <a
+                                  className={
+                                    isActive(subSection)
+                                      ? 'text-sky-500'
+                                      : 'hover:text-slate-600 dark:hover:text-slate-300'
+                                  }
+                                >
+                                  {subSection.title}
+                                </a>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
+          </nav>
         </div>
       </div>
       }
