@@ -340,7 +340,7 @@ export function YamlAuthoring() {
               <>
                 <button
                   onClick={() => {
-                    fathom.trackGoal('HOME_FEATURE_YAML_AUTHORING_GIMICK', 0);
+                    fathom.trackGoal('HOME_FEATURE_YAML_AUTHORING_GIMMICK', 0);
                     setVarsAdded(true)
                     setCode(withVars)
                     setHelm(helmWithVars)
