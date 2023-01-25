@@ -98,7 +98,7 @@ export function AppPlatform() {
             <ButtonLink
               href="/docs/make-kubernetes-an-application-platform"
               variant="secondary"
-              onclick="fathom.trackGoal('HOME_FEATURE_APP_PLATFORM', 0);"
+              onClick="fathom.trackGoal('HOME_FEATURE_APP_PLATFORM', 0);"
               >
               Learn more</ButtonLink>
           </div>

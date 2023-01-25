@@ -27,7 +27,7 @@ export function Integration() {
             <ButtonLink
               href="/concepts/integration-to-ci"
               variant="secondary"
-              onclick="fathom.trackGoal('HOME_FEATURE_INTEGRATION', 0);"
+              onClick="fathom.trackGoal('HOME_FEATURE_INTEGRATION', 0);"
               >
               Learn more</ButtonLink>
           </div>

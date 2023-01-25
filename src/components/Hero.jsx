@@ -32,7 +32,7 @@ export function Hero() {
               <div className="hidden sm:mb-8 sm:flex sm:justify-center">
                 <div className="relative overflow-hidden rounded-full py-1.5 px-4 text-sm leading-6 ring-1 ring-gray-900/10 hover:ring-gray-900/20 dark:ring-gray-100/10">
                   <span className="text-gray-600 dark:text-gray-300">
-                    Announcing our SaaS Early Access. <a href="/blog/announcing-the-gimlet-saas-early-access" onclick="fathom.trackGoal('HERO_SAAS_EARLY_ACCESS_INFO', 0);" className="font-semibold text-indigo-600"><span className="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
+                    Announcing our SaaS Early Access. <a href="/blog/announcing-the-gimlet-saas-early-access" onClick="fathom.trackGoal('HERO_SAAS_EARLY_ACCESS_INFO', 0);" className="font-semibold text-indigo-600"><span className="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
                   </span>
                 </div>
               </div>
@@ -43,7 +43,7 @@ export function Hero() {
                   <a
                     href="https://forms.reform.app/p5JfBA/early-access/nbZ6Go"
                     className="inline-block rounded-lg bg-indigo-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700"
-                    onclick="fathom.trackGoal('HERO_SAAS_EARLY_ACCESS', 0);"
+                    onClick="fathom.trackGoal('HERO_SAAS_EARLY_ACCESS', 0);"
                     >
                     Sign up for our SaaS Early Access
                     <span className="text-indigo-200" aria-hidden="true">&rarr;</span>
@@ -51,7 +51,7 @@ export function Hero() {
                   <a
                     href="/docs"
                     className="mt-4 md:mt-0 inline-block rounded-lg px-4 py-1.5 text-base font-semibold leading-7 text-gray-900 dark:text-gray-300 ring-1 ring-gray-900/10 dark:ring-gray-100/10 hover:ring-gray-900/20"
-                    onclick="fathom.trackGoal('HERO_SELF_HOST', 0);"
+                    onClick="fathom.trackGoal('HERO_SELF_HOST', 0);"
                     >
                     Self-Host Gimlet
                     <span className="text-gray-400" aria-hidden="true">&rarr;</span>
