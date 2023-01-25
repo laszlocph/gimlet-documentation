@@ -20,6 +20,7 @@
     "@tailwindcss/typography": "^0.5.2",
     "autoprefixer": "^10.4.7",
     "clsx": "^1.1.1",
+    "fathom-client": "^3.5.0",
     "focus-visible": "^5.2.0",
     "helm-react-ui": "github:gimlet-io/helm-react-ui#e50eef9550f49dc89eb1864920b329c50266653e",
     "next": "12.1.6",

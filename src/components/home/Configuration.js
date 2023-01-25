@@ -33,7 +33,7 @@ export function Configuration() {
             <ButtonLink
               href="/docs/gimlet-manifest-reference"
               variant="secondary"
-              onClick="fathom.trackGoal('HOME_FEATURE_CONFIGURATION', 0);"
+              onClick={() => Fathom.trackGoal('HOME_FEATURE_CONFIGURATION', 0)}
               >
               Learn more</ButtonLink>
           </div>

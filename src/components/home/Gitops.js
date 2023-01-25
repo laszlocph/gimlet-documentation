@@ -38,7 +38,7 @@ export function Gitops() {
             <ButtonLink
               href="/concepts/gitops-conventions"
               variant="secondary"
-              onClick="fathom.trackGoal('HOME_FEATURE_GITOPS', 0);"
+              onClick={() => Fathom.trackGoal('HOME_FEATURE_GITOPS', 0)}
               >
               Learn more</ButtonLink>
           </div>

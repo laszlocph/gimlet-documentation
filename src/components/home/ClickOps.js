@@ -52,7 +52,7 @@ export function ClickOps() {
             <ButtonLink
               href="/concepts/clickops"
               variant="secondary"
-              onClick="fathom.trackGoal('HOME_FEATURE_CLICKOPS', 0);"
+              onClick={() => Fathom.trackGoal('HOME_FEATURE_CLICKOPS', 0)}
               >
               Learn more</ButtonLink>
           </div>

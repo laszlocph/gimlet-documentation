@@ -325,7 +325,7 @@ export function YamlAuthoring() {
             <ButtonLink
               href="/docs/onechart-reference"
               variant="secondary"
-              onClick="fathom.trackGoal('HOME_FEATURE_YAML_AUTHORING', 0);"
+              onClick={() => Fathom.trackGoal('HOME_FEATURE_YAML_AUTHORING', 0)}
               >
               Learn more</ButtonLink>
           </div>

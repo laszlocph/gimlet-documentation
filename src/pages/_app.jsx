@@ -1,10 +1,12 @@
 import Head from 'next/head'
+import { useEffect } from 'react'
 import { slugifyWithCounter } from '@sindresorhus/slugify'
 
 import { Layout } from '@/components/Layout'
 
 import 'focus-visible'
 import '@/styles/tailwind.css'
+import * as Fathom from "fathom-client";
 
 const navigation = [
   {
@@ -152,11 +154,28 @@ export default function App({ Component, pageProps }) {
     description = pageProps.markdoc?.frontmatter.description
   }
 
+  useEffect(() => {
+    Fathom.load('TOOENNXR', {
+      excludedDomains: ['localhost', "127.0.0.1"],
+    });
+
+    function onRouteChangeComplete() {
+      Fathom.trackPageview();
+    }
+    // Record a pageview when route changes
+    router.events.on('routeChangeComplete', onRouteChangeComplete);
+
+    // Unassign event listener
+    return () => {
+      router.events.off('routeChangeComplete', onRouteChangeComplete);
+    };
+  }, []);
+
   return (
     <>
       <Head>
         <title>{pageTitle}</title>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content={description} />
         <meta content="Gimlet" property="og:site_name" />
@@ -187,12 +206,12 @@ export default function App({ Component, pageProps }) {
         <link rel="canonical" href={currentUrl} />
         <meta content={currentUrl} property="og:url" />
 
-        <script
+        {/* <script
           src="https://cdn.usefathom.com/script.js"
           data-site="TOOENNXR"
           data-excluded-domains="localhost,127.0.0.1"
           defer>
-        </script>
+        </script> */}
       </Head>
       <Layout
         navigation={navigation}

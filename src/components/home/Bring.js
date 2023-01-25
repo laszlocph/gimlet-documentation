@@ -34,7 +34,7 @@ export function Bring() {
             <ButtonLink
               href="/concepts/components"
               variant="secondary"
-              onClick="fathom.trackGoal('HOME_FEATURE_OWN_CLUSTER', 0);"
+              onClick={() => Fathom.trackGoal('HOME_FEATURE_OWN_CLUSTER', 0)}
               >
               Learn more
             </ButtonLink>
