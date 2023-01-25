@@ -4,6 +4,7 @@ import { Video } from '@/components/Video'
 import { Event } from '@/components/Event'
 import { Post } from '@/components/Post'
 import { Signup } from '@/components/Signup'
+import { Tweet } from '@/components/Tweet'
 
 const tags = {
   callout: {
@@ -62,6 +63,12 @@ const tags = {
         <figcaption>{caption}</figcaption>
       </figure>
     ),
+  },
+  tweet: {
+    attributes: {
+      link: {type: String},
+    },
+    render: Tweet,
   },
   'link-grid': {
     render: LinkGrid,

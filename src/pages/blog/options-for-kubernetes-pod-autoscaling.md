@@ -131,4 +131,4 @@ When we found KEDA, our pains with the Prometheus Adapter were solved instantly.
 
 We not just use KEDA ourselves, but also recommend it to our clients and friends. So much so that we integrated KEDA into our preferred stack at Gimlet.
 
-You might also be interested in our open source, gitops based developer platform. We value simple tools like KEDA and brought together a set of open-source tools that make Kubernetes accessible for more people. If you have questions unanswered, autoscaling or anything Kubernetes, [talk to us on our Discord](https://discord.com/invite/ZwQDxPkYzE).
+Onwards!

@@ -128,15 +128,4 @@ To do that, duplicate the "Failing Policies" widget on the dash and limit it to 
 
 ![Alerting on pods that run as root](/policy-alert.png)
 
-
-## Gimlet stack going wide and deep
-
-Adding Kyverno to Gimlet Stack rounds up a recent push of going wide.
-
-If you like what you saw, you may also be interested in hearing about Gimlet Stack going deep.
-
-Gimlet Stack for Amazon EKS arrives soon, see the announcement:
-
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Gimlet Stack for EKS is coming this year.<br><br>The why, the what and to get notified, check out <a href="https://t.co/GdzcO7BuFn">https://t.co/GdzcO7BuFn</a><br><br>Feature set 👉 <a href="https://t.co/XypJMgGDb2">pic.twitter.com/XypJMgGDb2</a></p>&mdash; Laszlo Fogas (@laszlocph) <a href="https://twitter.com/laszlocph/status/1460954766159368193?ref_src=twsrc%5Etfw">November 17, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
-
 Onwards!
