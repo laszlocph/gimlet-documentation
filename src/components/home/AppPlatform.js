@@ -95,7 +95,12 @@ export function AppPlatform() {
             Gimlet will deliver a stream of updates whenever new versions are available.
           </div>
           <div className='mt-8'>
-            <ButtonLink href="/docs/make-kubernetes-an-application-platform" variant="secondary">Learn more</ButtonLink>
+            <ButtonLink
+              href="/docs/make-kubernetes-an-application-platform"
+              variant="secondary"
+              onclick="fathom.trackGoal('HOME_FEATURE_APP_PLATFORM', 0);"
+              >
+              Learn more</ButtonLink>
           </div>
         </div>
         <div className="mx-auto grid max-w-2xl grid-cols-1 px-4 lg:max-w-8xl lg:grid-cols-2 lg:px-8 xl:px-12 pt-24 hidden md:grid">

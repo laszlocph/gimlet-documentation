@@ -322,7 +322,12 @@ export function YamlAuthoring() {
             or blog posts every turn. Plus you can make sure that your application yamls are following a common blueprint.
           </div>
           <div className='mt-8'>
-            <ButtonLink href="/docs/onechart-reference" variant="secondary">Learn more</ButtonLink>
+            <ButtonLink
+              href="/docs/onechart-reference"
+              variant="secondary"
+              onclick="fathom.trackGoal('HOME_FEATURE_YAML_AUTHORING', 0);"
+              >
+              Learn more</ButtonLink>
           </div>
         </div>
 
@@ -335,6 +340,7 @@ export function YamlAuthoring() {
               <>
                 <button
                   onClick={() => {
+                    fathom.trackGoal('HOME_FEATURE_YAML_AUTHORING_GIMICK', 0);
                     setVarsAdded(true)
                     setCode(withVars)
                     setHelm(helmWithVars)

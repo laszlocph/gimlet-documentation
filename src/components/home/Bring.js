@@ -31,7 +31,13 @@ export function Bring() {
             </p>
           </div>
           <div className='mt-8'>
-            <ButtonLink href="/concepts/components" variant="secondary">Learn more</ButtonLink>
+            <ButtonLink
+              href="/concepts/components"
+              variant="secondary"
+              onclick="fathom.trackGoal('HOME_FEATURE_OWN_CLUSTER', 0);"
+              >
+              Learn more
+            </ButtonLink>
           </div>
         </div>
       </div>

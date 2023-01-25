@@ -186,8 +186,13 @@ export default function App({ Component, pageProps }) {
     
         <link rel="canonical" href={currentUrl} />
         <meta content={currentUrl} property="og:url" />
-        
-        <script src="https://cdn.usefathom.com/script.js" data-site="TOOENNXR" defer></script>
+
+        <script
+          src="https://cdn.usefathom.com/script.js"
+          data-site="TOOENNXR"
+          data-excluded-domains="localhost,127.0.0.1"
+          defer>
+        </script>
       </Head>
       <Layout
         navigation={navigation}

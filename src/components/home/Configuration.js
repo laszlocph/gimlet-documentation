@@ -30,7 +30,12 @@ export function Configuration() {
             <br />The Gimlet manifest also supports variables.
           </div>
           <div className='mt-8'>
-            <ButtonLink href="/docs/gimlet-manifest-reference" variant="secondary">Learn more</ButtonLink>
+            <ButtonLink
+              href="/docs/gimlet-manifest-reference"
+              variant="secondary"
+              onclick="fathom.trackGoal('HOME_FEATURE_CONFIGURATION', 0);"
+              >
+              Learn more</ButtonLink>
           </div>
         </div>
 

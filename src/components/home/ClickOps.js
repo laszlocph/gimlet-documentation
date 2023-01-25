@@ -10,6 +10,7 @@ export function ClickOps() {
   const [applied, setApplied] = useState(false)
 
   const deploy = () => {
+    fathom.trackGoal('HOME_FEATURE_CLICKOPS_GIMICK', 0);
     setDeploying(true);
 
     setTimeout(() => {
@@ -48,7 +49,12 @@ export function ClickOps() {
             <br />You prefer the command line? The Gimlet CLI has got you covered.
           </div>
           <div className='mt-8'>
-            <ButtonLink href="/concepts/clickops" variant="secondary">Learn more</ButtonLink>
+            <ButtonLink
+              href="/concepts/clickops"
+              variant="secondary"
+              onclick="fathom.trackGoal('HOME_FEATURE_CLICKOPS', 0);"
+              >
+              Learn more</ButtonLink>
           </div>
         </div>
 

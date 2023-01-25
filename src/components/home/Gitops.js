@@ -35,7 +35,12 @@ export function Gitops() {
             Gimlet comes with conventions so you don&apos;t have to come up with a git repository structure. It also scales out of the box.
           </div>
           <div className='mt-8'>
-            <ButtonLink href="/concepts/gitops-conventions" variant="secondary">Learn more</ButtonLink>
+            <ButtonLink
+              href="/concepts/gitops-conventions"
+              variant="secondary"
+              onclick="fathom.trackGoal('HOME_FEATURE_GITOPS', 0);"
+              >
+              Learn more</ButtonLink>
           </div>
         </div>
       </div>
