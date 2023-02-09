@@ -43,7 +43,7 @@ export function Hero() {
               </div>
               <div>
                 <h1 className="text-4xl font-bold tracking-tight dark:text-slate-100 sm:text-center sm:text-6xl">Need to deploy to Kubernetes?</h1>
-                <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300 sm:text-center">But not sure how to put things together? We got you covered. Gimlet is a gitops based developer platform that gives you the best of open-source out of the box.</p>
+                <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300 sm:text-center">But not sure how to put things together? We got you covered. Gimlet is a gitops based developer platform that gives you the best of open-source out of the box. The platform you would build given enough time.</p>
                 <div className="mt-8 md:flex gap-x-4 sm:justify-center">
                   <a
                     href="https://forms.reform.app/p5JfBA/early-access/nbZ6Go"
