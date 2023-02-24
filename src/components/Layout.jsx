@@ -127,6 +127,7 @@ export function Layout({ children, title, navigation, tableOfContents, pageProps
   let isDocsPage = router.pathname.startsWith('/docs') || router.pathname.startsWith('/concepts')
   let isEventsPage = router.pathname.startsWith('/events')
   let isBlogPage = router.pathname.startsWith('/blog')
+  let isTOSPage = router.pathname === '/tos'
   let isBlogSubPage = isBlogPage && !router.pathname.endsWith('/blog') && !router.pathname.endsWith('/blog/')
   let isPricingPage = router.pathname === '/pricing'
   let isHomePage = router.pathname === '/'
@@ -169,7 +170,9 @@ export function Layout({ children, title, navigation, tableOfContents, pageProps
 
   return (
     <>
+      {!isTOSPage &&
       <Header navigation={navigation} />
+      }
 
       {isHomePage && <HomePage />}
       {isPricingPage && <PricingPage />}
@@ -196,6 +199,10 @@ export function Layout({ children, title, navigation, tableOfContents, pageProps
           </article>
         </div>
       </div>
+      }
+
+      {isTOSPage &&
+        <Prose className="m-16 max-w-4xl">{children}</Prose>
       }
 
       {isBlogPage &&
