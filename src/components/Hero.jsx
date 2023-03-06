@@ -46,8 +46,9 @@ export function Hero() {
                 <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300 sm:text-center">But not sure how to put things together? We got you covered. Gimlet is a gitops based developer platform that gives you the best of open-source out of the box. The platform you would build given enough time.</p>
                 <div className="mt-8 md:flex gap-x-4 sm:justify-center">
                   <a
-                    href="https://forms.reform.app/p5JfBA/early-access/nbZ6Go"
+                    href="https://accounts.gimlet.io"
                     className="inline-block rounded-lg bg-indigo-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700"
+                    target="_blank"
                     onClick={() => Fathom.trackGoal('XPL4AWPN', 0)}
                     >
                     Sign up for our SaaS Early Access

@@ -11,7 +11,7 @@ const redirects = {
     return [
       {
         source: '/signup',
-        destination: '/',
+        destination: 'https://accounts.gimlet.io',
         permanent: false,
       },
       {
