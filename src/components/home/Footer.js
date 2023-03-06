@@ -16,13 +16,14 @@ const footerNav = [
       { title: 'Integration to CI', href: '/concepts/integration-to-ci' },
       { title: 'Gimlet compared to...', href: '/concepts/compared-to' },
     ],
-  },
-  {
     Community: [
       { title: 'GitHub', href: 'https://github.com/gimlet-io/gimlet' },
       { title: 'Discord', href: 'https://discord.com/invite/ZwQDxPkYzE' },
       { title: 'Twitter', href: 'https://twitter.com/gimlet_io' },
       { title: 'YouTube', href: 'https://www.youtube.com/channel/UCMQj-27fzpOWGTKL5nutajA' },
+    ],
+    Company: [
+      { title: 'Terms of Service', href: 'https://gimlet.io/tos' },
     ],
   },
 ]
