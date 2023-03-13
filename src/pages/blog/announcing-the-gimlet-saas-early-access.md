@@ -66,6 +66,6 @@ If you continue to self-host Gimlet, you get all Gimlet features without any lim
 
 ## Onwards
 
-If you like what you see, sign-up to the Gimlet SaaS early Access program. It takes only a few clicks.
+If you like what you see, sign-up to the Gimlet SaaS early Access program. It takes only a few clicks:
 
-[Sign up now!](https://forms.reform.app/p5JfBA/early-access/nbZ6Go)
+[https://gimlet.io/signup](https://gimlet.io/signup)
