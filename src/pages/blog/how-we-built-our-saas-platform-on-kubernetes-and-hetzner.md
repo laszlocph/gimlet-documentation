@@ -3,7 +3,7 @@ layout: post
 title: The how and why we built our SaaS platform on Hetzner and Kubernetes
 date: "2023-03-08"
 image: why-hetzner.png
-description: "Hetzner is 5 times cheaper for us than the hyperscalers. This blog posts enumerates the how and why we built our SaaS on a discount bare metal provider. Gotchas included."
+description: "Hetzner is five times cheaper for us than the hyperscalers. This blog posts enumerates the how and why we built our SaaS on a discount bare metal provider. Gotchas included."
 ---
 
 Hello everyone, Laszlo here, the founder of Gimlet.io 👋. In this blog post I try to address various aspects of how and why we built our SaaS platform on Hetzner and Kubernetes and not on one of the hyperscaler cloud providers.
