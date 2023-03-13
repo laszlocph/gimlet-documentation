@@ -2,6 +2,14 @@
 title: Blog
 ---
 
+{% post name="The how and why we built our SaaS platform on Hetzner and Kubernetes" image="why-hetzner.png" link="/blog/how-we-built-our-saas-platform-on-kubernetes-and-hetzner" date="2023-03-08" %}
+Hetzner is 5 times cheaper for us than the hyperscalers. This blog posts enumerates the how and why we built our SaaS on a discount bare metal provider. Gotchas included.
+{% /post %}
+
+{% post name="Announcing the Gimlet SaaS Early Access" image="saas-early-access.png" link="/blog/announcing-the-gimlet-saas-early-access" date="2022-12-05" %}
+We have something really exciting to share with you: Gimlet is going SaaS. In other words, you will be able to use Gimlet's unparalleled Kubernetes deploy experience with even fewer clicks than before.
+{% /post %}
+
 {% post name="Options for Kubernetes pod autoscaling" image="autoscaling.png" link="/blog/options-for-kubernetes-pod-autoscaling" date="2023-01-23" %}
 The Gimlet.io team put together this blog to show common usecases of autoscaling:
 - based on CPU
