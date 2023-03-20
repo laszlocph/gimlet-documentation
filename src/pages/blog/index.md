@@ -2,6 +2,10 @@
 title: Blog
 ---
 
+{% post name="Clickops over gitops" image="clickops.png" link="/blog/clickops-over-gitops" date="2023-03-16" %}
+Doing cloud operations by clicking on a dashboard that generates a stream of infrastructure as code changes.
+{% /post %}
+
 {% post name="The how and why we built our SaaS platform on Hetzner and Kubernetes" image="why-hetzner.png" link="/blog/how-we-built-our-saas-platform-on-kubernetes-and-hetzner" date="2023-03-08" %}
 Hetzner is five times cheaper for us than the hyperscalers. This blog posts enumerates the how and why we built our SaaS on a discount bare metal provider. Gotchas included.
 {% /post %}

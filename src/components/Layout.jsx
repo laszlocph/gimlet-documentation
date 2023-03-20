@@ -254,6 +254,13 @@ export function Layout({ children, title, navigation, tableOfContents, pageProps
             </div>
             <h3 className='font-medium text-lg'>More from our blog</h3>
             <div className='flex mt-8'>
+              <img src="/clickops.png" className="w-48 object-contain"></img>
+              <div className='ml-2'>
+                <h2 className="mb-2 font-medium underline"><a href="/blog/clickops-over-gitops">Clickops over gitops</a></h2>
+                <div className="prose mt-2.5 text-gray-600 dark:text-gray-300 leading-tight"><p>Doing cloud operations by clicking on a dashboard that generates a stream of infrastructure as code changes.</p></div>
+              </div>
+            </div>
+            <div className='flex mt-8'>
               <img src="/why-hetzner.png" className="w-48 object-contain"></img>
               <div className='ml-2'>
                 <h2 className="mb-2 font-medium underline"><a href="/blog/announcing-the-gimlet-saas-early-access">The how and why we built our SaaS platform on Hetzner and Kubernetes</a></h2>
