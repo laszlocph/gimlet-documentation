@@ -63,7 +63,7 @@ export function ClickOps() {
             <div className="relative pl-2 py-4 bg-white hover:bg-gray-100 rounded">
               <img src="/arrow.svg" className="absolute right-0 top-0 -mt-20 mr-16 md:-mr-6 w-32 block dark:hidden" />
               <img src="/arrow-white.svg" className="absolute right-0 top-0 -mt-20 mr-16 md:-mr-6 w-32 hidden dark:block" />
-              <span className="absolute right-0 top-0 -mt-16 mr-0 md:-mr-24 w-24 font-mono font-bold text-xs dark:text-slate-100">Deploy this commit!</span>
+              <span className="absolute right-0 top-0 -mt-16 mr-0 md:-mr-24 w-24 font-mono font-bold text-xs dark:text-slate-100">Click to deploy this commit!</span>
               <div className="relative flex items-start space-x-3">
                 <div className="relative">
                   <img
