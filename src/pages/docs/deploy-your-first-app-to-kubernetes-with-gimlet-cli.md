@@ -18,7 +18,7 @@ This is the command line variation of the [Deploy your first app to Kubernetes](
 ## Install the Gimlet CLI
 
 ```bash
-curl -L https://github.com/gimlet-io/gimlet/releases/download/cli-v0.18.0/gimlet-$(uname)-$(uname -m) -o gimlet
+curl -L https://github.com/gimlet-io/gimlet/releases/download/cli-v0.21.0/gimlet-$(uname)-$(uname -m) -o gimlet
 chmod +x gimlet
 sudo mv ./gimlet /usr/local/bin/gimlet
 gimlet --version
@@ -40,31 +40,33 @@ Gimlet captures the deployment configuration in your source code repository. The
 
 In this tutorial, you are going to deploy your application to your testing environment. The tutorial will deploy the `gimlet-io/demo-app` application to the `staging` environment, you can pick your testing environment from the configured environments on the Gimlet dashboard's *Environments* tab. Replace the values to match your setup.
 
-Start the environment configuration by creating the Gimlet environmnet manifest file first.
+Start the environment configuration by creating the Gimlet environment manifest file first.
 
 ```bash
 mkdir .gimlet/
 
-gimlet manifest create \
-  --chart onechart/onechart \
+gimlet manifest configure -f .gimlet/staging-demo-app.yaml
+
+
   --env staging \
   --app demo-app \
   --namespace staging \
-  > .gimlet/staging-demo-app.yaml
 ```
+
+Set the environment to `staging`, application name to `demo-app` and namespace to `staging` then close the browser tab.
 
 This will create the environment file, without any deployment configuration specific to your app:
 
 - it holds the application's name, environment, and namespace
 - the Helm chart that is used as the application deployment template, and its version
-- the Helm cahrt values, that are now empty
+- the Helm chart values, that are now empty
 - and some place holders should you want to use Kustomize later for post porcessing, or if you want to add raw yamls into your config
 
 ```yaml
 ---
 app: myapp
 env: staging
-namespace: my-team
+namespace: staging
 chart:
   repository: https://chart.onechart.dev
   name: onechart
