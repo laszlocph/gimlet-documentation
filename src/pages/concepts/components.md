@@ -12,8 +12,8 @@ the Flux and Helm. It eliminates much of the decisions you have to make and gets
 
 ![Gimlet components](/components.svg)
 
-## Gimlet Dashboard
-The Gimlet Dashboard is where you can get a comprehensive overview quickly, manage your gitops environments and deployment configurations. 
+## Gimlet
+The Gimlet dashboard is where you can get a comprehensive overview quickly, manage your gitops environments and deployment configurations. 
 
 - It displays realtime Kubernetes information about your deployments
 - It also displays realtime git information about your commits, branches and their build statuses
@@ -21,7 +21,9 @@ The Gimlet Dashboard is where you can get a comprehensive overview quickly, mana
 - Configure your applications for deployment
 - Initiate and manage gitops environments
 
-The Gimlet Dashboard follows the [ClickOps](/concepts/clickops) approach. Every action you take on the dashboard is backed by a git commit. The integration is bi-directional, custom git or CLI actions show up in the dashboard too and don't break the UI.
+Also, Gimlet is the release manager. It has write access to the gitops repositories, and encompasses all logic related to making releases, rollbacks, and gathering audit logs.
+
+Gimlet follows the [ClickOps](/concepts/clickops) approach. Every action you take on the dashboard is backed by a git commit. The integration is bi-directional, custom git or CLI actions show up in the dashboard too and don't break the UI.
 
 ## Gimlet CLI
 Gimlet CLI is a command line tool with the same power as the Gimlet Dashboard.
@@ -37,10 +39,6 @@ Your CI/CD pipelines implemented with your preferred provider. Gimlet fits into 
 
 ## Gimlet Agent
 Gimlet Agent runs in your Kubernetes clusters. It collects realtime information about your deployments, and forwards it to the Gimlet Dashboard.
-
-## Gimletd
-
-Gimletd is the release manager. It has write access to the gitops repositories, and encompasses all logic related to making releases, rollbacks, and gathering audit logs.
 
 ## Flux
 Flux is the gitops controller. It pulls manifests from the gitops repositories and applies them on the Kubernetes clusters.

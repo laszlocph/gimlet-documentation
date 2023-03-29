@@ -37,7 +37,7 @@ export function HomePage({ className, tabs, code, language }) {
               className="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white hover:bg-indigo-700"
               onClick={() => {console.log("tracking");trackGoal('EWFJPYJE', 0)}}
             >
-              Sign up for our SaaS Early Access
+              Sign up for our SaaS
             </a>
           </div>
           <div className="mt-4 md:mt-0 ml-3 inline-flex">

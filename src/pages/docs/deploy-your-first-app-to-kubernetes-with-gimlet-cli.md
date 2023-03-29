@@ -44,10 +44,7 @@ Start the environment configuration by creating the Gimlet environment manifest 
 
 ```bash
 mkdir .gimlet/
-
 gimlet manifest configure -f .gimlet/staging-demo-app.yaml
-
-
   --env staging \
   --app demo-app \
   --namespace staging \
