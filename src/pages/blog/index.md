@@ -2,7 +2,7 @@
 title: Blog
 ---
 
-{% post name="Git: the ironclad system" image="git-ironclad.png" link="/blog/git-the-ironclad-system" date="2023-03-30" %}
+{% post name="Git: the ironclad system" image="git-ironclad.png" link="/blog/git-the-ironclad-system" date="2023-04-06" %}
 Git is the most feared tool amongst the tools we use everyday. Over the years I developed an ironclad approach to git, to not get into trouble, and if I did, how to get out of it.
 {% /post %}
 
