@@ -2,16 +2,20 @@
 title: Blog
 ---
 
+{% post name="Git: the ironclad system" image="git-ironclad.png" link="/blog/git-the-ironclad-system" date="2023-03-30" %}
+Git is the most feared tool amongst the tools we use everyday. Over the years I developed an ironclad approach to git, to not get into trouble, and if I did, how to get out of it.
+{% /post %}
+
+{% post name="Don't group environment variables" image="dont-group.png" link="/blog/dont-group-environment-variables" date="2023-04-03" %}
+This is a preiodic reminder for application developers to not group environment variables. `APP_ENV=staging` easily becomes a blocker when you do application operation.
+{% /post %}
+
 {% post name="Clickops over gitops" image="clickops.png" link="/blog/clickops-over-gitops" date="2023-03-16" %}
 Doing cloud operations by clicking on a dashboard that generates a stream of infrastructure as code changes.
 {% /post %}
 
 {% post name="The how and why we built our SaaS platform on Hetzner and Kubernetes" image="why-hetzner.png" link="/blog/how-we-built-our-saas-platform-on-kubernetes-and-hetzner" date="2023-03-08" %}
 Hetzner is five times cheaper for us than the hyperscalers. This blog posts enumerates the how and why we built our SaaS on a discount bare metal provider. Gotchas included.
-{% /post %}
-
-{% post name="Announcing the Gimlet SaaS Early Access" image="saas-early-access.png" link="/blog/announcing-the-gimlet-saas-early-access" date="2022-12-05" %}
-We have something really exciting to share with you: Gimlet is going SaaS. In other words, you will be able to use Gimlet's unparalleled Kubernetes deploy experience with even fewer clicks than before.
 {% /post %}
 
 {% post name="Options for Kubernetes pod autoscaling" image="autoscaling.png" link="/blog/options-for-kubernetes-pod-autoscaling" date="2023-01-23" %}
