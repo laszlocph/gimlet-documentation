@@ -126,14 +126,14 @@ export default function App({ Component, pageProps }) {
 
   const router = useRouter()
   let isBlogPage = router.pathname.startsWith('/blog')
+  let isYamlGeneratorPage = router.pathname === '/k8s-yaml-generator'
 
   let pageTitle = 'Gimlet'
   if (pageProps.markdoc?.frontmatter.title) {
-    if (isBlogPage) {
-      pageTitle = pageProps.markdoc?.frontmatter.title
-    } else {
-      pageTitle = `Gimlet - ${pageProps.markdoc?.frontmatter.title}`
-    }
+    pageTitle = pageProps.markdoc?.frontmatter.title
+  }
+  if (isYamlGeneratorPage) {
+    pageTitle = "Kubernetes YAML Generator";
   }
 
   let image = "logosocial.png"
