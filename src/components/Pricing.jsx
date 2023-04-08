@@ -5,7 +5,7 @@ import { Fragment, useState } from 'react'
 const tiers = [
   {
     name: 'Hobbyist',
-    href: 'https://forms.reform.app/p5JfBA/early-access/nbZ6Go',
+    href: 'https://accounts.gimlet.io',
     priceMonthly: "Free",
     priceYearly: "Free",
     description: 'The perfect tier to automate your blog or test-drive Gimlet without commitments.',
@@ -18,7 +18,7 @@ const tiers = [
   },
   {
     name: 'Startup',
-    href: 'https://forms.reform.app/p5JfBA/early-access/nbZ6Go',
+    href: 'https://accounts.gimlet.io',
     priceMonthly: "$?/mo",
     priceYearly: "$?/year",
     description: 'Use Gimlet to deploy your MVP. Upgrade when you build more services.',
@@ -31,7 +31,7 @@ const tiers = [
   },
   {
     name: 'Growth',
-    href: 'https://forms.reform.app/p5JfBA/early-access/nbZ6Go',
+    href: 'https://accounts.gimlet.io',
     priceMonthly: "$?/mo",
     priceYearly: "$?/year",
     description: 'Things are getting serious. Let\'s roll out Gimlet for your growing team. 🚀',
