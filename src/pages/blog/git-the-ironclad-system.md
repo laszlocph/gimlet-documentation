@@ -74,7 +74,9 @@ Could not apply 7aab195... conflict
 
 Knowing the basics of git's data model will help you in your everyday git operations.
 
-Git history is a tree. Its root is a single commit and all commits descend from it. Each commit knows its parent, and what diff it introduces to it.
+Git history is a tree. Its root is a single commit and all commits descend from it. Each commit knows its parent, and what diff it introduces to it. **
+
+(**UPDATE: Kind Reddit people highlighted that technically git stores new versions of the files you change in a commit. Diff is calculated on the fly. For a mental model though, thinking of commits as a tree of diffs is still useful.)
 
 When you branch out, you just create a new commit that has the same parent as another commit on another tree branch.
 
