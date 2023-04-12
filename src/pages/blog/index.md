@@ -2,6 +2,10 @@
 title: Blog
 ---
 
+{% post name="Hosting static sites on kubernetes" image="agyuvalverebre.jpg" link="/blog/hosting-static-sites-on-kubernetes" date="2023-04-08" %}
+There is a meme here somewhere. But as kubernetes is becoming *the* deployment platform, there are legitimate cases to deploy your static site on it. We show you how to.
+{% /post %}
+
 {% post name="Git: the ironclad system" image="git-ironclad.png" link="/blog/git-the-ironclad-system" date="2023-04-06" %}
 Git is the most feared tool amongst the tools we use everyday. Over the years I developed an ironclad approach to git, to not get into trouble, and if I did, how to get out of it.
 {% /post %}

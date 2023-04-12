@@ -137,6 +137,9 @@ export default function App({ Component, pageProps }) {
   }
 
   let image = "logosocial.png"
+  if (pageProps.markdoc?.frontmatter.image_social) {
+    image = pageProps.markdoc?.frontmatter.image_social
+  }
   if (pageProps.markdoc?.frontmatter.image) {
     image = pageProps.markdoc?.frontmatter.image
   }
