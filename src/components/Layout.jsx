@@ -102,6 +102,11 @@ function Header({ navigation }) {
         } */}
        
         <>
+        <ul className="hidden sm:flex items-center space-x-4 text-slate-700 font-semibold text-sm leading-6 dark:text-slate-200">
+          <li>
+            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="https://accounts.gimlet.io/login/">Log in</a>
+          </li>
+        </ul>
         <ThemeSelector className="relative z-10" />
         <Link href="https://github.com/gimlet-io/gimlet">
           <a className="group">
