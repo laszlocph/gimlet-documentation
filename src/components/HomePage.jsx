@@ -33,7 +33,7 @@ export function HomePage({ className, tabs, code, language }) {
         <div className="mt-8 md:flex justify-center">
           <div className="inline-flex rounded-md shadow">
             <a
-              href="https://forms.reform.app/p5JfBA/early-access/nbZ6Go"
+              href="https://accounts.gimlet.io/signup/"
               className="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white hover:bg-indigo-700"
               onClick={() => {console.log("tracking");trackGoal('EWFJPYJE', 0)}}
             >
