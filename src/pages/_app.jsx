@@ -132,9 +132,6 @@ export default function App({ Component, pageProps }) {
   if (pageProps.markdoc?.frontmatter.title) {
     pageTitle = pageProps.markdoc?.frontmatter.title
   }
-  if (isYamlGeneratorPage) {
-    pageTitle = "Kubernetes YAML Generator";
-  }
 
   let image = "logosocial.png"
   if (pageProps.markdoc?.frontmatter.image_social) {
@@ -153,6 +150,10 @@ export default function App({ Component, pageProps }) {
   let description = "Need to deploy to Kubernetes, but not sure how to put things together? We got you covered. Gimlet is a gitops based developer platform that gives you the best of open-source out of the box."
   if (pageProps.markdoc?.frontmatter.description) {
     description = pageProps.markdoc?.frontmatter.description
+  }
+  if (isYamlGeneratorPage) {
+    pageTitle = "Kubernetes YAML Generator";
+    description = "Generate YAML files from OneChart values effortlessly. A generic Helm chart for your application deployments. Because no one can remember the Kubernetes yaml syntax."
   }
 
   useEffect(() => {
@@ -183,8 +184,13 @@ export default function App({ Component, pageProps }) {
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 
-
         <meta content={pageTitle} property="og:title"/>
+        {isYamlGeneratorPage &&
+          <meta
+            name="keywords"
+            content="kubernetes yaml, kubernetes deployment yaml, yaml generator, kubernetes yaml generator, k8s yaml generator, kubectl yaml, kubernetes yaml reference, k8s deployment yaml, yaml template generator, yaml editor for kubernetes, yaml kubernetes, kubernetes yaml templates, yaml editor,  helm, helm chart, onechart"
+          />
+        }
         <meta content="website" property="og:type" />
         <meta content={`https://gimlet.io/${image}`} property="og:image" />
         <meta content={description} property="og:description" />
@@ -203,7 +209,7 @@ export default function App({ Component, pageProps }) {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
-    
+
         <link rel="canonical" href={currentUrl} />
         <meta content={currentUrl} property="og:url" />
 

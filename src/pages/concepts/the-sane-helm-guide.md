@@ -47,7 +47,7 @@ master:
 
 ## In this guide
 
-Helm is the most thrown around term in the Kubernetes ecosystem and perhaps one of the most divisive one as well. Many accept and use the tool, many refuse to touch it and always look for raw yaml alternatives.
+Helm is the most thrown around term in the Kubernetes ecosystem and perhaps one of the most divisive one as well. Many accept and use the tool, many refuse to touch it and always look for alternatives.
 
 But Helm does two things well:
 
@@ -56,7 +56,7 @@ But Helm does two things well:
 
 In this guide, you will get practical knowledge about using Helm, focusing on those use-cases, namely packaging and templating, that also underpin Gimlet.
 
-This guide emphasizes simplicity and ease of use. Being an exhausting guide of Helm features is a non-goal. Instead, the goal is to get you from *"Helm, wtf?"* to *"Helm, this ain't so bad"* under five minutes.
+This guide emphasizes simplicity and ease of use. Being an exhaustive guide of Helm features is a non-goal. Instead, the goal is to get you from *"Helm, wtf?"* to *"Helm, this ain't so bad"* under five minutes.
 
 Let's get to it, shall we?
 

@@ -6,6 +6,17 @@ const nextConfig = {
   pageExtensions: ['js', 'jsx', 'md'],
 }
 
+const rewrites = {
+  async rewrites() {
+    return [
+      {
+        source: '/api/yaml-generator',
+        destination: 'https://yaml-generator.gimlet.io',
+      },
+    ]
+  },
+}
+
 const redirects = {
   async redirects() {
     return [
@@ -55,4 +66,5 @@ const withPlugins = require('next-compose-plugins');
 module.exports = withPlugins([
   withMarkdoc(),
   redirects,
+  rewrites,
 ], nextConfig);

@@ -5,6 +5,7 @@ import clsx from 'clsx'
 
 import { HomePage } from '@/components/HomePage'
 import { PricingPage } from '@/components/Pricing'
+import { YamlGenerator } from '@/components/YamlGenerator'
 import { MobileNavigation } from '@/components/MobileNavigation'
 import { Navigation } from '@/components/Navigation'
 import { Prose } from '@/components/Prose'
@@ -70,6 +71,9 @@ function Header({ navigation }) {
             <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/blog">Blog</a>
           </li>
           <li>
+            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/k8s-yaml-generator">YAML Generator</a>
+          </li>
+          <li>
             <a className="hover:text-orange-500 dark:hover:text-orange-400" href="https://github.com/gimlet-io#jobs">Jobs</a>
           </li>
         </ul>
@@ -90,6 +94,9 @@ function Header({ navigation }) {
           </li>
           <li>
             <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/blog">Blog</a>
+          </li>
+          <li>
+            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/k8s-yaml-generator">YAML Generator</a>
           </li>
           <li>
             <a className="hover:text-orange-500 dark:hover:text-orange-400" href="https://github.com/gimlet-io#jobs">Jobs</a>
@@ -135,6 +142,7 @@ export function Layout({ children, title, navigation, tableOfContents, pageProps
   let isTOSPage = router.pathname === '/tos'
   let isBlogSubPage = isBlogPage && !router.pathname.endsWith('/blog') && !router.pathname.endsWith('/blog/')
   let isPricingPage = router.pathname === '/pricing'
+  let isYamlGeneratorPage = router.pathname === '/k8s-yaml-generator'
   let isHomePage = router.pathname === '/'
 
   let allLinks = navigation.flatMap((section) => section.links)
@@ -175,12 +183,13 @@ export function Layout({ children, title, navigation, tableOfContents, pageProps
 
   return (
     <>
-      {!isTOSPage &&
+      {!isTOSPage && !isYamlGeneratorPage &&
       <Header navigation={navigation} />
       }
 
       {isHomePage && <HomePage />}
       {isPricingPage && <PricingPage />}
+      {isYamlGeneratorPage && <YamlGenerator />}
 
       {isEventsPage &&
       <div className="relative mx-auto flex max-w-6xl justify-center sm:px-2 lg:px-8 xl:px-12">
