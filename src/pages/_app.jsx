@@ -153,7 +153,7 @@ export default function App({ Component, pageProps }) {
   }
   if (isYamlGeneratorPage) {
     pageTitle = "Kubernetes YAML Generator";
-    description = "Generate YAML files from OneChart values effortlessly. A generic Helm chart for your application deployments. Because no one can remember the Kubernetes yaml syntax."
+    description = "Generate Kubernetes YAML files for web application deployments. Uses a generic Helm chart, because no one can remember the Kubernetes yaml syntax."
   }
 
   useEffect(() => {
@@ -188,7 +188,7 @@ export default function App({ Component, pageProps }) {
         {isYamlGeneratorPage &&
           <meta
             name="keywords"
-            content="kubernetes yaml, kubernetes deployment yaml, yaml generator, kubernetes yaml generator, k8s yaml generator, kubectl yaml, kubernetes yaml reference, k8s deployment yaml, yaml template generator, yaml editor for kubernetes, yaml kubernetes, kubernetes yaml templates, yaml editor,  helm, helm chart, onechart"
+            content="kubernetes yaml, kubernetes deployment yaml, yaml generator, kubernetes yaml generator, k8s yaml generator, kubectl yaml, kubernetes yaml reference, k8s deployment yaml, yaml template generator, yaml editor for kubernetes, yaml kubernetes, kubernetes yaml templates, yaml editor, kubernetes manifest, web application deployment yaml, web application manifest"
           />
         }
         <meta content="website" property="og:type" />
