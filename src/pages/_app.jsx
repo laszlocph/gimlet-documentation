@@ -154,6 +154,7 @@ export default function App({ Component, pageProps }) {
   if (isYamlGeneratorPage) {
     pageTitle = "Kubernetes YAML Generator";
     description = "Generate Kubernetes YAML files for web application deployments. Uses a generic Helm chart, because no one can remember the Kubernetes yaml syntax."
+    image = "yaml-generator.png"
   }
 
   useEffect(() => {
