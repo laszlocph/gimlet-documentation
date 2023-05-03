@@ -2,6 +2,12 @@
 title: Blog
 ---
 
+{% post name="The ultimate GitOps repository structuring guide" image="gitops-repo-structure.png" link="/blog/the-ultimate-gitops-repository-structuring-guide" date="2023-05-02" %}
+The way you structure your repository can greatly impact the efficiency and reliability of your gitops workflow.
+
+In this article, we'll explore different approaches to structuring your gitops repository so you gain a better understanding of how to optimize your deployment process.
+{% /post %}
+
 {% post name="Hosting static sites on kubernetes" image="agyuvalverebre.jpg" link="/blog/hosting-static-sites-on-kubernetes" date="2023-04-08" %}
 There is a meme here somewhere. But as kubernetes is becoming *the* deployment platform, there are legitimate cases to deploy your static site on it. We show you how to.
 {% /post %}
