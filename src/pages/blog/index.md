@@ -2,6 +2,12 @@
 title: Blog
 ---
 
+{% post name="Error handling in HelmController - how to solve the infamous \"Upgrade retries exhausted\" error" image="annoyed-cat.png" link="/blog/error-handling-in-helm-controller-how-to-solve-the-infamous-upgrade-retries-exhausted-error" date="2023-05-12" %}
+Helm and Flux are two popular tools in the Kubernetes ecosystem to manage deployments, upgrades, and rollbacks. However, sometimes you encounter the `Upgrade retries exhausted` error when using these tools. 
+
+This article provides a detailed analysis of how Flux's Helm Controller handles failure, its implications, errorstates and potential resolutions.
+{% /post %}
+
 {% post name="The ultimate GitOps repository structuring guide" image="gitops-repo-structure.png" link="/blog/the-ultimate-gitops-repository-structuring-guide" date="2023-05-02" %}
 The way you structure your repository can greatly impact the efficiency and reliability of your gitops workflow.
 
