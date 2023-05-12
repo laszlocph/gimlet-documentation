@@ -3,9 +3,7 @@ layout: post
 title: Error handling in Helm Controller, and how to solve the infamous “Upgrade retries exhausted” error
 date: "2023-05-12"
 image: annoyed-cat.png
-description: "Helm and Flux are two popular tools in the Kubernetes ecosystem to manage deployments, upgrades, and rollbacks. However, sometimes you encounter the `Upgrade retries exhausted` error when using these tools. 
-
-This article provides a detailed analysis of how Flux's Helm Controller handles failure, its implications, errorstates and potential resolutions."
+description: "A detailed analysis of how Flux's Helm Controller handles failure, its implications, errorstates and potential resolutions."
 author: Youcef Guichi
 authorAvatar: /youcef.jpg
 coAuthor: Laszlo Fogas
