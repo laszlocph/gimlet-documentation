@@ -3,7 +3,7 @@ layout: post
 title: Error handling in Helm Controller, and how to solve the infamous “Upgrade retries exhausted” error
 date: "2023-05-12"
 image: annoyed-cat.png
-description: "A detailed analysis of how Flux's Helm Controller handles failure, its implications, errorstates and potential resolutions."
+description: "A detailed analysis of how Flux's Helm Controller handles failure, its implications, errorstates and potential resolutions. And everything we know about the `Upgrade retries exhausted` error."
 author: Youcef Guichi
 authorAvatar: /youcef.jpg
 coAuthor: Laszlo Fogas

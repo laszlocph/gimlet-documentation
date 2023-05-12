@@ -4,6 +4,8 @@ title: Blog
 
 {% post name="Error handling in HelmController - how to solve the infamous \"Upgrade retries exhausted\" error" image="annoyed-cat.png" link="/blog/error-handling-in-helm-controller-how-to-solve-the-infamous-upgrade-retries-exhausted-error" date="2023-05-12" %}
 A detailed analysis of how Flux's Helm Controller handles failure, its implications, errorstates and potential resolutions.
+
+And everything we know about the "Upgrade retries exhausted" error.
 {% /post %}
 
 {% post name="The ultimate GitOps repository structuring guide" image="gitops-repo-structure.png" link="/blog/the-ultimate-gitops-repository-structuring-guide" date="2023-05-02" %}
