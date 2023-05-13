@@ -4,41 +4,41 @@ import { Fragment, useState } from 'react'
 
 const tiers = [
   {
-    name: 'Hobbyist',
+    name: 'Personal / Trial',
     href: 'https://accounts.gimlet.io/signup/',
     priceMonthly: "Free",
     priceYearly: "Free",
-    description: 'The perfect tier to automate your blog or test-drive Gimlet without commitments.',
+    description: 'The perfect tier to automate your blog, for non-profits, or test-drive Gimlet without commitments.',
     includedFeatures: [
       'All Gimlet features.',
       'Unlimited users.', 
-      '1 deployed service.',
+      '3 deployed services, or deploy without limits with our "DON\'T MAKE ME THINK" pledge for individuals and non-profits',
       'Community support.'
     ],
   },
   {
     name: 'Startup',
     href: 'https://accounts.gimlet.io/signup/',
-    priceMonthly: "$?/mo",
-    priceYearly: "$?/year",
-    description: 'Use Gimlet to deploy your MVP. Upgrade when you build more services.',
+    priceMonthly: "$100/mo",
+    priceYearly: "$1000/year",
+    description: 'Use Gimlet to deploy your first services. Upgrade when you build more.',
     includedFeatures: [
       'All Gimlet features.',
       'Unlimited users.',
-      'Up to 5 deployed services.',
+      'Up to 10 deployed services.',
       'Community support.'
     ],
   },
   {
     name: 'Growth',
     href: 'https://accounts.gimlet.io/signup/',
-    priceMonthly: "$?/mo",
-    priceYearly: "$?/year",
+    priceMonthly: "$300/mo",
+    priceYearly: "$3000/year",
     description: 'Things are getting serious. Let\'s roll out Gimlet for your growing team. 🚀',
     includedFeatures: [
       'All Gimlet features.',
       'Unlimited users.',
-      'Up to 50 deployed services.',
+      'Up to 100 deployed services.',
       'Slack support in business-hours.',
       'Custom scale-out plan.',
     ],
@@ -52,7 +52,7 @@ const tiers = [
     includedFeatures: [
       'All Gimlet features.',
       'Unlimited users.',
-      'Unlimited services.',
+      'Deploy without limits.',
       '24/7 Slack support.',
       'Custom scale-out plan.',
       'Bespoke cloud consultancy.'
