@@ -105,7 +105,7 @@ export function PricingPage() {
                     href={tier.href}
                     className="mt-10 block w-full rounded-md border border-indigo-600 bg-indigo-600 py-2 text-center text-sm font-semibold text-white hover:bg-gray-900"
                   >
-                    Sign up for Early Access
+                    Get Started
                   </a>
                   }
                   {tier.priceMonthly === 'Get in touch' &&
