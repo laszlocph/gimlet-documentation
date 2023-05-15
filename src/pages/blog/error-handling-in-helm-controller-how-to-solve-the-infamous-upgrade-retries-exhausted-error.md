@@ -63,9 +63,9 @@ Misconfigurations are an unavoidable aspect.
 
 If you ever find yourself in the "Upgrade retries exhausted" state,
 
-- fixing your `HelmRelease` values will trigger a reconciliation, and may lead to a healthy state.
+- fixing your `HelmRelease` values and pushing a new commit will trigger a reconciliation, and may lead to a healthy state.
 
-- If the root cause of the "Upgrade retries exhausted" state is not related to your `HelmRelease` configuration, but implicit to your cluster state, after fixing the situation you can trigger a Helm Controller reconciliation by changing any value in the `spec` field of the `HelmRelease`. Practically a dummy value under `spec.values` will trigger a reconciliation.
+- If the root cause of the "Upgrade retries exhausted" state is not related to your `HelmRelease` configuration, but implicit to your cluster state, fixing the situation first, then triggering a Helm Controller reconciliation will solve the issue. The situation typically occurs when a secret or configmap is missing from the cluster that your HelmRelease is referring to. Once you resolved the dependency issue, you can trigger a reconciliation by changing any value in the `spec` field of the `HelmRelease`. Practically a dummy value under `spec.values` will do it, or if you use the flux CLI, `flux suspend helmrelease <foo>` and `flux resume helmrelease <foo>` will trigger a reconciliation.
 
 - Flux also includes a built-in feature that can help. In case of a failed upgrade, Flux can automatically clean up the broken state by rolling back to the previous version. Or depending on the configuration, it can also uninstall the release.
 
