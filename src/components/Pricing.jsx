@@ -8,54 +8,69 @@ const tiers = [
     href: 'https://accounts.gimlet.io/signup/',
     priceMonthly: "Free",
     priceYearly: "Free",
-    description: 'The perfect tier to automate your blog, for non-profits, or test-drive Gimlet without commitments.',
+    description: 'The perfect tier to test-drive Gimlet without commitments. Unlimited usage for individuals and non-profits.',
     includedFeatures: [
       'All Gimlet features.',
       'Unlimited users.', 
-      '3 deployed services, or deploy without limits with our "DON\'T MAKE ME THINK" pledge for individuals and non-profits',
+      '1 deployed service, or deploy without limits with our "DON\'T MAKE ME THINK" pledge for individuals and non-profits',
       'Community support.'
     ],
   },
   {
     name: 'Startup',
     href: 'https://accounts.gimlet.io/signup/',
-    priceMonthly: "$100/mo",
-    priceYearly: "$1000/year",
+    priceMonthly: "$99/mo",
+    priceYearly: "$999/yr",
     description: 'Use Gimlet to deploy your first services. Upgrade when you build more.',
     includedFeatures: [
       'All Gimlet features.',
       'Unlimited users.',
-      'Up to 10 deployed services.',
+      'Up to 5 deployed services.',
       'Community support.'
     ],
   },
   {
     name: 'Growth',
     href: 'https://accounts.gimlet.io/signup/',
-    priceMonthly: "$300/mo",
-    priceYearly: "$3000/year",
+    priceMonthly: "$299/mo",
+    priceYearly: "$2999/yr",
     description: 'Things are getting serious. Let\'s roll out Gimlet for your growing team. 🚀',
+    includedFeatures: [
+      'All Gimlet features.',
+      'Unlimited users.',
+      'Up to 50 deployed services.',
+      'Slack support in business-hours.',
+      '4 hours dedicated onboarding.',
+    ],
+  },
+  {
+    name: 'Scale',
+    href: 'https://accounts.gimlet.io/signup/',
+    priceMonthly: "$399/mo",
+    priceYearly: "$3999/yr",
+    description: 'For established teams.',
     includedFeatures: [
       'All Gimlet features.',
       'Unlimited users.',
       'Up to 100 deployed services.',
       'Slack support in business-hours.',
-      'Custom scale-out plan.',
+      '4 hours dedicated onboarding.',
     ],
   },
   {
     name: 'Enterprise',
     href: 'mailto:laszlo@gimlet.io',
-    priceMonthly: "Get in touch",
-    priceYearly: "Get in touch",
-    description: 'We probably know each other by name at this point.',
+    priceMonthly: "Let's talk",
+    priceYearly: "Let's talk",
+    description: 'Unlimited usage, bespoke consultancy.',
     includedFeatures: [
       'All Gimlet features.',
       'Unlimited users.',
       'Deploy without limits.',
       '24/7 Slack support.',
-      'Custom scale-out plan.',
-      'Bespoke cloud consultancy.'
+      'Dedicated onboarding.',
+      'May include Gimlet and bespoke cloud consultancy.',
+      'Gimlet hosted in your cloud, by us.'
     ],
   },
 ]
@@ -68,7 +83,7 @@ export function PricingPage() {
   return (
     <>
       <div className="bg-white dark:bg-gray-900">
-        <div className="mx-auto max-w-7xl py-24 px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-8xl py-24 px-4 sm:px-6 lg:px-8">
           <div className="sm:align-center sm:flex sm:flex-col">
             <h1 className="text-5xl font-bold tracking-tight text-gray-900 sm:text-center dark:text-slate-50">Pricing Plans</h1>
             <p className="mt-5 text-xl text-gray-500 sm:text-center dark:text-gray-300">
@@ -91,7 +106,7 @@ export function PricingPage() {
               </button>
             </div>
           </div>
-          <div className="mt-12 space-y-4 sm:mt-16 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:mx-auto lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-4">
+          <div className="mt-12 space-y-4 sm:mt-16 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:mx-auto lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-5">
             {tiers.map((tier) => (
               <div key={tier.name} className="divide-y divide-gray-200 dark:divide-gray-600 rounded-lg border border-gray-200 dark:border-gray-600 shadow-sm">
                 <div className="p-6">
@@ -100,7 +115,7 @@ export function PricingPage() {
                   <p className="mt-8">
                     <span className="text-4xl font-bold tracking-tight text-gray-900 dark:text-slate-50">{monthly ? tier.priceMonthly : tier.priceYearly}</span>
                   </p>
-                  {tier.priceMonthly !== 'Get in touch' &&
+                  {tier.priceMonthly !== 'Let\'s talk' &&
                   <a
                     href={tier.href}
                     className="mt-10 block w-full rounded-md border border-indigo-600 bg-indigo-600 py-2 text-center text-sm font-semibold text-white hover:bg-gray-900"
@@ -108,7 +123,7 @@ export function PricingPage() {
                     Get Started
                   </a>
                   }
-                  {tier.priceMonthly === 'Get in touch' &&
+                  {tier.priceMonthly === 'Let\'s talk' &&
                   <a
                     href={tier.href}
                     className="mt-10 block w-full rounded-md border border-indigo-600 bg-indigo-600 py-2 text-center text-sm font-semibold text-white hover:bg-gray-900"
@@ -132,24 +147,6 @@ export function PricingPage() {
             ))}
           </div>
           <div className="relative mx-auto mt-8 max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-md lg:max-w-4xl">
-            <div className="flex flex-col gap-6 rounded-3xl p-8 ring-1 ring-gray-900/10 dark:ring-gray-100/10 sm:p-10 lg:flex-row lg:items-center lg:gap-8">
-              <div className="lg:min-w-0 lg:flex-1">
-                <h3 className="text-lg font-semibold leading-8 tracking-tight text-indigo-600">Purchase support</h3>
-                <div className="mt-2 text-base leading-7 text-gray-600 dark:text-gray-300">
-                  You can get 24/7 Slack support, Gimlet and bespoke consultancy for any tier.
-                </div>
-              </div>
-              <div>
-                <a
-                  href="mailto:laszlo@gimlet.io"
-                  className="mt-10 block w-full rounded-md border border-indigo-600 bg-indigo-600 py-2 px-4 text-center text-sm font-semibold text-white hover:bg-gray-900"
-                >
-                  Get in touch<span aria-hidden="true">&rarr;</span>
-                </a>
-              </div>
-            </div>
-          </div>
           <div className="mx-auto max-w-md lg:max-w-4xl mt-8">
             <div className="flex flex-col gap-6 rounded-3xl p-8 ring-1 ring-gray-900/10 dark:ring-gray-100/10 m:p-10 lg:flex-row lg:items-center lg:gap-8">
               <div className="lg:min-w-0 lg:flex-1">
