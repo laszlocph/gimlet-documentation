@@ -6,7 +6,15 @@ image: clickops.png
 description: "We want to be true to the spirit of our free tier. We want individuals, non-profits to use it without thinking too much about what is included."
 ---
 
+We are engineers. Pricing should not affect our architecture, nor ouir workflows.
+
 ## Cluster based pricing is buts
+
+In the infrastructure space many has based pricing on the number of clusters you have.
+
+There can be legitimate usecases to have hundreds of clusters, also to pack everything on a handful.
+Pricing should not be a factor here.
+
 
 cluster based pricing is nuts
 CPU core based pricing is nuts
