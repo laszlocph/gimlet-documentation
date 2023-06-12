@@ -33,8 +33,8 @@ helm template my-release onechart/onechart -f values.yaml
 
 # values.yaml
 image:
-    repository: my-app
-    tag: fd803fc
+  repository: my-app
+  tag: fd803fc
 vars:
   VAR_1: "value 1"
   VAR_2: "value 2"
@@ -44,7 +44,7 @@ ingress:
   host: my-app.mycompany.com
 ```
 
-{% callout title="Prefer a deaper dive in Helm?" %}
+{% callout title="Prefer a deeper dive in Helm?" %}
 Check our [SANE Helm guide](/concepts/the-sane-helm-guide)
 {% /callout %}
 
