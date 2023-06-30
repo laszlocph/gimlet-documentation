@@ -21,6 +21,11 @@ const redirects = {
   async redirects() {
     return [
       {
+        source: '/signup',
+        destination: 'https://accounts.gimlet.io/signup/',
+        permanent: false,
+      },
+      {
         source: '/docs/deploy-your-app-to-kubernetes-without-the-boilerplate/',
         destination: '/docs/deploy-your-first-app-to-kubernetes-with-gimlet-cli',
         permanent: true,
