@@ -1,5 +1,7 @@
 import { Prose } from '@/components/Prose'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
+import clsx from 'clsx'
 
 export function BlogPage({ children, className, tabs, code, language, title, section, pageProps, tableOfContents }) {
   
@@ -15,6 +17,18 @@ export function BlogPage({ children, className, tabs, code, language, title, sec
   let authorAvatar = pageProps.markdoc?.frontmatter.authorAvatar
   const coAuthor = pageProps.markdoc?.frontmatter.coAuthor
   const coAuthorAvatar = pageProps.markdoc?.frontmatter.coAuthorAvatar
+
+  let currentSection = useTableOfContents(tableOfContents)
+
+  function isActive(section) {
+    if (section.id === currentSection) {
+      return true
+    }
+    if (!section.children) {
+      return false
+    }
+    return section.children.findIndex(isActive) > -1
+  }
 
   if (!author) {
     author = "Laszlo Fogas"

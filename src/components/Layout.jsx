@@ -51,16 +51,18 @@ export function Layout({ children, title, navigation, tableOfContents, pageProps
       {isPricingPage && <PricingPage />}
       {isYamlGeneratorPage && <YamlGenerator />}
 
-      {isEventsPage && <EventsPage title={title} section={section} children={children}/>}
+      {isEventsPage && <EventsPage title={title} section={section}>{children}</EventsPage>}
 
       {isTOSPage &&
         <Prose className="m-16 max-w-4xl">{children}</Prose>
       }
 
       {isBlogPage && <BlogPage
-        title={title} section={section} children={children}
+        title={title} section={section}
         pageProps={pageProps} tableOfContents={tableOfContents}
-        />
+        >
+          {children}
+        </BlogPage>
       }
 
       {isDocsPage &&
