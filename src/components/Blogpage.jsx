@@ -2,6 +2,7 @@ import { Prose } from '@/components/Prose'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import clsx from 'clsx'
+import { useTableOfContents } from './DocsPage'
 
 export function BlogPage({ children, className, tabs, code, language, title, section, pageProps, tableOfContents }) {
   
