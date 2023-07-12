@@ -3,7 +3,8 @@ layout: post
 title: "Running Kubernetes on your laptop with K3d"
 date: "2023-07-12"
 image: rocket.png
-description: "xx"
+description: "Setting up a cluster on a laptop feels like a complex task for many developers. For this reason, we put together this blog post to show that with only a handful of commands you can go very far.
+"
 author: Youcef Guichi
 authorAvatar: /youcef.jpg
 coAuthor: Laszlo Fogas
