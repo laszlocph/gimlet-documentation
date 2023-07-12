@@ -2,6 +2,12 @@
 title: Blog
 ---
 
+{% post name="Running Kubernetes on your laptop with K3d" image="rocket.png" link="/blog/running-kubernetes-on-your-laptop-with-k3d" date="2023-07-12" %}
+Kubernetes has emerged as the go-to platform. But setting up a cluster on a laptop feels like a complex task for many developers.
+
+For this reason, we put together this blog post to show that with only a handful of commands you can go very far.
+{% /post %}
+
 {% post name="Error handling in HelmController - how to solve the infamous \"Upgrade retries exhausted\" error" image="annoyed-cat.png" link="/blog/error-handling-in-helm-controller-how-to-solve-the-infamous-upgrade-retries-exhausted-error" date="2023-05-12" %}
 A detailed analysis of how Flux's Helm Controller handles failure, its implications, errorstates and potential resolutions.
 
