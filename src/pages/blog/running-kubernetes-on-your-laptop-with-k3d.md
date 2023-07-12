@@ -59,8 +59,9 @@ $ kubectl get nodes
 
 NAME                            STATUS  AGE     VERSION
 k3d-my-first-cluster-server-0   Ready   2m15s   v1.25.6+k3s1
-
 ```
+
+You can install with `curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash` as described on [their homepage](https://k3d.io/v5.5.1/#installation).
 
 ## Deploy an app
 Congratulations! You now have a fully operational cluster running on your laptop.
@@ -70,6 +71,7 @@ Let's put it to the test by deploying a sample application.
 We are going to use a Helm chart `onechart/onechart` to render an application manifest and then deploy the app.
 
 Little detour on Helm:
+- [Install instructions](https://helm.sh/docs/intro/install/)
 - Helm serves as a package manager. With a Helm chart being the equivalent of a packaged application configuration.
 - `onechart/onechart` is a Helm chart that we made at Gimlet. It is a generic Helm chart for web application deployments. It has sensible defaults, so you can use it with the least amount of configuration. As an example, without any parameter it will deploy an nginx image.
 
