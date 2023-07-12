@@ -81,7 +81,7 @@ helm template my-first-app onechart/onechart | kubectl apply -f -
 
 The `helm template` command generates the Kubernetes manifest files as defined in the Helm chart. These generated files are then applied as you pipe them into `kubectl apply -f -`.
 
-Let's check now if the application has been sucessfully deployed:
+Let's check now if the application has been successfully deployed:
 
 ```
 ➜  $ kubectl get deployment
@@ -111,9 +111,9 @@ This will remove the cluster and all associated resources.
 
 #### Port forward 
 
-This what you have seen already. You can port forward the deployments or services to a local port on your laptop.
+This is what you have seen already. You can port forward the deployments or services to a local port on your laptop.
 
-This is the simplest solution that and doesn't require complex networking knowledge.
+This is the simplest solution as it doesn't require complex networking knowledge.
 
 ```
 $ kubectl port-forward deploy/my-first-app 9999:80
@@ -131,7 +131,7 @@ NAME             TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)           
 traefik          LoadBalancer   10.43.183.230   172.24.0.2    80:30767/TCP,443:30356/TCP   21h
 ```
 
-If you are not using Mac that is. Since Docker Desktop on Mac uses a virtual machine, this service is exposed on the virtual machine's network - not very useful.
+If you are not using a Mac, that is. Since Docker Desktop on Mac uses a virtual machine, this service is exposed on the virtual machine's network - not very useful.
 
 The following example shows a deployed ingress resource called `dummy-app` that maps the application to `dummy-app.mylaptop.dev` on port 80.
 
@@ -145,7 +145,7 @@ If you create a host file entry mapping `dummy-app.mylaptop.dev` to `172.24.0.2`
 
 ### Accessing images built on your laptop
 
-Assuming that you have an image called `k3d-dummy-app` and a cluster called `my-first-cluster`, you can import the image to your k3d environmet by running the follwoing command:
+Assuming that you have an image called `k3d-dummy-app` and a cluster called `my-first-cluster`, you can import the image to your k3d environment by running the following command:
 
 ```
 k3d image import k3d-dummy-app -c my-first-cluster
