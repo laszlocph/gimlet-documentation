@@ -61,7 +61,7 @@ NAME                            STATUS  AGE     VERSION
 k3d-my-first-cluster-server-0   Ready   2m15s   v1.25.6+k3s1
 ```
 
-You can install with `curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash` as described on [their homepage](https://k3d.io/v5.5.1/#installation).
+You can install k3d with `curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash` as described on [their homepage](https://k3d.io/v5.5.1/#installation).
 
 ## Deploy an app
 Congratulations! You now have a fully operational cluster running on your laptop.
@@ -144,7 +144,7 @@ NAME        CLASS     HOSTS                    ADDRESS      PORTS   AGE
 dummy-app   traefik   dummy-app.mylaptop.dev   172.24.0.2   80      6m45s
 ```
 
-If you create a host file entry mapping `dummy-app.mylaptop.dev` to `172.24.0.2` you will be able to access the application in your browser on the http://dummy-app.mylaptop.dev
+If you create a host file entry mapping `dummy-app.mylaptop.dev` to `172.24.0.2` you will be able to access the application in your browser on the http://dummy-app.mylaptop.dev url.
 
 ### Accessing images built on your laptop
 
