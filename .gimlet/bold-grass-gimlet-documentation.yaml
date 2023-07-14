@@ -12,6 +12,6 @@ values:
     pullPolicy: Always
     repository: 127.0.0.1:32447/gimlet-documentation
     tag: '{{ .SHA }}'
-  replicas: 3
+  replicas: 5
   resources:
     ignore: true
