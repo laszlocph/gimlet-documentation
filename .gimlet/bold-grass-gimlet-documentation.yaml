@@ -1,0 +1,17 @@
+app: gimlet-documentation
+env: bold-grass
+namespace: default
+chart:
+  repository: https://chart.onechart.dev
+  name: onechart
+  version: 0.47.0
+values:
+  gitRepository: gimlet-io/gimlet-documentation
+  gitSha: '{{ .SHA }}'
+  image:
+    pullPolicy: Always
+    repository: 127.0.0.1:32447/gimlet-documentation
+    tag: '{{ .SHA }}'
+  replicas: 5
+  resources:
+    ignore: true
