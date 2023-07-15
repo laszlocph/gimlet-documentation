@@ -6,6 +6,7 @@ chart:
   name: onechart
   version: 0.47.0
 values:
+  containerPort: 8080
   gitRepository: laszlocph/gimlet-documentation
   gitSha: '{{ .SHA }}'
   image:
