@@ -1,0 +1,20 @@
+app: gimlet-documentation
+env: concise-cloud
+namespace: default
+chart:
+  repository: https://chart.onechart.dev
+  name: onechart
+  version: 0.47.0
+values:
+  gitRepository: laszlocph/gimlet-documentation
+  gitSha: '{{ .SHA }}'
+  image:
+    pullPolicy: Always
+    repository: 127.0.0.1:32447/gimlet-documentation
+    tag: '{{ .SHA }}'
+  ingress:
+    annotations:
+      kubernetes.io/ingress.class: nginx
+    host: myapp.gimlet.trial
+  resources:
+    ignore: true
