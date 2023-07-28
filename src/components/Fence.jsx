@@ -17,7 +17,7 @@ export function Fence({ children, language }) {
                 {line.map((token, index) => (
                   <span key={index} {...getTokenProps({ token })} />
                 ))}
-                {'\n'}
+                {line[0].content !== '\n' && '\n'}
               </Fragment>
             ))}
           </code>
