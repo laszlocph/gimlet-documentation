@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Clickops over gitops
-date: "2023-03-16"
+date: '2023-03-16'
 image: clickops.png
-description: "Doing cloud operations by clicking on a dashboard that generates a stream of infrastructure as code changes."
+description: 'Doing cloud operations by clicking on a dashboard that generates a stream of infrastructure as code changes.'
 ---
 
 ## Definition
@@ -18,7 +18,7 @@ But clickops over gitops: doing cloud operations by clicking on a dashboard that
 
 We did not invent the clickops term. In fact, it has been used to describe the practice when people work with cloud resources through the cloud provider's web console.
 
-We are latching our *clickops over gitops* definition on [Corey Quinn's recent blogpost](https://www.lastweekinaws.com/blog/clickops/). Corey articulates that the problem with AWS's web console is not that it is a GUI, but that it does not work together with infrastructure as code approaches. He continues with a vision:
+We are latching our _clickops over gitops_ definition on [Corey Quinn's recent blogpost](https://www.lastweekinaws.com/blog/clickops/). Corey articulates that the problem with AWS's web console is not that it is a GUI, but that it does not work together with infrastructure as code approaches. He continues with a vision:
 
 > I envision a world in which I can set things up in the AWS console [..] via the magic of clicking things. The provider captures what I set up and renders it into code or configuration somewhere, [..], then automatically generates diffs in the correct repository, or updates its [..] environment as it exists at the current moment.
 
@@ -43,16 +43,16 @@ metadata:
   name: my-ingress
 spec:
   rules:
-  - host: "foo.bar.com"
-    http:
-      paths:
-      - pathType: Prefix
-        path: "/"
-        backend:
-          service:
-            name: my-service
-            port:
-              number: 80
+    - host: 'foo.bar.com'
+      http:
+        paths:
+          - pathType: Prefix
+            path: '/'
+            backend:
+              service:
+                name: my-service
+                port:
+                  number: 80
 ```
 
 - this is how you add a persistent volume to your application
@@ -64,16 +64,16 @@ metadata:
   name: test-ebs
 spec:
   containers:
-  - image: registry.k8s.io/test-webserver
-    name: test-container
-    volumeMounts:
-    - mountPath: /test-ebs
-      name: test-volume
+    - image: registry.k8s.io/test-webserver
+      name: test-container
+      volumeMounts:
+        - mountPath: /test-ebs
+          name: test-volume
   volumes:
-  - name: test-volume
-    awsElasticBlockStore:
-      volumeID: "<volume id>"
-      fsType: ext4
+    - name: test-volume
+      awsElasticBlockStore:
+        volumeID: '<volume id>'
+        fsType: ext4
 ```
 
 - and this is how you create an Amazon RDS resource
@@ -90,7 +90,7 @@ spec:
     masterUsername: masteruser
     allocatedStorage: 20
     engine: postgres
-    engineVersion: "12"
+    engineVersion: '12'
 ```
 
 All are descriptive yaml files. Controllers on Kubernetes are looking for these resources, and if you create a new one, they will create the matching infrastructure.
@@ -115,7 +115,8 @@ But if scope is limited, clickops should adhere to a few musts to not limit the 
 
 ## Clickops over gitops must be robust
 
-It must respect the edits made directly to infrastructure as code: 
+It must respect the edits made directly to infrastructure as code:
+
 - It must not break if someone edits the source code.
 - It must not lose custom edits.
 
@@ -128,7 +129,7 @@ It must respect the edits made directly to infrastructure as code:
 
 Unlike popular belief, dashboards are not made for the inexperienced.
 
-Clickops is made for the otherwise smart people, who understand what is going on, but 
+Clickops is made for the otherwise smart people, who understand what is going on, but
 
 - not confident enough
 - too busy

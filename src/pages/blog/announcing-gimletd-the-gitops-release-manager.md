@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Announcing GimletD, the gitops release manager"
-date: "2021-03-16"
+title: 'Announcing GimletD, the gitops release manager'
+date: '2021-03-16'
 description: |
-    Today, I am thrilled to announce GimletD, the gitops release manager component of Gimlet.
-    See what GimletD brings to the gitops ecosystem.
+  Today, I am thrilled to announce GimletD, the gitops release manager component of Gimlet.
+  See what GimletD brings to the gitops ecosystem.
 
 topic: Product Updates
 image: gimletd-with-gitops.png
@@ -40,13 +40,14 @@ values:
   replicas: 1
   image:
     repository: myapp
-    tag: "{{ .GIT_SHA }}"
+    tag: '{{ .GIT_SHA }}'
   ingress:
     host: myapp.staging.mycompany.com
     tlsEnabled: true
 ```
 
 Then you use Gimlet CLI's `gimlet manifest template` command to render the specified Helm chart:
+
 - either locally to debug your manifest
 - or on CI you pipe it into `gimlet gitops write` to update your gitops repository
 - or on CI you pipe it to `kubectl apply` if you don't fancy gitops too much
@@ -102,5 +103,5 @@ The artifact itself is a json structure that you can create with our CI plugins,
 
 ## Ad-hoc releases, rollbacks and other actions
 
-You can read more about the [concepts of GimletD](/concepts/components) or follow how to 
+You can read more about the [concepts of GimletD](/concepts/components) or follow how to
 perform ad-hoc releases and rollbacks in the [GimletD documentation](/docs/rolling-back).

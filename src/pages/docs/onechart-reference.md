@@ -79,8 +79,8 @@ image:
   repository: aws_account_id.dkr.ecr.region.amazonaws.com/my-web-app
   tag: x.y.z
 
-imagePullSecrets: 
- - name: regcred
+imagePullSecrets:
+  - name: regcred
 ```
 
 Check the Kubernetes manifest:
@@ -91,7 +91,7 @@ image:
   repository: aws_account_id.dkr.ecr.region.amazonaws.com/my-web-app
   tag: x.y.z
 
-imagePullSecrets: 
+imagePullSecrets:
  - name: regcred
 EOF
 
@@ -99,7 +99,7 @@ helm template my-release onechart/onechart -f values.yaml
 ```
 
 {% callout type="warning" title="Image pull credentials must be set up in the cluster" %}
-The `regcred` image pull credentials must be set up in the cluster. 
+The `regcred` image pull credentials must be set up in the cluster.
 See how: [https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/)
 {% /callout %}
 
@@ -113,8 +113,8 @@ image:
   tag: 1.19.3
 
 vars:
-  VAR_1: "value 1"
-  VAR_2: "value 2"
+  VAR_1: 'value 1'
+  VAR_2: 'value 2'
 ```
 
 Check the Kubernetes manifest:
@@ -136,6 +136,7 @@ helm template my-release onechart/onechart -f values.yaml
 ## Secrets
 
 ### Referencing secret by convention
+
 Secrets demand special handling, and often they are stored, managed and configured in a workflow that is adjacent to application deployment.
 
 Therefore, OneChart will not generate a Kubernetes `Secret` object by default, but it can reference one.
@@ -166,6 +167,7 @@ given that you called your release `my-release`.
 ### Referencing secret by name
 
 You may use a secret with a custom name, by using the `secretName` field:
+
 ```yaml
 image:
   repository: nginx
@@ -245,7 +247,7 @@ echo -n mysupersecretstring | kubeseal  \
 Sealing entire files:
 
 ```
-kubeseal \                                                                                                      
+kubeseal \
   --raw --scope cluster-wide \
   --controller-namespace=infrastructure \
   --from-file=/home/laszlo/nats-testing-ca.crt
@@ -322,7 +324,6 @@ ingress:
   host: my-app.mycompany.com
   tlsEnabled: true
 ```
-
 
 ### Listening on multiple domains
 
@@ -409,7 +410,6 @@ You have to know what `storageClass` is supported in your cluster.
 - On Azure, `default` gets you a normal block storage
 - Use `do-block-storage` for Digital Ocean
 
-
 ## Healthcheck
 
 You can set a Kubernetes Readiness probe that determines whether your app is healthy and if it should receive traffic.
@@ -441,7 +441,7 @@ You can further tune the frequency and thresholds of the probe with:
 ```yaml
 probe:
   enabled: false
-  path: "/"
+  path: '/'
   settings:
     initialDelaySeconds: 0
     periodSeconds: 10
@@ -450,13 +450,13 @@ probe:
     failureThreshold: 3
 ```
 
-| Setting        | Description           | 
-| ------------- |:-------------|
-| initialDelaySeconds      | Number of seconds after the container has started before the probes is initiated      |
-| periodSeconds |How often (in seconds) to perform the probe     |
-| successThreshold | Minimum consecutive successes for the probe to be considered successful after having failed      |
-| timeoutSeconds | Number of seconds after which the probe times out     |
-| failureThreshold | When a probe fails, Kubernetes will tries this many times before giving up. Giving up the pod will be marked Unready and won't get any traffic      |
+| Setting             | Description                                                                                                                                    |
+| ------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------- |
+| initialDelaySeconds | Number of seconds after the container has started before the probes is initiated                                                               |
+| periodSeconds       | How often (in seconds) to perform the probe                                                                                                    |
+| successThreshold    | Minimum consecutive successes for the probe to be considered successful after having failed                                                    |
+| timeoutSeconds      | Number of seconds after which the probe times out                                                                                              |
+| failureThreshold    | When a probe fails, Kubernetes will tries this many times before giving up. Giving up the pod will be marked Unready and won't get any traffic |
 
 ## High-Availability
 
@@ -571,7 +571,7 @@ image:
   repository: debian
   tag: stable-slim
 
-schedule: "0 1 0 0 0"
+schedule: '0 1 0 0 0'
 command: |
   echo "hello"
 ```
@@ -597,7 +597,7 @@ helm template my-release onechart/cron-job -f values.yaml
 This section shows how you can add a `PrometheusRule` to your app deployment.
 
 This is a feature only supported by the [kube-stack-prometheus stack (formerly known as the Prometheus Operator)](https://github.com/prometheus-operator/kube-prometheus)
-    
+
 The following Prometheus rule alerts if a pod is crash-looping:
 
 ```bash
@@ -646,8 +646,8 @@ The following example adds a default debug container (a debian image) to your de
 sidecar:
   repository: debian
   tag: stable-slim
-  shell: "/bin/bash"
-  command: "while true; do sleep 30; done;"
+  shell: '/bin/bash'
+  command: 'while true; do sleep 30; done;'
 
 volumes:
   - name: data

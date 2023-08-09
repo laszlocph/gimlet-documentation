@@ -10,6 +10,7 @@ export function Header({ navigation }) {
   let [isScrolled, setIsScrolled] = useState(false)
   let router = useRouter()
   let isDocsPage = router.pathname.startsWith('/docs') || router.pathname.startsWith('/concepts')
+  let isHomePage = router.pathname === '/'
 
   useEffect(() => {
     function onScroll() {
@@ -25,7 +26,7 @@ export function Header({ navigation }) {
   return (
     <header
       className={clsx(
-        'sticky top-0 z-50 flex flex-wrap items-center justify-between bg-white px-4 py-5 shadow-md shadow-slate-900/5 transition duration-500 dark:shadow-none sm:px-6 lg:px-8',
+        'sticky top-0 z-50 flex flex-wrap items-center justify-between bg-white px-4 py-5 shadow-md shadow-slate-900/5 transition duration-500 dark:shadow-none sm:px-6 lg:px-8, block lg:hidden',
         {
           'dark:bg-slate-900/95 dark:backdrop-blur dark:[@supports(backdrop-filter:blur(0))]:bg-slate-900/75':
             isScrolled,
@@ -40,13 +41,13 @@ export function Header({ navigation }) {
         <Link href="/">
           <a className="block lg:w-auto">
             <span className="sr-only">Home page</span>
-            <img src="/logo.svg" alt="Gimlet" className='h-8 sm:h-10 w-auto block dark:hidden' />
+            <img src="/logo2.svg" alt="Gimlet" className='h-8 sm:h-10 w-auto block dark:hidden' />
             <img src="/logo-dark.svg" alt="Gimlet" className='h-8 sm:h-10 w-auto hidden dark:block' />
           </a>
         </Link>
       </div>
      
-      <div className="-my-5 mr-6 sm:mr-8 md:mr-0">
+      {/* <div className="-my-5 mr-6 sm:mr-8 md:mr-0">
         { isDocsPage &&
         <Search />
         }
@@ -58,21 +59,21 @@ export function Header({ navigation }) {
           <li>
             <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/pricing">Pricing</a>
           </li>
-          {/* <li>
+          <li>
             <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/events">Events</a>
-          </li> */}
+          </li>
           <li>
             <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/blog">Blog</a>
           </li>
           <li className="hidden lg:block">
             <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/k8s-yaml-generator">YAML Generator</a>
           </li>
-          {/* <li>
+          <li>
             <a className="hover:text-orange-500 dark:hover:text-orange-400" href="https://github.com/gimlet-io#jobs">Jobs</a>
-          </li> */}
+          </li>
         </ul>
         }
-      </div>
+      </div> */}
       
       <div className="relative flex basis-0 justify-end space-x-6 sm:space-x-8 md:flex-grow">
        

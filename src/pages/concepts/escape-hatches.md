@@ -1,7 +1,7 @@
 ---
 title: Escape hatches
 pageTitle: Gimlet - Escape hatches
-description: "Developer platforms need to be opinionated to be able to provide a robust and good developer experience. But platforms may become limiting for this very reason."
+description: 'Developer platforms need to be opinionated to be able to provide a robust and good developer experience. But platforms may become limiting for this very reason.'
 ---
 
 Developer platforms need to be opinionated to be able to provide a robust and good developer experience.

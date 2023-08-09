@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Don't group environment variables
-date: "2023-04-03"
+date: '2023-04-03'
 image: dont-group.png
-description: "This is a preiodic reminder for application developers to not group environment variables. `APP_ENV=staging` easily becomes a blocker when you do application operation."
+description: 'This is a preiodic reminder for application developers to not group environment variables. `APP_ENV=staging` easily becomes a blocker when you do application operation.'
 ---
 
 At Gimlet.io, we have a consulting background. We join teams who want to adopt containers and Kubernetes, and we create the guardrails for developers who want to efficiently use these technologies.
@@ -36,7 +36,7 @@ It happened to us during a disaster recovery plan rehearsal. It is one of the be
 export const BACKEND_URL = {
   development: 'https://xx.staging.mycompany.com',
   staging: 'https://xx.staging.mycompany.com',
-  production: 'https://xx.mycompany.com'
+  production: 'https://xx.mycompany.com',
 }
 ```
 

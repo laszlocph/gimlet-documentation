@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "GimletD - the GitOps release manager"
-date: "2021-01-25"
+title: 'GimletD - the GitOps release manager'
+date: '2021-01-25'
 description: |
-    This blog post is a design proposal for GimletD, a server-side release manager component for GitOps workflows.
+  This blog post is a design proposal for GimletD, a server-side release manager component for GitOps workflows.
 topic: Helm
 image: gimlet-tool.jpeg
 tags: [posts]
@@ -16,12 +16,12 @@ This document is a design proposal for GimletD, a server-side release manager co
 The GitOps ecosystem lacks tooling to manage the GitOps repository and related workflows.
 
 - How do you store manifests in your GitOps repository?
-- how many GitOps repositories do you have 
+- how many GitOps repositories do you have
 - how do you model clusters, environments, teams and apps?
-  
+
 Organizations have to answer these questions when they implement GitOps.
 
-Gimlet CLI [answers these questions]([https://gimlet.io/concepts/gitops-conventions](https://gimlet.io/concepts/gitops-conventions)) by bringing conventions to the GitOps repository to help companies implementing GitOps.
+Gimlet CLI [answers these questions](<[https://gimlet.io/concepts/gitops-conventions](https://gimlet.io/concepts/gitops-conventions)>) by bringing conventions to the GitOps repository to help companies implementing GitOps.
 But it is important to see the scope of Gimlet CLI today: its goal is to help developers in their local GitOps workflows and in their CI automation.
 
 ![GimletCLI used from CI](/gitops-with-ci.png)
@@ -47,7 +47,7 @@ GimletD assumes all release focused tasks and the management of the GitOps repos
 
 GimletD achieves this by introducing a new concept, the release artifact, that serves as the means to detach release workflows from CI.
 
-With GimletD, CI pipelines instead of releasing, they create an artifact for every releasable version of the application. 
+With GimletD, CI pipelines instead of releasing, they create an artifact for every releasable version of the application.
 GimletD then serves as a release manager to perform ad-hoc or policy based releases.
 
 Gimlet operates only on the releasable artifacts that CI creates. This split allows for the above listed features.
@@ -69,7 +69,7 @@ The release artifact idea is adopted from [Lunar's release manager](https://gith
     "sha": "017d995e32e3d1998395d971b969bcf682d2085",
     "branch": "master",
     "pr": true,
-    "source_branch": "feature/x", 
+    "source_branch": "feature/x",
     "authorName": "First Last",
     "authorEmail": "email@email.com",
     "committerName": "First Last",
@@ -79,13 +79,13 @@ The release artifact idea is adopted from [Lunar's release manager](https://gith
     "url": "https://github.com/owner/repo/commits/0017d995e32e3d1998395d971b969bcf682d2085",
   },
   "context": {
-    [...arbitrary environment variables from CI...]  
+    [...arbitrary environment variables from CI...]
   },
   "environments": [
     {
       "name": "staging",
-      [...the complete set of Gimlet environments from the Gimlet environment files...]  
-    },    
+      [...the complete set of Gimlet environments from the Gimlet environment files...]
+    },
   ],
   "artifacts": [
     {

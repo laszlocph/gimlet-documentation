@@ -55,7 +55,6 @@ gimlet gitops bootstrap \
 
 You can upgrade the gitops automation to the latest bundled version with the `gimlet gitops upgrade` command. It takes the same parameters as `gimlet gitops bootstrap`.
 
-
 ```
 $ gimlet gitops upgrade --single-env --no-deploykey --gitops-repo-url git@github.com:somewhere/overt-the.git
 ✔️ GitOps configuration upgraded at /projects/myproject/flux
@@ -69,6 +68,7 @@ Yay Gitops🙌
 ```
 
 If you don't want to upgrade/generate one of the components use the following flags:
+
 - `--no-controller`
 - `--no-kustomization`
 - `--no-deploykey`
@@ -76,6 +76,7 @@ If you don't want to upgrade/generate one of the components use the following fl
 ### Examples
 
 To upgrade everything, but not regenerating the deploykey:
+
 ```
 gimlet gitops upgrade \
   --single-env \
@@ -84,6 +85,7 @@ gimlet gitops upgrade \
 ```
 
 To upgrade everything, but not regenerating the deploykey. This time with a named env in the gitops repo:
+
 ```
 gimlet gitops upgrade \
   --env staging \
@@ -92,6 +94,7 @@ gimlet gitops upgrade \
 ```
 
 To upgrade only flux, but not regenerating the deploykey, and not generating/updating the gitops repo config
+
 ```
 gimlet gitops upgrade \
   --env staging \

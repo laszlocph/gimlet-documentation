@@ -1,6 +1,6 @@
 ---
 title: Why we built Gimlet
-date: "2020-06-04"
+date: '2020-06-04'
 description: Couple of weeks ago, Laszlo had the chance to talk about his path that lead to building Gimlet. Here is his talk from Software Circus.
 ---
 

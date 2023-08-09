@@ -3,7 +3,7 @@ title: Rolling back
 description: On this page, you will learn how to use it, first with the CLI, then on the UI, and learn what it actually does.
 ---
 
-In software, things go wrong sometimes. It is inevitable, so best if you can roll back routinely. That's why Gimlet provides rollback tooling out of the box. 
+In software, things go wrong sometimes. It is inevitable, so best if you can roll back routinely. That's why Gimlet provides rollback tooling out of the box.
 
 On this page, you will learn how to use it, first with the CLI, then on the UI, and learn what it actually does.
 
@@ -16,7 +16,7 @@ To roll back, first you have to get a good picture of what was released and when
 List the recent releases with Gimlet CLI:
 
 ```
-gimlet release list --env staging --app my-app                  
+gimlet release list --env staging --app my-app
 ```
 
 ```
@@ -48,7 +48,7 @@ gimlet release rollback --env staging --app my-app --to c8d8c1d192
 And verify the release state:
 
 ```
-gimlet release list --env staging --app my-app                  
+gimlet release list --env staging --app my-app
 ```
 
 ```

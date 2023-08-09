@@ -3,110 +3,115 @@ title: Installing Gimlet
 description: How to install Gimlet on k3s / k3d or Rancher / Docker Desktop or Minikube or kind
 ---
 
-On this page you can learn how to install Gimlet on any Kubernetes cluster.
+Welcome to Gimlet!
 
-By the end of this tutorial you will access the dashboard with a kubectl port-forward command, later you can [move the installation to a real domain and HTTPS](/docs/exposing-gimlet-on-a-domain-name).
+On this page you can learn how to install the open-source Gimlet on any Kubernetes cluster.
 
-## Pre-requisites
+If you prefer to use our hosted SaaS platform, [sign up here](https://gimlet.io/signup) then skip ahead to [connect a Kubernetes cluster](#connect-your-cluster).
 
-- A [Github.com](https://github.com) personal or organization account or a [Gitlab.com](https://gitlab.com) or self-hosted Gitlab account.
-- A Kubernetes cluster running on your laptop or on a cloud provider. Gimlet is tested with the following local Kubernetes options:
-    - k3s / k3d
-    - Rancher / Docker Desktop
-    - Minikube
-    - kind
+## Prerequisites
 
-## Start the installer with a oneliner
+- A [Github.com](https://github.com) personal or organization account.
+- A Kubernetes cluster running on your laptop or on a cloud provider. We recommend using k3d on your laptop if you are evaluating Gimlet. It takes only a single command to start one, and it runs in a container.
 
-You install Gimlet with an installer. The installer initiates a gitops environment and puts Gimlet into its gitops repository. This way Gimlet itself is managed by gitops.
+### Launching k3d on your laptop - optional
 
-The following oneliner kickstarts the Gimlet installer.
+K3d is a lightweight Kubernetes cluster that runs in a container on your laptop. At Gimlet, we use k3d solely for our local needs and we recommend you do the same.
 
-```bash
-curl -L -s https://get.gimlet.io | bash -s trial
-```
-
-## Connect with Github or Gitlab
-
-### Create a Github Application
-
-First, the installer creates a Github Application to manage all Gimlet access with it.
-
-![Creating a Github application](https://images.tango.us/public/screenshot_e090274e-ea94-4621-b6f0-b7a770d6815b.png?crop=focalpoint&fit=crop&fp-x=0.4999&fp-y=0.2487&fp-z=3.1368&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=3840%3A1960)
-
-Install the newly created Github Application and select what repositories Gimlet should have access to. We recommend that first you select only a subset of your repositories and extend the list if you want to roll out Gimlet for more apps.
-
-![Step 3 screenshot](https://images.tango.us/public/edited_image_3c1732d7-a923-47d7-bea8-fc69190d5e57.png?crop=focalpoint&fit=crop&fp-x=0.4969&fp-y=0.5822&fp-z=2.2336&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=3840%3A1960)
-
-As a final step, you also need to authorize the newly created application. Keep in mind that you are granting this access to your own Github Application. You are not granting any access to any third-party nor the Gimlet creators.
-
-![Step 4 screenshot](https://images.tango.us/public/screenshot_395e38bc-d9a5-4ef0-8cd9-7a3aeb23d8aa.png?crop=focalpoint&fit=crop&fp-x=0.4947&fp-y=0.5477&fp-z=2.2108&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=3840%3A1960)
-
-### Gitlab
-
-TODO
-
-## Bootstrapping the gitops environment
-
-You have to provide information about the environment you are creating in this step.
-
-You need to name the environment and set the approach to structure gitops resources. By default, Gimlet uses two gitops repositories per environment [by convention](/concepts/gitops-conventions), one for infrastructure components, one for application deployments.
-
-![Step 2 screenshot](https://images.tango.us/public/edited_image_374cd8b6-0385-48db-b8d1-e7ac7c4246da.png?crop=focalpoint&fit=crop&fp-x=0.5000&fp-y=0.5000&fp-z=1.0000&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=2176%3A662)
-
-## Kickstarting the gitops automation
-
-![Step 2 screenshot](https://images.tango.us/public/screenshot_5bb0d866-ba00-46d7-ba0e-130b3d9693d3.png?crop=focalpoint&fit=crop&fp-x=0.4950&fp-y=0.3286&fp-z=1.8696&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=3840%3A1960)
-
-Once the boorstrapping is done, you have two new git repositories to store manifests in.
-
-Follow the instructions to kickstart the automation. This will be the last time you have to manually deploy things on your cluster.
-
-Once you performed all the instructions, close the browser tab, and return to the terminal to finalize the install.
-
-The installer script is going to check the gitops automation and if Gimlet is installed yet.
+Install k3d with:
 
 ```
-🧐 Waiting for all four gitops kustomizations become ready, ctrl+c to abort
-$ kubectl get kustomizations.kustomize.toolkit.fluxcd.io -A
-NAMESPACE     NAME                                                         AGE   READY     STATUS
-flux-system   gitops-repo-laszlocph-gitops-minikube-1-apps                 31s   False     dependency 'flux-system/gitops-repo-laszlocph-gitops-minikube-1-apps-dependencies' is not ready
-flux-system   gitops-repo-laszlocph-gitops-minikube-1-apps-dependencies    31s   True      Applied revision: main/0195aaac0aa83c5e08c06a8b22c5f3d79ffbad06
-flux-system   gitops-repo-laszlocph-gitops-minikube-1-infra                53s   Unknown   reconciliation in progress
-flux-system   gitops-repo-laszlocph-gitops-minikube-1-infra-dependencies   53s   True      Applied revision: main/c7310c84029bef0dca8a3c081e5006fb736ad14b
-
- ✅ Gitops loop is healthy
-
- 🧐 Waiting for Gimlet to start up in the cluster, ctrl+c to abort
-$ kubectl get pods -n infrastructure | grep gimlet
-NAME                                        READY   STATUS    RESTARTS      AGE
-gimlet-agent-848b6f6dd5-t764c               1/1     Running   1 (31s ago)   43s
-gimlet-dashboard-855b799c67-fwvjr           0/1     Running   1 (20s ago)   42s
-gimletd-79dc5d546c-ksdfn                    0/1     Running   1 (15s ago)   42s
-postgresql-0                                1/1     Running   0             34s
-
- ✅ Gimlet is up
-
+curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
 ```
 
-## Accessing Gimlet
+Then launch a cluster:
 
-You were accessing the installer on the [http://gimlet.trial:9000](http://gimlet.trial:9000) address. Now that the installer is stopped, you will reuse this address to access the Gimlet dashboard.
-
-The `/etc/hosts` file entry already exists, you only need to port-forward Gimlet to your local port 9000 to make it accessible on [http://gimlet.trial:9000](http://gimlet.trial:9000).
-
-```yaml
-kubectl port-forward -n infrastructure svc/gimlet 9000:9000
+```
+k3d cluster create gimlet-cluster --k3s-arg "--disable=traefik@server:0"
 ```
 
-![Step 1 screenshot](https://images.tango.us/public/screenshot_1e63095f-b057-4e58-8722-fdfd572c5b7f.png?crop=focalpoint&fit=crop&fp-x=0.5053&fp-y=0.2449&fp-z=2.6872&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=3840%3A1960)
+Once your cluster is up, validate it with `kubectl get nodes`:
 
-## Where to go next
+```
+INFO[0000] Prep: Network
+INFO[0000] Created network 'k3d-gimlet-cluster'
+INFO[0000] Created image volume k3d-gimlet-cluster-images
+INFO[0000] Starting new tools node...
+INFO[0000] Starting Node 'k3d-gimlet-cluster-tools'
+INFO[0001] Creating node 'k3d-gimlet-cluster-server-0'
+INFO[0001] Creating LoadBalancer 'k3d-gimlet-cluster-serverlb'
+INFO[0001] Using the k3d-tools node to gather environment information
+INFO[0001] Starting new tools node...
+INFO[0001] Starting Node 'k3d-gimlet-cluster-tools'
+INFO[0002] Starting cluster 'my-first-cluster'
+INFO[0002] Starting servers...
+INFO[0003] Starting Node 'k3d-gimlet-cluster-server-0'
+INFO[0009] All agents already running.
+INFO[0009] Starting helpers...
+INFO[0009] Starting Node 'k3d-gimlet-cluster-serverlb'
+INFO[0016] Injecting records for hostAliases (incl. host.k3d.internal) and for 3 network members into CoreDNS configmap...
+INFO[0018] Cluster 'my-first-cluster' created successfully!
+INFO[0018] You can now use it like this:
+kubectl cluster-info
 
-Congratulations, now you have a fully functioning Gimlet dashboard available for evaluation.
+$ kubectl get nodes
+NAME                          STATUS   ROLES                  AGE   VERSION
+k3d-gimlet-cluster-server-0   Ready    control-plane,master   11s   v1.26.4+k3s1
+```
 
-If you installed Gimlet on a cloud provider, now you can continue and [move the installation to a real domain and HTTPS](/docs/exposing-gimlet-on-a-domain-name).
+## Install Gimlet with a oneliner
 
-If you installed Gimlet on your laptop, you can still proceed and use a service called Ngrok to expose Gimlet for external parties, like CI platforms.
+```
+kubectl apply -f https://raw.githubusercontent.com/gimlet-io/gimlet/main/deploy/gimlet.yaml
+```
 
-Should you have any trouble installing or have questions [join our community](/docs#getting-help).
+Then access it with port-forward on [http://127.0.0.1:9000](http://127.0.0.1:9000)
+
+```
+kubectl port-forward svc/gimlet 9000:9000
+```
+
+![](/admin-login.png)
+
+### Admin password
+
+You can find the admin password in the logs:
+
+```
+$ kubectl logs deploy/gimlet | grep "Admin auth key"
+time="2023-07-14T14:28:59Z" level=info msg="Admin auth key: 1c04722af2e830c319e590xxxxxxxx" file="[dashboard.go:55]"
+```
+
+### Alternative installation method
+
+We generate the Kubernetes manifests from a Helm chart. You can use this configuration directly with Helm if you prefer.
+
+```
+helm template gimlet onechart/onechart \
+  -f https://raw.githubusercontent.com/gimlet-io/gimlet/main/fixtures/gimlet-helm-values.yaml
+```
+
+For all Gimlet environment variables, see the [Gimlet configuration reference](/docs/gimlet-configuration-reference).
+
+## Basic configuration
+
+### Connect your repositories
+
+To connect your git repositories to Gimlet, follow the on-screen guides.
+
+Important to note:
+
+- When you integrate with Github, you don't give access to any third party or the makers of Gimlet.
+- The integration allows for fine-grained permission grants. You can pick the repositories that you want to integrate with Gimlet.
+
+![](/integrate.png)
+
+### Connect your cluster
+
+Navigate to the "Environments" tab.
+
+Notice that Gimlet created a dummy environment for you. Normally you would call your environments staging or production, but this is a dummy environment, mine is called _Bold Grass_ 🙃.
+
+Follow the steps on screen to connect your cluster.
+
+![](/connect.png)

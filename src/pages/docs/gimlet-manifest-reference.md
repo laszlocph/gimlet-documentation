@@ -3,7 +3,7 @@ title: Gimlet manifest reference
 description: See the full power of the Gimlet manifest on this page
 ---
 
-You can control environment configuration with the Gimlet environment manifest file. 
+You can control environment configuration with the Gimlet environment manifest file.
 
 It pins down the release configuration to a target environment: the Helm chart to use, its version, and the configuration variables for a given environment.
 
@@ -122,6 +122,7 @@ gimlet manifest template \
 In automated workflows, variables that are part of the released artifact are available in templating.
 
 Artifacts are shipped by CI, and each shipper ships
+
 - all CI specific cariables with prefix `GITHUB` and `CIRCLE`
 - all custom variables that you add in the shipper configuration
 - and the default set of variables that are available no matter which shipper you use.
@@ -134,16 +135,16 @@ You can look into an artifact by `gimlet artifact list -o json` and locate the `
 
 The commonly available variables made available by shippers are:
 
-| Variable  | Value  |  
-|---|---|
-|  REPO |  The owner and repository name. |
-|  OWNER | The repository owner's name.  |
-| BRANCH  | The name of the Git branch currently being built.  |
-| TAG  | The name of the git tag, if the current build is tagged.  |
-| SHA  | The commit SHA that triggered the workflow.  |
-| ACTOR  |The name of the person or app that initiated the workflow.   |
-| EVENT  | The name of the event that triggered the workflow.  |
-| JOB  | A unique identifier for the current job.  |
+| Variable | Value                                                      |
+| -------- | ---------------------------------------------------------- |
+| REPO     | The owner and repository name.                             |
+| OWNER    | The repository owner's name.                               |
+| BRANCH   | The name of the Git branch currently being built.          |
+| TAG      | The name of the git tag, if the current build is tagged.   |
+| SHA      | The commit SHA that triggered the workflow.                |
+| ACTOR    | The name of the person or app that initiated the workflow. |
+| EVENT    | The name of the event that triggered the workflow.         |
+| JOB      | A unique identifier for the current job.                   |
 
 ## Policy-based releases
 
@@ -152,6 +153,7 @@ Gimlet supports `branch` and `tag` filters.
 Both support wildcards and negated expressions
 
 ### Tag pattern trigger example
+
 ```yaml
 +deploy:
 +  tag: v*
@@ -161,6 +163,7 @@ Both support wildcards and negated expressions
 Triggers on `v1`, `v2`, `v1.1` or any glob pattern that is supported by the [https://github.com/gobwas/glob](https://github.com/gobwas/glob) project.
 
 ### Branch pattern trigger example
+
 ```yaml
 +deploy:
 +  branch: feature/*
@@ -170,6 +173,7 @@ Triggers on `v1`, `v2`, `v1.1` or any glob pattern that is supported by the [htt
 Triggers on any commit pushed to a branch that is prefixed with `feature/`.
 
 ### Negated branch trigger
+
 ```yaml
 +deploy:
 +  branch: !main
@@ -190,6 +194,7 @@ If both are defined, the policy triggers only if both conditions are satisfied.
 Since Gimlet manifests are Golang templates, functions can be used.
 
 The available functions:
+
 - http://masterminds.github.io/sprig/ functions are available
 - a special `sanitizieDNSName` function, see [source](https://github.com/gimlet-io/gimlet/blob/main/pkg/dx/manifest.go#L151).
 

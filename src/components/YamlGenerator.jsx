@@ -8,6 +8,7 @@ import axios from "axios";
 import CopyButton from './CopyButton';
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import clsx from 'clsx'
+import Link from 'next/link'
 
 export function YamlGenerator() {
   const [values, setValues] = useState({})
@@ -73,8 +74,16 @@ helm template my-release onechart/onechart -f values.yaml`
         <span className="mt-24 -ml-4 font-mono font-bold text-xs dark:text-slate-100">Shareable link!</span>
         </span>
       </div>
+      <div className="text-center pt-12 sm:pt-16">
+      <Link href="/">
+        <a>
+          <span className="sr-only">Home page</span>
+          <img src="/logo.svg" alt="Gimlet" className='h-10 sm:h-16 inline' />
+        </a>
+      </Link>
+      </div>
       <div className="mx-auto p-2 sm:p-4 lg:p-6">
-        <header className="grid sm:grid-cols-3 items-center mt-36 mb-20">
+        <header className="grid sm:grid-cols-3 items-center mt-8 mb-20">
           <h1 className="text-gray-900 dark:text-slate-50 sm:text-4xl font-semibold text-center sm:col-start-2">Kubernetes YAML Generator</h1>
           <div className="col-start-3 justify-self-end mr-10">
             <ThemeSelector className="relative z-10 items-end" />

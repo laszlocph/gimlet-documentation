@@ -1,12 +1,12 @@
 ---
 layout: post
 title: Deploy an application with multiple configurations - a Gimlet product update
-date: "2020-05-18"
+date: '2020-05-18'
 image: gorilla.jpg
 image_author: Mike Arney
 image_url: https://unsplash.com/photos/rJ5vHo8gr2U
 description: |
-    Deploy an application in multiple instances, each with a different configuration. Learn about Gimlet's new feature following a real-life scenario: a generic PyTorch machine learning API that is deployed in multiple instances, each with a different model.
+  Deploy an application in multiple instances, each with a different configuration. Learn about Gimlet's new feature following a real-life scenario: a generic PyTorch machine learning API that is deployed in multiple instances, each with a different model.
 topic: Product Updates
 tags: [posts]
 ---
@@ -14,9 +14,10 @@ tags: [posts]
 Now you can deploy an application in multiple instances, each with a different configuration.
 
 Learn about Gimlet's new feature following a real-life scenario: a generic PyTorch machine learning API that is deployed in multiple instances, each with a different model.
+
 ## TLDR
 
-The solution uses the following *.gimlet.yml*:
+The solution uses the following _.gimlet.yml_:
 
 ```yaml
 envs:

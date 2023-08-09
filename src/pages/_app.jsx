@@ -10,50 +10,27 @@ import * as Fathom from "fathom-client";
 
 const navigation = [
   {
-    title: 'Introduction',
+    title: 'Getting started',
     links: [
-      { title: 'Getting started', href: '/docs' },
+      { title: 'Installation', href: '/docs/installation' },
+      { title: 'Deploying your first app', href: '/docs/deploy-your-first-app' },
+      { title: 'Concepts', href: '/docs/concepts' },
+      { title: 'Using a Dockerfile and CI', href: '/docs/integrate-with-ci' },
+      { title: 'Setting up DNS and HTTPS', href: '/docs/setting-up-dns-and-https' },
     ],
   },
   {
-    title: 'Core concepts',
-    links: [
-      { title: 'Components', href: '/concepts/components' },
-      { title: 'Gitops conventions', href: '/concepts/gitops-conventions' },
-      { title: 'ClickOps', href: '/concepts/clickops' },
-      { title: 'Escape hatches', href: '/concepts/escape-hatches' },
-      { title: 'Integration to CI', href: '/concepts/integration-to-ci' },
-      { title: 'Gimlet compared to...', href: '/concepts/compared-to' },
-    ],
-  },
-  {
-    title: 'Installation',
-    links: [
-      { title: 'Installing Gimlet CLI', href: '/docs/installing-gimlet-cli' },
-      { title: 'Installing Gimlet', href: '/docs/installation' },
-      { title: 'Exposing Gimlet on a domain name', href: '/docs/exposing-gimlet-on-a-domain-name' }
-    ],
-  },
-  {
-    title: 'Tutorials',
-    links: [
-      { title: 'Deploy your first app to Kubernetes', href: '/docs/deploy-your-first-app-to-kubernetes' },
-      { title: 'Deploy your first app to Kubernetes with Gimlet CLI', href: '/docs/deploy-your-first-app-to-kubernetes-with-gimlet-cli' },
-      { title: 'Make Kubernetes an application platform', href: '/docs/make-kubernetes-an-application-platform' },
-      { title: 'Make Kubernetes an application platform with Gimlet CLI', href: '/docs/make-kubernetes-an-application-platform-with-gimlet-cli' },
-    ],
-  },
-  {
-    title: 'Advanced guides',
+    title: 'Guides',
     links: [
       { title: 'Managing deployment configs', href: '/docs/how-to-manage-deployment-configs' },
-      { title: 'Ad-hoc deploys', href: '/docs/ad-hoc-deploys' },
-      { title: 'Policy-based releases', href: '/docs/policy-based-releases' },
       { title: 'Configuring preview environments', href: '/docs/how-to-configure-preview-environments' },
-      { title: 'Managing secrets', href: '/docs/how-to-manage-secrets' },
       { title: 'Rolling back', href: '/docs/rolling-back' },
+      { title: 'Container image building', href: '/docs/container-image-building' },
+      { title: 'Managing secrets', href: '/docs/how-to-manage-secrets' },
       { title: 'When Helm is limiting', href: '/docs/when-helm-is-limiting' },
       { title: 'Managing infrastructure components', href: '/docs/managing-infrastructure-components' },
+      { title: 'Deploying Gimlet in production', href: '/docs/deploying-gimlet-in-production' },
+      { title: 'Upgrading Flux', href: '/docs/gitops-bootstrapping-reference' },
     ],
   },
   {
@@ -61,22 +38,18 @@ const navigation = [
     links: [
       { title: 'Gimlet manifest reference', href: '/docs/gimlet-manifest-reference' },
       { title: 'OneChart reference', href: '/docs/onechart-reference' },
-      { title: 'Gitops bootstrapping reference', href: '/docs/gitops-bootstrapping-reference' },
       { title: 'Gimlet configuration reference', href: '/docs/gimlet-configuration-reference' },
-      { title: 'Gimlet Agent configuration reference', href: '/docs/gimlet-agent-configuration-reference' },
-      { title: 'CI integration', href: '/docs/ci-integration' },
     ],
   },
   {
     title: 'Appendix',
     links: [
+      { title: 'Gimlet compared to...', href: '/concepts/compared-to' },
       { title: 'The SANE gitops guide', href: '/concepts/the-sane-gitops-guide' },
       { title: 'The SANE Helm guide', href: '/concepts/the-sane-helm-guide' },
-      { title: 'Boostrap gitops automation with Gimlet CLI', href: '/docs/bootstrap-gitops-automation-with-gimlet-cli' },
       { title: 'Flux CRDs', href: '/docs/flux-crds' },
-      { title: 'Gimlet Stack concepts', href: '/concepts/gimlet-stack-concepts' },
       { title: 'Stack authoring', href: '/docs/stack-authoring' },
-      { title: 'Helm React UI', href: '/blog/helm-react-ui-a-react-component-to-render-ui-for-helm-charts' },
+      { title: 'YAML Generator', href: '/k8s-yaml-generator' },
     ],
   },
 ]

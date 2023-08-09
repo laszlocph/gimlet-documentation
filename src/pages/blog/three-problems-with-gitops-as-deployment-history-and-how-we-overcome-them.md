@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Three problems with GitOps as deployment history, and how we overcome them
-date: "2022-11-01"
+date: '2022-11-01'
 image: three-problems-with-gitops.png
 description: Our finding is that the gitops history is too sparse and noisy to be used for anything practical without tooling. In this blog post we describe three problems we experienced once we adopted gitops and Flux CD, and what measures we implemented in Gimlet to overcome them.
 ---
@@ -28,6 +28,7 @@ But all we have is a stream of yaml changes, that does not know much about the c
 It captures Kubernetes specific changes well, like a change in required CPU or an environment variable, but it does not know much about code version. The information what developers want to know the most about.
 
 Ideally, as developers, we want to know the
+
 - the reference to the commit or pull request that was merged and deployed
 - the name of the PR or message of the deployed commit
 - who was the creator of the commit
@@ -52,7 +53,6 @@ This file is ignored by Flux CD, so it does not interfere with the Kubernetes de
 The key here is quickly. This is a denormalized form of metadata that otherwise could only be obtained through the references in the deployed manifest.
 
 The `release.json` file is the serialized form of the Golang `Release` struct of the `github.com/gimlet-io/gimlet-cli/pkg/dx` package.
-
 
 ```go
 type Release struct {
@@ -125,6 +125,7 @@ With this issue, we arrived at problem three: speed.
 Git was made for a specific usecase and depending the language library you use, speed can be an issue. The `git` binary that you use on the terminal is very well optimized code, and chances are that the library available for your language will be much slower. So the tooling you build is going to be much slower in constructing specific git histories.
 
 Answering questions like:
+
 - What was the last ten versions deployed from this service?
 - What changes were made on production last Monday?
 - What was the last ten deploys by Alice?

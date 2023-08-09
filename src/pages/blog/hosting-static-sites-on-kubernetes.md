@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Hosting static sites on kubernetes
-date: "2023-04-08"
+date: '2023-04-08'
 image_social: agyuvalverebre.jpg
-description: "There is a meme here somewhere. But as kubernetes is becoming *the* deployment platform, there are legitimate cases to deploy your static site on it. We will show you how to."
+description: 'There is a meme here somewhere. But as kubernetes is becoming *the* deployment platform, there are legitimate cases to deploy your static site on it. We will show you how to.'
 ---
 
 {% tweet link="https://twitter.com/memenetes/status/1587127455495618563" %}
@@ -11,7 +11,7 @@ description: "There is a meme here somewhere. But as kubernetes is becoming *the
 
 There is a meme here somewhere.
 
-But as kubernetes is becoming *the* deployment platform, there are legitimate cases to deploy your static site on it. We show you a simplified way to do it.
+But as kubernetes is becoming _the_ deployment platform, there are legitimate cases to deploy your static site on it. We show you a simplified way to do it.
 
 But first, let's review your options outside of kubernetes.
 
@@ -24,6 +24,7 @@ It is a fact that there are simpler deployment options for static websites and s
 Netlify is a vertically integrated solution. You provide your source code from git via OAuth, then customize the build command. Netlify in turn deploys your application with CDN and SSL. It sets a new standard in static site deployment.
 
 #### Pros
+
 - Easy to get started
 - Only need to provide your source code from git and your build command
 - No need for CI scripts
@@ -31,16 +32,20 @@ Netlify is a vertically integrated solution. You provide your source code from g
 - Preview deployments
 
 #### Cons
+
 - Since it is easy to get started with, Netlify often becomes part of shadow IT, operating outside of your compliance processes.
 
 ### Github Pages
+
 Github Pages has a well integrated workflow to source code management with simplified configuration paths. You build assets with CI, then place them according to the conventions. CDN and SSL are automatically configured.
 
 #### Pros
+
 - Integrated into source code management.
 - Simplified configuration paths.
 
 #### Cons
+
 - Requires a CI script
 - Somewhat limited options
 
@@ -49,10 +54,12 @@ Github Pages has a well integrated workflow to source code management with simpl
 Another popular solution to deploy static sites is to use cloud buckets. You upload the built assets to a bucket, enable website hosting setting, then further configure the bucket to enable SSL encryption.
 
 #### Pros
+
 - Highly scalable
 - Same provider as with other cloud resources
 
 #### Cons
+
 - Considered as a go to option, but it does require scripting and configuration work
 - Access configuration is somewhat cryptic
 - SSL options often not as streamlined as with Let's Encrypt
@@ -69,6 +76,7 @@ When you have a kubernetes based platform with standardized deployment tooling, 
 If your kubernetes based platform also caters to your custom networking needs, deploying your static site there could become your best option. Your compliance setup surely prefers using something that you already have, over onboarding another tool to your compliance framework.
 
 In a recent case, we helped a client deploying a documentation site, who
+
 - has a kubernetes based developer platform,
 - with ingress and automatic DNS and SSL setup,
 - with an OAuth proxy that verifies Google email / Github org membership.
@@ -108,6 +116,7 @@ To ease this process we made a Helm chart so you can provide as little informati
 - and build commands.
 
 Using the `onechart/static-site` Helm chart:
+
 - you don't have to containerize your static site, the manifests include an Nginx container that hosts your site
 - you don't have to write deployment manifests,
 - you don't have to write a CI script to build your site, you only need to add the generated manifest to your deployment process.
@@ -156,6 +165,7 @@ Or if you just want to test drive the solution, just run `helm template my-stati
 If you are more into kubernetes manifests, you can use `onechart/onechart` to host static sites. By doing so, you get access to the init-container, volumes, and every aspect of the deployment.
 
 The example below uses Hugo.
+
 - Uses an init container to setup Hugo, clone the source from git and build the site
 - The built site is then copied to a shared volume
 - Nginx serves the built site from the volume
@@ -174,7 +184,7 @@ volumes:
     # Pre-reqs
     apt update && apt install -y wget git
 
-    # Setting up Hugo 
+    # Setting up Hugo
     wget https://github.com/gohugoio/hugo/releases/download/v0.111.3/hugo_0.111.3_Linux-64bit.tar.gz &&
     tar -xzf hugo_0.111.3_Linux-64bit.tar.gz &&
     chmod +x hugo &&

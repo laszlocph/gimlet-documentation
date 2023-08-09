@@ -29,18 +29,22 @@ export function DocsPage({ children, tableOfContents, className, tabs, code, lan
   return (
     <div className="relative mx-auto flex max-w-8xl justify-center sm:px-2 lg:px-8 xl:px-12">
         <div className="hidden lg:relative lg:block lg:flex-none">
-          <div className="absolute inset-y-0 right-0 w-[50vw] bg-slate-50 dark:hidden" />
-          <div className="sticky top-[4.5rem] -ml-0.5 py-16 pl-0.5">
-            <div className="absolute top-16 bottom-0 right-0 hidden h-12 w-px bg-gradient-to-t from-slate-800 dark:block" />
-            <div className="absolute top-28 bottom-0 right-0 hidden w-px bg-slate-800 dark:block" />
+          <div className="-ml-0.5 py-16 pl-0.5">
+            <Link href="/">
+              <a className="block lg:w-auto">
+                <span className="sr-only">Home page</span>
+                <img src="/logo2.svg" alt="Gimlet" className='h-8 sm:h-10 w-auto block dark:hidden' />
+                <img src="/logo-dark.svg" alt="Gimlet" className='h-8 sm:h-10 w-auto hidden dark:block' />
+              </a>
+            </Link>
             <Navigation
               navigation={navigation}
               isDocsPage={true}
-              className="w-64 pr-8 xl:w-72 xl:pr-16"
+              className="w-64 pr-8 xl:w-72 2xl:pr-16"
             />
           </div>
         </div>
-        <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">
+        <div className="min-w-0 max-w-2fxl flex-auto px-4 py-16 lg:max-w-none 2xl:px-16">
           <article>
             {(title || section) && (
               <header className="mb-9 space-y-1">
@@ -50,7 +54,7 @@ export function DocsPage({ children, tableOfContents, className, tabs, code, lan
                   </p>
                 )}
                 {title && (
-                  <h1 className="font-display text-3xl tracking-tight text-slate-900 dark:text-white">
+                  <h1 className="font-display text-3xl tracking-tight text-zinc-900 dark:text-zinc-100">
                     {title}
                   </h1>
                 )}
@@ -58,15 +62,15 @@ export function DocsPage({ children, tableOfContents, className, tabs, code, lan
             )}
             <Prose>{children}</Prose>
           </article>
-          <dl className="mt-12 flex border-t border-slate-200 pt-6 dark:border-slate-800">
+          <dl className="mt-12 flex border-t border-zinc-200 pt-6 dark:border-zinc-800">
             {previousPage && (
               <div>
-                <dt className="font-display text-sm font-medium text-slate-900 dark:text-white">
+                <dt className="font-display text-sm font-medium text-zinc-900 dark:text-white">
                   Previous
                 </dt>
                 <dd className="mt-1">
                   <Link href={previousPage.href}>
-                    <a className="text-base font-semibold text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300">
+                    <a className="text-base font-semibold text-zinc-500 hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300">
                       &larr; {previousPage.title}
                     </a>
                   </Link>
@@ -75,12 +79,12 @@ export function DocsPage({ children, tableOfContents, className, tabs, code, lan
             )}
             {nextPage && (
               <div className="ml-auto text-right">
-                <dt className="font-display text-sm font-medium text-slate-900 dark:text-white">
+                <dt className="font-display text-sm font-medium text-zinc-900 dark:text-white">
                   Next
                 </dt>
                 <dd className="mt-1">
                   <Link href={nextPage.href}>
-                    <a className="text-base font-semibold text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300">
+                    <a className="text-base font-semibold text-zinc-500 hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300">
                       {nextPage.title} &rarr;
                     </a>
                   </Link>
@@ -95,7 +99,7 @@ export function DocsPage({ children, tableOfContents, className, tabs, code, lan
               <>
                 <h2
                   id="on-this-page-title"
-                  className="font-display text-sm font-medium text-slate-900 dark:text-white"
+                  className="font-display text-sm font-medium text-zinc-900 dark:text-white"
                 >
                   On this page
                 </h2>
@@ -108,7 +112,7 @@ export function DocsPage({ children, tableOfContents, className, tabs, code, lan
                             className={clsx(
                               isActive(section)
                                 ? 'text-sky-500'
-                                : 'font-normal text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300'
+                                : 'font-normal text-zinc-500 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-300'
                             )}
                           >
                             {section.title}
@@ -116,7 +120,7 @@ export function DocsPage({ children, tableOfContents, className, tabs, code, lan
                         </Link>
                       </h3>
                       {section.children.length > 0 && (
-                        <ul className="mt-2 space-y-3 pl-5 text-slate-500 dark:text-slate-400">
+                        <ul className="mt-2 space-y-3 pl-5 text-zinc-500 dark:text-zinc-400">
                           {section.children.map((subSection) => (
                             <li key={subSection.id}>
                               <Link href={`#${subSection.id}`}>
@@ -124,7 +128,7 @@ export function DocsPage({ children, tableOfContents, className, tabs, code, lan
                                   className={
                                     isActive(subSection)
                                       ? 'text-sky-500'
-                                      : 'hover:text-slate-600 dark:hover:text-slate-300'
+                                      : 'hover:text-zinc-600 dark:hover:text-zinc-300'
                                   }
                                 >
                                   {subSection.title}

@@ -1,6 +1,6 @@
 ---
 title: First ever Gimlet online meetup
-description: "On this occasion, we try a new format: an online meetup. You can watch silently, or ask questions, it is up to you!"
+description: 'On this occasion, we try a new format: an online meetup. You can watch silently, or ask questions, it is up to you!'
 image: https://gimlet.io/meetup2.png
 ---
 
@@ -12,10 +12,10 @@ Time: 12:00 PM Central European Time
 Hosts: Laszlo Fogas and TBD
 ```
 
-
 On this occasion, we try a new format: an online meetup. You can watch silently, or ask questions, it is up to you!
 
 You will learn about
+
 - new Gimlet features,
 - Laszlo will test drive the new installer,
 - and dive into our public roadmap.

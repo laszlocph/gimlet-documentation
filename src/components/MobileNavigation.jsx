@@ -36,7 +36,7 @@ export function MobileNavigation({ navigation }) {
         <span className="sr-only">Open navigation</span>
         <svg
           aria-hidden="true"
-          className="h-6 w-6 stroke-slate-500"
+          className="h-6 w-6 stroke-zinc-500"
           fill="none"
           strokeWidth="2"
           strokeLinecap="round"
@@ -47,16 +47,16 @@ export function MobileNavigation({ navigation }) {
       <Dialog
         open={isOpen}
         onClose={setIsOpen}
-        className="fixed inset-0 z-50 flex items-start overflow-y-auto bg-slate-900/50 pr-10 backdrop-blur lg:hidden"
+        className="fixed inset-0 z-50 flex items-start overflow-y-auto bg-zinc-900/50 pr-10 backdrop-blur lg:hidden"
       >
-        <Dialog.Panel className="min-h-full w-full max-w-xs bg-white px-4 pt-5 pb-12 dark:bg-slate-900 sm:px-6">
+        <Dialog.Panel className="min-h-full w-full max-w-xs bg-white px-4 pt-5 pb-12 dark:bg-zinc-900 sm:px-6">
           <Dialog.Title className="sr-only">Navigation</Dialog.Title>
           <div className="flex items-center">
             <button type="button" onClick={() => setIsOpen(false)}>
               <span className="sr-only">Close navigation</span>
               <svg
                 aria-hidden="true"
-                className="h-6 w-6 stroke-slate-500"
+                className="h-6 w-6 stroke-zinc-500"
                 fill="none"
                 strokeWidth="2"
                 strokeLinecap="round"

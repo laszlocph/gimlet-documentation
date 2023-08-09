@@ -105,7 +105,7 @@ echo -n mysupersecretstring | kubeseal  \
 #### Sealing entire files:
 
 ```
-kubeseal \                                                                                                      
+kubeseal \
   --raw --scope cluster-wide \
   --controller-namespace=infrastructure \
   --from-file=/home/laszlo/nats-testing-ca.crt

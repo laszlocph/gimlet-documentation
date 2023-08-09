@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "6 paths to adopt Gimlet and be better off with Kubernetes"
-date: "2021-03-17"
+title: '6 paths to adopt Gimlet and be better off with Kubernetes'
+date: '2021-03-17'
 description: |
-    Gimlet was made to be modular. It meets you where you are and helps you to be better off with Kubernetes. 
-    This post collects six avenues to adopt Gimlet.  
+  Gimlet was made to be modular. It meets you where you are and helps you to be better off with Kubernetes. 
+  This post collects six avenues to adopt Gimlet.
 topic: Best Practices
 image: gimlet-k8s.png
 image_author: Paweł Czerwiński
@@ -40,7 +40,7 @@ Authoring a Kubernetes application manifest is reduced to setting the parts that
 
 ### Gimlet CLI
 
-[Gimlet CLI](https://gimlet.io/docs/deploy-your-first-app-to-kubernetes-with-gimlet-cli) is the glue between all Gimlet components, but it also warrants for existence on its own. 
+[Gimlet CLI](https://gimlet.io/docs/deploy-your-first-app-to-kubernetes-with-gimlet-cli) is the glue between all Gimlet components, but it also warrants for existence on its own.
 There are workflows that can be only carried out with Gimlet CLI.
 
 You typically use Gimlet CLI on your laptop, or in CI, but also it is the tool to drive many of GimletD's workflows.
@@ -57,7 +57,7 @@ It allows for policy based deploys and advanced authorization settings. It also 
 
 This case is simple. OneChart is a Helm chart like any other, and you can insert it in your existing Helm workflow.
 
-While I wouldn't call this a true adoption of Gimlet, OneChart can stand on its own. 
+While I wouldn't call this a true adoption of Gimlet, OneChart can stand on its own.
 It simplifies YAML authoring at your company. Go and use it, and thanks for doing so!
 
 ## Path #2 - Using Gimlet CLI in your Helm workflows
@@ -68,7 +68,7 @@ On this path you would use the generic Helm UI feature of Gimlet CLI to configur
 
 It would mean that Gimlet's Helm UI feature would really take off, something I want to happen regardless of the success of Gimlet as a whole.
 
-[Helm React UI](https://gimlet.io/blog/helm-react-ui-a-react-component-to-render-ui-for-helm-charts/) was a true R&D at Gimlet 
+[Helm React UI](https://gimlet.io/blog/helm-react-ui-a-react-component-to-render-ui-for-helm-charts/) was a true R&D at Gimlet
 and I'm hoping that one that you can use it for all the common charts out there.
 
 It is certainly my priority to get through to Helm devs and make Helm UI an industry wide standard.
@@ -76,7 +76,6 @@ It is certainly my priority to get through to Helm devs and make Helm UI an indu
 See the UI feature of Gimlet CLI in action:
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/d8hq5e_wq54?start=1682" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 
 ## Path #3 - Using all that Gimlet can give to speed up YAML authoring
 
@@ -96,13 +95,13 @@ We recently discussed OneChart on CNCF's Application Delivery SIG how to use it 
 
 This path means adopting one of the defining feature of Gimlet, the environment file.
 
-Its power lies in its declarativeness. It captures all there is to be captured about an environment, versions, variables, etc. 
+Its power lies in its declarativeness. It captures all there is to be captured about an environment, versions, variables, etc.
 And the best thing is: it lives in the application source code repository, thus giving the control to devs for things that they can and should control.
 
-The manifest combined with OneChart's best practices approach gives the core developer experience of Gimlet, 
+The manifest combined with OneChart's best practices approach gives the core developer experience of Gimlet,
 and you can benefit from it even without adopting gitops, or the gimletd release manager.
 
-You can stick to your existing CI pipelines and use `gimlet manifest template` to render the Kubernetes manifests at deploy time, 
+You can stick to your existing CI pipelines and use `gimlet manifest template` to render the Kubernetes manifests at deploy time,
 then pipe into `kubectl apply`. This way you can enjoy a standardized templating mechanism, and a more declarative approach than using Helm alone.
 
 ## Path #5 - Gitops, driven by CI
@@ -131,7 +130,7 @@ In path six, you take full advantage of Gimlet.
 
 In this setup GimletD acts as a centralized release manager that adds policy based deploys and advanced authorization and security controls.
 
-It both allows strict control over releases, and flexibility to rewire the release workflows for all your applications at once. 
+It both allows strict control over releases, and flexibility to rewire the release workflows for all your applications at once.
 And by capturing all release logic, it factors out a large amount of scripting work from CI pipelines into a
 standardized toolchain.
 

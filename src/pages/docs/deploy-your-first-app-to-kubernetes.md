@@ -13,6 +13,7 @@ You can also [perform this tutorial using the Gimlet CLI](/docs/deploy-your-firs
 ---
 
 ## Prerequisites
+
 - A running Gimlet installation. If you are the cluster administrator, [install Gimlet](/docs/installation) here.
 - An application hosted on Github.
 - A Github Action workflow, or CircleCI pipeline, that builds a container image from your source code.
@@ -35,7 +36,6 @@ There are three configured deployment environments in this tutorial: staging, pr
 The list of environments may differ for you, depending what deployment environments your team has. Pick one that is used for testing and click on _Deploy this repository to Staging_. This will navigate you to the deployment configuration screen.
 ![Step 3 screenshot](https://images.tango.us/public/screenshot_b9b5f387-d557-4ce7-87ea-5b5ccea51f07.png?crop=focalpoint&fit=crop&fp-x=0.4961&fp-y=0.4423&fp-z=1.2439&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=3840%3A1960)
 
-
 ### Set the namespace
 
 Namespaces are arbitrary groupings of deployed resources on Kubernetes. They are really name spaces, you can have identically called resources in different namespaces, they will not collide.
@@ -45,8 +45,8 @@ Because namespaces are an arbitrary grouping, your team probably has a preferred
 At Gimlet, as a rule of thumb, we use the environment name as namespace. For this tutorial, follow this practice and set the namespace as staging.
 ![Step 4 screenshot](https://images.tango.us/public/edited_image_fddbc18e-960e-4038-a6ce-40455168747e.png?crop=focalpoint&fit=crop&fp-x=0.5000&fp-y=0.5000&fp-z=1.0000&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=2539%3A793)
 
-
 ### Set the image you want to deploy
+
 As a prerequisite, your CI process already builds a Docker image from your application source code. And it follows a tagging strategy too.
 
 The demo-app uses the Github container registry (ghcr.io) to host the docker image, and uses the repository name as image name. Images are tagged by the hash of the commit that kicked off the CI build
@@ -59,8 +59,8 @@ Set the image repository and tag on the configration screen. This tutorial sets 
 You can still continue this tutorial, use the CNCF's testing image, `ghcr.io/podtato-head/podtatoserver` with the `v0.1.1` tag. It runs a webserver on port `9000`.
 {% /callout %}
 
-
 ### Watch out for the container port
+
 Time to set the port your application is serving traffic on. It is a common mistake that developers not setting the right port in the deployment configuraton and when they try to open the deployed app in the browser, they get a HTTP 503.
 
 The demo-app serves traffic on port 9000. Set your own port.
@@ -82,7 +82,7 @@ Gimlet environments are served with wildcard DNS entries, so `$app.$env.yourcomp
 
 When you hit save, a file will be placed in your application source code. It will hold the configuration that we just set on the UI and will be named `.gimlet/staging-demo-app.yaml` as it follows the `.gimlet/$env-$app.yaml` naming convention.
 
-Hit *Save* now. The changes you make on the dashboard are always backed by a git commit. This is ClickOps 🙌
+Hit _Save_ now. The changes you make on the dashboard are always backed by a git commit. This is ClickOps 🙌
 
 ![Step 12 screenshot](https://images.tango.us/public/edited_image_77a77279-4eb5-4d56-be72-892612f769e6.png?crop=focalpoint&fit=crop&fp-x=0.5000&fp-y=0.5000&fp-z=1.0000&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=3840%3A1878)
 
@@ -115,36 +115,36 @@ jobs:
     name: 👷 Build
     runs-on: ubuntu-latest
     steps:
-    - name: ⬇️ Check out
-      uses: actions/checkout@v1
-      with:
-        fetch-depth: 1
-    - name: 🐋 Set up Docker Buildx
-      uses: docker/setup-buildx-action@v1
-    - name: Login to GitHub Container Registry
-      uses: docker/login-action@v1
-      with:
-        registry: ghcr.io
-        username: ${{ github.repository_owner }}
-        password: ${{ secrets.PAT }}
-    - name: 🐋 Build and push docker image
-      uses: docker/build-push-action@v2
-      with:
-        context: .
-        file: Dockerfile
-        platforms: linux/amd64
-        push: true
-        tags: |
-          ghcr.io/gimlet-io/demo-app:${{ github.sha }}
-    - name: 🚀 Deploy / Staging
-      uses: gimlet-io/gimlet-artifact-shipper-action@v0.8.0
-      with:
-        DEPLOY: "true"
-        ENV: "staging"
-        APP: "demo-app"
-      env:
-        GIMLET_SERVER: ${{ secrets.GIMLET_SERVER }}
-        GIMLET_TOKEN: ${{ secrets.GIMLET_TOKEN }}
+      - name: ⬇️ Check out
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+      - name: 🐋 Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.PAT }}
+      - name: 🐋 Build and push docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: Dockerfile
+          platforms: linux/amd64
+          push: true
+          tags: |
+            ghcr.io/gimlet-io/demo-app:${{ github.sha }}
+      - name: 🚀 Deploy / Staging
+        uses: gimlet-io/gimlet-artifact-shipper-action@v0.8.0
+        with:
+          DEPLOY: 'true'
+          ENV: 'staging'
+          APP: 'demo-app'
+        env:
+          GIMLET_SERVER: ${{ secrets.GIMLET_SERVER }}
+          GIMLET_TOKEN: ${{ secrets.GIMLET_TOKEN }}
 ```
 
 ### Integrate CircleCI
@@ -171,9 +171,9 @@ workflows:
           name: 🚀 Deploy / Staging
           context:
             - Gimlet
-          deploy: "true"
-          env: "staging"
-          app: "demo-app"
+          deploy: 'true'
+          env: 'staging'
+          app: 'demo-app'
           requires:
             - build_docker
 ```
@@ -185,7 +185,7 @@ For the CI deploy steps to work, you need to provide access to the Gimlet API. Y
 - Set `GIMLET_SERVER` to https://gimletd.<<yourcompany.com>>
 - Set `GIMLET_TOKEN` to a Gimlet API key
 
-To create a Gimlet API key navigate to *Profile* > *Create a new user* in Gimlet and add a user for this integration.
+To create a Gimlet API key navigate to _Profile_ > _Create a new user_ in Gimlet and add a user for this integration.
 
 ![Step 2 screenshot](https://images.tango.us/public/screenshot_f01e4201-f15b-4562-8201-4230c685169f.png?crop=focalpoint&fit=crop&fp-x=0.4961&fp-y=0.8102&fp-z=1.2375&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=3840%3A1960)
 
@@ -198,13 +198,13 @@ CI will call the Gimlet API, and Gimlet will make a gitops based deployment of y
 ```
 Deploying..
 Deployment ID is: ff11eb64-2f94-49c3-ac07-e9274735096c
-👉 Request (ff11eb64-2f94-49c3-ac07-e9274735096c) is new 
+👉 Request (ff11eb64-2f94-49c3-ac07-e9274735096c) is new
 	⏳ The release is not processed yet...
-👉 Request (ff11eb64-2f94-49c3-ac07-e9274735096c) is processed 
+👉 Request (ff11eb64-2f94-49c3-ac07-e9274735096c) is processed
 	📖 demo-app -> staging, gitops hash 176da9babbd7647fc68f3c5268a86a1d5fc6669a, status is NotReconciled
-👉 Request (ff11eb64-2f94-49c3-ac07-e9274735096c) is processed 
+👉 Request (ff11eb64-2f94-49c3-ac07-e9274735096c) is processed
 	📖 demo-app -> staging, gitops hash 176da9babbd7647fc68f3c5268a86a1d5fc6669a, status is DependencyNotReady
-👉 Request (ff11eb64-2f94-49c3-ac07-e9274735096c) is processed 
+👉 Request (ff11eb64-2f94-49c3-ac07-e9274735096c) is processed
 	📖 demo-app -> staging, gitops hash 176da9babbd7647fc68f3c5268a86a1d5fc6669a, status is ReconciliationSucceeded
 ```
 
@@ -215,5 +215,3 @@ You should see the deployed resources in Kubernetes, and you can also cross-refe
 {% callout title="Can't see the deployed application?" %}
 You can [debug](/docs/bootstrap-gitops-automation-with-gimlet-cli#verify-the-gitops-automation) the gitops automation to see what went wrong.
 {% /callout %}
-
-

@@ -1,6 +1,6 @@
 ---
 title: Integrating Gimlet into CI/CD workflows
-description: "On this second Gimlet online meetup you will learn how you can fit Gimlet into your CI/CD workflow. You can watch silently, or ask questions, it is up to you!"
+description: 'On this second Gimlet online meetup you will learn how you can fit Gimlet into your CI/CD workflow. You can watch silently, or ask questions, it is up to you!'
 image: https://gimlet.io/meetup2.png
 ---
 
@@ -15,6 +15,7 @@ Hosts: Laszlo Fogas and TBD
 On this second Gimlet online meetup you will learn how you can fit Gimlet into your CI/CD workflow. You can watch silently, or ask questions, it is up to you!
 
 You will learn about:
+
 - How GitOps broke the CI/CD feedback loop
 - How can you get back to the "green build means successful deploy" heuristic
 - How Gimlet works with GitHub Actions

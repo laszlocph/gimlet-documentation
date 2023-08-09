@@ -1,7 +1,6 @@
 ---
 title: Policy based releases
 description: You will learn how to create release policies that are triggered on certain conditions to automatically release to a target environment.
-
 ---
 
 Once you [added the Gimlet deploy step in your CI workflow](/docs/deploy-your-first-app-to-kubernetes#integrate-ci-with-gimlet), every commit becomes deployable in Gimlet - given that CI has built the commit and the workflow reached the Gimlet step.
@@ -79,6 +78,7 @@ values:
     host: myapp.staging.mycompany.com
     tlsEnabled: true
 ```
+
 {% callout title="Full set of supported policies" %}
 For a full set of supported policies, head over to the [Gimlet manifest reference](/docs/gimlet-manifest-reference#policy-based-releases) page.
 {% /callout %}

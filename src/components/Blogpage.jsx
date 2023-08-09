@@ -39,6 +39,15 @@ export function BlogPage({ children, className, tabs, code, language, title, sec
   }
 
   return (
+    <>
+    <div className="text-center pt-12 sm:pt-16">
+      <Link href="/">
+        <a>
+          <span className="sr-only">Home page</span>
+          <img src="/logo.svg" alt="Gimlet" className='h-10 sm:h-16 inline' />
+        </a>
+      </Link>
+    </div>
     <div className="relative mx-auto flex max-w-6xl justify-center sm:px-2 lg:px-8 xl:px-12">
         <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">
           <article>
@@ -180,5 +189,6 @@ export function BlogPage({ children, className, tabs, code, language, title, sec
           </nav>
         </div>
       </div>
+      </>
   )
 }

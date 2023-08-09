@@ -2,6 +2,12 @@
 title: Blog
 ---
 
+{% post name="Our free tier" image="our-free-tier.png" link="/blog/our-free-tier" date="2023-08-03" %}
+We don't want to make you think.
+
+There is always a catch with SaaS pricing, but we want to avoid it as much as possible.
+{% /post %}
+
 {% post name="Running Kubernetes on your laptop with K3d" image="rocket.png" link="/blog/running-kubernetes-on-your-laptop-with-k3d" date="2023-07-12" %}
 Kubernetes has emerged as the go-to platform. But setting up a cluster on a laptop feels like a complex task for many developers.
 
@@ -21,7 +27,7 @@ In this article, we'll explore different approaches to structuring your gitops r
 {% /post %}
 
 {% post name="Hosting static sites on kubernetes" image="agyuvalverebre.jpg" link="/blog/hosting-static-sites-on-kubernetes" date="2023-04-08" %}
-There is a meme here somewhere. But as kubernetes is becoming *the* deployment platform, there are legitimate cases to deploy your static site on it. We show you how to.
+There is a meme here somewhere. But as kubernetes is becoming _the_ deployment platform, there are legitimate cases to deploy your static site on it. We show you how to.
 {% /post %}
 
 {% post name="Git: the ironclad system" image="git-ironclad.png" link="/blog/git-the-ironclad-system" date="2023-04-06" %}
@@ -42,6 +48,7 @@ Hetzner is five times cheaper for us than the hyperscalers. This blog posts enum
 
 {% post name="Options for Kubernetes pod autoscaling" image="autoscaling.png" link="/blog/options-for-kubernetes-pod-autoscaling" date="2023-01-23" %}
 The Gimlet.io team put together this blog to show common usecases of autoscaling:
+
 - based on CPU
 - custom Prometheus metrics
 - and RabbitMQ queue length.
@@ -78,8 +85,8 @@ See how you can mirror complete environments with gitops and rewrite host names 
 {% /post %}
 
 {% post name="6 paths to adopt Gimlet and be better off with Kubernetes" image="gimlet-k8s.png" link="/blog/6-paths-to-adopt-gimlet-and-be-better-off-with-kubernetes" date="2021-03-17" %}
- Gimlet was made to be modular. It meets you where you are and helps you to be better off with Kubernetes. 
-    This post collects six avenues to adopt Gimlet.  
+Gimlet was made to be modular. It meets you where you are and helps you to be better off with Kubernetes.
+This post collects six avenues to adopt Gimlet.  
 {% /post %}
 
 {% post name="Announcing GimletD, the gitops release manager" image="gimletd-with-gitops.png" link="/blog/announcing-gimletd-the-gitops-release-manager" date="2021-03-16" %}
@@ -93,6 +100,7 @@ This document is a design proposal for GimletD, a server-side release manager co
 {% /post %}
 
 {% post name="The last-mile problem with Kubernetes" image="randy-laybourne-06P0tprVDvY-unsplash.jpg" link="/blog/the-last-mile-problem-with-kubernetes" date="2020-06-23" %}
+
 > Transporting goods via freight rail networks and container ships is often the most efficient and cost-effective manner of shipping.
 >
 > However, when goods arrive at a high-capacity freight station or port, they must then be transported to their final destination. This last leg of the supply chain is often less efficient, comprising up to 41% of the total cost to move goods.
@@ -106,9 +114,8 @@ This week's update is about resource management.
 Learn about the new CPU/Memory widgets and how you can configure them appropriately to keep cluster resources in check.
 {% /post %}
 
-
 {% post name="The cluster admin struggle, and ways to keep Kubernetes Resource Requests and Limits in check" image="pascal-meier-2hkYgCchEhk-unsplash.jpg" link="/blog/the-cluster-admin-struggle-and-ways-to-keep-kubernetes-resource-requests-and-limits-in-check" date="2020-06-15" %}
-Learn how you can teach and remind developers of setting good Kubernetes Resource Requests and Limits. Enforce it if you must, and a bonus. 
+Learn how you can teach and remind developers of setting good Kubernetes Resource Requests and Limits. Enforce it if you must, and a bonus.
 {% /post %}
 
 {% post name="How to implement a gitops platform with Flux and Helm" image="leafs.jpg" link="/blog/how-to-implement-a-gitops-platform-with-flux-and-helm" date="2020-06-09" %}

@@ -1,12 +1,12 @@
 ---
 layout: post
 title: How to implement a gitops platform with Flux and Kustomize
-date: "2020-06-08"
+date: '2020-06-08'
 image: mountain.jpg
 image_author: Massimiliano Morosinotto
-image_url: 
+image_url:
 description: |
-    In this blog post you will learn how to implement a gitops platform at your company, using Flux and Kustomize.
+  In this blog post you will learn how to implement a gitops platform at your company, using Flux and Kustomize.
 topic: Ecosystem
 tags: [posts]
 ---
@@ -19,10 +19,11 @@ This blog post uses Flux V1 which is deprecated now. Either head over [fluxcd.io
 
 In this blog post you will learn how to implement a gitops platform at your company, using Flux and Kustomize.
 
-What you need as a prerequisite is 
+What you need as a prerequisite is
+
 - a Kubernetes cluster
 - a project you already deploy to Kubernetes from a CI pipeline
-- you configure this application with Kustomize 
+- you configure this application with Kustomize
 
 You will deploy this project to Kubernetes with the gitops approach, side-by-side of your existing deployment.
 At the end of this how-to, you will be able to judge how gitops fits your workflow.
@@ -61,7 +62,7 @@ EOF
 
 It's a good practice to scan the deployment manifests now on [https://github.com/fluxcd/flux/tree/master/deploy](https://github.com/fluxcd/flux/tree/master/deploy).
 
-Alternatively you can pull down the manifests from Github and use it as a base in your kustomization.yaml. 
+Alternatively you can pull down the manifests from Github and use it as a base in your kustomization.yaml.
 This could be a good idea especially as we are not going to use the Flux features that use Memcached.
 Removing the Memcached manifests reduces the number of moving parts in the deployment.
 
@@ -99,31 +100,25 @@ The arguments are significantly different from what is in the official installat
 
 Disables automatic deployments of new Docker images. You will deploy through CI every time, and the version change will be captured as a git commit.
 
-
 - remove `memcached-*` arguments
 
 After adding registry-disable-scanning, we won't need Memcached anymore as Flux only uses Memcached to cache image metadata.
-
 
 - add `git-readonly`
 
 Disables fluxctl release workflows. You will deploy through CI every time, and the version change will be captured as a git commit.
 
-
 - remove `git-user` and `git-email`
 
 Due to using git-readonly
-
-
 
 - add `git-poll-interval`
 
 To speed up releases. The default is 5 minutes.
 
-
 - change `git-path`
 
-Configures Flux to deploy everything from the releases/staging and releases/production  folder of the gitops repo.
+Configures Flux to deploy everything from the releases/staging and releases/production folder of the gitops repo.
 
 ## Github access
 
@@ -136,7 +131,8 @@ kubectl apply -k fluxcd
 At startup Flux generates an SSH key and logs the public key.
 In order to sync your cluster state with git, you need to copy the public key and create a deploy key on your GitHub repository.
 
-Grab the key with 
+Grab the key with
+
 ```
 kubectl -n flux logs deployment/flux | grep identity.pub | cut -d '"' -f2
 ```
@@ -152,8 +148,8 @@ ts=2020-06-05T12:00:50.218922569Z caller=loop.go:133 component=sync-loop event=r
 Congratulations, you have Flux running.
 
 One note before moving forward. Copying the public key from the log is not easy to automate.
-Alternatively, you can find the public key in the `flux-git-deploy` secret after startup, 
-or you can provision your own key in your installation script following the 
+Alternatively, you can find the public key in the `flux-git-deploy` secret after startup,
+or you can provision your own key in your installation script following the
 [https://docs.fluxcd.io/en/1.19.0/guides/provide-own-ssh-key/](https://docs.fluxcd.io/en/1.19.0/guides/provide-own-ssh-key/)
 guide.
 
@@ -167,21 +163,21 @@ The folder structure is up to the conventions you come up with. This how-to work
 ```bash
 ├── fluxcd
 │   ├── kustomization.yaml
-│   └── patch.yaml                                                                                                                                        
-└── releases                                                                                                                                                  
-    ├── staging                                                                                                                                            
-    │   ├── app1                                                                                                                                             
-    │   │   ├── deployment.yaml                                                                                                                         
+│   └── patch.yaml
+└── releases
+    ├── staging
+    │   ├── app1
+    │   │   ├── deployment.yaml
     │   │   └── service.yaml
     │   └── app2
-    │       ├── deployment.yaml                                                                                                                         
+    │       ├── deployment.yaml
     │       └── service.yaml
     └── production
-        ├── app1                                                                                                                                             
-        │   ├── deployment.yaml                                                                                                                         
+        ├── app1
+        │   ├── deployment.yaml
         │   └── service.yaml
         └── app2
-            ├── deployment.yaml                                                                                                                         
+            ├── deployment.yaml
             └── service.yaml
 
 ```
@@ -190,12 +186,11 @@ Using a `releases` folder allows us to store other things in this repo, like the
 
 Using the `releases/staging` and `releases/production` folders, allows this repository to serve as the source of truth for multiple environments - or Kubernetes clusters.
 
-
 ## Now let's make the first deploy
 
 To deploy your application, you should put the kustomized Kubernetes manifests under `releases/staging/your-app`
 
-Instead of applying your templates on the cluster with `kubectl apply -k`, run `kubectl kustomize . > releases/staging/your-app/deployment.yaml`, and make a git commit to the gitops repository.   
+Instead of applying your templates on the cluster with `kubectl apply -k`, run `kubectl kustomize . > releases/staging/your-app/deployment.yaml`, and make a git commit to the gitops repository.
 
 You should see in the Flux logs that it synced the change to your cluster.
 
@@ -271,7 +266,7 @@ This approach however comes with a few drawbacks:
 - Kustomize failures will surface at deploy time
 - if you want to see what changed in your manifest in a given commit, you have to run kustomize in your head to grasp what changed
 - Flux imposes limitations on the placement of `.flux.yaml`. It looks for the file in the `git-path` folder, or one level up.
-The folder conventions we come up with do not fit this limitation.  
+  The folder conventions we come up with do not fit this limitation.
 
 ## An alternative workflow: using fluxctl
 
