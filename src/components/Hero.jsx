@@ -71,13 +71,13 @@ export function Hero() {
                 <div className="my-12 p-4 bg-zinc-900 dark:bg-black text-zinc-300 dark:text-zinc-600 rounded-lg">
                   <div className="whitespace-pre-wrap font-mono">
                     <p className=""># Install Gimlet on any Kubernetes cluster.</p>
-                    <p className=""># Even on a cluster running on your laptop (we recommend using <a href="/blog/running-kubernetes-on-your-laptop-with-k3d" className="underline cursor-pointer">k3d</a>). </p>
+                    <p className=""># Even on a cluster running on your laptop (we recommend using <a href="/blog/running-kubernetes-on-your-laptop-with-k3d" className="underline cursor-pointer" onClick={() => Fathom.trackGoal('WHIDLWNA', 0)}>k3d</a>). </p>
                     <p className=""># Install with:</p>
 
                     <p className="text-yellow-100 dark:text-zinc-300 font-semibold my-4">kubectl apply -f https://raw.githubusercontent.com/gimlet-io/gimlet/main/deploy/gimlet.yaml</p>
 
-                    <p className=""># Or start deploying your applications on our <a href="https://accounts.gimlet.io/signup/" className="underline cursor-pointer">hosted version</a>. (<a href="/pricing" className="underline cursor-pointer">Pricing</a>)</p>
-                    <p className=""># We have a free tier that <a href="/blog/our-free-tier" className="underline cursor-pointer">won&apos;t make you think</a> every corner.</p>
+                    <p className=""># Or start deploying your applications on our <a href="https://accounts.gimlet.io/signup/" className="underline cursor-pointer" onClick={() => Fathom.trackGoal('XPL4AWPN', 0)}>hosted version</a>. (<a href="/pricing" className="underline cursor-pointer" onClick={() => Fathom.trackGoal('SQJAO9DX', 0)}>Pricing</a>)</p>
+                    <p className=""># We have a free tier that <a href="/blog/our-free-tier" className="underline cursor-pointer" onClick={() => Fathom.trackGoal('ZBNHX76G', 0)}>won&apos;t make you think</a> every corner.</p>
                   </div>
                 </div>
               </div>
