@@ -541,7 +541,25 @@ EOF
 
 helm template my-release onechart/onechart -f values.yaml
 ```
-
+## Security context
+For security reasons, if your application doesn't require root access and writing to the root file system, we recommend you to set `readOnlyRootFilesystem: true` and `runAsNonRoot: true`.
+### Example of setting security context for containers
+```
+# values.yaml
+securityContext:
+  readOnlyRootFilesystem: true
+  runAsNonRoot: true
+```
+### Example of setting security context for init containers
+```
+# values.yaml
+initContainers:
+- name: test
+  image: test:test
+  securityContext:
+    readOnlyRootFilesystem: true
+    runAsNonRoot: true
+```
 ## Resources
 
 ```bash
