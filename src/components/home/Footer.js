@@ -8,14 +8,14 @@ const youtubeLogo = <svg className="inline" xmlns="http://www.w3.org/2000/svg" w
 const footerNav = [
   {
     'Getting Started': [
-      { title: 'Installation', href: '/docs/installation' },
-      { title: 'Deploy your first app', href: '/docs/deploy-your-first-app' },
-      { title: 'Concepts', href: '/docs/concepts' },
+      { title: 'Installation', href: '/docs/installation?ref=footer' },
+      { title: 'Deploy your first app', href: '/docs/deploy-your-first-app?ref=footer' },
+      { title: 'Concepts', href: '/docs/concepts?ref=footer' },
     ],
     'Navigation': [
-      { title: 'Blog', href: '/blog' },
-      { title: 'Pricing', href: '/pricing' },
-      { title: 'YAML Generator', href: '/k8s-yaml-generator' },
+      { title: 'Blog', href: '/blog?ref=footer' },
+      { title: 'Pricing', href: '/pricing?ref=footer' },
+      { title: 'YAML Generator', href: '/k8s-yaml-generator?ref=footer' },
     ],
     'Community': [
       { logo: githubLogo, title: 'GitHub', href: 'https://github.com/gimlet-io/gimlet' },
@@ -24,8 +24,8 @@ const footerNav = [
       { logo: youtubeLogo, title: 'YouTube', href: 'https://www.youtube.com/channel/UCMQj-27fzpOWGTKL5nutajA' },
     ],
     'SaaS': [
-      { title: 'Terms of Service', href: 'https://gimlet.io/tos' },
-      { title: 'Signup', href: 'https://gimlet.io/signup' },
+      { title: 'Terms of Service', href: 'https://gimlet.io/tos?ref=footer' },
+      { title: 'Signup', href: 'https://gimlet.io/signup?ref=footer' },
     ],
   },
 ]

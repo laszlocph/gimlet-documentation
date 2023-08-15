@@ -41,7 +41,7 @@ export function BlogPage({ children, className, tabs, code, language, title, sec
   return (
     <>
     <div className="text-center pt-12 sm:pt-16">
-      <Link href="/">
+      <Link href="/?ref=bloghead">
         <a>
           <span className="sr-only">Home page</span>
           <img src="/logo.svg" alt="Gimlet" className='h-10 sm:h-16 inline' />

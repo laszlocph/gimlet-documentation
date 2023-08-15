@@ -30,7 +30,7 @@ export function DocsPage({ children, tableOfContents, className, tabs, code, lan
     <div className="relative mx-auto flex max-w-8xl justify-center sm:px-2 lg:px-8 xl:px-12">
         <div className="hidden lg:relative lg:block lg:flex-none">
           <div className="-ml-0.5 py-16 pl-0.5">
-            <Link href="/">
+            <Link href="/?ref=docshead">
               <a className="block lg:w-auto">
                 <span className="sr-only">Home page</span>
                 <img src="/logo2.svg" alt="Gimlet" className='h-8 sm:h-10 w-auto block dark:hidden' />

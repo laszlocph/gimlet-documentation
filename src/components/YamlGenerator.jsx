@@ -75,7 +75,7 @@ helm template my-release onechart/onechart -f values.yaml`
         </span>
       </div>
       <div className="text-center pt-12 sm:pt-16">
-      <Link href="/">
+      <Link href="/?ref=yamlgenerator">
         <a>
           <span className="sr-only">Home page</span>
           <img src="/logo.svg" alt="Gimlet" className='h-10 sm:h-16 inline' />
@@ -169,8 +169,8 @@ helm template my-release onechart/onechart -f values.yaml`
                 )}
               </Highlight>
             </div>
-            <p className='pt-16 text-base text-blue-500'>Are you new to Helm? Check out <a href="/concepts/the-sane-helm-guide" className="underline">our SANE Helm guide</a>.</p>
-            <p className='text-base text-blue-500'>Curious about onechart/onechart? See <a href="/concepts/the-sane-helm-guide" className="underline">the reference</a>.</p>
+            <p className='pt-16 text-base text-blue-500'>Are you new to Helm? Check out <a href="/concepts/the-sane-helm-guide?ref=yamlgenerator" className="underline">our SANE Helm guide</a>.</p>
+            <p className='text-base text-blue-500'>Curious about onechart/onechart? See <a href="/docs/onechart-reference?ref=yamlgenerator" className="underline">the reference</a>.</p>
           </div>
         </div>
       </div>
