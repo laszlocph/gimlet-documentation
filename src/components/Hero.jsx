@@ -76,7 +76,7 @@ export function Hero() {
 
                     <p className="text-yellow-100 dark:text-zinc-300 font-semibold my-4">kubectl apply -f https://raw.githubusercontent.com/gimlet-io/gimlet/main/deploy/gimlet.yaml</p>
 
-                    <p className=""># Or start deploying your applications on our <a href="https://accounts.gimlet.io/signup/" className="underline cursor-pointer" onClick={() => Fathom.trackGoal('XPL4AWPN', 0)}>hosted version</a>. (<a href="/pricing" className="underline cursor-pointer" onClick={() => Fathom.trackGoal('SQJAO9DX', 0)}>Pricing</a>)</p>
+                    <p className=""># Or start deploying your applications on our <a href="https://accounts.gimlet.io/signup/" className="underline cursor-pointer" onClick={() => Fathom.trackGoal('XPL4AWPN', 0)}>hosted version</a>. (<a href="/pricing" className="underline cursor-pointer" onClick={() => Fathom.trackGoal('SQJAO9DX', 0)}>SaaS Pricing</a>)</p>
                     <p className=""># We have a free tier that <a href="/blog/our-free-tier" className="underline cursor-pointer" onClick={() => Fathom.trackGoal('ZBNHX76G', 0)}>won&apos;t make you think</a> every corner.</p>
                   </div>
                 </div>
