@@ -149,9 +149,8 @@ kubectl port-forward svc/my-hugo-site 8000:80
 The majority of the code in the above example was setting up Hugo itself. With a react based site, the values.yaml can be as small as:
 
 ```yaml
-gitCloneUrl: https://github.com/gimlet-io/react-tutorial-solutions.git
-buildImage: node
-buildTag: 16.20-buster
+gitCloneUrl: https://github.com/gimlet-io/reactjs-test-app.git
+buildImage: "node:16.20-buster"
 buildScript: npm install && npm run build
 builtAssets: build/
 ```
@@ -228,9 +227,8 @@ And thanks to `onechart/static-site` the configuration need is not much worse th
 helm repo add onechart https://chart.onechart.dev
 
 cat << EOF > values.yaml
-gitCloneUrl: https://github.com/gimlet-io/react-tutorial-solutions.git
-buildImage: node
-buildTag: 16.20-buster
+gitCloneUrl: https://github.com/gimlet-io/reactjs-test-app.git
+buildImage: "node:16.20-buster"
 buildScript: npm install && npm run build
 builtAssets: build/
 EOF
