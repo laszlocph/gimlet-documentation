@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router'
 import HelmUI from "helm-react-ui";
 import { ThemeSelector } from './ThemeSelector';
 import YAML from "json-to-pretty-yaml";
@@ -14,6 +15,9 @@ export function YamlGenerator() {
   const [values, setValues] = useState({})
   const [nonDefaultValues, setNonDefaultValues] = useState({})
   const [kubernetesYaml, setKubernetesYaml] = useState("")
+
+  const router = useRouter()
+  const ref = router.pathname.slice(1).replaceAll("/", "-")
 
   function validationCallback(errors) {
     if (errors) {
@@ -75,7 +79,7 @@ helm template my-release onechart/onechart -f values.yaml`
         </span>
       </div>
       <div className="text-center pt-12 sm:pt-16">
-      <Link href="/?ref=yamlgenerator">
+      <Link href={"/?ref="+ref}>
         <a>
           <span className="sr-only">Home page</span>
           <img src="/logo.svg" alt="Gimlet" className='h-10 sm:h-16 inline' />

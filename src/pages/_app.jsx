@@ -97,7 +97,6 @@ export default function App({ Component, pageProps }) {
   let title = pageProps.markdoc?.frontmatter.title
 
   const router = useRouter()
-  let isBlogPage = router.pathname.startsWith('/blog')
   let isYamlGeneratorPage = router.pathname === '/k8s-yaml-generator'
 
   let pageTitle = 'Gimlet'

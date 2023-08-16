@@ -7,6 +7,7 @@ import { useTableOfContents } from './DocsPage'
 export function BlogPage({ children, className, tabs, code, language, title, section, pageProps, tableOfContents }) {
   
   let router = useRouter()
+  const ref = router.pathname.slice(1).replaceAll("/", "-")
   let isBlogSubPage = !router.pathname.endsWith('/blog') && !router.pathname.endsWith('/blog/')
 
   const date = pageProps.markdoc?.frontmatter.date
@@ -41,7 +42,7 @@ export function BlogPage({ children, className, tabs, code, language, title, sec
   return (
     <>
     <div className="text-center pt-12 sm:pt-16">
-      <Link href="/?ref=bloghead">
+      <Link href={"/?ref="+ref}>
         <a>
           <span className="sr-only">Home page</span>
           <img src="/logo.svg" alt="Gimlet" className='h-10 sm:h-16 inline' />
@@ -98,35 +99,35 @@ export function BlogPage({ children, className, tabs, code, language, title, sec
             <div className='flex mt-8'>
               <img src="/clickops.png" className="w-48 object-contain"></img>
               <div className='ml-2'>
-                <h2 className="mb-2 font-medium underline"><a href="/blog/clickops-over-gitops">Clickops over gitops</a></h2>
+                <h2 className="mb-2 font-medium underline"><a href={"/blog/clickops-over-gitops?ref="+ref}>Clickops over gitops</a></h2>
                 <div className="prose mt-2.5 text-gray-600 dark:text-gray-300 leading-tight"><p>Doing cloud operations by clicking on a dashboard that generates a stream of infrastructure as code changes.</p></div>
               </div>
             </div>
             <div className='flex mt-8'>
               <img src="/why-hetzner.png" className="w-48 object-contain"></img>
               <div className='ml-2'>
-                <h2 className="mb-2 font-medium underline"><a href="/blog/announcing-the-gimlet-saas-early-access">The how and why we built our SaaS platform on Hetzner and Kubernetes</a></h2>
+                <h2 className="mb-2 font-medium underline"><a href={"/blog/announcing-the-gimlet-saas-early-access?ref="+ref}>The how and why we built our SaaS platform on Hetzner and Kubernetes</a></h2>
                 <div className="prose mt-2.5 text-gray-600 dark:text-gray-300 leading-tight"><p>Hetzner is 5 times cheaper for us than the hyperscalers. This blog posts enumerates the how and why we built our SaaS on a discount bare metal provider. Gotchas included.</p></div>
               </div>
             </div>
             <div className='flex mt-8'>
               <img src="/saas-early-access.png" className="w-48 object-contain"></img>
               <div className='ml-2'>
-                <h2 className="mb-2 font-medium underline"><a href="/blog/announcing-the-gimlet-saas-early-access">Announcing the Gimlet SaaS Early Access</a></h2>
+                <h2 className="mb-2 font-medium underline"><a href={"/blog/announcing-the-gimlet-saas-early-access?ref="+ref}>Announcing the Gimlet SaaS Early Access</a></h2>
                 <div className="prose mt-2.5 text-gray-600 dark:text-gray-300 leading-tight"><p>We have something really exciting to share with you: Gimlet is going SaaS. In other words, you will be able to use Gimlet&apos;s unparalleled Kubernetes deploy experience with even fewer clicks than before.</p></div>
               </div>
             </div>
             <div className='flex mt-8'>
               <img src="/gitops-broke-cicd.jpg" className="w-48 object-contain"></img>
               <div className='ml-2'>
-                <h2 className="mb-2 font-medium underline"><a href="/blog/how-flux-broke-the-cicd-feedback-loop-and-how-we-pieced-it-back-together">How Flux broke the CI/CD feedback loop, and how we pieced it back together</a></h2>
+                <h2 className="mb-2 font-medium underline"><a href={"/blog/how-flux-broke-the-cicd-feedback-loop-and-how-we-pieced-it-back-together?ref="+ref}>How Flux broke the CI/CD feedback loop, and how we pieced it back together</a></h2>
                 <div className="prose mt-2.5 text-gray-600 dark:text-gray-300 leading-tight"><p>A green build used to mean a successful deploy. But then gitops came and broke this heuristic.</p></div>
               </div>
             </div>
             <div className='flex mt-8'>
               <img src="/introducing-kyverno.png" className="w-48 object-contain"></img>
               <div className='ml-2'>
-                <h2 className="mb-2 font-medium underline"><a href="/blog/are-you-sure-none-of-your-containers-run-as-root">Are you sure none of your containers run as root?</a></h2>
+                <h2 className="mb-2 font-medium underline"><a href={"/blog/are-you-sure-none-of-your-containers-run-as-root?ref="+ref}>Are you sure none of your containers run as root?</a></h2>
                 <div className="prose mt-2.5 text-gray-600 dark:text-gray-300 leading-tight"><p>The Kyverno policy engine just arrived in Gimlet Stack. Let&apos;s see how you can be certain that none of the containers run as root in your Kubernetes cluster.</p></div>
               </div>
             </div>
