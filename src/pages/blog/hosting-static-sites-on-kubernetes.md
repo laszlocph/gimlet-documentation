@@ -11,7 +11,27 @@ description: 'There is a meme here somewhere. But as kubernetes is becoming *the
 
 There is a meme here somewhere.
 
-But as kubernetes is becoming _the_ deployment platform, there are legitimate cases to deploy your static site on it. We show you a simplified way to do it.
+But as kubernetes is becoming _the_ deployment platform, there are legitimate cases to deploy your static site on it.
+
+**tldr** here is possibly the simplest way to deploy a static site on Kubernetes. It uses our `onechart/static-site` Helm chart and the required configuration is not much worse than with Netlify:
+
+```
+helm repo add onechart https://chart.onechart.dev
+
+cat << EOF > values.yaml
+gitCloneUrl: https://github.com/gimlet-io/reactjs-test-app.git
+buildImage: "node:16.20-buster"
+buildScript: npm install && npm run build
+builtAssets: build/
+EOF
+
+helm template my-react-site onechart/static-site -f values.yaml > manifest.yaml
+kubectl apply -f manifest.yaml
+
+kubectl port-forward svc/my-react-site 8000:80
+```
+
+Let us explain in depth in this blog post.
 
 But first, let's review your options outside of kubernetes.
 
@@ -69,7 +89,7 @@ Another popular solution to deploy static sites is to use cloud buckets. You upl
 
 ## Reasons to deploy static sites on kubernetes
 
-While our website is hosted on Netlify and our Helm charts are hosted on Github Pages, we see usecases where it does make sense to deploy on kubernetes.
+While our website is hosted on Netlify and our Helm charts are hosted on Github Pages, we see cases where it does make sense to deploy static sites on kubernetes.
 
 When you have a kubernetes based platform with standardized deployment tooling, with an ingress setup with automated SSL certificates, it starts to make more and more sense to just use that. You would still have to containerize your static site, and have a CI pipeline to build and deploy it.
 
@@ -110,7 +130,7 @@ Given you have a kubernetes platform already, to deploy a static site to kuberne
 - write deployment manifests,
 - have a CI script to build and deploy.
 
-To ease this process we made a Helm chart so you can provide as little information as if you were using Netlify:
+To ease this process, we made a Helm chart so you can provide as little information as if you were using Netlify:
 
 - your git url
 - and build commands.
@@ -155,67 +175,11 @@ buildScript: npm install && npm run build
 builtAssets: build/
 ```
 
-Or if you just want to test drive the solution, just run `helm template my-static-site onechart/static-site` to get an example Hugo site up and running, as every chart we make has demonstrative defaults.
-
 ## If you need configuration options
 
-`onechart/static-site` is a simplified view on kubernetes. If you want to see all configuration option, you can check the default values for [all configuration option](https://github.com/gimlet-io/onechart/blob/master/charts/static-site/values.yaml#L65).
+`onechart/static-site` is a simplified view on kubernetes. If you want to see all configuration option, you can check the [default values](https://github.com/gimlet-io/onechart/blob/master/charts/static-site/values.yaml#L65).
 
-If you are more into kubernetes manifests, you can use `onechart/onechart` to host static sites. By doing so, you get access to the init-container, volumes, and every aspect of the deployment.
-
-The example below uses Hugo.
-
-- Uses an init container to setup Hugo, clone the source from git and build the site
-- The built site is then copied to a shared volume
-- Nginx serves the built site from the volume
-
-```bash
-helm repo add onechart https://chart.onechart.dev
-
-cat << EOF > hugo.yaml
-volumes:
-- name: init-hugo
-  fileName: setup_hugo.sh
-  path: /hugo.conf
-  subPath: setup_hugo.sh
-  fileContent: |
-    #!/usr/bin/env bash
-    # Pre-reqs
-    apt update && apt install -y wget git
-
-    # Setting up Hugo
-    wget https://github.com/gohugoio/hugo/releases/download/v0.111.3/hugo_0.111.3_Linux-64bit.tar.gz &&
-    tar -xzf hugo_0.111.3_Linux-64bit.tar.gz &&
-    chmod +x hugo &&
-    mv hugo /usr/local/bin && cd / &&
-
-    # Getting and building Hugo site source
-    git clone https://github.com/gimlet-io/hugo-site.git &&
-    cd hugo-site && hugo &&
-
-    # Copying the built Hugo site to the shared volume for serving with Nginx
-    mkdir -p /usr/share/nginx/html && cp -r ./public/. /usr/share/nginx/html
-- name: shared-static-files
-  emptyDir: true
-  path: /usr/share/nginx/html
-initContainers:
-- name: setup
-  image: debian
-  tag: stable-slim
-  command: |
-    cp /hugo.conf/setup_hugo.sh . &&
-    chmod +x setup_hugo.sh &&
-    ./setup_hugo.sh
-image:
-  repository: nginx
-  tag: 1.23.3
-EOF
-
-helm template my-hugo-site onechart/onechart -f hugo.yaml > manifest.yaml
-kubectl apply -f manifest.yaml
-
-kubectl port-forward svc/my-hugo-site 8000:80
-```
+If you are more into kubernetes manifests, you can use [onechart/onechart](https://github.com/gimlet-io/onechart/releases/tag/v0.44.0) Helm chart to host static sites. By doing so, you get access to the init-container, volumes, and every aspect of the deployment. 
 
 ## Conclusion
 
