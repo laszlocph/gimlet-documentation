@@ -15,6 +15,8 @@ But as kubernetes is becoming _the_ deployment platform, there are legitimate ca
 
 **tldr** here is possibly the simplest way to deploy a static site on Kubernetes. It uses our `onechart/static-site` Helm chart and the required configuration is not much worse than with Netlify:
 
+Don't have `helm` installed? You can use our online [yaml generator](/k8s-yaml-generator?ref=blog-hosting-static-sites-on-kubernetes) or [install it](https://helm.sh/docs/intro/install/).
+
 ```
 helm repo add onechart https://chart.onechart.dev
 
