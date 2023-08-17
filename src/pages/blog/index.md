@@ -2,6 +2,13 @@
 title: Blog
 ---
 
+{% post name="A 6.37 EUR a month single node Kubernetes cluster on Hetzner with vitobotta/hetzner-k3s" image="637.png" link="/blog/a-6-37-mo-single-node-kubernetes-cluster-on-hetzner-with-vitobotta-hetzner-k3s" date="2023-08-17" %}
+I recently did a live stream trying out Vito Botta's `hetzner-k3s` tool. This blog post is a follow up to the stream where I share my config for
+- starting up a single node cluster,
+- installing ingress controller,
+- and exposing it on port 80 and 443 to the world.
+{% /post %}
+
 {% post name="Our free tier" image="our-free-tier.png" link="/blog/our-free-tier" date="2023-08-03" %}
 We don't want to make you think.
 
