@@ -206,7 +206,7 @@ Optionally you can set a DNS entry that points to your server's IP address.
 
 ## Deploy a static website
 
-To test the ingress controller we are going to use the nip.io dynamic DNS service, and the `onechart/static-site` helm chart. This helm chart pulls the source code from git, builds it, then serves the files of a static website.
+To test the ingress controller we are going to use the nip.io dynamic DNS service, and the [onechart/static-site](/blog/hosting-static-sites-on-kubernetes?ref=blog-a-6-37-mo-single-node-kubernetes-cluster-on-hetzner-with-vitobotta-hetzner-k3s) helm chart. This helm chart pulls the source code from git, builds it, then serves the files of a static website.
 
 ```
 helm repo add onechart https://chart.onechart.dev
