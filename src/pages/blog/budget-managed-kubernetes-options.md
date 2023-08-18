@@ -220,6 +220,6 @@ Scaleway probably did the right thing by not going below 2(3) cores and 4GB of m
 
 What I would do personally:
 - Run a 5$ CIVO node, and not set resource requests. This can be used for the things a single core VPS can be used for: proxies, tunnels, vpns, static websites.
-- The [6.37 EUR a month Kubernetes cluster on Hetzner](/blog/a-6-37-mo-single-node-kubernetes-cluster-on-hetzner-with-vitobotta-hetzner-k3s?ref=blog-budget-managed-kubernetes-options) option is still my favorite. I would still skip setting resource requests for my workloads, and this option also has decent performance as well. It comes at the cost of managing the node, but the hetzner-k3s tool gives me confidence for future maintenance tasks. Also Hetzner starup/terdown time was heads down the fastest.
+- The [6.37 EUR a month Kubernetes cluster on Hetzner](/blog/a-6-37-mo-single-node-kubernetes-cluster-on-hetzner-with-vitobotta-hetzner-k3s?ref=blog-budget-managed-kubernetes-options) option is still my favorite. I would still skip setting resource requests for my workloads, and this option also has decent performance as well. It comes at the cost of managing the node, but the hetzner-k3s tool gives me confidence for future maintenance tasks. Also Hetzner startup/teardown time was heads down the fastest.
 
 Onwards!
