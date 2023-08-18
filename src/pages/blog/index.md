@@ -2,6 +2,13 @@
 title: Blog
 ---
 
+{% post name="Budget managed Kubernetes options" image="budget-managed-k8s.png" link="/blog/budget-managed-kubernetes-options" date="2023-08-18" %}
+Managed Kubernetes starts at 5$ a month. With free control planes, they are now comparable with VPS.
+
+Let's look at the options.
+
+{% /post %}
+
 {% post name="A 6.37 EUR a month single node Kubernetes cluster on Hetzner with vitobotta/hetzner-k3s" image="637.png" link="/blog/a-6-37-mo-single-node-kubernetes-cluster-on-hetzner-with-vitobotta-hetzner-k3s" date="2023-08-17" %}
 I recently did a live stream trying out Vito Botta's `hetzner-k3s` tool. This blog post is a follow up to the stream where I share my config for
 - starting up a single node cluster,
