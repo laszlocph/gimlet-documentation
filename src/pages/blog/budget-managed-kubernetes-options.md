@@ -3,7 +3,7 @@ layout: post
 title: 'Budget managed Kubernetes options'
 date: '2023-08-18'
 image: budget-managed-k8s.png
-description: 'Managed Kubernetes starts at 5$ a month. With free control planes, they are now comparable with VPS. Let&apos;s look at the options!'
+description: 'Managed Kubernetes starts at 5$ a month. With free control planes, they are now comparable with VPS options out there. Let&apos;s look at the options!'
 ---
 
 After looking at [a 6.37 EUR a month Kubernetes cluster on Hetzner](/blog/a-6-37-mo-single-node-kubernetes-cluster-on-hetzner-with-vitobotta-hetzner-k3s?ref=blog-budget-managed-kubernetes-options), let's look at the budget managed Kubernetes options.
