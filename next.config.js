@@ -76,6 +76,11 @@ const redirects = {
         destination: '/docs/onechart-reference',
         permanent: true,
       },
+      {
+        source: '/docs/gimlet-agent-configuration-reference',
+        destination: '/docs/gimlet-configuration-reference',
+        permanent: true,
+      },
     ];
   },
 };
