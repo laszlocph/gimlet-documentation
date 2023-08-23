@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import * as Fathom from "fathom-client";
 
 const CopyButton = ({ text, style }) => {
     const [isCopied, setIsCopied] = useState(false);
@@ -18,7 +19,7 @@ const CopyButton = ({ text, style }) => {
 
     return (
         <div className="relative">
-            <svg onClick={() => { copyToClipboard(text); handleCopyClick() }} xmlns="http://www.w3.org/2000/svg" className={`cursor-pointer float-left h-6 w-6 ${textColorClasses[style]}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg onClick={() => { copyToClipboard(text); handleCopyClick(); Fathom.trackGoal("32GVHPPE", 0) }} xmlns="http://www.w3.org/2000/svg" className={`cursor-pointer float-left h-6 w-6 ${textColorClasses[style]}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
             </svg>
             {isCopied && (
