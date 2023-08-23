@@ -24,6 +24,7 @@ const navigation = [
   {
     title: 'Guides',
     links: [
+      { title: 'Deploying static sites', href: '/docs/deploying-static-sites' },
       { title: 'Managing deployment configs', href: '/docs/how-to-manage-deployment-configs' },
       { title: 'Configuring preview environments', href: '/docs/how-to-configure-preview-environments' },
       { title: 'Rolling back', href: '/docs/rolling-back' },

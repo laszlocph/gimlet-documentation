@@ -34,10 +34,10 @@ web: node node.js
 
 ## Deploying static sites
 
-Coming soon.
+[Deploying static sites](/docs/deploying-static-sites)
 
 ## Dockerfiles
 
 If none of the above approaches help you, writing a `Dockerfile` is inevitable.
 
-Follow the [Using Dockerfile and CI](docs/integrate-with-ci) tutorial to see how Gimlet works with Dockerfiles.
+Follow the [Using Dockerfile and CI](/docs/integrate-with-ci) tutorial to see how Gimlet works with Dockerfiles.
