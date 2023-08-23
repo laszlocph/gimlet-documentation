@@ -13,9 +13,7 @@ There is a meme here somewhere.
 
 But as kubernetes is becoming _the_ deployment platform, there are legitimate cases to deploy your static site on it.
 
-**tldr** here is possibly the simplest way to deploy a static site on Kubernetes. It uses our `onechart/static-site` Helm chart and the required configuration is not much worse than with Netlify:
-
-Don't have `helm` installed? You can use our online [yaml generator](/k8s-yaml-generator?ref=blog-hosting-static-sites-on-kubernetes) or [install it](https://helm.sh/docs/intro/install/).
+**tldr** this is possibly the simplest way to deploy static sites on Kubernetes. It uses our `onechart/static-site` Helm chart and the required configuration is not much worse than with Netlify:
 
 ```
 helm repo add onechart https://chart.onechart.dev
@@ -33,9 +31,10 @@ kubectl apply -f manifest.yaml
 kubectl port-forward svc/my-react-site 8000:80
 ```
 
-Let us explain in depth in this blog post.
+Don't have `helm` installed? You can use our online [yaml generator](/k8s-yaml-generator?ref=blog-hosting-static-sites-on-kubernetes) or [install Helm here](https://helm.sh/docs/intro/install/).
 
-But first, let's review your options outside of kubernetes.
+
+Let us explain in the blog post how this approach works. But first, let's review your options outside of kubernetes.
 
 ## Deployment options outside of kubernetes
 
