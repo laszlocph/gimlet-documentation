@@ -17,13 +17,13 @@ import * as Fathom from "fathom-client";
 export function YamlGenerator() {
   const [values, setValues] = useState({})
   const [nonDefaultValues, setNonDefaultValues] = useState({})
-  const [kubernetesYaml, setKubernetesYaml] = useState("TODO")
+  const [kubernetesYaml, setKubernetesYaml] = useState("")
 
   const router = useRouter()
   const ref = router.pathname.slice(1).replaceAll("/", "-")
   const [charts, setCharts] = useState([
-    { title: "Static sites", current: true, name: "static-site" },
-    { title: "Web application", current: false, name: "onechart" },
+    { title: "Web application", current: true, name: "onechart" },
+    { title: "Static sites", current: false, name: "static-site" },
     { title: "Cron job", current: false, name: "cron-job" }
   ]);
   const selected = 'border-zinc-200 bg-white text-zinc-900 shadow-sm';
@@ -160,8 +160,8 @@ helm template my-release onechart/${chart.name} -f values.yaml`
             <div className="dark:bg-white border-2 p-4 rounded-md col-span-5">
               <HelmUI
                 key={charts[0].current ? charts[0].name : charts[1].current ? charts[1].name : charts[2].name}
-                schema={charts[0].current ? staticSchema : charts[1].current ? onechartSchema : cronjobSchema}
-                config={charts[0].current ? staticUISchema : charts[1].current ? onechartUISchema :cronjobUISchema}
+                schema={charts[0].current ? onechartSchema : charts[1].current ? staticSchema : cronjobSchema}
+                config={charts[0].current ? onechartUISchema : charts[1].current ? staticUISchema :cronjobUISchema}
                 values={values}
                 setValues={valuesSetter}
                 validate={true}
