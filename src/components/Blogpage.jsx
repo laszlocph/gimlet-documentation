@@ -9,6 +9,10 @@ export function BlogPage({ children, className, tabs, code, language, title, sec
   let router = useRouter()
   const ref = router.pathname.slice(1).replaceAll("/", "-")
   let isBlogSubPage = !router.pathname.endsWith('/blog') && !router.pathname.endsWith('/blog/')
+  let isBackpack = router.pathname.startsWith('/blog/hosting-static-sites-on-kubernetes') ||
+    router.pathname.startsWith('/blog/running-kubernetes-on-your-laptop-with-k3d') ||
+    router.pathname.startsWith('/blog/a-6-37-mo-single-node-kubernetes-clust') ||
+    router.pathname.startsWith('/blog/budget-managed-kubernetes-')
 
   const date = pageProps.markdoc?.frontmatter.date
   const image = pageProps.markdoc?.frontmatter.image
@@ -49,8 +53,83 @@ export function BlogPage({ children, className, tabs, code, language, title, sec
         </a>
       </Link>
     </div>
-    <div className="relative mx-auto flex max-w-6xl justify-center sm:px-2 lg:px-8 xl:px-12">
-        <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">
+    <div className="relative mx-auto flex max-w-8xl justify-center sm:px-2 grid grid-cols-12 gap-16 pb-32">
+        <div className="hidden xl:sticky xl:top-[4.5rem] xl:block xl:h-[calc(100vh-4.5rem)] xl:flex-none xl:overflow-y-auto xl:py-16 col-span-3">
+          <nav aria-labelledby="on-this-page-title">
+            {isBackpack && (
+              <div className='bg-gray-100 p-2 text-sm'>
+                <h2
+                  id="on-this-page-title"
+                  className="font-display font-medium text-slate-900 dark:text-white"
+                >
+                 🎒 Kubernetes backpack
+                </h2>
+                <ul className="mt-4 space-y-3">
+                    <li key="hosting">
+                      <h3 className='font-semibold'>Hosting</h3>
+                      <ul className="pl-5 list-disc text-red-500">
+                          <li key='k3d'>
+                            <Link href="/blog/running-kubernetes-on-your-laptop-with-k3d?ref=starterpack">
+                              <a className='hover:text-red-600 dark:hover:text-slate-300'>
+                                Running Kubernetes on your laptop with K3d
+                              </a>
+                            </Link>
+                          </li>
+                          <li key='hetzner'>
+                            <Link href="/blog/a-6-37-mo-single-node-kubernetes-cluster-on-hetzner-with-vitobotta-hetzner-k3s?ref=starterpack">
+                              <a className='hover:text-red-600 dark:hover:text-slate-300'>
+                                A 6.37 EUR a month single node Kubernetes cluster on Hetzner
+                              </a>
+                            </Link>
+                          </li>
+                          <li key='k3d'>
+                            <Link href="/blog/budget-managed-kubernetes-options?ref=starterpack">
+                              <a className='hover:text-red-600 dark:hover:text-slate-300'>
+                                Budget managed Kubernetes options
+                              </a>
+                            </Link>
+                          </li>
+                      </ul>
+                    </li>
+                    <li key="hosting">
+                      <h3 className='font-semibold'>YAML</h3>
+                      <ul className="pl-5 text-red-500 list-disc">
+                          <li key='k3d'>
+                            <Link href="/k8s-yaml-generator?ref=starterpack">
+                              <a className='hover:text-red-600 dark:hover:text-slate-300'>
+                                YAML Generator
+                              </a>
+                            </Link>
+                          </li>
+                          <li key='hetzner'>
+                            <Link href="/concepts/the-sane-gitops-guide?ref=starterpack">
+                              <a className='hover:text-red-600 dark:hover:text-slate-300'>
+                                The SANE gitops guide
+                              </a>
+                            </Link>
+                          </li>
+                          <li key='k3d'>
+                            <Link href="/concepts/the-sane-helm-guide?ref=starterpack">
+                              <a className='hover:text-red-600 dark:hover:text-slate-300'>
+                                The SANE Helm guide
+                              </a>
+                            </Link>
+                          </li>
+                          <li key='static'>
+                            <Link href="/blog/hosting-static-sites-on-kubernetes?ref=starterpack">
+                              <a className='hover:text-red-600 dark:hover:text-slate-300'>
+                                Hosting static sites on kubernetes
+                              </a>
+                            </Link>
+                          </li>
+                      </ul>
+                    </li>
+                </ul>
+              </div>
+            )}
+          </nav>
+        </div>
+        <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pr-0 col-span-6">
           <article>
             {(title || section) && (
               <header className="mb-9 space-y-1">
@@ -88,7 +167,7 @@ export function BlogPage({ children, className, tabs, code, language, title, sec
             }
             <Prose className="mt-16">{children}</Prose>
           </article>
-          {isBlogSubPage &&
+          {isBlogSubPage && !isBackpack &&
           <>
             <div className="relative py-16">
               <div className="absolute inset-0 flex items-center" aria-hidden="true">
@@ -131,13 +210,10 @@ export function BlogPage({ children, className, tabs, code, language, title, sec
                 <div className="prose mt-2.5 text-gray-600 dark:text-gray-300 leading-tight"><p>The Kyverno policy engine just arrived in Gimlet Stack. Let&apos;s see how you can be certain that none of the containers run as root in your Kubernetes cluster.</p></div>
               </div>
             </div>
-
-            
-
           </>
           }
         </div>
-        <div className="hidden xl:sticky xl:top-[4.5rem] xl:block xl:h-[calc(100vh-4.5rem)] xl:flex-none xl:overflow-y-auto xl:py-16">
+        <div className="hidden xl:sticky xl:top-[4.5rem] xl:block xl:h-[calc(100vh-4.5rem)] xl:flex-none xl:overflow-y-auto xl:py-16 col-span-3">
           <nav aria-labelledby="on-this-page-title" className="w-56">
             {tableOfContents.length > 0 && (
               <>
@@ -172,7 +248,7 @@ export function BlogPage({ children, className, tabs, code, language, title, sec
                                   className={
                                     isActive(subSection)
                                       ? 'text-sky-500'
-                                      : 'hover:text-slate-600 dark:hover:text-slate-300'
+                                      : 'hover:text-red-600 dark:hover:text-slate-300'
                                   }
                                 >
                                   {subSection.title}
