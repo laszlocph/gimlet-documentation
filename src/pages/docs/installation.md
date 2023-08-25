@@ -93,6 +93,12 @@ helm template gimlet onechart/onechart \
 
 For all Gimlet environment variables, see the [Gimlet configuration reference](/docs/gimlet-configuration-reference).
 
+{% callout title="Open-source product analytics" %}
+The open-source Gimlet is collecting non-identifyable product analytics data on Posthog's EU servers.
+
+To turn this off, set the `FEATURE_POSTHOG: false` under `.vars` in the gimlet-helm-values.yaml file before yaml generation.
+{% /callout %}
+
 ## Basic configuration
 
 ### Connect your repositories
