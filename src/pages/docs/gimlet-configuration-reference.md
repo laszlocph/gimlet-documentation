@@ -47,6 +47,9 @@ This page is a full configuration reference should you need to adjust the config
 | `RELEASE_STATS`                 | Periodically processes the state of GitOps repositories for different environments. It can be acitvated with `enable`.                                                                                             |
 | `FEATURE_TERMS_OF_SERVICE`      | A feature flag variable for enabling the Terms and Conditions link on the signin page.                                                                                                                             |
 | `FEATURE_CHART_VERSION_UPDATER` | If set to true, it scans all git repositories daily and updates the chart version to the version set in `CHART_*`                                                                                                  |
+| `FEATURE_POSTHOG`               | A feature flag variable for collecting non-identifyable product analytics data on PostHog's EU servers. Default: `true`                                                                                            |
+| `POSTHOG_API_KEY`               | A write-only Project API Key to communicate with the PostHog instance. It can't read events or any of your other data stored with PostHog, so it's safe to use in public apps                                      |
+| `POSTHOG_IDENTIFY_USER`         | Identify a user with a unique ID instead of a PostHog randomly generated distinct_id and enables session recording for PostHog. Default: `false`                                                                   |
 
 #### Gimlet agent configuration refernce
 
