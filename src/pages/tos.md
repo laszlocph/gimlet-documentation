@@ -45,7 +45,7 @@ If you violate of any of the terms, we may terminate your account.
 
 - The Service stores cookies in your browser for authentication purposes.
 - The Service stores your email address and we use it to contact you in relation with your usage of the Service. We also subscribe you to a stream of occasional product updates. You can unsubscribe from these within every email we send.
-- The Service uses a third-party, userflow.com to help you with in-product guides and to help us better understand product usage. Userflow.com is GDPR compliant and the Service has a data processing agreement with it.
+- The Service uses a third-party, posthog.com to provide in-product analytics and to help us better understand product usage. Posthog.com is GDPR compliant and they store data in their EU cloud in Frankfurt.
 
 ## Features and Bugs
 
