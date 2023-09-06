@@ -121,3 +121,9 @@ Notice that Gimlet created a dummy environment for you. Normally you would call 
 Follow the steps on screen to connect your cluster.
 
 ![](/connect.png)
+
+{% callout title="One cluster, two clusters, three clusters?" %}
+Use just one cluster while you are evaluating Gimlet.
+
+Later, you can map a cluster to an environment and separate your testing and production environments.
+{% /callout %}

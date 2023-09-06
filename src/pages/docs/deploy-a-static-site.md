@@ -1,11 +1,9 @@
 ---
-title: Deploy your first app
-description: 'In this tutorial, you will deploy your first application to Kubernetes and access it on a port-forward.'
+title: Deploying a static site to Kubernetes
+description: 'In this tutorial, you will deploy a static site to Kubernetes and access it on a port-forward.'
 ---
 
-In this tutorial, you will deploy your first application to Kubernetes and access it on a port-forward.
-
-You will use an existing container image for this task - in later tutorials you can explore the various container image building options.
+In this tutorial, you will deploy a static site to Kubernetes and access it on a port-forward.
 
 ## Prerequisites
 
@@ -13,7 +11,7 @@ You will use an existing container image for this task - in later tutorials you 
 
 ## Step 1 - Fork an example repository
 
-Fork [this NodeJS/ExpressJS](https://github.com/gimlet-io/expressjs-test-app) example application.
+Fork [this ReactJS](https://github.com/gimlet-io/reactjs-test-app) example application.
 
 ## Step 2 - Locate and open the example repository
 
@@ -26,14 +24,13 @@ Click "Refresh repositories".
 Click "Add deployment configuration".
 
 On the deployment configuration screen:
-- Change the application name to `first-app`
-- Inspect the container image configuration under "Basics > Image". But leave it unchanged.
-  - You are going to deploy an existing image, thus use a static image tag strategy
-  - Make sure that the "Repository says" `nginx` and "Tag" `1.19.3`
-- Validate the "Port" is set to `80`
-- You can change the replicas to two.
+- Pick "Static site" from the deployment templates.
+- Change the application name to `static-site`
+- Inspect the build commands:
+  - It takes a build script and an output folder to configure the build
+- Modify the "Build script" by adding "echo hello" as the last line.
 
-![](/static-image-tag.png)
+![](/static-site-config.png)
 
 Click `Save` at the bottom of the screen.
 
@@ -43,16 +40,24 @@ Once you reviewed and merged the application configuration pull request, you wil
 
 Push the "Deploy" button now and select the application configuration to deploy.
 
-![](/deploy-button.png)
-
 This will open the deploy panel where you can follow the deploy process:
 - Kubernetes manifests are generated and written
 - then syncronized to the cluster.
 - A deployment shows up on Gimlet's screen.
 
-![](/deployed.png)
+![](/deployed3.png)
 
-## Step 5 - Access with port-forward
+## Step 5 - Build logs
+
+Deploying static sites with this approach builds on Kubernetes's features. You may noticed that you did not need to build the project, only provide the build script. Now you can verify the build: builds take place on application startup, in an init container.
+
+Open the deployment menu as it is shown on the screenshot above and click "View app logs".
+
+You can follow the build and runtime logs of the deployed static site.
+
+![](/static-site-logs.png)
+
+## Step 6 - Access with port-forward
 
 Applications running on Kubernetes are only accessible on the internal container network by default.
 
