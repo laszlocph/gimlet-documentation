@@ -2,6 +2,10 @@
 title: Blog
 ---
 
+{% post name="Your first three kubectl commands when troubleshooting Kubernetes applications" image="three-commands.png" link="/blog/your-first-three-kubectl-commands-when-troubleshooting-kubernetes-applications" date="2023-09-14" %}
+Learn Kubernetes troubleshooting with this step-by-step guide. List pods, analyze logs, describe pods, and monitor events in real-time. Master debugging Kubernetes based applications with confidence.
+{% /post %}
+
 {% post name="Budget managed Kubernetes options" image="budget-managed-k8s.png" link="/blog/budget-managed-kubernetes-options" date="2023-08-18" %}
 Managed Kubernetes starts at 5$ a month. With free control planes, they are now comparable with VPS options.
 {% /post %}
