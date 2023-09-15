@@ -2,6 +2,10 @@
 title: Blog
 ---
 
+{% post name="Troubleshooting common Kubernetes pod error states" image="fire.png" link="/blog/troubleshooting-common-kubernetes-pod-error-states" date="2023-09-15" %}
+You can use this article as a reference for troubleshooting common Kubernetes pod error states. CrashLoopBackOff, CreateContainerConfigError, OOMKilled and more.
+{% /post %}
+
 {% post name="Your first three kubectl commands when troubleshooting Kubernetes applications" image="three-commands.png" link="/blog/your-first-three-kubectl-commands-when-troubleshooting-kubernetes-applications" date="2023-09-14" %}
 Learn Kubernetes troubleshooting with this step-by-step guide. List pods, analyze logs, describe pods, and monitor events in real-time. Master debugging Kubernetes based applications with confidence.
 {% /post %}
