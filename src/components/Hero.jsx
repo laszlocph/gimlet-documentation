@@ -38,7 +38,7 @@ export function Hero() {
               </div> */}
               <div>
                 <p className="mb-6 text-lg leading-8 sm:text-center">
-                  Adopting Kubernetes is a big endevaur. But it is <span className='italic'>the</span> deployment platform today.
+                  Adopting Kubernetes is a big endeavor. But it is <span className='italic'>the</span> deployment platform today.
                 </p>
                 <h1 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-center sm:text-5xl">
                   As little, or as much Kubernetes as you want.
