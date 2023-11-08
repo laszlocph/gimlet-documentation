@@ -57,10 +57,11 @@ export function Hero() {
                     className="mt-4 md:mt-0 inline-block rounded-lg px-4 py-1.5 text-base font-semibold leading-7 text-gray-900 dark:text-gray-300 ring-1 ring-gray-900/10 dark:ring-gray-100/10 hover:ring-gray-900/20"
                     onClick={() => Fathom.trackGoal('XPL4AWPN', 0)}
                   >
-                    Sign up
+                    Use-cases
                   </a> */}
                 </div>
-                <div className="my-12 p-4 bg-zinc-900 dark:bg-black text-zinc-300 dark:text-zinc-600 rounded-lg">
+                <p className="mt-24 text-2xl font-semibold tracking-tight sm:text-3xl text-zinc-900 dark:text-zinc-100 text-center">Quickstart</p>
+                <div className="mt-6 p-4 bg-zinc-900 dark:bg-black text-zinc-300 dark:text-zinc-600 rounded-lg">
                   <div className="whitespace-pre-wrap font-mono">
                     <p className=""># Install Gimlet on any Kubernetes cluster.</p>
                     <p className=""># Even on a cluster running on your laptop (we recommend using <a href="/blog/running-kubernetes-on-your-laptop-with-k3d?ref=hero" className="underline cursor-pointer" onClick={() => Fathom.trackGoal('WHIDLWNA', 0)}>k3d</a>). </p>
