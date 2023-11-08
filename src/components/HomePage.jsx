@@ -19,6 +19,7 @@ export function HomePage({ className, tabs, code, language }) {
       <div className="pt-20 pb-16 sm:pt-20 sm:pb-32">
         <Hero />
       </div>
+      {/* <p className="mt-24 text-2xl font-semibold tracking-tight sm:text-3xl text-zinc-900 dark:text-zinc-100 text-center">Why Gimlet?</p> */}
       <div className="pt-16 pb-16 sm:pb-32">
         <YourCommits />
       </div>

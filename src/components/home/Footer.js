@@ -23,7 +23,7 @@ const footerNav = [
       { logo: twitterLogo, title: 'Twitter', href: 'https://twitter.com/gimlet_io' },
       { logo: youtubeLogo, title: 'YouTube', href: 'https://www.youtube.com/channel/UCMQj-27fzpOWGTKL5nutajA' },
     ],
-    'SaaS': [
+    'Gimlet Cloud': [
       { title: 'Terms of Service', href: 'https://gimlet.io/tos?ref=footer' },
       { title: 'Signup', href: 'https://gimlet.io/signup?ref=footer' },
     ],
