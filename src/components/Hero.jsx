@@ -42,7 +42,7 @@ export function Hero() {
                 </h1>
                 <p className="mt-6 text-lg leading-8 sm:text-center">
                   Gitops-based deployment tooling, service catalog and a curated stack of open-source components packaged 
-                  to help small to medium businneses to run applications on Kubernetes.
+                  to help small to medium businesses to run applications on Kubernetes.
                 </p>
                 <div className="mt-8 md:flex md:space-x-4 space-x-2 sm:justify-center">
                   <a
