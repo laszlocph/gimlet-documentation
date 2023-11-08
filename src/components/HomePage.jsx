@@ -8,11 +8,11 @@ import Link from 'next/link'
 export function HomePage({ className, tabs, code, language }) {
   return (
     <>
-      <div className="text-center pt-12 sm:pt-16">
+      <div className="text-center mx-auto max-w-4xl pt-12 sm:pt-16">
         <Link href="/">
           <a>
             <span className="sr-only">Home page</span>
-            <img src="/logo.svg" alt="Gimlet" className='h-10 sm:h-16 inline' />
+            <img src="/logo2.svg" alt="Gimlet" className='h-10 sm:h-16 inline' />
           </a>
         </Link>
       </div>

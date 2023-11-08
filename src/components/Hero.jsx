@@ -37,15 +37,12 @@ export function Hero() {
                 </div>
               </div> */}
               <div>
-                <p className="mb-6 text-lg leading-8 sm:text-center">
-                  Adopting Kubernetes is a big endeavor. But it is <span className='italic'>the</span> deployment platform today.
-                </p>
                 <h1 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-center sm:text-5xl">
-                  As little, or as much Kubernetes as you want.
+                  The Flux-based Internal Developer Platform
                 </h1>
                 <p className="mt-6 text-lg leading-8 sm:text-center">
-                  With Gimlet, you can start with one-click-deploys then stair-step your way to a gitops based application delivery platform when you need to.
-                  Gimlet features the best of open-source out of the box.
+                  Gitops-based deployment tooling, service catalog and a curated stack of open-source components packaged 
+                  to help small to medium businneses to run applications on Kubernetes.
                 </p>
                 <div className="mt-8 md:flex md:space-x-4 space-x-2 sm:justify-center">
                   <a
