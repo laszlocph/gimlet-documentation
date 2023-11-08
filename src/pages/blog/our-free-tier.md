@@ -14,22 +14,22 @@ We announce free, unlimited use of Gimlet's SaaS for your personal projects.
 
 ## Free, unlimited use for personal projects
 
-There is always a catch in SaaS pricing. This we wanted to avoid at all costs when we constructed Gimlet's pricing plans.
+There is always a catch in SaaS pricing. We wanted to avoid this at all costs when we constructed Gimlet's pricing plans.
 
-Our plans scale based on usage. Based on how many services you deploy, you fit into the various pricing plans we have. This was clear for commercial use, but where to draw the line for our free plan? One service, or ten?
+Our plans scale based on usage, based on how many services you deploy. But where should we draw the line for our free plan? One service, or ten?
 
-Instead, we decided that we make Gimlet's hosted version free for individuals who deploy non-commercial or personal projects with Gimlet.
+Instead of putting complicated rules in place, we decided that we make Gimlet Cloud free for individuals who deploy non-commercial or personal projects.
 
 ## Free, unlimited use for non-profits
 
-Furthermore, it is an easy decision to include non-profits in our free, unlimited use plan.
+Furthermore, non-profits can also benefit from our free, unlimited use plan.
 
 ## In doubt?
 
 If you are not sure if your project fits our free plan, email us at laszlo at gimlet.io to clarify.
 
-And remember, you can [self-host Gimlet](/docs/installation) even if you don't fit our free plan.
+And remember, you can [self-host Gimlet](/docs/installation) even if you don't fit into our free plan.
 
 ## Sign up
 
-You can sign up for our hosted version on [this page](/signup).
+You can sign up to Gimlet Cloud on [this page](/signup).

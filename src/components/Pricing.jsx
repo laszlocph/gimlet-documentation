@@ -70,7 +70,7 @@ const tiers = [
       'Deploy without limits.',
       '24/7 Slack support.',
       'Dedicated onboarding.',
-      'May include Gimlet and bespoke cloud consultancy.',
+      'May include bespoke cloud consultancy.',
       'Gimlet hosted in your cloud, by us.'
     ],
   },
@@ -173,7 +173,7 @@ export function PricingPage() {
               <div className="lg:min-w-0 lg:flex-1">
                 <h3 className="text-lg font-semibold leading-8 tracking-tight text-indigo-600">Self-host</h3>
                 <div className="mt-2 text-base leading-7 text-zinc-600 dark:text-zinc-300">
-                  You get all Gimlet features without user and number of deployed services limitation if you self-host.
+                  You get all Gimlet features without limitations if you self-host.
                 </div>
               </div>
               <div>
