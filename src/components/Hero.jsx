@@ -47,7 +47,7 @@ export function Hero() {
                   easing the load on platform builders and developers alike.
 
                 </p>
-                <div className="mt-8 md:flex md:space-x-4 space-x-2 sm:justify-center">
+                <div className="pt-8 pb-2 md:flex md:space-x-4 space-x-2 sm:justify-center">
                   <a
                     href="/docs/installation?ref=hero"
                     className="inline-block rounded-lg bg-indigo-600 px-8 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700"
@@ -74,7 +74,7 @@ export function Hero() {
 
 export function Quickstart() {
   return (
-    <>
+    <div className="mx-auto max-w-4xl">
       <p className="text-2xl font-semibold tracking-tight sm:text-3xl text-zinc-900 dark:text-zinc-100 text-center">Quickstart</p>
       <div className="mt-6 p-4 bg-zinc-900 dark:bg-black text-zinc-300 dark:text-zinc-600 rounded-lg">
         <div className="whitespace-pre-wrap font-mono">
@@ -88,6 +88,6 @@ export function Quickstart() {
           <p className=""># We have a free tier that <a href="/blog/our-free-tier?ref=hero" className="underline cursor-pointer" onClick={() => Fathom.trackGoal('ZBNHX76G', 0)}>won&apos;t make you think</a> every corner.</p>
         </div>
       </div>
-    </>
+    </div>
   )
 }
