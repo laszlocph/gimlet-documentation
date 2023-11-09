@@ -1,4 +1,5 @@
 import { Hero } from '@/components/Hero'
+import { Quickstart } from '@/components/Hero'
 import { YourCommits } from './home/YourCommits'
 import { GitopsPromises } from './home/GitopsPromises'
 import { Footer } from './home/Footer'
@@ -16,8 +17,11 @@ export function HomePage({ className, tabs, code, language }) {
           </a>
         </Link>
       </div>
-      <div className="pt-20 pb-16 sm:pt-20 sm:pb-32">
+      <div className="pt-20 pb-16 sm:pt-20 sm:pb-24">
         <Hero />
+      </div>
+      <div className="mx-auto max-w-4xl pt-16 pb-16 sm:pb-32 p-4">
+        <Quickstart />
       </div>
       {/* <p className="mt-24 text-2xl font-semibold tracking-tight sm:text-3xl text-zinc-900 dark:text-zinc-100 text-center">Why Gimlet?</p> */}
       <div className="pt-16 pb-16 sm:pb-32">
