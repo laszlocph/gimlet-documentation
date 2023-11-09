@@ -45,7 +45,7 @@ export function HomePage({ className, tabs, code, language }) {
       <Configuration />
       <AppPlatform />
       <CTA /> */}
-      <div className="text-center px-2 md:px-16 py-4 lg:py-16 text-zinc-900 dark:text-zinc-200 text-3xl font-bold">
+      <div className="text-center px-2 md:px-16 py-4 lg:py-32 text-zinc-900 dark:text-zinc-200 text-3xl font-bold">
         Follow for updates on <a href="https://twitter.com/gimlet_io" className="">{twitterLogo}</a>
         , star us on <a href="https://github.com/gimlet-io/gimlet" className="">{githubLogo}</a> and join our community on <a href="https://discord.com/invite/ZwQDxPkYzE" className="">{discordLogo}</a>
       </div>
