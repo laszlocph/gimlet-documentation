@@ -44,7 +44,7 @@ export function Hero() {
                   Gitops-based deployment tooling, service catalog and a curated stack of open-source components.
 
                   Turnkey solution for startups and medium-sized businesses to run applications on Kubernetes, 
-                  easing the load on platform builders and developers alike.
+                  easing the load on platform builders and developers alike. And your wallet.
 
                 </p>
                 <div className="pt-8 pb-2 md:flex md:space-x-4 space-x-2 sm:justify-center">
