@@ -33,7 +33,7 @@ export function HomePage({ className, tabs, code, language }) {
               {
                 name: 'Requires the most skilled engineers.',
                 description:
-                  'Engineers that own vast amount of institutional knowledge and often legacy systems that not get talked about.',
+                  'Engineers that own vast amounts of institutional knowledge and often legacy systems that do not get talked about.',
               },
               {
                 name: 'The scope is broad.',
@@ -47,7 +47,7 @@ export function HomePage({ className, tabs, code, language }) {
         <div className="pt-16 lg:pt-32">
           <Right 
             heading="Batteries included"
-            text="Neither FluxCD, ArgoCD or Backstage is a platform. They are building blocks that platform builders has to stitch together. Gimlet did the work for you."
+            text="Neither FluxCD, ArgoCD or Backstage is a platform. They are building blocks that platform builders have to stitch together. Gimlet did the work for you."
             features={[
               {
                 name: 'Gitops-based deployment workflows.',
@@ -74,7 +74,7 @@ export function HomePage({ className, tabs, code, language }) {
         <div className="pt-16 lg:pt-32">
           <Left 
             heading="Speaks developer"
-            text="Gimlet is not an inventory of Kubernetes resources: Pods, Igresses, and ConfigMaps. You focus on your source code and pull requests."
+            text="Gimlet is not an inventory of Kubernetes resources: Pods, Ingresses, and ConfigMaps. You focus on your source code and pull requests."
             features={[
               {
                 name: 'Navigate your code.',
@@ -97,12 +97,12 @@ export function HomePage({ className, tabs, code, language }) {
         <div className="pt-16 lg:pt-32">
           <Right 
             heading="Gitops promises delivered"
-            text="Gitops was supposed to give us an auditlog. But all we got is manually cross-referencing technical commits between many repos. Gimlet pulled this together."
+            text="Gitops was supposed to give us an audit log. But all we got is manually cross-referencing technical commits between many repos. Gimlet pulled this together."
             features={[
               {
                 name: 'A green CI means a successful deploy again.',
                 description:
-                  'What Flux and ArgoCD broke, Gimlet patched back together. A green CI build means a successfull deploy again.',
+                  'What Flux and ArgoCD broke, Gimlet patched back together. A green CI build means a successful deploy again.',
               },
               {
                 name: 'Promotions, rollbacks',
