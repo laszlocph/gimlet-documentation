@@ -4,6 +4,7 @@ import { Footer } from './home/Footer'
 import Link from 'next/link'
 import { Left } from './home/Left'
 import { Right } from './home/Right'
+import Testimonials from './Testimonial'
 
 
 export function HomePage({ className, tabs, code, language }) {
@@ -20,105 +21,16 @@ export function HomePage({ className, tabs, code, language }) {
       <div className="py-16 sm:py-32">
         <Hero />
       </div>
-      <div className="bg-neutral-100 pt-16 pb-16 sm:pb-32 p-4">
+      <div className="bg-neutral-100 dark:bg-neutral-700 pt-16 pb-16 sm:pb-32 p-4">
         <Quickstart />
       </div>
       <div className="pt-16 pb-16 sm:pb-32 p-4">
         <Why />
-        <div className="pt-8 sm:pt-16 lg:pt-24">
-          <Left 
-            heading="Platform building is costly"
-            text="Building a platform with cloud native tools is a broad and costly exercise."
-            features={[
-              {
-                name: 'Requires the most skilled engineers.',
-                description:
-                  'Engineers that own vast amounts of institutional knowledge and often legacy systems that do not get talked about.',
-              },
-              {
-                name: 'The scope is broad.',
-                description: 'The "State of Platform Engineering Report Volume 2" found what we also see in teams: Platform Engineering has to cover a lot. CD is just a fraction of the job, and we believe it can be standardized.',
-              },
-            ]}
-            image="/pe-focus.png"
-            alt="Excerpt from the State of Platform Engineering Report Volume 2"
-          />
-        </div>
-        <div className="pt-16 lg:pt-32">
-          <Right 
-            heading="Batteries included"
-            text="Neither FluxCD, ArgoCD or Backstage is a platform. They are building blocks that platform builders have to stitch together. Gimlet did the work for you."
-            features={[
-              {
-                name: 'Gitops-based deployment workflows.',
-                description:
-                  'Deploy, rollback, secret handling, manifest authoring.',
-              },
-              {
-                name: 'Fleet management.',
-                description: 'Update all app manifests with the latest compliance needs. Update infrastructure components on all clusters with the latest security patch.',
-              },
-              {
-                name: 'A curated stack of open-source components.',
-                description: 'We put together the most common permutations of cloud native tools. We issue updates on a schedule.',
-              },
-              {
-                name: 'Troubleshooting aid.',
-                description: 'Get notified when an app is crashing, with context-aware fix suggestions.',
-              },
-            ]}
-            image="/features.png"
-            alt=""
-          />
-        </div>
-        <div className="pt-16 lg:pt-32">
-          <Left 
-            heading="Speaks developer"
-            text="Gimlet is not an inventory of Kubernetes resources: Pods, Ingresses, and ConfigMaps. You focus on your source code and pull requests."
-            features={[
-              {
-                name: 'Navigate your code.',
-                description:
-                  'You see one git repository at a time so you can focus on your commits and pull requests.',
-              },
-              {
-                name: 'Know what is deployed,',
-                description: 'when and by whom.',
-              },
-              {
-                name: 'Well known deployment actions.',
-                description: 'Deploy, rollback and preview deploys.',
-              },
-            ]}
-            image="/service-card.png"
-            alt=""
-          />
-        </div>
-        <div className="pt-16 lg:pt-32">
-          <Right 
-            heading="Gitops promises delivered"
-            text="Gitops was supposed to give us an audit log. But all we got is manually cross-referencing technical commits between many repos. Gimlet pulled this together."
-            features={[
-              {
-                name: 'A green CI means a successful deploy again.',
-                description:
-                  'What Flux and ArgoCD broke, Gimlet patched back together. A green CI build means a successful deploy again.',
-              },
-              {
-                name: 'Promotions, rollbacks',
-                description: ' - check.',
-              },
-              {
-                name: 'Smoke tests?',
-                description: 'We have lifecycle hooks for that.',
-              },
-            ]}
-            image="/auditlog.png"
-            alt=""
-          />
-        </div>
       </div>
-      <div className="bg-neutral-100 text-center px-2 md:px-16 py-4 lg:py-32 text-zinc-900 dark:text-zinc-200 text-2xl sm:text-3xl font-bold">
+      <div className="pt-16 pb-16 sm:pb-32 p-4">
+        <Saying />
+      </div>
+      <div className="bg-neutral-100 dark:bg-neutral-700 text-center px-2 md:px-16 py-4 lg:py-32 text-zinc-900 dark:text-zinc-200 text-2xl sm:text-3xl font-bold">
         <p>Join our community!</p>
         <p className="pt-8">Join our <a href="https://discord.com/invite/ZwQDxPkYzE" className="underline">{discordLogo} Discord</a> or star us on <a href="https://github.com/gimlet-io/gimlet" className="underline">{githubLogo}Github</a></p>
       </div>
@@ -131,9 +43,117 @@ export function HomePage({ className, tabs, code, language }) {
 
 export function Why() {
   return (
+    <>
     <div className="mx-auto max-w-4xl">
-    <p className="text-2xl font-semibold tracking-tight sm:text-3xl text-zinc-900 dark:text-zinc-100 text-center">Why Gimlet?</p>
-  </div>
+      <h3 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-4xl text-center">Why Gimlet?</h3>
+      {/* <p className="text-2xl font-semibold tracking-tight sm:text-3xl text-zinc-900 dark:text-zinc-100 text-center">Why Gimlet?</p> */}
+    </div>
+    <div className="pt-8 sm:pt-16 lg:pt-24">
+      <Left 
+        heading="Platform building is costly"
+        text="Building a platform with cloud native tools is a broad and costly exercise."
+        features={[
+          {
+            name: 'Requires the most skilled engineers.',
+            description:
+              'Engineers that own vast amounts of institutional knowledge and often legacy systems that do not get talked about.',
+          },
+          {
+            name: 'The scope is broad.',
+            description: 'The "State of Platform Engineering Report Volume 2" found what we also see in teams: Platform Engineering has to cover a lot. CD is just a fraction of the job, and we believe it can be standardized.',
+          },
+        ]}
+        image="/pe-focus.png"
+        alt="Excerpt from the State of Platform Engineering Report Volume 2"
+      />
+    </div>
+    <div className="pt-16 lg:pt-32">
+      <Right 
+        heading="Batteries included"
+        text="Neither FluxCD, ArgoCD or Backstage is a platform. They are building blocks that platform builders have to stitch together. Gimlet did the work for you."
+        features={[
+          {
+            name: 'Gitops-based deployment workflows.',
+            description:
+              'Deploy, rollback, secret handling, manifest authoring.',
+          },
+          {
+            name: 'Fleet management.',
+            description: 'Update all app manifests with the latest compliance needs. Update infrastructure components on all clusters with the latest security patch.',
+          },
+          {
+            name: 'A curated stack of open-source components.',
+            description: 'We put together the most common permutations of cloud native tools. We issue updates on a schedule.',
+          },
+          {
+            name: 'Troubleshooting aid.',
+            description: 'Get notified when an app is crashing, with context-aware fix suggestions.',
+          },
+        ]}
+        image="/features.png"
+        alt=""
+      />
+    </div>
+    <div className="pt-16 lg:pt-32">
+      <Left 
+        heading="Speaks developer"
+        text="Gimlet is not an inventory of Kubernetes resources: Pods, Ingresses, and ConfigMaps. You focus on your source code and pull requests."
+        features={[
+          {
+            name: 'Navigate your code.',
+            description:
+              'You see one git repository at a time so you can focus on your commits and pull requests.',
+          },
+          {
+            name: 'Know what is deployed,',
+            description: 'when and by whom.',
+          },
+          {
+            name: 'Well known deployment actions.',
+            description: 'Deploy, rollback and preview deploys.',
+          },
+        ]}
+        image="/service-card.png"
+        alt=""
+      />
+    </div>
+    <div className="pt-16 lg:pt-32">
+      <Right 
+        heading="Gitops promises delivered"
+        text="Gitops was supposed to give us an audit log. But all we got is manually cross-referencing technical commits between many repos. Gimlet pulled this together."
+        features={[
+          {
+            name: 'A green CI means a successful deploy again.',
+            description:
+              'What Flux and ArgoCD broke, Gimlet patched back together. A green CI build means a successful deploy again.',
+          },
+          {
+            name: 'Promotions, rollbacks',
+            description: ' - check.',
+          },
+          {
+            name: 'Smoke tests?',
+            description: 'We have lifecycle hooks for that.',
+          },
+        ]}
+        image="/auditlog.png"
+        alt=""
+      />
+    </div>
+    </>
+  )
+}
+
+export function Saying() {
+  return (
+    <>
+    <div className="mx-auto max-w-4xl">
+      <h3 id="testimonials" className="text-3xl font-bold tracking-tight sm:text-4xl text-neutral-900 dark:text-neutral-100 text-center">We have amazing users</h3>
+    </div>
+    <div className="pt-8 sm:pt-16 lg:pt-24">
+      <Testimonials />
+    </div>
+    </>
   )
 }
 
