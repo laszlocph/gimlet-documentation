@@ -50,7 +50,7 @@ export function Why() {
     </div>
     <div className="pt-8 sm:pt-16 lg:pt-24">
       <Left 
-        heading="Do more with your platform building efforts"
+        heading="Do more with your platform building effort"
         text="Building a platform with cloud native tools is a broad and costly exercise."
         features={[
           {
