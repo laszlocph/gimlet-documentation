@@ -50,17 +50,21 @@ export function Why() {
     </div>
     <div className="pt-8 sm:pt-16 lg:pt-24">
       <Left 
-        heading="Platform building is costly"
+        heading="Do more with your platform building efforts"
         text="Building a platform with cloud native tools is a broad and costly exercise."
         features={[
           {
-            name: 'Requires the most skilled engineers.',
+            name: 'Requires the most skilled engineers,',
             description:
-              'Engineers that own vast amounts of institutional knowledge and often legacy systems that do not get talked about.',
+              'who own vast amounts of institutional knowledge and often legacy systems that do not get talked about. They are spread thin.',
           },
           {
             name: 'The scope is broad.',
-            description: 'The "State of Platform Engineering Report Volume 2" found what we also see in teams: Platform Engineering has to cover a lot. CD is just a fraction of the job, and we believe it can be standardized.',
+            description: 'The State of Platform Engineering Report Volume 2 found what we also see in teams: platform engineering has to cover a lot. CD is just a fraction of the job, and we believe it can be standardized.',
+          },
+          {
+            name: 'What if you could focus?',
+            description: 'With using Gimlet, platform engineering is freed up to focus on your compliance project, your security initiative and ultimately, on your special sauce.'
           },
         ]}
         image="/pe-focus.png"
