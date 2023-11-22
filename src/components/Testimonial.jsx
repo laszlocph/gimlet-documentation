@@ -12,7 +12,7 @@ const testimonials = [
     body: 'As a developer, I found that Gimlet significantly lowered the barrier to entry for using Kubernetes by adopting an opinionated approach. I can now easily create and deploy Kubernetes clusters in a reproducible manner.',
     author: {
       name: 'Linas Zdanavičius',
-      handle: '',
+      handle: 'CTO at Trektours.eu',
       imageUrl:
         'https://media.licdn.com/dms/image/C5603AQGAU69nCfnZPg/profile-displayphoto-shrink_400_400/0/1517773023596?e=1706140800&v=beta&t=376xdX1yyYEI8mzkwK_l1OtqW8jwRia4qZQtBw2ataQ',
     },
