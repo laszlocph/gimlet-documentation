@@ -14,7 +14,8 @@ export function HomePage({ className, tabs, code, language }) {
         <Link href="/">
           <a>
             <span className="sr-only">Home page</span>
-            <img src="/logo2.svg" alt="Gimlet" className='h-10 sm:h-16 inline' />
+            <img src="/logo2.svg" alt="Gimlet" className='h-10 sm:h-16 inline dark:hidden' />
+            <img src="/logo-dark.svg" alt="Gimlet" className='h-10 sm:h-16 inline hidden dark:inline' />
           </a>
         </Link>
       </div>
