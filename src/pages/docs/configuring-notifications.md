@@ -78,7 +78,7 @@ NOTIFICATIONS_DEFAULT_CHANNEL: "general"
 + NOTIFICATIONS_CHANNEL_MAPPING: "production=production-deploys,staging=staging-deploys"
 ```
 
-### Route notifications per application
+### Per application routing
 
 To route notifications of a Gimlet application to a channel, set the service catalog field Owner IM. Use `@` sign to send direct message instead of a message to a channel.
 
