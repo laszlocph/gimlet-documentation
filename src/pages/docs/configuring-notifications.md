@@ -80,6 +80,6 @@ NOTIFICATIONS_DEFAULT_CHANNEL: "general"
 
 ### Route notifications per application
 
-To route alert notifications of a Gimlet application to a channel, set the service catalog field Owner IM. Use `@` sign to send direct message instead of a message to a channel.
+To route notifications of a Gimlet application to a channel, set the service catalog field Owner IM. Use `@` sign to send direct message instead of a message to a channel.
 
 ![Service catalog entry for owner IM settings](/owner-im.png)
