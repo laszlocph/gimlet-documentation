@@ -30,6 +30,7 @@ const navigation = [
       { title: 'Rolling back', href: '/docs/rolling-back' },
       { title: 'Container image building', href: '/docs/container-image-building' },
       { title: 'Managing secrets', href: '/docs/how-to-manage-secrets' },
+      { title: 'Configuring notifications', href: '/docs/configuring-notifications' },
       { title: 'When Helm is limiting', href: '/docs/when-helm-is-limiting' },
       { title: 'Managing infrastructure components', href: '/docs/managing-infrastructure-components' },
       { title: 'Deploying Gimlet in production', href: '/docs/deploying-gimlet-in-production' },
