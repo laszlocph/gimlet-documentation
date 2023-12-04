@@ -32,8 +32,8 @@ export function HomePage({ className, tabs, code, language }) {
         <Saying />
       </div>
       <div className="bg-neutral-100 dark:bg-neutral-700 text-center px-2 md:px-16 py-4 lg:py-32 text-zinc-900 dark:text-zinc-200 text-2xl sm:text-3xl font-bold">
-        <p>Join our community!</p>
-        <p className="pt-8">Join our <a href="https://discord.com/invite/ZwQDxPkYzE" className="underline">{discordLogo} Discord</a> or star us on <a href="https://github.com/gimlet-io/gimlet" className="underline">{githubLogo}Github</a></p>
+        <p>Get help, show support!</p>
+        <p className="pt-8">Join our <a href="https://discord.com/invite/ZwQDxPkYzE" className="underline">{discordLogo} Discord</a> and star us on <a href="https://github.com/gimlet-io/gimlet" className="underline">{githubLogo}Github</a></p>
       </div>
       <div className="mt-32">
         <Footer />

@@ -21,11 +21,6 @@ const redirects = {
   async redirects() {
     return [
       {
-        source: '/docs',
-        destination: '/docs/installation',
-        permanent: false,
-      },
-      {
         source: '/concepts/components',
         destination: '/docs/concepts',
         permanent: false,

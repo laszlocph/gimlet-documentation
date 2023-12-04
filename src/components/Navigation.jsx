@@ -60,7 +60,7 @@ export function Navigation({ navigation, className, isDocsPage }) {
             <h2 className="font-display font-medium text-zinc-900 dark:text-zinc-100">
               {section.title}
             </h2>
-            <ul className="mt-2 space-y-2 border-l-2 border-zinc-100 dark:border-zinc-800 lg:mt-4 lg:space-y-4 lg:border-zinc-200">
+            <ul className="mt-2 space-y-2 border-l-2 border-zinc-100 dark:border-zinc-800 lg:mt-4 lg:border-zinc-200">
               {section.links.map((link) => (
                 <li key={link.href} className="relative">
                   <Link href={link.href}>

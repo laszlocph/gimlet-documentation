@@ -27,7 +27,7 @@ It is built on the de-facto tools of the ecosystem - Helm and Flux - and provide
 
 We are committed to community support even when it is not strictly about Gimlet.
 
-Be that Gimlet, containers or cloud related, we are here to help. [Join our community Discord](https://discord.com/invite/ZwQDxPkYzE) or [Ask a question on Github](https://github.com/gimlet-io/gimlet/discussions)
+Be that Gimlet, containers or cloud related, we are here to help. [Join our community Discord](https://discord.com/invite/ZwQDxPkYzE).
 
 ## Supporting Gimlet
 

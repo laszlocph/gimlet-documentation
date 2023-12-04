@@ -10,6 +10,21 @@ import * as Fathom from "fathom-client";
 
 const navigation = [
   {
+    title: 'Overview',
+    links: [
+      { title: 'The tooling challenge', href: '/docs/tooling-challenge' },
+    ],
+  },
+  {
+    title: 'Use-cases',
+    links: [
+      { title: 'I am a developer', href: '/docs/i-am-a-developer' },
+      { title: 'I am a data-scientist/ml engineer', href: '/docs/i-am-a-data-scientist-ml-engineer' },
+      { title: 'I am a platform builder', href: '/docs/i-am-a-platform-builder' },
+      { title: 'I am a manager / product owner', href: '/docs/i-am-a-manager-produc-owner' },
+    ],
+  },
+  {
     title: 'Getting started',
     links: [
       { title: 'Installation', href: '/docs/installation' },
