@@ -1,9 +1,7 @@
 ---
-title: Getting started
+title: Welcome to the Gimlet universe!
 description: Turn your cluster into an application platform built on open standards. Deploy without the steep learning curve. 100% open-source.
 ---
-
-## Welcome to the Gimlet universe!
 
 Gimlet will get you a developer platform on top of Kubernetes.
 

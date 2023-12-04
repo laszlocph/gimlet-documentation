@@ -1,6 +1,6 @@
 ---
 title: The Tooling Challenge
-description: You will learn how to create release policies that are triggered on certain conditions to automatically release to a target environment.
+description: It is challenging to build a platform that is polished, not limiting and cost-effective.
 ---
 
 
