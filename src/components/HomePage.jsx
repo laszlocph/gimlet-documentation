@@ -22,6 +22,9 @@ export function HomePage({ className, tabs, code, language }) {
       <div className="py-16 sm:py-32">
         <Hero />
       </div>
+      <div className="bg-orange-100 dark:bg-stone-950 pt-16 pb-16 p-4">
+        <Video />
+      </div>
       <div className="bg-neutral-100 dark:bg-neutral-700 pt-16 pb-16 sm:pb-32 p-4">
         <Quickstart />
       </div>
@@ -159,6 +162,15 @@ export function Saying() {
       <Testimonials />
     </div>
     </>
+  )
+}
+
+export function Video() {
+  return (
+    <div className="mx-auto max-w-4xl">
+      <h3 className="text-2xl font-semibold tracking-tight sm:text-3xl text-zinc-900 dark:text-zinc-100 text-center">Gimlet in 90 seconds</h3>
+      <iframe className='mx-auto mt-16' width="560" height="315" src="https://www.youtube-nocookie.com/embed/xHVMjKSVz8k?si=Uegq4YVe0Vwm0vhm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen></iframe>
+    </div>
   )
 }
 
