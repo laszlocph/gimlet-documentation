@@ -22,10 +22,10 @@ export function HomePage({ className, tabs, code, language }) {
       <div className="py-16 sm:py-32">
         <Hero />
       </div>
-      <div className="bg-orange-100 dark:bg-stone-950 pt-16 pb-16 p-4">
+      <div className="bg-neutral-100 dark:bg-stone-950 pt-16 pb-16 sm:pb-32 p-4">
         <Video />
       </div>
-      <div className="bg-neutral-100 dark:bg-neutral-700 pt-16 pb-16 sm:pb-32 p-4">
+      <div className="bg-neutral-200 dark:bg-neutral-700 pt-16 pb-16 sm:pb-32 p-4">
         <Quickstart />
       </div>
       <div className="pt-16 pb-16 sm:pb-32 p-4">
