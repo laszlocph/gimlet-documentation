@@ -684,3 +684,31 @@ Check the Kubernetes manifest:
 ```bash
 helm template my-release onechart/onechart -f values.yaml
 ```
+
+## Supporting any Kubernetes field
+
+Helm charts can be limiting. If OneChart did not template a particular Kubernetes yaml field, you have to reach for post-processing tools.
+
+To bridge this gap in Helm, we provide the following mechanism.
+
+### Example: setting `hostNetwork`
+
+The `hostNetwork` field is not templated in OneChart. Still, if you set 
+
+```
+podSpec:
+  hostNetwork: true
+```
+
+OneChart will merge the hostNetwork field onto `.spec.template.spec` of the Deployment resource. Practically you can set any unimplemented field on the pod specification. Just add it to your values file under `podSpec`.
+
+### Example: overwriting `imagePullPolicy`
+
+Setting
+
+```
+container:
+  imagePullPolicy: Always
+```
+
+Will add or overwrite the Deployment resource's: `.spec.template.spec.containers[0]` field with any of the specified field. This ay you can alter any implemented field in OneChart.
