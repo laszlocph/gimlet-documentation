@@ -140,12 +140,6 @@ For all other possibilities, please refer to the [Gimlet manifest reference](/do
 
 If you deploy preview apps with dynamic names, like with the branch name in the app name, you can use Gimlet's cleanup policies to clean them up once you don't need them anymore.
 
-{% callout type="warning" title="Configure Gimletd for cleaning up" %}
-This feature works only if you [enabled the Github integration](/docs/gimletd-configuration-reference#github-integration) in GimletD.
-{% /callout %}
-
-### Cleanup policy
-
 ```diff
 # .gimlet/preview.yaml
 app: myapp-{{ .BRANCH | sanitizeDNSName }}
