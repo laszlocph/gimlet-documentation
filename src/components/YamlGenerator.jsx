@@ -175,6 +175,7 @@ helm template my-release onechart/${chart.name} -f values.yaml`
               <CopyButton
                 text={kubernetesYaml}
                 style="light"
+                feedback={true}
               />
               <Highlight
                 {...defaultProps}
