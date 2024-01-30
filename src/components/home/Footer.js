@@ -25,6 +25,7 @@ const footerNav = [
     ],
     'Gimlet Cloud': [
       { title: 'Terms of Service', href: 'https://gimlet.io/tos?ref=footer' },
+      { title: 'Pricing', href: 'https://gimlet.io/pricing?ref=footer' },
       { title: 'Signup', href: 'https://gimlet.io/signup?ref=footer' },
     ],
   },
