@@ -23,16 +23,16 @@ export function HomePage({ className, tabs, code, language }) {
         <div className='hidden sm:block'>
           <div className='flex gap-x-2'>
           <Link href="https://accounts.gimlet.io/signup">
-          <button class="text-white font-bold py-2 px-4 rounded">
+          <button className="text-white font-bold py-2 px-4 rounded">
             Sign up
           </button>
           </Link>
-          {/* <button class="bg-orange-400 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
+          {/* <button className="bg-orange-400 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
             App down?
           </button> */}
           {/* <button class="bg-transparent hover:bg-orange-700 text-orange-400 font-semibold hover:text-white py-2 px-4 border border-orange-500 hover:border-transparent rounded"> */}
           <Link href="https://accounts.gimlet.io">
-          <button class="bg-orange-400 hover:bg-orange-700 text-white font-semibold hover:text-white py-2 px-4 border border-orange-500 hover:border-transparent rounded">
+          <button className="bg-orange-400 hover:bg-orange-700 text-white font-semibold hover:text-white py-2 px-4 border border-orange-500 hover:border-transparent rounded">
             Log in
           </button>
           </Link>
