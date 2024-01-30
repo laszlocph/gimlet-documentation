@@ -24,9 +24,9 @@ const footerNav = [
       { logo: youtubeLogo, title: 'YouTube', href: 'https://www.youtube.com/channel/UCMQj-27fzpOWGTKL5nutajA' },
     ],
     'Gimlet Cloud': [
-      { title: 'Terms of Service', href: 'https://gimlet.io/tos?ref=footer' },
-      { title: 'Pricing', href: 'https://gimlet.io/pricing?ref=footer' },
       { title: 'Signup', href: 'https://gimlet.io/signup?ref=footer' },
+      { title: 'Pricing', href: 'https://gimlet.io/pricing?ref=footer' },
+      { title: 'Terms of Service', href: 'https://gimlet.io/tos?ref=footer' },
     ],
   },
 ]
