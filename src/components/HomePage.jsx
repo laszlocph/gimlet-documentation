@@ -10,16 +10,36 @@ import Testimonials from './Testimonial'
 export function HomePage({ className, tabs, code, language }) {
   return (
     <>
-      <div className="text-center mx-auto max-w-4xl pt-12 sm:pt-16">
+      <div className="mx-auto max-w-6xl flex p-4 pt-12 sm:pt-16">
+        <div className="grow">
         <Link href="/">
           <a>
             <span className="sr-only">Home page</span>
-            <img src="/logo2.svg" alt="Gimlet" className='h-10 sm:h-16 inline dark:hidden' />
-            <img src="/logo-dark.svg" alt="Gimlet" className='h-10 sm:h-16 inline hidden dark:inline' />
+            <img src="/logo2.svg" alt="Gimlet" className='h-10 sm:h-12 inline dark:hidden' />
+            <img src="/logo-dark.svg" alt="Gimlet" className='h-10 sm:h-12 inline hidden dark:inline' />
           </a>
         </Link>
+        </div>
+        <div className='hidden sm:block'>
+          <div className='flex gap-x-2'>
+          <Link href="https://accounts.gimlet.io/signup">
+          <button class="text-white font-bold py-2 px-4 rounded">
+            Sign up
+          </button>
+          </Link>
+          {/* <button class="bg-orange-400 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
+            App down?
+          </button> */}
+          {/* <button class="bg-transparent hover:bg-orange-700 text-orange-400 font-semibold hover:text-white py-2 px-4 border border-orange-500 hover:border-transparent rounded"> */}
+          <Link href="https://accounts.gimlet.io">
+          <button class="bg-orange-400 hover:bg-orange-700 text-white font-semibold hover:text-white py-2 px-4 border border-orange-500 hover:border-transparent rounded">
+            Log in
+          </button>
+          </Link>
+          </div>
+        </div>
       </div>
-      <div className="py-16 sm:py-32">
+      <div className="py-16 sm:py-48">
         <Hero />
       </div>
       <div className="bg-neutral-100 dark:bg-stone-950 pt-16 pb-16 sm:pb-32 p-4">
