@@ -80,7 +80,7 @@ image:
   tag: x.y.z
 
 imagePullSecrets:
-  - name: regcred
+  - regcred
 ```
 
 Check the Kubernetes manifest:
@@ -92,7 +92,7 @@ image:
   tag: x.y.z
 
 imagePullSecrets:
- - name: regcred
+ - regcred
 EOF
 
 helm template my-release onechart/onechart -f values.yaml
