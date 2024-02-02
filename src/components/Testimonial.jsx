@@ -5,7 +5,7 @@ const testimonials = [
       name: 'Louis Scheepers',
       handle: 'CTO at CubeZoo',
       imageUrl:
-        'https://media.licdn.com/dms/image/C5603AQGioW-mfELHTA/profile-displayphoto-shrink_800_800/0/1549462231658?e=1706140800&v=beta&t=cj1C1sCM9CblNbionhRXMNk8y7FLckAvotJpqDxk8fo',
+        '/louis-scheepers.jpg',
     },
   },
   {
@@ -14,7 +14,7 @@ const testimonials = [
       name: 'Linas Zdanavičius',
       handle: 'CTO at Trektours.eu',
       imageUrl:
-        'https://media.licdn.com/dms/image/C5603AQGAU69nCfnZPg/profile-displayphoto-shrink_400_400/0/1517773023596?e=1706140800&v=beta&t=376xdX1yyYEI8mzkwK_l1OtqW8jwRia4qZQtBw2ataQ',
+        '/linas-zdanavičius.png',
     },
   },
   {
@@ -23,7 +23,7 @@ const testimonials = [
       name: 'Pawel Darulewski',
       handle: 'Machine Learning Engineer at raffle.ai',
       imageUrl:
-        'https://media.licdn.com/dms/image/C4D03AQG7w3vFVg8ocA/profile-displayphoto-shrink_800_800/0/1558213165153?e=1706140800&v=beta&t=0SVAaKjiQqQTbNyYR3mV_ED40TW5zm_cAsA_86E9AAQ',
+        '/pawel-darulewski.jpg',
     },
   },
   {
@@ -32,7 +32,7 @@ const testimonials = [
       name: 'Ida Riis Jensen',
       handle: 'Data Scientist @ ADC',
       imageUrl:
-        'https://media.licdn.com/dms/image/D4E03AQHhftq58J4VuQ/profile-displayphoto-shrink_800_800/0/1693992284023?e=1706140800&v=beta&t=E4LSkCaZSBrRh9Y4EZkm1LJuo3X-egtcFp1dQIDMLnA',
+        '/ida-riis-Jensen.jpg',
     },
   },
   {
@@ -41,7 +41,7 @@ const testimonials = [
       name: 'Mads Sejersen',
       handle: 'Lead Software Engineer hos raffle.ai',
       imageUrl:
-        'https://media.licdn.com/dms/image/C4D03AQGYSc5PZwJ5Jg/profile-displayphoto-shrink_800_800/0/1516502002359?e=1706140800&v=beta&t=QVgkUNEc-6qSB8EZfaJiiZ1cbDABO_VBgDM_zmq-NEA',
+        '/mads-sejersen.jpg',
     },
   },
   {
@@ -50,7 +50,7 @@ const testimonials = [
       name: 'Tobias Slott Jensen',
       handle: 'MLOps Engineer at Veo Technologies',
       imageUrl:
-        'https://media.licdn.com/dms/image/C4D03AQGsQSjRBNG0WA/profile-displayphoto-shrink_800_800/0/1593628841388?e=1706140800&v=beta&t=wnV1aDxfxczbxue2CL9ywoD_z0eYXteeFo-DXgEqOUo',
+        '/tobias-slott-jensen.jpg',
     },
   },
 ]
