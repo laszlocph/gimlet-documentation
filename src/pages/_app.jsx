@@ -131,7 +131,7 @@ export default function App({ Component, pageProps }) {
     image = pageProps.markdoc?.frontmatter.image
   }
 
-  let tableOfContents = pageProps.markdoc?.content
+  let tableOfContents = pageProps.markdoc?.frontmatter.toc !== false && pageProps.markdoc?.content
     ? collectHeadings(pageProps.markdoc.content)
     : []
 

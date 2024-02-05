@@ -111,39 +111,39 @@ export function BlogPage({ children, className, tabs, code, language, title, sec
                 <div className="w-full border-t border-gray-300" />
               </div>
             </div>
-            <h3 className='font-medium text-lg'>More from our blog</h3>
+            <h3 className='font-medium text-lg dark:text-gray-300'>More from our blog</h3>
             <div className='flex mt-8'>
               <img src="/clickops.png" className="w-48 object-contain"></img>
               <div className='ml-2'>
-                <h2 className="mb-2 font-medium underline"><a href={"/blog/clickops-over-gitops?ref="+ref}>Clickops over gitops</a></h2>
+                <h2 className="mb-2 font-medium underline dark:text-gray-300"><a href={"/blog/clickops-over-gitops?ref="+ref}>Clickops over gitops</a></h2>
                 <div className="prose mt-2.5 text-gray-600 dark:text-gray-300 leading-tight"><p>Doing cloud operations by clicking on a dashboard that generates a stream of infrastructure as code changes.</p></div>
               </div>
             </div>
             <div className='flex mt-8'>
               <img src="/why-hetzner.png" className="w-48 object-contain"></img>
               <div className='ml-2'>
-                <h2 className="mb-2 font-medium underline"><a href={"/blog/announcing-the-gimlet-saas-early-access?ref="+ref}>The how and why we built our SaaS platform on Hetzner and Kubernetes</a></h2>
+                <h2 className="mb-2 font-medium underline dark:text-gray-300"><a href={"/blog/announcing-the-gimlet-saas-early-access?ref="+ref}>The how and why we built our SaaS platform on Hetzner and Kubernetes</a></h2>
                 <div className="prose mt-2.5 text-gray-600 dark:text-gray-300 leading-tight"><p>Hetzner is 5 times cheaper for us than the hyperscalers. This blog posts enumerates the how and why we built our SaaS on a discount bare metal provider. Gotchas included.</p></div>
               </div>
             </div>
             <div className='flex mt-8'>
               <img src="/saas-early-access.png" className="w-48 object-contain"></img>
               <div className='ml-2'>
-                <h2 className="mb-2 font-medium underline"><a href={"/blog/announcing-the-gimlet-saas-early-access?ref="+ref}>Announcing the Gimlet SaaS Early Access</a></h2>
+                <h2 className="mb-2 font-medium underline dark:text-gray-300"><a href={"/blog/announcing-the-gimlet-saas-early-access?ref="+ref}>Announcing the Gimlet SaaS Early Access</a></h2>
                 <div className="prose mt-2.5 text-gray-600 dark:text-gray-300 leading-tight"><p>We have something really exciting to share with you: Gimlet is going SaaS. In other words, you will be able to use Gimlet&apos;s unparalleled Kubernetes deploy experience with even fewer clicks than before.</p></div>
               </div>
             </div>
             <div className='flex mt-8'>
               <img src="/gitops-broke-cicd.jpg" className="w-48 object-contain"></img>
               <div className='ml-2'>
-                <h2 className="mb-2 font-medium underline"><a href={"/blog/how-flux-broke-the-cicd-feedback-loop-and-how-we-pieced-it-back-together?ref="+ref}>How Flux broke the CI/CD feedback loop, and how we pieced it back together</a></h2>
+                <h2 className="mb-2 font-medium underline dark:text-gray-300"><a href={"/blog/how-flux-broke-the-cicd-feedback-loop-and-how-we-pieced-it-back-together?ref="+ref}>How Flux broke the CI/CD feedback loop, and how we pieced it back together</a></h2>
                 <div className="prose mt-2.5 text-gray-600 dark:text-gray-300 leading-tight"><p>A green build used to mean a successful deploy. But then gitops came and broke this heuristic.</p></div>
               </div>
             </div>
             <div className='flex mt-8'>
               <img src="/introducing-kyverno.png" className="w-48 object-contain"></img>
               <div className='ml-2'>
-                <h2 className="mb-2 font-medium underline"><a href={"/blog/are-you-sure-none-of-your-containers-run-as-root?ref="+ref}>Are you sure none of your containers run as root?</a></h2>
+                <h2 className="mb-2 font-medium underline dark:text-gray-300"><a href={"/blog/are-you-sure-none-of-your-containers-run-as-root?ref="+ref}>Are you sure none of your containers run as root?</a></h2>
                 <div className="prose mt-2.5 text-gray-600 dark:text-gray-300 leading-tight"><p>The Kyverno policy engine just arrived in Gimlet Stack. Let&apos;s see how you can be certain that none of the containers run as root in your Kubernetes cluster.</p></div>
               </div>
             </div>

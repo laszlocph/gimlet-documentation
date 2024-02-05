@@ -5,8 +5,38 @@ import { Event } from '@/components/Event'
 import { Post } from '@/components/Post'
 import { Signup } from '@/components/Signup'
 import { Tweet } from '@/components/Tweet'
+import { Wide } from '@/components/Wide'
+import { MyHighlight } from '@/components/Highlight'
+import { Box } from '@/components/Box'
+import { SideBySide } from '@/components/SideBySide'
+import { Grid } from '@/components/Grid'
 
 const tags = {
+  highlight: {
+    render: MyHighlight,
+  },
+  box : {
+    attributes: {
+      css: { type: String },
+    },
+    render: Box,
+  },
+  sidebyside : {
+    attributes: {
+      css: { type: String },
+    },
+    render: SideBySide,
+  },
+  grid : {
+    render: Grid,
+  },
+  wide: {
+    attributes: {
+      css: { type: String },
+      width: { type: Number },
+    },
+    render: Wide,
+  },
   callout: {
     attributes: {
       title: { type: String },

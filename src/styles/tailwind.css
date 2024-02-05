@@ -29,3 +29,11 @@
   -webkit-transform: scaleX(-1); transform: scaleX(-1);
   -webkit-transform: scaleY(-1); transform: scaleY(-1);
 }
+
+.inserted {
+  @apply text-green-600;
+}
+
+.deleted {
+  @apply text-red-600;
+}
