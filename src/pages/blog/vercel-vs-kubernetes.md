@@ -44,7 +44,7 @@ The first test: let's deploy something.
 
 We are going to deploy a React app since Vercel only supports frontend frameworks. The app is on Github, in a private repository.
 
-{% wide css="pt-2 pb-8 mt-16 mb-16 bg-gray-100 dark:bg-slate-800/60" width=80 %}
+{% wide css="pt-2 pb-8 mt-16 mb-16 bg-gray-100 dark:bg-slate-800/60 z-10" width=80 %}
 ### Registration
 {% sidebyside css="sm:pb-16" %}
 {% box css="w-full" %}
