@@ -210,4 +210,4 @@ The final score:
 
 Vercel: 🏀 🏀 🏀 - Kubernetes: 🏀 🏀 🏀?
 
-If you want to see how a React app is deployed to Kubernetes, join [this live stream](Linkedin) on the 13th February.
+If you want to see how a React app is deployed to Kubernetes, join [this live stream](https://www.linkedin.com/events/awalkthrough-deployingareactapp7160557073028530176/theater/) on the 13th February.
