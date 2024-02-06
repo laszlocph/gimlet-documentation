@@ -23,7 +23,7 @@ export function HomePage({ className, tabs, code, language }) {
         <div className='hidden sm:block'>
           <div className='flex gap-x-2'>
           <Link href="https://accounts.gimlet.io/signup">
-          <button className="text-white font-bold py-2 px-4 rounded">
+          <button className="text-zinc-900 dark:text-white font-bold py-2 px-4 rounded">
             Sign up
           </button>
           </Link>
