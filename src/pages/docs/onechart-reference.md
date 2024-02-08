@@ -711,4 +711,4 @@ container:
   imagePullPolicy: Always
 ```
 
-Will add or overwrite the Deployment resource's: `.spec.template.spec.containers[0]` field with any of the specified field. This ay you can alter any implemented field in OneChart.
+Will add or overwrite the Deployment resource's: `.spec.template.spec.containers[0]` field with any of the specified field. This way you can alter any implemented field in OneChart.
