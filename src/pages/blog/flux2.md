@@ -14,7 +14,7 @@ Flux has been one of the most popular gitops tools available for years. Yet, it 
 > I thought we could make one, hence we made Capacitor.
 > 
 > Why?
-> Because it is not easy to observe Kustomization and HelmRelease states in the cluster. Even with tools that show Custom Resources, it is not obvious to make the connection between application > deployments and Flux resources.
+> Because it is not easy to observe Kustomization and HelmRelease states in the cluster. Even with tools that show Custom Resources, it is not obvious to make the connection between application deployments and Flux resources.
 > 
 > The goal with Capacitor is to create the right context for developers to debug their deployments. Whether the error is related to Flux or not.
 > 
@@ -51,6 +51,8 @@ With these controls, Capacitor can become your daily driver for your deployments
 Flux resources:
 - Kustomization
 - GitRepository
+- OCIRepositories
+- Buckets
 - HelmRelease
 
 Kubernetes resources:
@@ -61,8 +63,6 @@ Kubernetes resources:
 - Configmap
 - Secret
 
-OCI repositories are not supported at this point.
-
 ## Who made Capacitor?
 
 Capacitor is an open-source project backed by [Gimlet](https://gimlet.io), a team that creates a Flux-based IDP.
@@ -71,15 +71,48 @@ Gimlet is our opinionated project, Capacitor is our un-opinionated take.
 
 ## How to get started?
 
-Capacitor doesn’t come with Flux natively, you’ll need to set it up separately with one of the methods described below: as Kubernetes manifest or Helm chart.
+Capacitor doesn’t come with Flux natively, you’ll need to set it up separately.
 
-### Kubernetes manifest
+Deploy the latest Capacitor release in the flux-system namespace by adding the following manifests to your Flux repository:
 
-```k8s manifests from readme```
+```yaml
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: OCIRepository
+metadata:
+  name: capacitor
+  namespace: flux-system
+spec:
+  interval: 12h
+  url: oci://ghcr.io/gimlet-io/capacitor-manifests
+  ref:
+    semver: ">=0.1.0-0"
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: capacitor
+  namespace: flux-system
+spec:
+  targetNamespace: flux-system
+  interval: 1h
+  retryInterval: 2m
+  timeout: 5m
+  wait: true
+  prune: true
+  path: "./"
+  sourceRef:
+    kind: OCIRepository
+    name: capacitor
+```
 
-### Deploy as a Helm chart
+Note that Flux will check for Capacitor releases every 12 hours and will automatically deploy the new version if it is available.
 
-```Helm chart from readme```
+Access Capacitor UI with port-forwarding:
+
+```bash
+kubectl -n flux-system port-forward svc/capacitor 9000:9000
+```
 
 ## Where is the project hosted?
 
