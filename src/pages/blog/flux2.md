@@ -34,7 +34,7 @@ Application deployments show which Flux Kustomization or HelmRelease deployed th
 
 With a click of a button you can jump to the Flux resource and check the reconsiliation state.
 
-[gif showing app deployments and related Kustomization / Helm Releases]
+![Clicking references](../../../public/click.gif)
 
 ### Application deployment debugging feedback loop
 
