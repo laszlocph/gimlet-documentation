@@ -26,7 +26,7 @@ Flux has been one of the most popular gitops tools available for years. Yet, it 
 
 The GUI substitutes for interacting with Flux resources and runtime via flux CLI commands.
 
-[image showing Flux resources in the footer]
+![Flux resources in the footer](../../../public/capacitor-flux-resources.png)
 
 ### Connecting application deployments with Flux resources
 
@@ -42,7 +42,7 @@ With a click of a button you can jump to the Flux resource and check the reconsi
 
 Application deployments have controls to perform routine tasks, like checking logs, describing deployments, pods, configmaps.
 
-With these controls, Capacitor can become your daily driver for your deployments.
+With these controls Capacitor can become your daily driver for your Kubernetes dashboarding needs.
 
 ![Application logs](../../../public/application-logs.png)
 
@@ -116,4 +116,4 @@ kubectl -n flux-system port-forward svc/capacitor 9000:9000
 
 ## Where is the project hosted?
 
-It is hosted on [Gihub: gimlet-io/capacitor](https://github.com/gimlet-io/capacitor)
+It is hosted on Github: [gimlet-io/capacitor](https://github.com/gimlet-io/capacitor)
