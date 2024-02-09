@@ -34,15 +34,14 @@ Application deployments show which Flux Kustomization or HelmRelease deployed th
 
 With a click of a button you can jump to the Flux resource and check the reconsiliation state.
 
-![Clicking references](../../../public/click.gif)
+![Clicking references](../../../public/click2.gif)
 
-### Application deployment debugging feedback loop
-
-![Application deployment controls](../../../public/servicecard.png)
-
+### Application deployment debugging
 Application deployments have controls to perform routine tasks, like checking logs, describing deployments, pods, configmaps.
 
 With these controls Capacitor can become your daily driver for your Kubernetes dashboarding needs.
+
+![Application deployment controls](../../../public/servicecard.png)
 
 ![Application logs](../../../public/application-logs.png)
 
@@ -50,10 +49,10 @@ With these controls Capacitor can become your daily driver for your Kubernetes d
 
 Flux resources:
 - Kustomization
+- HelmRelease
 - GitRepository
 - OCIRepositories
 - Buckets
-- HelmRelease
 
 Kubernetes resources:
 - Deployment
