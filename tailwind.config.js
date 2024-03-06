@@ -37,7 +37,15 @@ module.exports = {
       },
       left: {
         '3/5': "calc(-40vw + 50%)",
-      }
+      },
+      animation: {
+        marquee: "marquee var(--duration, 30s) linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          to: { transform: "translateX(-50%)" },
+        },
+      },
     },
   },
   plugins: [

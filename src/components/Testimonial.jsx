@@ -57,27 +57,25 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <div className="mx-auto max-w-7xl px-6 lg:px-8">
-      <div className="mx-auto flow-root max-w-2xl lg:mx-0 lg:max-w-none">
-        <div className="-mt-8 sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3">
-          {testimonials.map((testimonial) => (
-            <div key={testimonial.author.handle} className="pt-8 sm:inline-block sm:w-full sm:px-4">
-              <figure className="rounded-2xl bg-gray-50 p-8 text-sm leading-6">
-                <blockquote className="text-gray-900">
-                  <p>{`“${testimonial.body}”`}</p>
-                </blockquote>
-                <figcaption className="mt-6 flex items-center gap-x-4">
-                  <img className="h-10 w-10 rounded-full bg-gray-50" src={testimonial.author.imageUrl} alt="" />
-                  <div>
-                    <div className="font-semibold text-gray-900">{testimonial.author.name}</div>
-                    <div className="text-gray-600">{`${testimonial.author.handle}`}</div>
-                  </div>
-                </figcaption>
-              </figure>
+    <div className="relative flex max-w-[100vw] overflow-hidden py-5">
+      <div className="flex w-max animate-marquee [--duration:60s] hover:[animation-play-state:paused]">
+        {[...testimonials, ...testimonials].map((testimonial, index) => (
+          <div key={index} className="h-full px-2.5">
+            <div className="relative h-[25rem] w-[30rem] flex flex-col justify-between rounded-2xl border border-white/5 bg-white/5 hover:bg-white/10 px-8 py-6">
+              <div className="pb-4 font-light text-white/75">{testimonial.body}</div>
+              <div className="flex items-center gap-4">
+                <img src={testimonial.author.imageUrl} className="h-9 w-9 rounded-full" />
+                <div className="flex flex-col text-sm">
+                  <div className="text-white">{testimonial.author.name}</div>
+                  <div className="text-white/75">{testimonial.author.handle}</div>
+                </div>
+              </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-zinc-900"></div>
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-zinc-900"></div>
     </div>
   )
 }

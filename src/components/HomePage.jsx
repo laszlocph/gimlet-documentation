@@ -1,10 +1,9 @@
 import { Hero } from '@/components/Hero'
-import { Quickstart } from '@/components/Hero'
 import { Footer } from './home/Footer'
 import Link from 'next/link'
-import { Left } from './home/Left'
-import { Right } from './home/Right'
 import Testimonials from './Testimonial'
+import Languages from './Languages'
+import How from './How'
 
 
 export function HomePage({ className, tabs, code, language }) {
@@ -12,184 +11,90 @@ export function HomePage({ className, tabs, code, language }) {
     <>
       <div className="mx-auto max-w-6xl flex p-4 pt-12 sm:pt-16">
         <div className="grow">
-        <Link href="/">
-          <a>
-            <span className="sr-only">Home page</span>
-            <img src="/logo2.svg" alt="Gimlet" className='h-10 sm:h-12 inline dark:hidden' />
-            <img src="/logo-dark.svg" alt="Gimlet" className='h-10 sm:h-12 inline hidden dark:inline' />
-          </a>
-        </Link>
+          <Link href="/">
+            <a>
+              <span className="sr-only">Home page</span>
+              <img src="/logo2.svg" alt="Gimlet" className='h-10 sm:h-12 inline dark:hidden' />
+              <img src="/logo-dark.svg" alt="Gimlet" className='h-10 sm:h-12 inline hidden dark:inline' />
+            </a>
+          </Link>
         </div>
         <div className='hidden sm:block'>
           <div className='flex gap-x-2'>
-          <Link href="https://accounts.gimlet.io/signup">
-          <button className="text-zinc-900 dark:text-white font-bold py-2 px-4 rounded">
-            Sign up
-          </button>
-          </Link>
-          {/* <button className="bg-orange-400 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
+            <Link href="https://accounts.gimlet.io/signup">
+              <button className="text-zinc-900 dark:text-white font-bold py-2 px-4 rounded">
+                Sign up
+              </button>
+            </Link>
+            {/* <button className="bg-orange-400 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
             App down?
           </button> */}
-          {/* <button class="bg-transparent hover:bg-orange-700 text-orange-400 font-semibold hover:text-white py-2 px-4 border border-orange-500 hover:border-transparent rounded"> */}
-          <Link href="https://accounts.gimlet.io">
-          <button className="bg-orange-400 hover:bg-orange-700 text-white font-semibold hover:text-white py-2 px-4 border border-orange-500 hover:border-transparent rounded">
-            Log in
-          </button>
-          </Link>
+            {/* <button className="bg-transparent hover:bg-orange-700 text-orange-400 font-semibold hover:text-white py-2 px-4 border border-orange-500 hover:border-transparent rounded"> */}
+            <Link href="https://accounts.gimlet.io">
+              <button className="bg-orange-400 hover:bg-orange-700 text-white font-semibold hover:text-white py-2 px-4 border border-orange-500 hover:border-transparent rounded">
+                Log in
+              </button>
+            </Link>
           </div>
         </div>
       </div>
-      <div className="py-16 sm:py-48">
+      <div className="py-16 sm:py-48 mx-auto max-w-6xl">
         <Hero />
       </div>
-      <div className="bg-neutral-100 dark:bg-stone-950 pt-16 pb-16 sm:pb-32 p-4">
-        <Video />
-      </div>
-      <div className="bg-neutral-200 dark:bg-neutral-700 pt-16 pb-16 sm:pb-32 p-4">
-        <Quickstart />
-      </div>
       <div className="pt-16 pb-16 sm:pb-32 p-4">
-        <Why />
+        <How />
       </div>
       <div className="pt-16 pb-16 sm:pb-32 p-4">
         <Saying />
       </div>
-      <div className="bg-neutral-100 dark:bg-neutral-700 text-center px-2 md:px-16 py-4 lg:py-32 text-zinc-900 dark:text-zinc-200 text-2xl sm:text-3xl font-bold">
+      <div className="pt-16 pb-166 sm:pb-32 p-4">
+        <Languages />
+      </div>
+      <div className="pt-16 pb-16 sm:pb-32 p-4">
+        <CTA />
+      </div>
+      <div className="text-center px-2 md:px-16 py-4 lg:py-32 text-zinc-900 dark:text-zinc-200 text-2xl sm:text-3xl font-bold">
         <p>Get help, show support!</p>
         <p className="pt-8">Join our <a href="https://discord.com/invite/ZwQDxPkYzE" className="underline">{discordLogo} Discord</a> and star us on <a href="https://github.com/gimlet-io/gimlet" className="underline">{githubLogo}Github</a></p>
       </div>
-      <div className="mt-32">
+      <div className="bg-white dark:bg-neutral-700 pt-8">
         <Footer />
       </div>
     </>
   )
 }
 
-export function Why() {
+function Saying() {
   return (
     <>
-    <div className="mx-auto max-w-4xl">
-      <h3 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-4xl text-center">Why Gimlet?</h3>
-      {/* <p className="text-2xl font-semibold tracking-tight sm:text-3xl text-zinc-900 dark:text-zinc-100 text-center">Why Gimlet?</p> */}
-    </div>
-    <div className="pt-8 sm:pt-16 lg:pt-24">
-      <Left 
-        heading="Do more with your platform building effort"
-        text="Building a platform with cloud native tools is a broad and costly exercise."
-        features={[
-          {
-            name: 'Requires the most skilled engineers,',
-            description:
-              'who own vast amounts of institutional knowledge and often legacy systems that do not get talked about. They are spread thin.',
-          },
-          {
-            name: 'The scope is broad.',
-            description: 'The State of Platform Engineering Report Volume 2 found what we also see in teams: platform engineering has to cover a lot. CD is just a fraction of the job, and we believe it can be standardized.',
-          },
-          {
-            name: 'What if you could focus?',
-            description: 'With using Gimlet, platform engineering is freed up to focus on your compliance project, your security initiative and ultimately, on your special sauce.'
-          },
-        ]}
-        image="/pe-focus.png"
-        alt="Excerpt from the State of Platform Engineering Report Volume 2"
-      />
-    </div>
-    <div className="pt-16 lg:pt-32">
-      <Right 
-        heading="Batteries included"
-        text="Neither FluxCD, ArgoCD or Backstage is a platform. They are building blocks that platform builders have to stitch together. Gimlet did the work for you."
-        features={[
-          {
-            name: 'Gitops-based deployment workflows.',
-            description:
-              'Deploy, rollback, secret handling, manifest authoring.',
-          },
-          {
-            name: 'Fleet management.',
-            description: 'Update all app manifests with the latest compliance needs. Update infrastructure components on all clusters with the latest security patch.',
-          },
-          {
-            name: 'A curated stack of open-source components.',
-            description: 'We put together the most common permutations of cloud native tools. We issue updates on a schedule.',
-          },
-          {
-            name: 'Troubleshooting aid.',
-            description: 'Get notified when an app is crashing, with context-aware fix suggestions.',
-          },
-        ]}
-        image="/features.png"
-        alt=""
-      />
-    </div>
-    <div className="pt-16 lg:pt-32">
-      <Left 
-        heading="Speaks developer"
-        text="Gimlet is not an inventory of Kubernetes resources: Pods, Ingresses, and ConfigMaps. You focus on your source code and pull requests."
-        features={[
-          {
-            name: 'Navigate your code.',
-            description:
-              'You see one git repository at a time so you can focus on your commits and pull requests.',
-          },
-          {
-            name: 'Know what is deployed,',
-            description: 'when and by whom.',
-          },
-          {
-            name: 'Well known deployment actions.',
-            description: 'Deploy, rollback and preview deploys.',
-          },
-        ]}
-        image="/service-card.png"
-        alt=""
-      />
-    </div>
-    <div className="pt-16 lg:pt-32">
-      <Right 
-        heading="Gitops promises delivered"
-        text="Gitops was supposed to give us an audit log. But all we got is manually cross-referencing technical commits between many repos. Gimlet pulled this together."
-        features={[
-          {
-            name: 'A green CI means a successful deploy again.',
-            description:
-              'What Flux and ArgoCD broke, Gimlet patched back together. A green CI build means a successful deploy again.',
-          },
-          {
-            name: 'Promotions, rollbacks',
-            description: ' - check.',
-          },
-          {
-            name: 'Smoke tests?',
-            description: 'We have lifecycle hooks for that.',
-          },
-        ]}
-        image="/auditlog.png"
-        alt=""
-      />
-    </div>
+      <div className="mx-auto max-w-4xl">
+        <h3 id="testimonials" className="text-3xl font-bold tracking-tight sm:text-4xl text-neutral-900 dark:text-neutral-100 text-center">We have amazing users</h3>
+      </div>
+      <div className="pt-8 sm:pt-16 lg:pt-24">
+        <Testimonials />
+      </div>
     </>
   )
 }
 
-export function Saying() {
+function CTA() {
   return (
-    <>
-    <div className="mx-auto max-w-4xl">
-      <h3 id="testimonials" className="text-3xl font-bold tracking-tight sm:text-4xl text-neutral-900 dark:text-neutral-100 text-center">We have amazing users</h3>
-    </div>
-    <div className="pt-8 sm:pt-16 lg:pt-24">
-      <Testimonials />
-    </div>
-    </>
-  )
-}
-
-export function Video() {
-  return (
-    <div className="mx-auto max-w-4xl">
-      <h3 className="text-2xl font-semibold tracking-tight sm:text-3xl text-zinc-900 dark:text-zinc-100 text-center">Gimlet in 90 seconds</h3>
-      <iframe className='mx-auto mt-16' width="560" height="315" src="https://www.youtube.com/embed/CVb7hKLkp7Y?si=v65eC-ajLzgs46hB" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen></iframe>
+    <div className="mx-auto max-w-6xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8">
+      <h2 className="text-3xl space-y-2 font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-4xl">
+        Deploy your project now, for free.
+        <br />
+        <button className="text-2xl text-green-600 hover:underline">Start deploying</button>
+        <br />
+        <button className="text-2xl hover:underline">Book a demo</button>
+      </h2>
+      <div className="mt-10 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0">
+        <ul className="list-disc text-lg font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
+          <li>Cross OAuth & TLS off your to-do list</li>
+          <li>Auto-deployments, previews & rollbacks</li>
+          <li>Every language supported</li>
+          <li>Migrate from Gimlet anytime</li>
+        </ul>
+      </div>
     </div>
   )
 }
