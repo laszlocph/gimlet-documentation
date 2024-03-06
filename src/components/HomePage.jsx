@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { Hero } from '@/components/Hero'
 import { Footer } from './home/Footer'
 import Link from 'next/link'

@@ -24,7 +24,7 @@ export function Hero() {
             className="py-1.5 text-xl font-semibold leading-7 text-red-600 shadow-sm hover:text-red-700 hover:underline"
           // onClick={() => Fathom.trackGoal('', 0)}
           >
-            My app's down
+            My app&apos;s down
           </a>
           <a
             href="#"
