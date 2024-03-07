@@ -6,7 +6,6 @@ import Languages from './Languages'
 import How from './How'
 import * as Fathom from "fathom-client";
 
-
 export function HomePage({ className, tabs, code, language }) {
   return (
     <>
@@ -45,11 +44,11 @@ export function HomePage({ className, tabs, code, language }) {
       <div className="pt-16 pb-16 sm:pb-32 p-4">
         <How />
       </div>
-      <div className="pt-16 pb-16 sm:pb-32 p-4">
-        <Saying />
-      </div>
       <div className="pt-16 pb-166 sm:pb-32 p-4">
         <Languages />
+      </div>
+      <div className="pt-16 pb-16 sm:pb-32 p-4">
+        <Saying />
       </div>
       <div className="pt-16 pb-16 sm:pb-32 p-4">
         <CTA />
