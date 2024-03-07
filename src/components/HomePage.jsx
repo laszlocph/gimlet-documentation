@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Testimonials from './Testimonial'
 import Languages from './Languages'
 import How from './How'
+import * as Fathom from "fathom-client";
 
 
 export function HomePage({ className, tabs, code, language }) {
@@ -79,23 +80,97 @@ function Saying() {
 
 function CTA() {
   return (
-    <div className="mx-auto max-w-6xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8">
-      <h2 className="text-3xl space-y-2 font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-4xl">
-        Deploy your project now, for free.
-        <br />
-        <button className="text-2xl text-green-600 hover:underline">Start deploying</button>
-        <br />
-        <button className="text-2xl hover:underline">Book a demo</button>
-      </h2>
-      <div className="mt-10 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0">
-        <ul className="list-disc text-lg font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
-          <li>Cross OAuth & TLS off your to-do list</li>
-          <li>Auto-deployments, previews & rollbacks</li>
-          <li>Every language supported</li>
-          <li>Migrate from Gimlet anytime</li>
-        </ul>
+    <div className="mx-auto max-w-5xl items-center">
+      <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+        <div className="absolute inset-0 opacity-25 w-2/3 h-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:32px_32px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_60%,transparent_100%)]"></div>
+        <div className="w-full h-full flex justify-between my-8">
+          <div className="relative px-6 py-6 sm:px-16 my-auto">
+            <div className="absolute inset-0 rounded-full bg-white/10 blur-3xl"></div>
+            <h2 className="text-3xl space-y-2 font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-4xl my-auto">
+              <div className="relative space-y-4">
+                <span>Deploy your project now, for free.</span>
+                <div className="space-x-2">
+                  <DeployButton />
+                  <DemoButton />
+                </div>
+              </div>
+            </h2>
+          </div>
+          <div className="flex items-center justify-center">
+            <span className="h-full w-0.5 bg-gradient-to-b from-transparent via-white/5 to-transparent" aria-hidden="true"></span>
+            <ul className="list-disc text-xl space-y-4 font-bold tracking-tight text-neutral-900 dark:text-neutral-100 px-20">
+              <li>Cross OAuth & TLS off your to-do list</li>
+              <li>Auto-deployments, previews & rollbacks</li>
+              <li>Every language supported</li>
+              <li>Migrate from Gimlet anytime</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
+  )
+}
+
+export function DeployButton() {
+  return (
+    <a
+      href="/docs/installation?ref=hero"
+      className="group relative inline-flex text-3xl font-bold tracking-tight items-center overflow-hidden rounded-full bg-green-900 px-8 py-3 transition"
+      onClick={() => Fathom.trackGoal('VEWYCI7B', 0)}
+    >
+      <div className="absolute inset-0 flex items-center [container-type:inline-size]">
+        <div
+          className="absolute h-[100cqw] w-[100cqw] animate-spin bg-[conic-gradient(from_0_at_50%_50%,rgba(255,255,255,0.5)_0deg,transparent_60deg,transparent_300deg,rgba(255,255,255,0.5)_360deg)] opacity-0"
+        ></div>
+      </div>
+      <div className="absolute inset-0.5 rounded-full bg-zinc-800"></div>
+      <div className="absolute bottom-0 left-1/2 h-1/3 w-4/5 -translate-x-1/2 rounded-full bg-green-900 opacity-50 blur-md transition-all duration-500 group-hover:h-2/3 group-hover:opacity-50"></div>
+      <span className="relative mt-px bg-gradient-to-b from-green-900 to-green-400 bg-clip-text font-mona text-lg font-medium text-transparent transition-all duration-200">
+        Start deploying
+      </span>
+    </a>
+  )
+}
+
+export function AppDownButton() {
+  return (
+    <a
+      href="#"
+      className="group relative inline-flex text-3xl font-bold tracking-tight items-center overflow-hidden rounded-full bg-red-900 px-8 py-3 transition"
+    // onClick={() => Fathom.trackGoal('', 0)}
+    >
+      <div className="absolute inset-0 flex items-center [container-type:inline-size]">
+        <div
+          className="absolute h-[100cqw] w-[100cqw] animate-spin bg-[conic-gradient(from_0_at_50%_50%,rgba(255,255,255,0.5)_0deg,transparent_60deg,transparent_300deg,rgba(255,255,255,0.5)_360deg)] opacity-0 transition duration-700 group-hover:opacity-100"
+        ></div>
+      </div>
+      <div className="absolute inset-0.5 rounded-full bg-zinc-800"></div>
+      <div className="absolute bottom-0 left-1/2 h-1/3 w-4/5 -translate-x-1/2 rounded-full bg-red-900 opacity-50 blur-md transition-all duration-500 group-hover:h-2/3 group-hover:opacity-50"></div>
+      <span className="relative mt-px bg-gradient-to-b from-red-900 to-red-400 bg-clip-text font-mona text-lg font-medium text-transparent transition-all duration-200">
+        My app&apos;s down
+      </span>
+    </a>
+  )
+}
+
+export function DemoButton() {
+  return (
+    <a
+      href="#"
+      className="group relative inline-flex text-3xl font-bold tracking-tight items-center overflow-hidden rounded-full bg-zinc-700 px-8 py-3 transition"
+    // onClick={() => Fathom.trackGoal('B', 0)}
+    >
+      <div className="absolute inset-0 flex items-center [container-type:inline-size]">
+        <div
+          className="absolute h-[100cqw] w-[100cqw] animate-spin bg-[conic-gradient(from_0_at_50%_50%,rgba(255,255,255,0.5)_0deg,transparent_60deg,transparent_300deg,rgba(255,255,255,0.5)_360deg)] opacity-0"
+        ></div>
+      </div>
+      <div className="absolute inset-0.5 rounded-full bg-zinc-800"></div>
+      <div className="absolute bottom-0 left-1/2 h-1/3 w-4/5 -translate-x-1/2 rounded-full bg-white/10 opacity-50 blur-md transition-all duration-500 group-hover:h-2/3 group-hover:opacity-100"></div>
+      <span className="relative mt-px bg-gradient-to-b from-white/25 to-white bg-clip-text font-mona text-lg font-medium text-transparent transition-all duration-200">
+        Book a Demo
+      </span>
+    </a>
   )
 }
 
