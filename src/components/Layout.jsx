@@ -8,6 +8,7 @@ import { EventsPage } from './EventsPage'
 import { BlogPage } from './Blogpage'
 import { Header } from './Header'
 import { DocsPage } from './DocsPage'
+import { AIPage } from './AIPage'
 
 export function Layout({ children, title, navigation, tableOfContents, pageProps }) {
   let router = useRouter()
@@ -18,10 +19,14 @@ export function Layout({ children, title, navigation, tableOfContents, pageProps
   let isPricingPage = router.pathname === '/pricing'
   let isYamlGeneratorPage = router.pathname === '/k8s-yaml-generator'
   let isHomePage = router.pathname === '/'
+  let isAIPage = router.pathname === '/ai-deployment'
 
   let section = navigation.find((section) =>
     section.links.find((link) => link.href === router.pathname)
   )
+
+  console.log(router.pathname)
+  console.log(isAIPage)
 
   return (
     <>
@@ -32,6 +37,7 @@ export function Layout({ children, title, navigation, tableOfContents, pageProps
       {isHomePage && <HomePage />}
       {isPricingPage && <PricingPage />}
       {isYamlGeneratorPage && <YamlGenerator />}
+      {isAIPage && <AIPage />}
 
       {isEventsPage && <EventsPage title={title} section={section}>{children}</EventsPage>}
 

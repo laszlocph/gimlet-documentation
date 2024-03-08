@@ -1,15 +1,15 @@
 const languages = {
-  frontend: [
+  'Frontend': [
     { title: "Next.js", description: "React framework for building scalable, high-performance applications.", source: "next-js.svg", deploy: "How to deploy Next.js" },
     { title: "React", description: "JavaScript library for building dynamic, interactive user interfaces.", source: "react-js.svg", deploy: "How to deploy React" },
     { title: "Remix", description: "A web framework for building fast, modern web applications with React.", source: "remix.svg", deploy: "How to deploy Remix" },
   ],
-  backend: [
+  'Backend': [
     { title: "Rails", description: "Server-side framework written in Ruby, designed for simplicity and productivity.", source: "rails.svg", deploy: "How to deploy Rails" },
     { title: "Laravel", description: "PHP framework for web applications, offering a clean and elegant syntax.", source: "laravel.svg", deploy: "How to deploy Laravel" },
     { title: "Django", description: "Python framework that encourages rapid development and clean design.", source: "django.svg", deploy: "How to deploy Django" },
   ],
-  aiDeployment: [
+  'AI Deployment': [
     { title: "Streamlit", description: "Library for quickly building and sharing web apps for machine learning and data science projects.", source: "streamlit.svg", deploy: "How to deploy Streamlit" },
     { title: "Hugging face", description: "State-of-the-art NLP models for text analysis and generation.", source: "huggingface.svg", deploy: "How to deploy Hugging Face models" },
     { title: "Dockerfile", description: "Ensuring consistency through reproducible environments.", source: "docker.svg", deploy: "How to deploy with Dockerfiles" },
@@ -26,12 +26,9 @@ export default function Languages() {
       </div>
       <div className="mx-auto mt-16 sm:mt-20 lg:mt-24 lg:max-w-none space-y-8">
         {Object.entries(languages).map(([title, items]) => {
-          console.log(title === 'frontend')
           return (
             <div key={title}>
-              <h1 className="text-3xl font-bold tracking-tight sm:text-4xl text-neutral-900 dark:text-neutral-100">
-                {title === 'frontend' ? "Frontend" : title === 'backend' ? "Backend" : "AI Deployment"}
-              </h1>
+              <h1 className="text-3xl font-bold tracking-tight sm:text-4xl text-neutral-900 dark:text-neutral-100">{title}</h1>
               <dl className="grid max-w-xl grid-cols-1 gap-6 lg:max-w-none lg:grid-cols-3 mt-4">
                 {items.map(i => {
                   return (
@@ -39,7 +36,7 @@ export default function Languages() {
                       className="group flex flex-col justify-between overflow-hidden rounded-xl bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]"
                     >
                       <div className="pointer-events-none z-10 flex flex-col gap-1 p-6">
-                        <img src={i.source} alt={i.title} className="h-14 w-14 origin-left transform-gpu text-neutral-700" />
+                        <img src={i.source} alt={i.title} className="h-14 w-14 origin-left text-neutral-700" />
                         <h3 className="text-xl font-semibold text-neutral-700 dark:text-neutral-300">{i.title}</h3>
                         <p className="max-w-lg text-neutral-400">{i.description}</p>
                       </div>
