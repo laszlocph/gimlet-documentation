@@ -1,4 +1,4 @@
-const languages = {
+export const languages = {
   'Frontend': [
     { title: "Next.js", description: "React framework for building scalable, high-performance applications.", source: "next-js.svg", deploy: "How to deploy Next.js" },
     { title: "React", description: "JavaScript library for building dynamic, interactive user interfaces.", source: "react-js.svg", deploy: "How to deploy React" },

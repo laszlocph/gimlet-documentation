@@ -25,9 +25,6 @@ export function Layout({ children, title, navigation, tableOfContents, pageProps
     section.links.find((link) => link.href === router.pathname)
   )
 
-  console.log(router.pathname)
-  console.log(isAIPage)
-
   return (
     <>
       {!isTOSPage && !isYamlGeneratorPage && !isHomePage &&
