@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { DeployButton, AppDownButton, DemoButton } from './HomePage'
+import { DeployButton, AppDownButton, DemoButton } from './Button'
 
 export function Hero() {
 

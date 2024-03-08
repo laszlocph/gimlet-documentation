@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Testimonials from './Testimonial'
 import Languages from './Languages'
 import How from './How'
-import * as Fathom from "fathom-client";
+import { DeployButton, DemoButton } from './Button'
 
 export function HomePage({ className, tabs, code, language }) {
   return (
@@ -88,7 +88,7 @@ function CTA() {
             <h2 className="text-3xl space-y-2 font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-4xl my-auto">
               <div className="relative space-y-4">
                 <span>Deploy your project now, for free.</span>
-                <div className="space-x-2">
+                <div className="grid max-w-sm grid-cols-2 gap-x-2">
                   <DeployButton />
                   <DemoButton />
                 </div>
@@ -107,69 +107,6 @@ function CTA() {
         </div>
       </div>
     </div>
-  )
-}
-
-export function DeployButton() {
-  return (
-    <a
-      href="/docs/installation?ref=hero"
-      className="group relative inline-flex text-3xl font-bold tracking-tight items-center overflow-hidden rounded-full bg-green-900 px-8 py-3 transition"
-      onClick={() => Fathom.trackGoal('VEWYCI7B', 0)}
-    >
-      <div className="absolute inset-0 flex items-center [container-type:inline-size]">
-        <div
-          className="absolute h-[100cqw] w-[100cqw] animate-spin bg-[conic-gradient(from_0_at_50%_50%,rgba(255,255,255,0.5)_0deg,transparent_60deg,transparent_300deg,rgba(255,255,255,0.5)_360deg)] opacity-0"
-        ></div>
-      </div>
-      <div className="absolute inset-0.5 rounded-full bg-zinc-800"></div>
-      <div className="absolute bottom-0 left-1/2 h-1/3 w-4/5 -translate-x-1/2 rounded-full bg-green-900 opacity-50 blur-md transition-all duration-500 group-hover:h-2/3 group-hover:opacity-50"></div>
-      <span className="relative mt-px bg-gradient-to-b from-green-900 to-green-400 bg-clip-text font-mona text-lg font-medium text-transparent transition-all duration-200">
-        Start deploying
-      </span>
-    </a>
-  )
-}
-
-export function AppDownButton() {
-  return (
-    <a
-      href="#"
-      className="group relative inline-flex text-3xl font-bold tracking-tight items-center overflow-hidden rounded-full bg-red-900 px-8 py-3 transition"
-    // onClick={() => Fathom.trackGoal('', 0)}
-    >
-      <div className="absolute inset-0 flex items-center [container-type:inline-size]">
-        <div
-          className="absolute h-[100cqw] w-[100cqw] animate-spin bg-[conic-gradient(from_0_at_50%_50%,rgba(255,255,255,0.5)_0deg,transparent_60deg,transparent_300deg,rgba(255,255,255,0.5)_360deg)] opacity-0 transition duration-700 group-hover:opacity-100"
-        ></div>
-      </div>
-      <div className="absolute inset-0.5 rounded-full bg-zinc-800"></div>
-      <div className="absolute bottom-0 left-1/2 h-1/3 w-4/5 -translate-x-1/2 rounded-full bg-red-900 opacity-50 blur-md transition-all duration-500 group-hover:h-2/3 group-hover:opacity-50"></div>
-      <span className="relative mt-px bg-gradient-to-b from-red-900 to-red-400 bg-clip-text font-mona text-lg font-medium text-transparent transition-all duration-200">
-        My app&apos;s down
-      </span>
-    </a>
-  )
-}
-
-export function DemoButton() {
-  return (
-    <a
-      href="#"
-      className="group relative inline-flex text-3xl font-bold tracking-tight items-center overflow-hidden rounded-full bg-zinc-700 px-8 py-3 transition"
-    // onClick={() => Fathom.trackGoal('B', 0)}
-    >
-      <div className="absolute inset-0 flex items-center [container-type:inline-size]">
-        <div
-          className="absolute h-[100cqw] w-[100cqw] animate-spin bg-[conic-gradient(from_0_at_50%_50%,rgba(255,255,255,0.5)_0deg,transparent_60deg,transparent_300deg,rgba(255,255,255,0.5)_360deg)] opacity-0"
-        ></div>
-      </div>
-      <div className="absolute inset-0.5 rounded-full bg-zinc-800"></div>
-      <div className="absolute bottom-0 left-1/2 h-1/3 w-4/5 -translate-x-1/2 rounded-full bg-white/10 opacity-50 blur-md transition-all duration-500 group-hover:h-2/3 group-hover:opacity-100"></div>
-      <span className="relative mt-px bg-gradient-to-b from-white/25 to-white bg-clip-text font-mona text-lg font-medium text-transparent transition-all duration-200">
-        Book a Demo
-      </span>
-    </a>
   )
 }
 
