@@ -51,7 +51,10 @@ export function HomePage({ className, tabs, code, language }) {
         <Saying />
       </div>
       <div className="pt-16 pb-16 sm:pb-32 p-4">
-        <CTA />
+        <CTA
+          title="Deploy your project now, for free."
+          list={["Cross OAuth & TLS off your to-do list", "Auto-deployments, previews & rollbacks", "Every language supported", "Migrate from Gimlet anytime"]}
+        />
       </div>
       <div className="text-center px-2 md:px-16 py-4 lg:py-32 text-zinc-900 dark:text-zinc-200 text-2xl sm:text-3xl font-bold">
         <p>Get help, show support!</p>

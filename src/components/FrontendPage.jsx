@@ -4,21 +4,25 @@ import { languages } from './Languages'
 import { CTA } from './CallToAction'
 
 const sections = {
-  "Scalability": [
-    { title: "Hybrid Cloud Compatibility", desc: "Deploy and manage models across hybrid, cloud, and on-premises environments." },
-    { title: "Optimized Resource Allocation", desc: "Kubernetes to automatically scale your infrastructure to match your model's demands." },
+  "Branch Previews": [
+    { title: "Frontend Testing", desc: "Ship changes and take a look at your application before deploying to production." },
+    { title: "Rollbacks & Auto-Deployments", desc: "Advanced deployment capabilities to turn your frontend highly available." },
   ],
-  "Model Version Management": [
-    { title: "Centralized Version Control", desc: "Track, preview, and deploy your model versions with ease." },
-    { title: "Advanced Deployment Capabilities", desc: "Rollbacks and automated deployments to even hundreds of models." },
+  "Security and Support": [
+    { title: "HTTPS/SSL", desc: "Secure communication between your app and your users." },
+    { title: "All Languages Supported", desc: "Deploy any language and framework you prefer to use." },
   ],
-  "Monitoring": [
-    { title: "Grafana & Prometheus Compatibility", desc: "Real-time data of infrastructure performance." },
-    { title: "Fine-Tune Your Infrastructure", desc: "Identify and address performance bottlenecks based on monitoring data." },
+  "Observability": [
+    { title: "Integrate with Grafana & Prometheus", desc: "Track performance data of your frontend in real-time." },
+    { title: "Analyze Performance Issues", desc: "Find out how you can further improve the performance of your application." },
+  ],
+  "Fixed Pricing": [
+    { title: "One-Time Annual Payment", desc: "$299 billed annually without usage limits, transfer fees and monetization restrictions." },
+    { title: "Migrate from Gimlet Anytime", desc: "No strings attached. Feel free to migrate your services anytime." },
   ],
 };
 
-export function AIPage() {
+export function FrontendPage() {
   return (
     <>
       <div className="mx-auto max-w-6xl flex p-4 pt-12 sm:pt-16">
@@ -54,7 +58,7 @@ export function AIPage() {
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <div className="mx-auto lg:text-center">
             <p className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Introducing Kubernetes to Your AI Project
+              Host Your Frontend Without Billing Surprises
             </p>
           </div>
         </div>
@@ -63,12 +67,11 @@ export function AIPage() {
         <div className="px-6 py-32 lg:px-8">
           <div className="text-base leading-7 text-zinc-900 dark:text-white space-y-8">
             <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl text-center">
-              Effortless Social Login and TLS Encryption
+              Add Social Sign-In To Your Project Without Next Auth PhD
             </h1>
-            <ul className="list-disc px-4">
-              <li>Integrate social media platforms for user authentication.</li>
-              <li>Ensure data protection with industry-standard encryption.</li>
-            </ul>
+            <p className="mt-6 text-lg leading-8 text-zinc-900 dark:text-white text-center">
+              Deploy frontend with social media platform integrations for user authentication.
+            </p>
             {Object.entries(sections).map(([title, items]) => (
               <div key={title} className="mt-10 max-w-2xl">
                 <h1 className="text-xl font-bold tracking-tight sm:text-3xl">
@@ -92,12 +95,12 @@ export function AIPage() {
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <div className="mx-auto lg:text-center">
             <p className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              The most popular AI frameworks and technologies are supported.
+              The most popular frontend frameworks are supported.
             </p>
           </div>
           <div className="mx-auto mt-16 sm:mt-20 lg:mt-24 lg:max-w-none space-y-8">
             <dl className="grid max-w-xl grid-cols-1 gap-6 lg:max-w-none lg:grid-cols-3 mt-4">
-              {languages["Backend"].map(i => {
+              {languages["Frontend"].map(i => {
                 return (
                   <div key={i.title}
                     className="group flex flex-col justify-between overflow-hidden rounded-xl bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]"
@@ -124,6 +127,7 @@ export function AIPage() {
           </div>
         </div>
       </div>
+
       <div className="py-16 sm:py-48 mx-auto max-w-6xl">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <div className="mx-auto lg:text-center">
@@ -178,9 +182,9 @@ export function AIPage() {
         </div>
       </div>
       <div className="py-16 sm:py-48 mx-auto max-w-6xl">
-        <CTA
-          title="Try with your model now, for free."
-          list={["Hugging Face, Streamlit, and other technologies are supported", "Lowered Kubernetes entry-point", "Migrate from Gimlet anytime"]}
+        <CTA 
+          title="Deploy your frontend now, for free."
+          list={["Social sign-in to your app", "Next.js, React, Remix, you name it - you can deploy it", "One-time annual payment. No hidden fees and TOS traps", "Migrate from Gimlet anytime"]}
         />
       </div>
       <div className="text-center px-2 md:px-16 py-4 lg:py-32 text-zinc-900 dark:text-zinc-200 text-2xl sm:text-3xl font-bold">

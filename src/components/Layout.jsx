@@ -9,6 +9,7 @@ import { BlogPage } from './Blogpage'
 import { Header } from './Header'
 import { DocsPage } from './DocsPage'
 import { AIPage } from './AIPage'
+import { FrontendPage } from './FrontendPage'
 
 export function Layout({ children, title, navigation, tableOfContents, pageProps }) {
   let router = useRouter()
@@ -20,6 +21,7 @@ export function Layout({ children, title, navigation, tableOfContents, pageProps
   let isYamlGeneratorPage = router.pathname === '/k8s-yaml-generator'
   let isHomePage = router.pathname === '/'
   let isAIPage = router.pathname === '/ai-deployment'
+  let isFrontendPage = router.pathname === '/frontend'
 
   let section = navigation.find((section) =>
     section.links.find((link) => link.href === router.pathname)
@@ -35,6 +37,7 @@ export function Layout({ children, title, navigation, tableOfContents, pageProps
       {isPricingPage && <PricingPage />}
       {isYamlGeneratorPage && <YamlGenerator />}
       {isAIPage && <AIPage />}
+      {isFrontendPage && <FrontendPage />}
 
       {isEventsPage && <EventsPage title={title} section={section}>{children}</EventsPage>}
 
