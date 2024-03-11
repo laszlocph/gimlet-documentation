@@ -29,11 +29,8 @@ export function DeployButton() {
       onClick={() => Fathom.trackGoal('VEWYCI7B', 0)}
     >
       <div className="absolute inset-0 flex items-center [container-type:inline-size]">
-        <div
-          className="absolute h-[100cqw] w-[100cqw] animate-spin bg-[conic-gradient(from_0_at_50%_50%,rgba(255,255,255,0.5)_0deg,transparent_60deg,transparent_300deg,rgba(255,255,255,0.5)_360deg)] opacity-0"
-        ></div>
       </div>
-      <div className="absolute inset-0.5 rounded-full bg-zinc-800"></div>
+      <div className="absolute inset-0.5 rounded-full backdrop-blur-3xl bg-white/5"></div>
       <div className="absolute bottom-0 left-1/2 h-1/3 w-4/5 -translate-x-1/2 rounded-full bg-green-900 opacity-50 blur-md transition-all duration-500 group-hover:h-2/3 group-hover:opacity-50"></div>
       <span className="relative mt-px bg-gradient-to-b from-green-900 to-green-400 bg-clip-text font-mona text-lg font-medium text-transparent transition-all duration-200">
         Start deploying
@@ -57,7 +54,7 @@ export function AppDownButton() {
       <div className="absolute inset-0.5 rounded-full bg-zinc-800"></div>
       <div className="absolute bottom-0 left-1/2 h-1/3 w-4/5 -translate-x-1/2 rounded-full bg-red-900 opacity-50 blur-md transition-all duration-500 group-hover:h-2/3 group-hover:opacity-50"></div>
       <span className="relative mt-px bg-gradient-to-b from-red-900 to-red-400 bg-clip-text font-mona text-lg font-medium text-transparent transition-all duration-200">
-        My app&apos;s down
+        My app’s down
       </span>
     </a>
   )
@@ -71,11 +68,8 @@ export function DemoButton() {
     // onClick={() => Fathom.trackGoal('B', 0)}
     >
       <div className="absolute inset-0 flex items-center [container-type:inline-size]">
-        <div
-          className="absolute h-[100cqw] w-[100cqw] animate-spin bg-[conic-gradient(from_0_at_50%_50%,rgba(255,255,255,0.5)_0deg,transparent_60deg,transparent_300deg,rgba(255,255,255,0.5)_360deg)] opacity-0"
-        ></div>
       </div>
-      <div className="absolute inset-0.5 rounded-full bg-zinc-800"></div>
+      <div className="absolute inset-0.5 rounded-full backdrop-blur-3xl bg-white/5"></div>
       <div className="absolute bottom-0 left-1/2 h-1/3 w-4/5 -translate-x-1/2 rounded-full bg-white/10 opacity-50 blur-md transition-all duration-500 group-hover:h-2/3 group-hover:opacity-100"></div>
       <span className="relative mt-px bg-gradient-to-b from-white/25 to-white bg-clip-text font-mona text-lg font-medium text-transparent transition-all duration-200">
         Book a Demo

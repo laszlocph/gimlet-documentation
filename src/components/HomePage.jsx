@@ -5,38 +5,53 @@ import Testimonials from './Testimonial'
 import Languages from './Languages'
 import How from './How'
 import { CTA } from './CallToAction'
+import { Dropdown } from './Usecases'
 
 export function HomePage({ className, tabs, code, language }) {
   return (
     <>
-      <div className="mx-auto max-w-6xl flex p-4 pt-12 sm:pt-16">
-        <div className="grow">
-          <Link href="/">
-            <a>
-              <span className="sr-only">Home page</span>
-              <img src="/logo2.svg" alt="Gimlet" className='h-10 sm:h-12 inline dark:hidden' />
-              <img src="/logo-dark.svg" alt="Gimlet" className='h-10 sm:h-12 inline hidden dark:inline' />
-            </a>
-          </Link>
-        </div>
-        <div className='hidden sm:block'>
-          <div className='flex gap-x-2'>
+      <div className="relative isolate pt-12">
+        <nav className="mx-auto flex max-w-6xl items-center justify-between p-4" aria-label="Global">
+          <div className="flex lg:flex-1 space-x-6">
+            <Link href="/">
+              <a>
+                <span className="sr-only">Home page</span>
+                <img src="/logo2.svg" alt="Gimlet" className='h-10 sm:h-12 inline dark:hidden' />
+                <img src="/logo-dark.svg" alt="Gimlet" className='h-10 sm:h-12 inline hidden dark:inline' />
+              </a>
+            </Link>
+            <button className="text-zinc-900 dark:text-white text-xl font-bold whitespace-nowrap">
+              <Dropdown />
+            </button>
+            <button>
+              <a href="/pricing" className="text-zinc-900 dark:text-white text-xl font-bold">
+                Pricing
+              </a>
+            </button>
+            <button>
+              <a href="/blog" className="text-zinc-900 dark:text-white text-xl font-bold">
+                Blog
+              </a>
+            </button>
+            <button>
+              <a href="/docs" className="text-zinc-900 dark:text-white text-xl font-bold">
+                Docs
+              </a>
+            </button>
+          </div>
+          <div className="hidden sm:flex lg:flex-1 lg:justify-end">
             <Link href="https://accounts.gimlet.io/signup">
               <button className="text-zinc-900 dark:text-white font-bold py-2 px-4 rounded">
                 Sign up
               </button>
             </Link>
-            {/* <button className="bg-orange-400 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
-            App down?
-          </button> */}
-            {/* <button className="bg-transparent hover:bg-orange-700 text-orange-400 font-semibold hover:text-white py-2 px-4 border border-orange-500 hover:border-transparent rounded"> */}
             <Link href="https://accounts.gimlet.io">
               <button className="bg-orange-400 hover:bg-orange-700 text-white font-semibold hover:text-white py-2 px-4 border border-orange-500 hover:border-transparent rounded">
                 Log in
               </button>
             </Link>
           </div>
-        </div>
+        </nav>
       </div>
       <div className="py-16 sm:py-48 mx-auto max-w-6xl">
         <Hero />
