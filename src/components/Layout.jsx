@@ -30,6 +30,7 @@ export function Layout({ children, title, navigation, tableOfContents, pageProps
   return (
     <>
       {!isTOSPage && !isYamlGeneratorPage && !isHomePage &&
+        !isAIPage && !isFrontendPage &&
         <Header navigation={navigation} />
       }
 
@@ -48,13 +49,13 @@ export function Layout({ children, title, navigation, tableOfContents, pageProps
       {isBlogPage && <BlogPage
         title={title} section={section}
         pageProps={pageProps} tableOfContents={tableOfContents}
-        >{children}</BlogPage>
+      >{children}</BlogPage>
       }
 
-      {isDocsPage && <DocsPage 
-          title={title} section={section}
-          navigation={navigation} tableOfContents={tableOfContents}
-        >{children}</DocsPage>
+      {isDocsPage && <DocsPage
+        title={title} section={section}
+        navigation={navigation} tableOfContents={tableOfContents}
+      >{children}</DocsPage>
       }
     </>
   )

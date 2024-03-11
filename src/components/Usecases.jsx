@@ -7,14 +7,12 @@ export function Dropdown() {
           <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
         </svg>
       </a>
-      <div className="group-hover:block dropdown-menu absolute hidden h-auto -right-1/2 p-4 rounded-3xl backdrop-blur-3xl bg-white/30 dark:bg-zinc-900/30" id="headlessui-popover-panel-:r1h:" tabIndex="-1" data-headlessui-state="open">
-        <nav>
-          <ul className="divide-y divide-zinc-100 top-0 w-48 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-            <li><a className="block py-2 hover:text-zinc-300 hover:bg-white/10 rounded-3xl" data-headlessui-state="open" href="/frontend">Frontend</a></li>
-            <li><a className="block py-2 hover:text-zinc-300 hover:bg-white/10 rounded-3xl" data-headlessui-state="open" href="/backend">Backend</a></li>
-            <li><a className="block py-2 hover:text-zinc-300 hover:bg-white/10 rounded-3xl" data-headlessui-state="open" href="/ai-deployment">AI Deployment</a></li>
-          </ul>
-        </nav>
+      <div className="group-hover:block -my-2 dropdown-menu absolute hidden h-auto -right-1/2 p-6 rounded-3xl backdrop-blur-3xl bg-white/30 dark:bg-zinc-900/30 ring-1 ring-white/10" id="headlessui-popover-panel-:r1h:" tabIndex="-1" data-headlessui-state="open">
+        <ul className="divide-y divide-zinc-100 top-0 w-48 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
+          <li><a className="block py-2 hover:text-zinc-300 bg-[radial-gradient(ellipse_at_center_200px,_var(--tw-gradient-stops))] hover:from-white/10 rounded-md" data-headlessui-state="open" href="/frontend">Frontend</a></li>
+          <li><a className="block py-2 hover:text-zinc-300 bg-[radial-gradient(ellipse_at_center_200px,_var(--tw-gradient-stops))] hover:from-white/10 rounded-md" data-headlessui-state="open" href="/backend">Backend</a></li>
+          <li><a className="block py-2 hover:text-zinc-300 bg-[radial-gradient(ellipse_at_center_200px,_var(--tw-gradient-stops))] hover:from-white/10 rounded-md" data-headlessui-state="open" href="/ai-deployment">AI Deployment</a></li>
+        </ul>
       </div>
     </div>
   )
