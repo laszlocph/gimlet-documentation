@@ -20,7 +20,7 @@ const sections = {
 
 export function AIPage() {
   return (
-    <>
+    <div className="bg-purple-500">
       <div className="mx-auto max-w-6xl flex p-4 pt-12 sm:pt-16">
         <div className="grow">
           <Link href="/">
@@ -190,7 +190,7 @@ export function AIPage() {
       <div className="bg-white dark:bg-neutral-700 pt-8">
         <Footer />
       </div>
-    </>
+    </div>
   )
 }
 
