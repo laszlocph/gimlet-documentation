@@ -6,27 +6,27 @@ import { Dropdown } from './Usecases'
 import { githubLogo, discordLogo } from './HomePage'
 
 const sections = {
-  "Branch Previews": [
-    { title: "Frontend Testing", desc: "Ship changes and take a look at your application before deploying to production." },
-    { title: "Rollbacks & Auto-Deployments", desc: "Advanced deployment capabilities to turn your frontend highly available." },
+  "Databases & Services": [
+    { title: "Containerized database deployments", desc: "Set up PostgreSQL, MySQL, Redis, or MongoDB and any database you use." },
+    { title: "Launch queues", desc: "Deploy RabbitMQ, NATS, Kafka, or any other supporting services required for your stack." },
   ],
-  "Security and Support": [
-    { title: "HTTPS/SSL", desc: "Secure communication between your app and your users." },
-    { title: "All Languages Supported", desc: "Deploy any language and framework you prefer to use." },
+  "Advanced Deployments": [
+    {title:"Git Version Control", desc: "Preview and rollback capabilities of your git branches on GitHub and GitLab."},
+    {title:"Continuous Delivery", desc: "Lowered barrier to entry for gitops adoption with automated deployments."},
   ],
-  "Observability": [
-    { title: "Integrate with Grafana & Prometheus", desc: "Track performance data of your frontend in real-time." },
-    { title: "Analyze Performance Issues", desc: "Find out how you can further improve the performance of your application." },
+  "Grafana & Prometheus Support": [
+    {title:"Monitoring and alerts", desc: "Integrate with Prometheus to scrape and store metrics for alerting."},
+    {title:"Custom dashboards", desc: "Instrument and create app specific dashboards. Find out how to set up monitoring here."},
   ],
-  "Fixed Pricing": [
-    { title: "One-Time Annual Payment", desc: "$299 billed annually without usage limits, transfer fees and monetization restrictions." },
-    { title: "Migrate from Gimlet Anytime", desc: "No strings attached. Feel free to migrate your services anytime." },
+  "No Vendor Lock-In": [
+    {title:"Migrate Services Anytime", desc: "Won’t lock you in to a provider. Migrate to any gitops tooling, Kubernetes, or company platform."},
+    {title:"Fixed Annual Pricing", desc: "$299 yearly subscription without usage, bandwidth, service, or storage restrictions."},
   ],
 };
 
-export function FrontendPage() {
+export function BackendPage() {
   return (
-    <div className="bg-teal-700">
+    <div className="bg-amber-600">
       <div className="relative isolate pt-12">
         <nav className="mx-auto flex max-w-6xl items-center justify-between p-4" aria-label="Global">
           <div className="flex lg:flex-1">
@@ -74,19 +74,20 @@ export function FrontendPage() {
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <div className="mx-auto lg:text-center">
             <p className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Host Your Frontend Without Billing Surprises
+              Deploy Containerized Backend Services
             </p>
           </div>
         </div>
       </div>
+      
       <div className="py-16 sm:py-48 mx-auto max-w-3xl">
         <div className="px-6 py-32 lg:px-8">
           <div className="text-base leading-7 text-zinc-900 dark:text-white space-y-8">
             <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl text-center">
-              Add Social Sign-In To Your Project Without Next Auth PhD
+              Provision and Manage Your Containerized Stack
             </h1>
             <p className="mt-6 text-lg leading-8 text-zinc-900 dark:text-white text-center">
-              Deploy frontend with social media platform integrations for user authentication.
+              Treat staging and production environments separately.
             </p>
             {Object.entries(sections).map(([title, items]) => (
               <div key={title} className="mt-10 max-w-2xl">
@@ -111,12 +112,12 @@ export function FrontendPage() {
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <div className="mx-auto lg:text-center">
             <p className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              The most popular frontend frameworks are supported.
+              The most popular backend frameworks are supported.
             </p>
           </div>
           <div className="mx-auto mt-16 sm:mt-20 lg:mt-24 lg:max-w-none space-y-8">
             <dl className="grid max-w-xl grid-cols-1 gap-6 lg:max-w-none lg:grid-cols-3 mt-4">
-              {languages["Frontend"].map(i => {
+              {languages["Backend"].map(i => {
                 return (
                   <div key={i.title}
                     className="group flex flex-col justify-between overflow-hidden rounded-xl bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]"
@@ -143,12 +144,11 @@ export function FrontendPage() {
           </div>
         </div>
       </div>
-
       <div className="py-16 sm:py-48 mx-auto max-w-6xl">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <div className="mx-auto lg:text-center">
             <p className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Already proven its worth in emerging AI businesses
+              Already proven its worth in emerging Backend businesses
             </p>
           </div>
           <div className="mx-auto mt-16 sm:mt-20 lg:mt-24 lg:max-w-none grid grid-cols-3">
@@ -199,8 +199,8 @@ export function FrontendPage() {
       </div>
       <div className="py-16 sm:py-48 mx-auto max-w-6xl">
         <CTA
-          title="Deploy your frontend now, for free."
-          list={["Social sign-in to your app", "Next.js, React, Remix, you name it - you can deploy it", "One-time annual payment. No hidden fees and TOS traps", "Migrate from Gimlet anytime"]}
+          title="Deploy your backend now, for free."
+          list={["Separate provisioning and management for different environments", "Consistent and advanced deployments", "Observability with Grafana and Prometheus stack", "Migrate from Gimlet anytime"]}
         />
       </div>
       <div className="text-center px-2 md:px-16 py-4 lg:py-32 text-zinc-900 dark:text-zinc-200 text-2xl sm:text-3xl font-bold">
