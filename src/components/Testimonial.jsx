@@ -55,6 +55,34 @@ const testimonials = [
   },
 ]
 
+//“
+export const recommendation = [
+  {
+    body: "Accelerate QA with self-service previews and rollbacks of your branches and repositories to the latest stable version.",
+    author: {
+      name: "XYZ",
+      handle: "abc at DEF",
+      imageUrl: "/logo.svg"
+    }
+  },
+  {
+    body: "Accelerate QA with self-service previews and rollbacks of your branches and repositories to the latest stable version.",
+    author: {
+      name: "XYZ",
+      handle: "abc at DEF",
+      imageUrl: "/logo.svg"
+    }
+  },
+  {
+    body: "Accelerate QA with self-service previews and rollbacks of your branches and repositories to the latest stable version.",
+    author: {
+      name: "XYZ",
+      handle: "abc at DEF",
+      imageUrl: "/logo.svg"
+    }
+  },
+];
+
 export default function Testimonials() {
   return (
     <div className="relative flex max-w-[100vw] overflow-hidden py-5">

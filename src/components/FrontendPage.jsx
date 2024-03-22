@@ -4,6 +4,7 @@ import { languages } from './Languages'
 import { CTA } from './CallToAction'
 import { Dropdown } from './Usecases'
 import { githubLogo, discordLogo } from './HomePage'
+import { recommendation } from './Testimonial'
 
 const sections = {
   "Branch Previews": [
@@ -128,7 +129,7 @@ export function FrontendPage() {
                     </div>
                     <div className="pointer-events-none bottom-0 flex w-full flex-row items-center p-4 mt-auto">
                       <a
-                        href="#"
+                        href={i.link}
                         className="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition text-neutral-900 hover:text-neutral-700 dark:text-neutral-100 dark:hover:text-neutral-300 pointer-events-auto underline"
                       >
                         {i.deploy}
@@ -152,48 +153,24 @@ export function FrontendPage() {
             </p>
           </div>
           <div className="mx-auto mt-16 sm:mt-20 lg:mt-24 lg:max-w-none grid grid-cols-3">
-            <div className="h-full px-2.5">
-              <div className="flex flex-col justify-between rounded-2xl border border-white/5 bg-white/5 hover:bg-white/10 px-8 py-6">
-                <div className="pb-4 font-light text-white/75">
-                  “Accelerate QA with self-service previews and rollbacks of your branches and repositories to the latest stable version.”
-                </div>
-                <div className="flex items-center gap-4">
-                  <img src="/logo.svg" className="h-9 w-9 rounded-full" />
-                  <div className="flex flex-col text-sm">
-                    <div className="text-white">XZY</div>
-                    <div className="text-white/75">abc at DEF</div>
+            {
+              recommendation.map((r, idx) => (
+                <div key={idx} className="h-full px-2.5">
+                  <div className="flex flex-col justify-between rounded-2xl border border-white/5 bg-white/5 hover:bg-white/10 px-8 py-6">
+                    <div className="pb-4 font-light text-white/75">
+                      {`“${r.body}”`}
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <img src={r.author.imageUrl} className="h-9 w-9 rounded-full" />
+                      <div className="flex flex-col text-sm">
+                        <div className="text-white">{r.author.name}</div>
+                        <div className="text-white/75">{r.author.handle}</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div className="h-full px-2.5">
-              <div className="flex flex-col justify-between rounded-2xl border border-white/5 bg-white/5 hover:bg-white/10 px-8 py-6">
-                <div className="pb-4 font-light text-white/75">
-                  “Accelerate QA with self-service previews and rollbacks of your branches and repositories to the latest stable version.”
-                </div>
-                <div className="flex items-center gap-4">
-                  <img src="/logo.svg" className="h-9 w-9 rounded-full" />
-                  <div className="flex flex-col text-sm">
-                    <div className="text-white">XZY</div>
-                    <div className="text-white/75">abc at DEF</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="h-full px-2.5">
-              <div className="flex flex-col justify-between rounded-2xl border border-white/5 bg-white/5 hover:bg-white/10 px-8 py-6">
-                <div className="pb-4 font-light text-white/75">
-                  “Accelerate QA with self-service previews and rollbacks of your branches and repositories to the latest stable version.”
-                </div>
-                <div className="flex items-center gap-4">
-                  <img src="/logo.svg" className="h-9 w-9 rounded-full" />
-                  <div className="flex flex-col text-sm">
-                    <div className="text-white">XZY</div>
-                    <div className="text-white/75">abc at DEF</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+              ))
+            }
           </div>
         </div>
       </div>

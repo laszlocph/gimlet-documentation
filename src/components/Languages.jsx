@@ -1,18 +1,20 @@
 export const languages = {
   'Frontend': [
-    { title: "Next.js", description: "React framework for building scalable, high-performance applications.", source: "next-js.svg", deploy: "How to deploy Next.js" },
-    { title: "React", description: "JavaScript library for building dynamic, interactive user interfaces.", source: "react-js.svg", deploy: "How to deploy React" },
-    { title: "Remix", description: "A web framework for building fast, modern web applications with React.", source: "remix.svg", deploy: "How to deploy Remix" },
+    { title: "Next.js", description: "React framework for building scalable, high-performance applications.", link: "#", source: "next-js.svg", deploy: "How to deploy Next.js" },
+    { title: "React", description: "JavaScript library for building dynamic, interactive user interfaces.", link: "#", source: "react-js.svg", deploy: "How to deploy React" },
+    { title: "Remix", description: "A web framework for building fast, modern web applications with React.", link: "#", source: "remix.svg", deploy: "How to deploy Remix" },
   ],
   'Backend': [
-    { title: "Rails", description: "Server-side framework written in Ruby, designed for simplicity and productivity.", source: "rails.svg", deploy: "How to deploy Rails" },
-    { title: "Laravel", description: "PHP framework for web applications, offering a clean and elegant syntax.", source: "laravel.svg", deploy: "How to deploy Laravel" },
-    { title: "Django", description: "Python framework that encourages rapid development and clean design.", source: "django.svg", deploy: "How to deploy Django" },
+    { title: "Rails", description: "Server-side framework written in Ruby, designed for simplicity and productivity.", link: "#", source: "rails.svg", deploy: "How to deploy Rails" },
+    { title: "Laravel", description: "PHP framework for web applications, offering a clean and elegant syntax.", link: "#", source: "laravel.svg", deploy: "How to deploy Laravel" },
+    { title: "Django", description: "Python framework that encourages rapid development and clean design.", link: "#", source: "django.svg", deploy: "How to deploy Django" },
   ],
   'AI Deployment': [
-    { title: "Streamlit", description: "Library for quickly building and sharing web apps for machine learning and data science projects.", source: "streamlit.svg", deploy: "How to deploy Streamlit" },
-    { title: "Hugging face", description: "State-of-the-art NLP models for text analysis and generation.", source: "huggingface.svg", deploy: "How to deploy Hugging Face models" },
-    { title: "Dockerfile", description: "Ensuring consistency through reproducible environments.", source: "docker.svg", deploy: "How to deploy with Dockerfiles" },
+    { title: "vLLM", description: "High-performance and cost-effective Large Language Model serving solution.", link: "#", source: "vllm-logo-text-dark.png", deploy: "How to deploy vLLM" },
+    { title: "Hugging face", description: "State-of-the-art NLP models for text analysis and generation.", link: "#", source: "huggingface.svg", deploy: "How to deploy Hugging Face models" },
+    { title: "Dockerfile", description: "Ensuring consistency through reproducible environments.", link: "#", source: "docker.svg", deploy: "How to deploy with Dockerfiles" },
+    { title: "Streamlit", description: "Library for quickly building and sharing web apps for machine learning and data science projects.", link: "#", source: "streamlit.svg", deploy: "How to deploy Streamlit" },
+    { title: "Jupyter Notebook", description: "Interactive computing environment for live code, equations, visualizations, and narrative text.", link: "#", source: "jupyter-logo.png", deploy: "How to deploy Jupyter Notebook" },
   ]
 };
 
@@ -36,13 +38,13 @@ export default function Languages() {
                       className="group flex flex-col justify-between overflow-hidden rounded-xl bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]"
                     >
                       <div className="pointer-events-none z-10 flex flex-col gap-1 p-6">
-                        <img src={i.source} alt={i.title} className="h-14 w-14 origin-left text-neutral-700" />
+                        <img src={i.source} alt={i.title} className="h-14 w-14 object-scale-down origin-left text-neutral-700" />
                         <h3 className="text-xl font-semibold text-neutral-700 dark:text-neutral-300">{i.title}</h3>
                         <p className="max-w-lg text-neutral-400">{i.description}</p>
                       </div>
                       <div className="pointer-events-none bottom-0 flex w-full flex-row items-center p-4 mt-auto">
                         <a
-                          href="#"
+                          href={i.link}
                           className="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition text-neutral-900 hover:text-neutral-700 dark:text-neutral-100 dark:hover:text-neutral-300 pointer-events-auto underline"
                         >
                           {i.deploy}

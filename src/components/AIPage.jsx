@@ -4,9 +4,14 @@ import { languages } from './Languages'
 import { CTA } from './CallToAction'
 import { Dropdown } from './Usecases'
 import { githubLogo, discordLogo } from './HomePage'
+import { recommendation } from './Testimonial'
 
 const sections = {
-  "Scalability": [
+  "Remote Resources": [
+    { title: "Remote NVIDIA GPU Containers", desc: "Utilize remote GPU resources when working on your AI project from your local setup." },
+    { title: "File syncing", desc: "Keep code and data consistent with your local laptop with file syncing utilities." },
+  ],
+  "Production Deployments": [
     { title: "Hybrid Cloud Compatibility", desc: "Deploy and manage models across hybrid, cloud, and on-premises environments." },
     { title: "Optimized Resource Allocation", desc: "Kubernetes to automatically scale your infrastructure to match your model's demands." },
   ],
@@ -15,7 +20,7 @@ const sections = {
     { title: "Advanced Deployment Capabilities", desc: "Rollbacks and automated deployments to even hundreds of models." },
   ],
   "Monitoring": [
-    { title: "Grafana & Prometheus Compatibility", desc: "Real-time data of infrastructure performance." },
+    { title: "Grafana & Prometheus Compatibility", desc: "Track and visualize memory and GPU use of your deployed models." },
     { title: "Fine-Tune Your Infrastructure", desc: "Identify and address performance bottlenecks based on monitoring data." },
   ],
 };
@@ -108,24 +113,24 @@ export function AIPage() {
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <div className="mx-auto lg:text-center">
             <p className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              The most popular AI frameworks and technologies are supported.
+              Experiment with the most popular AI frameworks and technologies.
             </p>
           </div>
           <div className="mx-auto mt-16 sm:mt-20 lg:mt-24 lg:max-w-none space-y-8">
             <dl className="grid max-w-xl grid-cols-1 gap-6 lg:max-w-none lg:grid-cols-3 mt-4">
-              {languages["Backend"].map(i => {
+              {languages["AI Deployment"].map(i => {
                 return (
                   <div key={i.title}
                     className="group flex flex-col justify-between overflow-hidden rounded-xl bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]"
                   >
                     <div className="pointer-events-none z-10 flex flex-col gap-1 p-6">
-                      <img src={i.source} alt={i.title} className="h-14 w-14 origin-left text-neutral-700" />
+                      <img src={i.source} alt={i.title} className="h-14 w-14 object-scale-down origin-left text-neutral-700" />
                       <h3 className="text-xl font-semibold text-neutral-700 dark:text-neutral-300">{i.title}</h3>
                       <p className="max-w-lg text-neutral-400">{i.description}</p>
                     </div>
                     <div className="pointer-events-none bottom-0 flex w-full flex-row items-center p-4 mt-auto">
                       <a
-                        href="#"
+                        href={i.link}
                         className="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition text-neutral-900 hover:text-neutral-700 dark:text-neutral-100 dark:hover:text-neutral-300 pointer-events-auto underline"
                       >
                         {i.deploy}
@@ -148,48 +153,24 @@ export function AIPage() {
             </p>
           </div>
           <div className="mx-auto mt-16 sm:mt-20 lg:mt-24 lg:max-w-none grid grid-cols-3">
-            <div className="h-full px-2.5">
-              <div className="flex flex-col justify-between rounded-2xl border border-white/5 bg-white/5 hover:bg-white/10 px-8 py-6">
-                <div className="pb-4 font-light text-white/75">
-                  “Accelerate QA with self-service previews and rollbacks of your branches and repositories to the latest stable version.”
-                </div>
-                <div className="flex items-center gap-4">
-                  <img src="/logo.svg" className="h-9 w-9 rounded-full" />
-                  <div className="flex flex-col text-sm">
-                    <div className="text-white">XZY</div>
-                    <div className="text-white/75">abc at DEF</div>
+            {
+              recommendation.map((r, idx) => (
+                <div key={idx} className="h-full px-2.5">
+                  <div className="flex flex-col justify-between rounded-2xl border border-white/5 bg-white/5 hover:bg-white/10 px-8 py-6">
+                    <div className="pb-4 font-light text-white/75">
+                      {`“${r.body}”`}
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <img src={r.author.imageUrl} className="h-9 w-9 rounded-full" />
+                      <div className="flex flex-col text-sm">
+                        <div className="text-white">{r.author.name}</div>
+                        <div className="text-white/75">{r.author.handle}</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div className="h-full px-2.5">
-              <div className="flex flex-col justify-between rounded-2xl border border-white/5 bg-white/5 hover:bg-white/10 px-8 py-6">
-                <div className="pb-4 font-light text-white/75">
-                  “Accelerate QA with self-service previews and rollbacks of your branches and repositories to the latest stable version.”
-                </div>
-                <div className="flex items-center gap-4">
-                  <img src="/logo.svg" className="h-9 w-9 rounded-full" />
-                  <div className="flex flex-col text-sm">
-                    <div className="text-white">XZY</div>
-                    <div className="text-white/75">abc at DEF</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="h-full px-2.5">
-              <div className="flex flex-col justify-between rounded-2xl border border-white/5 bg-white/5 hover:bg-white/10 px-8 py-6">
-                <div className="pb-4 font-light text-white/75">
-                  “Accelerate QA with self-service previews and rollbacks of your branches and repositories to the latest stable version.”
-                </div>
-                <div className="flex items-center gap-4">
-                  <img src="/logo.svg" className="h-9 w-9 rounded-full" />
-                  <div className="flex flex-col text-sm">
-                    <div className="text-white">XZY</div>
-                    <div className="text-white/75">abc at DEF</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+              ))
+            }
           </div>
         </div>
       </div>
