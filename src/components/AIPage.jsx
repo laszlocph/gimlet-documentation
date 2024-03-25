@@ -5,6 +5,7 @@ import { CTA } from './CallToAction'
 import { Dropdown } from './Usecases'
 import { githubLogo, discordLogo } from './HomePage'
 import { recommendation } from './Testimonial'
+import { MultipleBeam, OneWayBeam, TwoWayBeam } from './Beam'
 
 const sections = {
   "Remote Resources": [
@@ -107,6 +108,13 @@ export function AIPage() {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+      <div className="py-16 sm:py-48 mx-auto max-w-6xl">
+        <div className="mx-auto max-w-4xl px-6 lg:px-8 space-y-24">
+          <OneWayBeam />
+          <TwoWayBeam />
+          <MultipleBeam />
         </div>
       </div>
       <div className="py-16 sm:py-48 mx-auto max-w-6xl">
