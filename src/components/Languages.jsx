@@ -1,20 +1,21 @@
 export const languages = {
   'Frontend': [
-    { title: "Next.js", description: "React framework for building scalable, high-performance applications.", link: "#", source: "next-js.svg", deploy: "How to deploy Next.js" },
-    { title: "React", description: "JavaScript library for building dynamic, interactive user interfaces.", link: "#", source: "react-js.svg", deploy: "How to deploy React" },
-    { title: "Remix", description: "A web framework for building fast, modern web applications with React.", link: "#", source: "remix.svg", deploy: "How to deploy Remix" },
+    { title: "Next.js", description: "React framework for building scalable, high-performance applications.", link: "/docs/tutorials/frontend/next-js-deployment-tutorial", source: "next-js.svg", deploy: "How to deploy Next.js" },
+    { title: "React", description: "JavaScript library for building dynamic, interactive user interfaces.", link: "/docs/tutorials/frontend/react-deployment-tutorial", source: "react-js.svg", deploy: "How to deploy React" },
+    { title: "Remix", description: "A web framework for building fast, modern web applications with React.", link: "/docs/tutorials/frontend/remix-deployment-tutorial", source: "remix.svg", deploy: "How to deploy Remix" },
   ],
   'Backend': [
-    { title: "Rails", description: "Server-side framework written in Ruby, designed for simplicity and productivity.", link: "#", source: "rails.svg", deploy: "How to deploy Rails" },
-    { title: "Laravel", description: "PHP framework for web applications, offering a clean and elegant syntax.", link: "#", source: "laravel.svg", deploy: "How to deploy Laravel" },
-    { title: "Django", description: "Python framework that encourages rapid development and clean design.", link: "#", source: "django.svg", deploy: "How to deploy Django" },
+    { title: "Rails", description: "Server-side framework written in Ruby, designed for simplicity and productivity.", link: "/docs/tutorials/backend/ruby-on-rails-deployment-tutorial", source: "rails.svg", deploy: "How to deploy Rails" },
+    { title: "Laravel", description: "PHP framework for web applications, offering a clean and elegant syntax.", link: "/docs/tutorials/backend/laravel-deployment-tutorial", source: "laravel.svg", deploy: "How to deploy Laravel" },
+    { title: "Django", description: "Python framework that encourages rapid development and clean design.", link: "/docs/tutorials/backend/django-deployment-tutorial", source: "django.svg", deploy: "How to deploy Django" },
   ],
   'AI Deployment': [
-    { title: "vLLM", description: "High-performance and cost-effective Large Language Model serving solution.", link: "#", source: "vllm-logo-text-dark.png", deploy: "How to deploy vLLM" },
-    { title: "Hugging face", description: "State-of-the-art NLP models for text analysis and generation.", link: "#", source: "huggingface.svg", deploy: "How to deploy Hugging Face models" },
-    { title: "Dockerfile", description: "Ensuring consistency through reproducible environments.", link: "#", source: "docker.svg", deploy: "How to deploy with Dockerfiles" },
-    { title: "Streamlit", description: "Library for quickly building and sharing web apps for machine learning and data science projects.", link: "#", source: "streamlit.svg", deploy: "How to deploy Streamlit" },
-    { title: "Jupyter Notebook", description: "Interactive computing environment for live code, equations, visualizations, and narrative text.", link: "#", source: "jupyter-logo.png", deploy: "How to deploy Jupyter Notebook" },
+    { title: "vLLM", description: "High-performance and cost-effective Large Language Model serving solution.", link: "/docs/tutorials/ai-deployments/vllm-deployment-tutorial", source: "vllm-logo-text-dark.png", deploy: "How to deploy vLLM" },
+    { title: "Hugging face", description: "State-of-the-art NLP models for text analysis and generation.", link: "/docs/tutorials/ai-deployments/hugging-face-model-deployment-tutorial", source: "huggingface.svg", deploy: "How to deploy Hugging Face models" },
+    { title: "Dockerfile", description: "Ensuring consistency through reproducible environments.", link: "/docs/tutorials/ai-deployments/dockerfile-deployment-tutorial", source: "docker.svg", deploy: "How to deploy with Dockerfiles" },
+    { title: "Streamlit", description: "Library for quickly building and sharing web apps for machine learning and data science projects.", link: "/docs/tutorials/ai-deployments/streamlit-deployment-tutorial", source: "streamlit.svg", deploy: "How to deploy Streamlit" },
+    { title: "Jupyter Notebook", description: "Interactive computing environment for live code, equations, visualizations, and narrative text.", link: "/docs/tutorials/ai-deployments/jupyter-notebook-deployment-tutorial", source: "jupyter-logo.png", deploy: "How to deploy Jupyter Notebook" },
+    { title: "Flowise", description: "Open source low-code tool for developers to build customized LLM orchestration flow & AI agents.", link: "/docs/tutorials/ai-deployments/flowise-deployment-tutorial", source: "flowise.png", deploy: "How to deploy Flowise" },
   ]
 };
 
