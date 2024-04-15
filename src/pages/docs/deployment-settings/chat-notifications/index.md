@@ -1,7 +1,7 @@
 You can configure chat notifications for the platforms below to get information promptly about events related to your applications.
 
-- [Slack]()
-- [Discord]()
+- [Slack](/docs/deployment-settings/chat-notifications/slack-notifications)
+- [Discord](/docs/deployment-settings/chat-notifications/discord-notifications)
 
 ## Self-Hosted Gimlet Notification Settings
 

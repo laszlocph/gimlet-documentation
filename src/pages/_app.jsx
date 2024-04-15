@@ -73,6 +73,99 @@ const navigation = [
   },
 ]
 
+const newNavigation = [
+  {
+    title: 'Overview',
+    links: [
+      { title: 'Introduction', href: '/docs/overview/introduction' },
+      { title: 'Quick start', href: '/docs/overview/quick-start' },
+    ],
+  },
+  {
+    title: 'Tutorials',
+    links: [
+      { title: 'Frontend', href: '/docs/tutorials/frontend' },
+      { title: 'Backend', href: '/docs/tutorials/backend' },
+      { title: 'AI Deployments', href: '/docs/tutorials/ai-deployments' },
+    ],
+  },
+  {
+    title: 'Deployments',
+    links: [
+      { title: 'Deployments', href: '/docs/deployments' },
+      { title: 'Preview deployments', href: '/docs/deployments/preview-deployments' },
+      { title: 'Rollbacks', href: '/docs/deployments/rollbacks' },
+      { title: 'Automated deployments', href: '/docs/deployments/automated-deployments' },
+    ],
+  },
+  {
+    title: 'Deployment settings',
+    links: [
+      { title: 'Deployment settings', href: '/docs/deployment-settings' },
+      { title: 'Build with Gimlet', href: '/docs/deployment-settings/build-with-gimlet' },
+      { title: 'Social authentication', href: '/docs/deployment-settings/social-authentication' },
+      { title: 'DNS', href: '/docs/deployment-settings/dns' },
+      { title: 'Port-forwarding', href: '/docs/deployment-settings/port-forwarding' },
+      { title: 'HTTPS', href: '/docs/deployment-settings/https' },
+      { title: 'Deployment configuration', href: '/docs/deployment-settings/deployment-configuration' },
+      { title: 'Secrets', href: '/docs/deployment-settings/secrets' },
+      { title: 'Infrastruture management', href: '/docs/deployment-settings/infrastructure-management' },
+      { title: 'Chat notifications', href: '/docs/deployment-settings/chat-notifications' },
+    ],
+  },
+  {
+    title: 'Monitoring',
+    links: [
+      { title: 'Monitoring notes', href: '/docs/monitoring/monitoring-notes' },
+      { title: 'Loki', href: '/docs/monitoring/loki' },
+      { title: 'Grafana', href: '/docs/monitoring/grafana' },
+      { title: 'Prometheus', href: '/docs/monitoring/prometheus' },
+      { title: 'Integated Kubernetes alerts', href: '/docs/monitoring/integrated-kubernetes-alerts' },
+    ],
+  },
+  {
+    title: 'CLI',
+    links: [
+      { title: 'CLI', href: '/docs/cli' },
+      { title: 'Get started with CLI', href: '/docs/cli/get-started-with-cli' },
+      { title: 'CLI Use-cases', href: '/docs/cli/cli-use-cases' },
+    ],
+  },
+  {
+    title: 'Kubernetes resources',
+    links: [
+      { title: 'Kubernetes resources', href: '/docs/kubernetes-resources' },
+      { title: 'Kubernetes essentials', href: '/docs/kubernetes-resources/kubernetes-essentials' },
+      { title: 'Troubleshooting', href: '/docs/kubernetes-resources/troubleshooting' },
+      { title: 'Gimlet manifest reference', href: '/docs/kubernetes-resources/gimlet-manifest-reference' },
+    ],
+  },
+  {
+    title: 'Reference',
+    links: [
+      { title: 'Reference', href: '/docs/reference' },
+      { title: 'Gimlet configuration reference', href: '/docs/reference/gimlet-configuration-reference' },
+      { title: 'Onechart reference', href: '/docs/reference/onechart-reference' },
+      { title: 'Capacitor reference', href: '/docs/reference/capacitor-reference' },
+    ],
+  },
+  {
+    title: 'Concepts',
+    links: [
+      { title: 'Concepts', href: '/docs/concepts/concepts' },
+    ],
+  },
+  {
+    title: 'Learn-more',
+    links: [
+      { title: 'Gimlet compared to', href: '/docs/learn-more/gimlet-compared-to' },
+      { title: 'ONCE/BUSL', href: '/docs/learn-more/once-busl' },
+      { title: 'FAQ', href: '/docs/learn-more/faq' },
+      { title: 'Contact us', href: '/docs/learn-more/contact-us' },
+    ],
+  },
+]
+
 function getNodeText(node) {
   let text = ''
   for (let child of node.children ?? []) {
@@ -212,7 +305,7 @@ export default function App({ Component, pageProps }) {
         </script> */}
       </Head>
       <Layout
-        navigation={navigation}
+        navigation={newNavigation}
         title={title}
         tableOfContents={tableOfContents}
         pageProps={pageProps}

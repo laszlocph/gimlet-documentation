@@ -4,11 +4,11 @@ While there aren't directly integrated monitoring tools in Gimlet, there are ope
 
 We can help you with maintaining these with release notes and guides attached. Here's what you can find in this section:
 
-- **[Loki]()**
+- **[Loki](/docs/monitoring/loki)**
 	- Querying Guide
-- **[Grafana (Grafana Cloud is supported)]()**
+- **[Grafana (Grafana Cloud is supported)](/docs/monitoring/grafana)**
 	- Dashboards
 	- Alertek
-- **[Prometheus]()**
+- **[Prometheus](/docs/monitoring/prometheus)**
 	- Day 2 Operations Guide
-- **[Integrated Kubernetes Alerts on Gimlet]()**
+- **[Integrated Kubernetes Alerts on Gimlet](/docs/monitoring/integrated-kubernetes-alerts)**
