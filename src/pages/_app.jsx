@@ -12,71 +12,6 @@ const navigation = [
   {
     title: 'Overview',
     links: [
-      { title: 'The tooling challenge', href: '/docs/tooling-challenge' },
-    ],
-  },
-  // {
-  //   title: 'Use-cases',
-  //   links: [
-  //     { title: 'I am a developer', href: '/docs/i-am-a-developer' },
-  //     { title: 'I am a data-scientist/ml engineer', href: '/docs/i-am-a-data-scientist-ml-engineer' },
-  //     { title: 'I am a platform builder', href: '/docs/i-am-a-platform-builder' },
-  //     { title: 'I am a manager / product owner', href: '/docs/i-am-a-manager-produc-owner' },
-  //   ],
-  // },
-  {
-    title: 'Getting started',
-    links: [
-      { title: 'Installation', href: '/docs/installation' },
-      { title: 'Deploying your first app', href: '/docs/deploy-your-first-app' },
-      { title: 'Deploying your second app', href: '/docs/deploy-your-second-app' },
-      { title: 'Deploying a static site', href: '/docs/deploy-a-static-site' },
-      { title: 'Concepts', href: '/docs/concepts' },
-      { title: 'Using a Dockerfile and CI', href: '/docs/integrate-with-ci' },
-      { title: 'Setting up DNS and HTTPS', href: '/docs/setting-up-dns-and-https' },
-    ],
-  },
-  {
-    title: 'Guides',
-    links: [
-      { title: 'Deploying static sites', href: '/docs/deploying-static-sites' },
-      { title: 'Managing deployment configs', href: '/docs/how-to-manage-deployment-configs' },
-      { title: 'Configuring preview environments', href: '/docs/how-to-configure-preview-environments' },
-      { title: 'Rolling back', href: '/docs/rolling-back' },
-      { title: 'Container image building', href: '/docs/container-image-building' },
-      { title: 'Managing secrets', href: '/docs/how-to-manage-secrets' },
-      { title: 'Configuring notifications', href: '/docs/configuring-notifications' },
-      { title: 'When Helm is limiting', href: '/docs/when-helm-is-limiting' },
-      { title: 'Managing infrastructure components', href: '/docs/managing-infrastructure-components' },
-      { title: 'Deploying Gimlet in production', href: '/docs/deploying-gimlet-in-production' },
-      { title: 'Upgrading Flux', href: '/docs/gitops-bootstrapping-reference' },
-    ],
-  },
-  {
-    title: 'Reference',
-    links: [
-      { title: 'Gimlet manifest reference', href: '/docs/gimlet-manifest-reference' },
-      { title: 'OneChart reference', href: '/docs/onechart-reference' },
-      { title: 'Gimlet configuration reference', href: '/docs/gimlet-configuration-reference' },
-    ],
-  },
-  {
-    title: 'Appendix',
-    links: [
-      { title: 'Gimlet compared to...', href: '/concepts/compared-to' },
-      { title: 'The SANE gitops guide', href: '/concepts/the-sane-gitops-guide' },
-      { title: 'The SANE Helm guide', href: '/concepts/the-sane-helm-guide' },
-      { title: 'Flux CRDs', href: '/docs/flux-crds' },
-      { title: 'Stack authoring', href: '/docs/stack-authoring' },
-      { title: 'YAML Generator', href: '/k8s-yaml-generator' },
-    ],
-  },
-]
-
-const newNavigation = [
-  {
-    title: 'Overview',
-    links: [
       { title: 'Introduction', href: '/docs/overview/introduction' },
       { title: 'Quick start', href: '/docs/overview/quick-start' },
     ],
@@ -152,7 +87,7 @@ const newNavigation = [
   {
     title: 'Concepts',
     links: [
-      { title: 'Concepts', href: '/docs/concepts/concepts' },
+      { title: 'Concepts', href: '/docs/concepts' },
     ],
   },
   {
@@ -305,7 +240,7 @@ export default function App({ Component, pageProps }) {
         </script> */}
       </Head>
       <Layout
-        navigation={newNavigation}
+        navigation={navigation}
         title={title}
         tableOfContents={tableOfContents}
         pageProps={pageProps}
