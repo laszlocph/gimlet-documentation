@@ -5,7 +5,6 @@ import { CTA } from './CallToAction'
 import { Dropdown } from './Usecases'
 import { githubLogo, discordLogo } from './HomePage'
 import { recommendation } from './Testimonial'
-import { MultipleBeam, OneWayBeam, TwoWayBeam } from './Beam'
 
 const sections = {
   "Remote Resources": [
@@ -35,32 +34,31 @@ export function AIPage() {
             <Link href="/">
               <a>
                 <span className="sr-only">Home page</span>
-                <img src="/logo2.svg" alt="Gimlet" className='h-10 sm:h-12 inline dark:hidden' />
-                <img src="/logo-dark.svg" alt="Gimlet" className='h-10 sm:h-12 inline hidden dark:inline' />
+                <img src="/logo-dark.svg" alt="Gimlet" className='h-10 sm:h-12 inline' />
               </a>
             </Link>
-            <button className="text-zinc-900 dark:text-white text-xl font-bold whitespace-nowrap ml-10">
+            <button className="text-white text-xl font-bold whitespace-nowrap ml-10">
               <Dropdown />
             </button>
             <button>
-              <a href="/pricing" className="text-zinc-900 dark:text-white text-xl font-bold ml-4">
+              <a href="/pricing" className="text-white text-xl font-bold ml-4">
                 Pricing
               </a>
             </button>
             <button>
-              <a href="/blog" className="text-zinc-900 dark:text-white text-xl font-bold ml-4">
+              <a href="/blog" className="text-white text-xl font-bold ml-4">
                 Blog
               </a>
             </button>
             <button>
-              <a href="/docs" className="text-zinc-900 dark:text-white text-xl font-bold ml-4">
+              <a href="/docs" className="text-white text-xl font-bold ml-4">
                 Docs
               </a>
             </button>
           </div>
           <div className="hidden sm:flex lg:flex-1 lg:justify-end gap-x-2">
             <Link href="https://accounts.gimlet.io/signup">
-              <button className="text-zinc-900 dark:text-white font-bold py-2 px-4 rounded">
+              <button className="text-white font-bold py-2 px-4 rounded">
                 Sign up
               </button>
             </Link>
@@ -81,9 +79,12 @@ export function AIPage() {
           </div>
         </div>
       </div>
-      <div className="py-16 sm:py-48 mx-auto max-w-3xl">
+      <div className="mx-auto max-w-3xl">
+        <img src="/placeholder.png" alt="Gimlet" className='' />
+      </div>
+      <div className="pb-16 sm:pb-48 mx-auto max-w-3xl">
         <div className="px-6 py-32 lg:px-8">
-          <div className="text-base leading-7 text-zinc-900 dark:text-white space-y-8">
+          <div className="text-base leading-7 text-white space-y-8">
             <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl text-center">
               Effortless Social Login and TLS Encryption
             </h1>
@@ -111,13 +112,6 @@ export function AIPage() {
         </div>
       </div>
       <div className="py-16 sm:py-48 mx-auto max-w-6xl">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8 space-y-24">
-          <OneWayBeam />
-          <TwoWayBeam />
-          <MultipleBeam />
-        </div>
-      </div>
-      <div className="py-16 sm:py-48 mx-auto max-w-6xl">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <div className="mx-auto lg:text-center">
             <p className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -129,12 +123,12 @@ export function AIPage() {
               {languages["AI Deployment"].map(i => {
                 return (
                   <div key={i.title}
-                    className="group flex flex-col justify-between overflow-hidden rounded-xl bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]"
+                    className="group flex flex-col justify-between overflow-hidden rounded-xl [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]"
                   >
                     <div className="pointer-events-none z-10 flex flex-col gap-1 p-6">
                       <img src={i.source} alt={i.title} className="h-14 w-14 object-scale-down origin-left text-neutral-700" />
-                      <h3 className="text-xl font-semibold text-neutral-700 dark:text-neutral-300">{i.title}</h3>
-                      <p className="max-w-lg text-neutral-400">{i.description}</p>
+                      <h3 className="text-xl font-semibold text-neutral-300">{i.title}</h3>
+                      <p className="max-w-lg text-neutral-200">{i.description}</p>
                     </div>
                     <div className="pointer-events-none bottom-0 flex w-full flex-row items-center p-4 mt-auto">
                       <a
@@ -188,7 +182,7 @@ export function AIPage() {
           list={["Hugging Face, Streamlit, and other technologies are supported", "Lowered Kubernetes entry-point", "Migrate from Gimlet anytime"]}
         />
       </div>
-      <div className="text-center px-2 md:px-16 py-4 lg:py-32 text-zinc-900 dark:text-zinc-200 text-2xl sm:text-3xl font-bold">
+      <div className="text-center px-2 md:px-16 py-4 lg:py-32 text-zinc-200 text-2xl sm:text-3xl font-bold">
         <p>Get help, show support!</p>
         <p className="pt-8">Join our <a href="https://discord.com/invite/ZwQDxPkYzE" className="underline">{discordLogo} Discord</a> and star us on <a href="https://github.com/gimlet-io/gimlet" className="underline">{githubLogo}Github</a></p>
       </div>
