@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Announcing the Gimlet SaaS Early Access
-date: "2022-12-05"
+date: '2022-12-05'
 image: saas-early-access.png
 description: "We have something really exciting to share with you: Gimlet is going SaaS. In other words, you will be able to use Gimlet's unparalleled Kubernetes deploy experience with even fewer clicks than before."
 ---
@@ -30,7 +30,7 @@ We are looking for early access partners: developers, dev teams and DevOps profe
 
 We are a couple of months away from launching our SaaS platform and during this period you would get access to the platform and our engineering team, while helping us with your feedback to be ready for our launch.
 
-[By signing up](https://forms.reform.app/p5JfBA/early-access/nbZ6Go) you will be able to get started for free, and stay free forever as we are announcing our always free plan: 
+[By signing up](https://forms.reform.app/p5JfBA/early-access/nbZ6Go) you will be able to get started for free, and stay free forever as we are announcing our always free plan:
 
 You will be able to deploy a single service to Kubernetes for free forever. Whether you use that to automate your blog or test-drive Gimlet, it is up to you.
 

@@ -10,50 +10,46 @@ import * as Fathom from "fathom-client";
 
 const navigation = [
   {
-    title: 'Introduction',
+    title: 'Overview',
     links: [
-      { title: 'Getting started', href: '/docs' },
+      { title: 'The tooling challenge', href: '/docs/tooling-challenge' },
+    ],
+  },
+  // {
+  //   title: 'Use-cases',
+  //   links: [
+  //     { title: 'I am a developer', href: '/docs/i-am-a-developer' },
+  //     { title: 'I am a data-scientist/ml engineer', href: '/docs/i-am-a-data-scientist-ml-engineer' },
+  //     { title: 'I am a platform builder', href: '/docs/i-am-a-platform-builder' },
+  //     { title: 'I am a manager / product owner', href: '/docs/i-am-a-manager-produc-owner' },
+  //   ],
+  // },
+  {
+    title: 'Getting started',
+    links: [
+      { title: 'Installation', href: '/docs/installation' },
+      { title: 'Deploying your first app', href: '/docs/deploy-your-first-app' },
+      { title: 'Deploying your second app', href: '/docs/deploy-your-second-app' },
+      { title: 'Deploying a static site', href: '/docs/deploy-a-static-site' },
+      { title: 'Concepts', href: '/docs/concepts' },
+      { title: 'Using a Dockerfile and CI', href: '/docs/integrate-with-ci' },
+      { title: 'Setting up DNS and HTTPS', href: '/docs/setting-up-dns-and-https' },
     ],
   },
   {
-    title: 'Core concepts',
+    title: 'Guides',
     links: [
-      { title: 'Components', href: '/concepts/components' },
-      { title: 'Gitops conventions', href: '/concepts/gitops-conventions' },
-      { title: 'ClickOps', href: '/concepts/clickops' },
-      { title: 'Escape hatches', href: '/concepts/escape-hatches' },
-      { title: 'Integration to CI', href: '/concepts/integration-to-ci' },
-      { title: 'Gimlet compared to...', href: '/concepts/compared-to' },
-    ],
-  },
-  {
-    title: 'Installation',
-    links: [
-      { title: 'Installing Gimlet CLI', href: '/docs/installing-gimlet-cli' },
-      { title: 'Installing Gimlet', href: '/docs/installation' },
-      { title: 'Exposing Gimlet on a domain name', href: '/docs/exposing-gimlet-on-a-domain-name' }
-    ],
-  },
-  {
-    title: 'Tutorials',
-    links: [
-      { title: 'Deploy your first app to Kubernetes', href: '/docs/deploy-your-first-app-to-kubernetes' },
-      { title: 'Deploy your first app to Kubernetes with Gimlet CLI', href: '/docs/deploy-your-first-app-to-kubernetes-with-gimlet-cli' },
-      { title: 'Make Kubernetes an application platform', href: '/docs/make-kubernetes-an-application-platform' },
-      { title: 'Make Kubernetes an application platform with Gimlet CLI', href: '/docs/make-kubernetes-an-application-platform-with-gimlet-cli' },
-    ],
-  },
-  {
-    title: 'Advanced guides',
-    links: [
+      { title: 'Deploying static sites', href: '/docs/deploying-static-sites' },
       { title: 'Managing deployment configs', href: '/docs/how-to-manage-deployment-configs' },
-      { title: 'Ad-hoc deploys', href: '/docs/ad-hoc-deploys' },
-      { title: 'Policy-based releases', href: '/docs/policy-based-releases' },
       { title: 'Configuring preview environments', href: '/docs/how-to-configure-preview-environments' },
-      { title: 'Managing secrets', href: '/docs/how-to-manage-secrets' },
       { title: 'Rolling back', href: '/docs/rolling-back' },
+      { title: 'Container image building', href: '/docs/container-image-building' },
+      { title: 'Managing secrets', href: '/docs/how-to-manage-secrets' },
+      { title: 'Configuring notifications', href: '/docs/configuring-notifications' },
       { title: 'When Helm is limiting', href: '/docs/when-helm-is-limiting' },
       { title: 'Managing infrastructure components', href: '/docs/managing-infrastructure-components' },
+      { title: 'Deploying Gimlet in production', href: '/docs/deploying-gimlet-in-production' },
+      { title: 'Upgrading Flux', href: '/docs/gitops-bootstrapping-reference' },
     ],
   },
   {
@@ -61,22 +57,18 @@ const navigation = [
     links: [
       { title: 'Gimlet manifest reference', href: '/docs/gimlet-manifest-reference' },
       { title: 'OneChart reference', href: '/docs/onechart-reference' },
-      { title: 'Gitops bootstrapping reference', href: '/docs/gitops-bootstrapping-reference' },
       { title: 'Gimlet configuration reference', href: '/docs/gimlet-configuration-reference' },
-      { title: 'Gimlet Agent configuration reference', href: '/docs/gimlet-agent-configuration-reference' },
-      { title: 'CI integration', href: '/docs/ci-integration' },
     ],
   },
   {
     title: 'Appendix',
     links: [
+      { title: 'Gimlet compared to...', href: '/concepts/compared-to' },
       { title: 'The SANE gitops guide', href: '/concepts/the-sane-gitops-guide' },
       { title: 'The SANE Helm guide', href: '/concepts/the-sane-helm-guide' },
-      { title: 'Boostrap gitops automation with Gimlet CLI', href: '/docs/bootstrap-gitops-automation-with-gimlet-cli' },
       { title: 'Flux CRDs', href: '/docs/flux-crds' },
-      { title: 'Gimlet Stack concepts', href: '/concepts/gimlet-stack-concepts' },
       { title: 'Stack authoring', href: '/docs/stack-authoring' },
-      { title: 'Helm React UI', href: '/blog/helm-react-ui-a-react-component-to-render-ui-for-helm-charts' },
+      { title: 'YAML Generator', href: '/k8s-yaml-generator' },
     ],
   },
 ]
@@ -124,7 +116,6 @@ export default function App({ Component, pageProps }) {
   let title = pageProps.markdoc?.frontmatter.title
 
   const router = useRouter()
-  let isBlogPage = router.pathname.startsWith('/blog')
   let isYamlGeneratorPage = router.pathname === '/k8s-yaml-generator'
 
   let pageTitle = 'Gimlet'
@@ -140,7 +131,7 @@ export default function App({ Component, pageProps }) {
     image = pageProps.markdoc?.frontmatter.image
   }
 
-  let tableOfContents = pageProps.markdoc?.content
+  let tableOfContents = pageProps.markdoc?.frontmatter.toc !== false && pageProps.markdoc?.content
     ? collectHeadings(pageProps.markdoc.content)
     : []
 

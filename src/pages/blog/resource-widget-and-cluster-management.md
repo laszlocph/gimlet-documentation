@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Resource widget and cluster management
-date: "2020-06-18"
+date: '2020-06-18'
 excerpt: This week's update is about resource management. Learn about the new CPU/Memory widgets and how you can configure them appropriately to keep cluster resources in check.
 topic: Product Updates
 tags: [posts]
@@ -18,7 +18,7 @@ Developers want to be good citizens. If they have all the knowledge required to 
 Trainings, wikis, enforcement, feedback loops all suffer from a key problem however. They are not helping when developers have the most attention on the problem. When they are setting requests and limits.
 
 Often they are on a mission to deploy their application, and the configuration details are just obstacles to reach that goal.
-Setting just *some value* is often their approach to get through this hurdle.
+Setting just _some value_ is often their approach to get through this hurdle.
 
 In Gimlet, we build the knowledge right in the tooling. Developers have the hints right where they need it, when they focus on the problem.
 
@@ -133,7 +133,7 @@ Memory over-commit starts evicting pods, which may cause downtime of workloads.
 questions:
   - variable: requests
     label: Resource Requests
-    description: "Requests are used by the cluster scheduler to place your workload on the best suiting server node."
+    description: 'Requests are used by the cluster scheduler to place your workload on the best suiting server node.'
     type: complex
     required: false
     group: resources
@@ -141,24 +141,24 @@ questions:
     subquestions:
       - variable: cpu
         label: CPU
-        description: "Indicates the average CPU usage of the application. 1000 CPU shares = 1 CPU core"
+        description: 'Indicates the average CPU usage of the application. 1000 CPU shares = 1 CPU core'
         type: int
         default: 500
         range:
           min: 100
           max: 8000
           step: 100
-        unit: "m"
-        readableUnit: "shares"
+        unit: 'm'
+        readableUnit: 'shares'
         validation:
-        - type: minRatio
-          value: "1"
-          variable: limits.memory
-          description: "Memory requests must be equal to memory limits. We don't allow memory over-commit in our cluster to prevent out of memory errors. Please adjust your request or limit."
-        - type: maxRatio
-          value: "1"
-          variable: limits.memory
-          description: "Memory requests can not be higher than memory limits. Please adjust your request or limit."
+          - type: minRatio
+            value: '1'
+            variable: limits.memory
+            description: "Memory requests must be equal to memory limits. We don't allow memory over-commit in our cluster to prevent out of memory errors. Please adjust your request or limit."
+          - type: maxRatio
+            value: '1'
+            variable: limits.memory
+            description: 'Memory requests can not be higher than memory limits. Please adjust your request or limit.'
 ```
 
 ## More about Gimlet

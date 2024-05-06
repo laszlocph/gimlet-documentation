@@ -1,7 +1,7 @@
 ---
-title: "Options for Kubernetes pod autoscaling"
-date: "2023-01-23"
-description: "The Gimlet.io team put together this blog to show common usecases of autoscaling: based on CPU, custom Prometheus metrics and RabbitMQ queue length. Furthermore, we are aiming to clear up the differences between the Horizontal Pod Autoscaler (HPA), the Prometheus Adapter and KEDA."
+title: 'Options for Kubernetes pod autoscaling'
+date: '2023-01-23'
+description: 'The Gimlet.io team put together this blog to show common usecases of autoscaling: based on CPU, custom Prometheus metrics and RabbitMQ queue length. Furthermore, we are aiming to clear up the differences between the Horizontal Pod Autoscaler (HPA), the Prometheus Adapter and KEDA.'
 image: autoscaling.png
 author: Youcef Guichi
 authorAvatar: /youcef.jpg
@@ -12,17 +12,19 @@ coAuthorAvatar: /laszlo.jpg
 Kubernetes autoscaling was supposed to be easy. Even though one of the selling points of Kubernetes is scaling, the built-in autoscaling support is basic at best. You can only scale based on CPU or memory consumption, anything more advanced requires additional tooling that is often not trivial.
 
 The Gimlet.io team put together this blog to show common usecases of autoscaling:
+
 - based on CPU
 - custom Prometheus metrics
 - and RabbitMQ queue length
 
-Furthermore, we are aiming to clear up the differences between the Horizontal Pod Autoscaler (HPA), the Prometheus Adapter and KEDA. 
+Furthermore, we are aiming to clear up the differences between the Horizontal Pod Autoscaler (HPA), the Prometheus Adapter and KEDA.
 
 Let's get into it shall we?
 
 First, about the Horizontal Pod Autoscaler (HPA).
 
 ## First, about the Horizontal Pod Autoscaler (HPA)
+
 The Horizontal Pod Autoscaler, or HPA in short, is a Kubernetes resource that allows you to scale your application based on resource utilization such as CPU and memory.
 
 To be more precise, HPA is a general purpose autoscaler, but by default only CPU and memory metrics are available for it to scale on.
@@ -52,6 +54,7 @@ KEDA is a Kubernetes operator that is handling a user friendly custom yaml resou
 In KEDA, you create a `ScaledObject`custom resource with the necessary information about the deployment you want to scale, then define the trigger event, which can be based on CPU and memory usage or on custom metrics. It has premade triggers for most anything that you may want to scale on, with a yaml structure that we think the Kubernetes API could have been made in the first place.
 
 KEDA does two things:
+
 - it exposes the selected metrics to the Kubernetes Custom Metrics API - just like Prometheus Adapter
 - and it creates the Horizontal Pod Autoscaler resource. Ultimately this HPA does the scaling.
 
@@ -68,16 +71,16 @@ metadata:
   name: cpu-based-scaledobject
   namespace: default
 spec:
-  minReplicaCount:  1                                 
-  maxReplicaCount:  10
+  minReplicaCount: 1
+  maxReplicaCount: 10
   scaleTargetRef:
     kind: Deployment
     name: test-app-deployment
   triggers:
-  - type: cpu
-    metricType: Utilization
-    metadata:
-      value: "50"
+    - type: cpu
+      metricType: Utilization
+      metadata:
+        value: '50'
 ```
 
 `scaleTargetRef` is where you refer to your deployment, and `triggers` is where you define the metrics and threshold that will trigger the scaling.
@@ -102,25 +105,25 @@ Scaling example based on custom Prometheus metrics:
 
 ```yaml
 triggers:
-- type: prometheus
-  metadata:
-    serverAddress: http://<prometheus-host>:9090
-    metricName: http_requests_total # Note: name to identify the metric, generated value would be `prometheus-http_requests_total`
-    query: sum(rate(http_requests_total{deployment="my-deployment"}[2m])) # Note: query must return a vector/scalar single element response
-    threshold: '100.50'
-    activationThreshold: '5.5'
+  - type: prometheus
+    metadata:
+      serverAddress: http://<prometheus-host>:9090
+      metricName: http_requests_total # Note: name to identify the metric, generated value would be `prometheus-http_requests_total`
+      query: sum(rate(http_requests_total{deployment="my-deployment"}[2m])) # Note: query must return a vector/scalar single element response
+      threshold: '100.50'
+      activationThreshold: '5.5'
 ```
 
 Scaling example based on RabbitMQ queue length:
 
 ```yaml
 triggers:
-- type: rabbitmq
-  metadata:
-    host: amqp://localhost:5672/vhost
-    mode: QueueLength # QueueLength or MessageRate
-    value: "100" # message backlog or publish/sec. target per instance
-    queueName: testqueue
+  - type: rabbitmq
+    metadata:
+      host: amqp://localhost:5672/vhost
+      mode: QueueLength # QueueLength or MessageRate
+      value: '100' # message backlog or publish/sec. target per instance
+      queueName: testqueue
 ```
 
 Check the [KEDA](https://keda.sh/docs/2.9/scalers/) official website to see all the scalers.

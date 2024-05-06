@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The ultimate GitOps repository structuring guide
-date: "2023-05-02"
+date: '2023-05-02'
 image: gitops-repo-structure.png
 description: "The way you structure your repository can greatly impact the efficiency and reliability of your gitops workflow. In this article, we'll explore different approaches to structuring your gitops repository so you gain a better understanding of how to structure your gitops repository to optimize your deployment process."
 author: Youcef Guichi
@@ -29,6 +29,7 @@ Since we use git to store deployment manifests, there are only limited options a
 Moreover, based on experience, long-running branches for each environment (such as QA, staging, and production) with pull requests to promote changes through them are not a real option. Although it may seem like a good idea initially, in practice, promoting changes is seldom a simple git merge but a manual process of selecting good changes and rejecting bad changes to reach production.
 
 Allow me to provide you with some examples:
+
 - Environment variables are frequently included in the configuration verbatim.
 - Infrastructure configuration is distinct from code changes due to the existence of environment-specific strings such as host names.
 - Certain long-running tasks may exclusively target a specific environment, such as load tests or penetration tests that necessitate temporary yet prolonged settings.
@@ -58,6 +59,7 @@ What all approaches share is the separation of deployment manifests from the app
 - The common repository structures that we discuss in this chapter are also enabled by the separation.
 
 ### Monorepo - Folder per environment
+
 A monorepo is a single git repository that contains all the deployment manifests for both applications and infrastructure components for all environments.
 
 In a monorepo, folders are used to separate apps, infrastructure components and environments.
@@ -69,11 +71,11 @@ If you use Kustomize, you can use the following structure:
 ```
 ├── apps
 │   ├── base
-│   ├── production 
+│   ├── production
 │   └── staging
 ├── infrastructure
 │   ├── base
-│   ├── production 
+│   ├── production
 │   └── staging
 └── environments
     ├── production
@@ -85,6 +87,7 @@ To define each environment state, a dedicated folder like `environments/producti
 The separation of apps and infrastructure makes it possible to define the order in which an environment is reconciled. For instance, the cluster addons and other Kubernetes controllers can be reconciled first, followed by the applications.
 
 #### Helm
+
 If you use Helm or raw manifests, you can use the following structure:
 
 ```
@@ -110,14 +113,15 @@ If you use Helm or raw manifests, you can use the following structure:
 
 #### Pros of using monorepos
 
-* Easy collaboration and versioning across all the components.
-* A single source of truth for all changes.
-* Good for small projects and trials.
+- Easy collaboration and versioning across all the components.
+- A single source of truth for all changes.
+- Good for small projects and trials.
 
 #### Cons of using monorepos
-* Can become difficult to manage as it grow.
-* Can be challenging to separate concerns.
-* Source Code Managers like Github and Gitlab don't provide fine-grained access control options inside repositories. If you have access to the repository, you have access to everything. A `CODEOWNERS` file may help in restricting write access, but read access can't be limited.
+
+- Can become difficult to manage as it grow.
+- Can be challenging to separate concerns.
+- Source Code Managers like Github and Gitlab don't provide fine-grained access control options inside repositories. If you have access to the repository, you have access to everything. A `CODEOWNERS` file may help in restricting write access, but read access can't be limited.
 
 ### Repository per environment
 
@@ -166,6 +170,7 @@ and
 In conclusion, the structure of your git repository can greatly impact the development and deployment process of your project.
 
 By carefully planning and organizing your repository structure, you can improve collaboration, maintainability, and scalability of your codebase. Some key considerations to keep in mind when structuring your repository include your
+
 - project's size and complexity,
 - the nature of your development team,
 - and the tools and workflows that you use.

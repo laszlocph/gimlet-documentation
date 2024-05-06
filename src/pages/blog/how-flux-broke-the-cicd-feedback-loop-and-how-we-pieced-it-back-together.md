@@ -1,13 +1,13 @@
 ---
-title: "How Flux broke the CI/CD feedback loop, and how we pieced it back together"
-date: "2022-10-20"
+title: 'How Flux broke the CI/CD feedback loop, and how we pieced it back together'
+date: '2022-10-20'
 description: A green build used to mean a successful deployment. But then gitops came and broke this heuristic.
 image: gitops-broke-cicd.jpg
 ---
 
 For a decade, a green CI/CD build meant that everything is fine, code is tested, deployed, and you can move on with your day.
 
-This is what we gave up when we adopted Flux. It wasn't for nothing, but with giving up the *green build means a successful deploy* heuristic, it became harder to figure out whether our code is deployed yet.
+This is what we gave up when we adopted Flux. It wasn't for nothing, but with giving up the _green build means a successful deploy_ heuristic, it became harder to figure out whether our code is deployed yet.
 
 Flux runs in our Kubernetes clusters in a distributed fashion: one Flux in each cluster. This architecture has benefits, but the drawback is, we cannot ask a central Flux instance to see if our code is deployed.
 
@@ -21,17 +21,17 @@ CI/CD platforms fire and forget, they generate the config from a template, deliv
 
 Our clients are big Flux CD users.
 
-1) When developers push their code to git
-2) CI kicks off and tests, builds the software and a docker image.
-3) To roll out this new artifact, a change is made to the gitops configuration repository to point to this docker image.
-4) Flux then notices the change and applies it on the Kubernetes cluster.
-5) Flux sends a notification to Slack that it applied the change.
+1. When developers push their code to git
+2. CI kicks off and tests, builds the software and a docker image.
+3. To roll out this new artifact, a change is made to the gitops configuration repository to point to this docker image.
+4. Flux then notices the change and applies it on the Kubernetes cluster.
+5. Flux sends a notification to Slack that it applied the change.
 
 ![CICD and Flux](/flux-cicd.jpg)
 
 Looks simple enough, but there is one thing that the diagram doesn't communicate well. The CI/CD pipeline is finished after step three, Flux applies the changes in step four asynchronously.
 
-While Flux notifies developers once it applied the changes, CI/CD at step three returns green and developers must match up notifications with builds in their heads. We lost the *green build means a successful deploy* heuristic.
+While Flux notifies developers once it applied the changes, CI/CD at step three returns green and developers must match up notifications with builds in their heads. We lost the _green build means a successful deploy_ heuristic.
 
 The question is, can we get it back?
 
@@ -41,14 +41,14 @@ The short answer is yes. Flux has a generic webhook notification system, so it c
 
 The problem is, CI runs only on-demand, so you have to have a standalone service that accepts these webhooks. This is also the service that the CI/CD pipeline can poll to get the state of the deployment.
 
-Factoring in this new standalone component, let's call it the *gitops brain*, here is how the modified flow looks:
+Factoring in this new standalone component, let's call it the _gitops brain_, here is how the modified flow looks:
 
-1) When developers push their code to git
-2) CI kicks off and tests, builds the software and a docker image.
-3) To roll out this new artifact, a change is made to the gitops configuration repository to point to this docker image.
-4) CI starts polling the gitops brain to see if the gitops commits were applied
-5) Flux then notices the change and applies it on the Kubernetes cluster.
-6) Flux sends a notification to Slack and the gitops brain that it applied the change.
+1. When developers push their code to git
+2. CI kicks off and tests, builds the software and a docker image.
+3. To roll out this new artifact, a change is made to the gitops configuration repository to point to this docker image.
+4. CI starts polling the gitops brain to see if the gitops commits were applied
+5. Flux then notices the change and applies it on the Kubernetes cluster.
+6. Flux sends a notification to Slack and the gitops brain that it applied the change.
 
 ![CICD and Flux](/flux-cicd-gitops-brain.jpg)
 
@@ -72,9 +72,9 @@ metadata:
 spec:
   eventSeverity: info
   eventSources:
-  - kind: Kustomization
-    name: gitops-repo
-    namespace: flux-system
+    - kind: Kustomization
+      name: gitops-repo
+      namespace: flux-system
   providerRef:
     name: -gitops-brain
 ```
@@ -100,7 +100,7 @@ spec:
   validation: client
 ```
 
-The yaml changes and the standalone webhook processor, the gitops brain, is what it takes to piece the *green build means a successful deploy* heuristic back together when using Flux.
+The yaml changes and the standalone webhook processor, the gitops brain, is what it takes to piece the _green build means a successful deploy_ heuristic back together when using Flux.
 
 ## What is up with ArgoCD and other gitops controllers?
 
@@ -108,11 +108,11 @@ Flux is not unique with its distributed approach. It has some nice characteristi
 
 From the CI/CD pipeline, you can ask ArgoCD whether the sync is done using the `argocd app sync --async` command followed by the `argocd app wait --sync --health` commands. The wait command will halt the execution until the terminal state is known.
 
-Other distributed gitops controllers face similar challenges without a central orchestrator who can serve the role of the *gitops brain*. At Gimlet, we also added a centralized layer on top of FluxCD to better support the CI/CD usecase.
+Other distributed gitops controllers face similar challenges without a central orchestrator who can serve the role of the _gitops brain_. At Gimlet, we also added a centralized layer on top of FluxCD to better support the CI/CD usecase.
 
 ## How we pieced it back together at Gimlet?
 
-Besides the Flux yaml pieces, we also added a centralized layer on top of FluxCD, *the gitops brain*, to better support the CI/CD usecase.
+Besides the Flux yaml pieces, we also added a centralized layer on top of FluxCD, _the gitops brain_, to better support the CI/CD usecase.
 
 To be more precise, we already had one: Gimlet factored the gitops related logic to Gimletd, Gimlet's release manager component. So when we needed a service for Flux to notify about gitops applies, we knew what to use.
 
@@ -120,25 +120,25 @@ With Gimletd the flow looks like this:
 
 ![CICD and Flux and Gimletd](/flux-cicd-gimletd.png)
 
-1) 
-2)
-3) To roll out the new artifact CI/CD asks Gimletd to make changes to the gitops configuration repository to point to the new docker image. CI also starts polling Gimletd for the deployment status.
-4) 
-5)
-6) Flux sends a notification to Gimletd that it applied the change
-7) CI/CD polling gets a final answer about the deployment status and returns green (or red).
+1.
+2.
+3. To roll out the new artifact CI/CD asks Gimletd to make changes to the gitops configuration repository to point to the new docker image. CI also starts polling Gimletd for the deployment status.
+4.
+5.
+6. Flux sends a notification to Gimletd that it applied the change
+7. CI/CD polling gets a final answer about the deployment status and returns green (or red).
 
 In the CI/CD pipeline we used plugins that are available in Gimlet. For Github Actions the pipeline looks like the following:
 
 ```yaml
-  deploy-staging:
-    name: 🚀 Deploy / Staging
-    runs-on: ubuntu-latest
-    needs:
-    - "docker-build"
-    if: github.ref == 'refs/heads/main'
-    environment: staging
-    steps:
+deploy-staging:
+  name: 🚀 Deploy / Staging
+  runs-on: ubuntu-latest
+  needs:
+    - 'docker-build'
+  if: github.ref == 'refs/heads/main'
+  environment: staging
+  steps:
     - name: ⬇️ Check out
       uses: actions/checkout@v3.1.0
       with:
@@ -146,9 +146,9 @@ In the CI/CD pipeline we used plugins that are available in Gimlet. For Github A
     - name: 🚀 Deploy / Staging
       uses: gimlet-io/gimlet-artifact-shipper-action
       with:
-        DEPLOY: "true"
-        ENV: "staging"
-        APP: "gais"
+        DEPLOY: 'true'
+        ENV: 'staging'
+        APP: 'gais'
       env:
         GIMLET_SERVER: ${{ secrets.GIMLET_SERVER }}
         GIMLET_TOKEN: ${{ secrets.GIMLET_TOKEN }}

@@ -21,7 +21,7 @@ The gitops controller is a small piece of software running in your Kubernetes cl
 To bootstrap the gitops controller
 
 - first create a new git repository and check it out locally
-- then use the `gimlet gitops bootstrap` command to put the controller's deploy manifests in the gitops repository 
+- then use the `gimlet gitops bootstrap` command to put the controller's deploy manifests in the gitops repository
 - finally, apply the just created manifests on the cluster to kickstart the automation
 
 Any further changes to the GitOps repository will be automatically applied to the cluster. This is GitOps.🙌
@@ -61,9 +61,9 @@ kubectl apply -f /home/laszlo/projects/deleteme/flux/gitops-repo-gimlet-io-tutor
 {% callout id="add-deploy-key-to-gitops-repo" title="Not sure how to add a deploy key?" %}
 You need to authorize Flux to fetch the contents from Github by creating a read-only deploy key in your gitops repository.
 
-- Open GitHub, navigate to your repository, and under *Settings > Deploy* keys click on *Add deploy key*
+- Open GitHub, navigate to your repository, and under _Settings > Deploy_ keys click on _Add deploy key_
 - Paste the ssh-rsa key from step 2) of the `gimlet gitops bootstrap` output as a key. `flux-gitops` can be an appropriate name for it
-- Make sure to leave the *Allow write access* checkbox unchecked
+- Make sure to leave the _Allow write access_ checkbox unchecked
 
 ![Create a deploy-key](/deploy-key.png)
 {% /callout %}
@@ -84,7 +84,7 @@ flux-system   gitops-repo-gimlet-bootstraping-tutorial   ssh://git@github.com/gi
 If the git repositories are in ready state, validate the `kustomization` custom resources. These resources point to a path in a git repository to apply yamls from. If they are in ready state, you can be sure the Flux applied your latest manifests.
 
 ```bash
-➜  kubectl get kustomizations -A 
+➜  kubectl get kustomizations -A
 NAMESPACE     NAME                                                                 AGE    READY   STATUS
 flux-system   gitops-repo-gimlet-bootstraping-tutorial                127m   True    Applied revision: main/f4a2a676bbcc04f38120b24463ca1c66cc099ab4
 flux-system   gitops-repo-gimlet-bootstraping-tutorial-dependencies   127m   True    Applied revision: main/f4a2a676bbcc04f38120b24463ca1c66cc099ab4
@@ -101,6 +101,7 @@ If you need to further debug their behavior, you can check Flux logs in the `flu
 kubectl logs -f deploy/kustomize-controller -n flux-system
 kubectl logs -f deploy/source-controller -n flux-system
 ```
+
 {% /callout %}
 
 ## Deploy your app with gitops
@@ -109,7 +110,7 @@ Now let's deploy a dummy application now with gitops. To do that, you need to pl
 
 ### A dummy app
 
-First you need a dummy yaml to deploy an Nginx container. 
+First you need a dummy yaml to deploy an Nginx container.
 
 ```
 apiVersion: apps/v1

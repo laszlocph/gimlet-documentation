@@ -1,8 +1,7 @@
 ---
 title: Gitops conventions
 pageTitle: Gimlet - Gitops conventions
-description: On this page you can read about the choices Gimlet made.  
-
+description: On this page you can read about the choices Gimlet made.
 ---
 
 {% callout title="Not sure about gitops yet?" %}
@@ -10,15 +9,15 @@ Read [our SANE gitops guide](/concepts/the-sane-gitops-guide) to clear things up
 {% /callout %}
 
 You have to make several decisions when you start implementing gitops.
-No standards emerged yet on how to structure your gitops repository, 
+No standards emerged yet on how to structure your gitops repository,
 thus you have to weigh tradeoffs as you settle on your structure:
- 
+
 - will you have one central repository or many?
 - how do you split repositories?
 - how to organize folders inside the repository?
 - how to model clusters, environments, teams, namespaces, apps?
 
-On this page you can read about the choices Gimlet made.  
+On this page you can read about the choices Gimlet made.
 
 ## Model environments and apps rather than clusters and namespaces
 
@@ -41,6 +40,7 @@ You can either use git repositories or folders for this purpose.
 Gimlet supports both strategies.
 
 ### Using folders
+
 In simple scenarios, you can model everything in a single git repository and use folders to separate `staging` from `production`. Then also use folders to separate one application from another within the environments.
 
 You will have two git repositories:
@@ -51,10 +51,12 @@ You will have two git repositories:
 With `/$environment/$applicaton` folder structure in those repositories.
 
 #### Pros
+
 - easy to manage
 - easy to navigate between environments
 
 #### Cons
+
 - no fine-grained access control possibilities
 
 This scales well up to a handful of environments with tens of deployments within each, for teams not larger than 10 people. Where responsibilities have not crystallized yet.
@@ -69,18 +71,20 @@ When you want access control, Gimlet recommends to split environments into diffe
 Inside the repositories, folders separate apps from one another.
 
 #### Pros
+
 - access control
 - separating different concerns
 
 #### Cons
+
 - managing custom changes becomes repetative
 
 This scales well up to many environments with a couple hundred deployments within each. This approach can work for teams sized 10-50, where distinct functions within the team are known.
 
 {% callout title="Splitting gitops repositories on custom concerns" %}
-Splitting   gitops repositories shows great similarity to rightsizing your services: whether you develop micro, nano, or team sized services.
+Splitting gitops repositories shows great similarity to rightsizing your services: whether you develop micro, nano, or team sized services.
 
-Splitting the gitops repositories is more 
+Splitting the gitops repositories is more
 an art than science, and influenced by the team structure of your company. That said, splitting up gitops repositories is usually driven by access control and organizational boundaries.
 {% /callout %}
 

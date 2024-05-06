@@ -1,138 +1,13 @@
-import { useCallback, useEffect, useState } from 'react'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
-import clsx from 'clsx'
 
 import { HomePage } from '@/components/HomePage'
 import { PricingPage } from '@/components/Pricing'
 import { YamlGenerator } from '@/components/YamlGenerator'
-import { MobileNavigation } from '@/components/MobileNavigation'
-import { Navigation } from '@/components/Navigation'
 import { Prose } from '@/components/Prose'
-import { Search } from '@/components/Search'
-import { ThemeSelector } from '@/components/ThemeSelector'
-
-function Header({ navigation }) {
-  let [isScrolled, setIsScrolled] = useState(false)
-  let router = useRouter()
-  let isDocsPage = router.pathname.startsWith('/docs') || router.pathname.startsWith('/concepts')
-
-  useEffect(() => {
-    function onScroll() {
-      setIsScrolled(window.scrollY > 0)
-    }
-    onScroll()
-    window.addEventListener('scroll', onScroll)
-    return () => {
-      window.removeEventListener('scroll', onScroll)
-    }
-  }, [])
-
-  return (
-    <header
-      className={clsx(
-        'sticky top-0 z-50 flex flex-wrap items-center justify-between bg-white px-4 py-5 shadow-md shadow-slate-900/5 transition duration-500 dark:shadow-none sm:px-6 lg:px-8',
-        {
-          'dark:bg-slate-900/95 dark:backdrop-blur dark:[@supports(backdrop-filter:blur(0))]:bg-slate-900/75':
-            isScrolled,
-          'dark:bg-transparent': !isScrolled,
-        }
-      )}
-    >
-      <div className="mr-6 lg:hidden">
-        <MobileNavigation navigation={navigation} />
-      </div>
-      <div className="relative flex flex-grow basis-0 items-center">
-        <Link href="/">
-          <a className="block lg:w-auto">
-            <span className="sr-only">Home page</span>
-            <img src="/logo.svg" alt="Gimlet" className='h-8 sm:h-10 w-auto block dark:hidden' />
-            <img src="/logo-dark.svg" alt="Gimlet" className='h-8 sm:h-10 w-auto hidden dark:block' />
-          </a>
-        </Link>
-      </div>
-     
-      <div className="-my-5 mr-6 sm:mr-8 md:mr-0">
-        { isDocsPage &&
-        <Search />
-        }
-        { !isDocsPage &&
-        <ul className="hidden sm:flex space-x-8 text-slate-700 font-semibold text-lg dark:text-slate-200">
-          <li>
-            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/docs">Docs</a>
-          </li>
-          <li>
-            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/pricing">Pricing</a>
-          </li>
-          <li>
-            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/events">Events</a>
-          </li>
-          <li>
-            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/blog">Blog</a>
-          </li>
-          <li>
-            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/k8s-yaml-generator">YAML Generator</a>
-          </li>
-          <li>
-            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="https://github.com/gimlet-io#jobs">Jobs</a>
-          </li>
-        </ul>
-        }
-      </div>
-      
-      <div className="relative flex basis-0 justify-end space-x-6 sm:space-x-8 md:flex-grow">
-        { isDocsPage &&
-        <ul className="hidden sm:flex items-center space-x-4 text-slate-700 font-semibold text-sm leading-6 dark:text-slate-200">
-          <li>
-            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/docs">Docs</a>
-          </li>
-          <li>
-            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/pricing">Pricing</a>
-          </li>
-          <li>
-            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/events">Events</a>
-          </li>
-          <li>
-            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/blog">Blog</a>
-          </li>
-          <li>
-            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/k8s-yaml-generator">YAML Generator</a>
-          </li>
-          <li>
-            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="https://github.com/gimlet-io#jobs">Jobs</a>
-          </li>
-        </ul>
-        }
-        
-        {/* { !isDocsPage &&
-        <a href="https://app.gimlet.io" className="inline-block rounded-lg px-3 py-1.5 text-sm font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20">Log in</a>
-        } */}
-       
-        <>
-        <ul className="hidden sm:flex items-center space-x-4 text-slate-700 font-semibold text-sm leading-6 dark:text-slate-200">
-          <li>
-            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="https://accounts.gimlet.io/login/">Log in</a>
-          </li>
-        </ul>
-        <ThemeSelector className="relative z-10" />
-        <Link href="https://github.com/gimlet-io/gimlet">
-          <a className="group">
-            <span className="sr-only">GitHub</span>
-            <svg
-              aria-hidden="true"
-              viewBox="0 0 16 16"
-              className="h-6 w-6 fill-slate-400 group-hover:fill-slate-500 dark:group-hover:fill-slate-300"
-            >
-              <path d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z" />
-            </svg>
-          </a>
-        </Link>
-        </>
-        
-      </div>
-    </header>
-  )
-}
+import { EventsPage } from './EventsPage'
+import { BlogPage } from './Blogpage'
+import { Header } from './Header'
+import { DocsPage } from './DocsPage'
 
 export function Layout({ children, title, navigation, tableOfContents, pageProps }) {
   let router = useRouter()
@@ -140,404 +15,41 @@ export function Layout({ children, title, navigation, tableOfContents, pageProps
   let isEventsPage = router.pathname.startsWith('/events')
   let isBlogPage = router.pathname.startsWith('/blog')
   let isTOSPage = router.pathname === '/tos'
-  let isBlogSubPage = isBlogPage && !router.pathname.endsWith('/blog') && !router.pathname.endsWith('/blog/')
   let isPricingPage = router.pathname === '/pricing'
   let isYamlGeneratorPage = router.pathname === '/k8s-yaml-generator'
   let isHomePage = router.pathname === '/'
 
-  let allLinks = navigation.flatMap((section) => section.links)
-  let linkIndex = allLinks.findIndex((link) => link.href === router.pathname)
-  let previousPage = allLinks[linkIndex - 1]
-  let nextPage = allLinks[linkIndex + 1]
   let section = navigation.find((section) =>
     section.links.find((link) => link.href === router.pathname)
   )
-  let currentSection = useTableOfContents(tableOfContents)
-
-  function isActive(section) {
-    if (section.id === currentSection) {
-      return true
-    }
-    if (!section.children) {
-      return false
-    }
-    return section.children.findIndex(isActive) > -1
-  }
-
-  const date = pageProps.markdoc?.frontmatter.date
-  const image = pageProps.markdoc?.frontmatter.image
-  const imageAuthor = pageProps.markdoc?.frontmatter.image_author
-  const imageURL = pageProps.markdoc?.frontmatter.image_url
-
-  let author = pageProps.markdoc?.frontmatter.author
-  let authorAvatar = pageProps.markdoc?.frontmatter.authorAvatar
-  const coAuthor = pageProps.markdoc?.frontmatter.coAuthor
-  const coAuthorAvatar = pageProps.markdoc?.frontmatter.coAuthorAvatar
-
-  if (!author) {
-    author = "Laszlo Fogas"
-  }
-  if (!authorAvatar) {
-    authorAvatar = "/laszlo.jpg"
-  }
 
   return (
     <>
-      {!isTOSPage && !isYamlGeneratorPage &&
-      <Header navigation={navigation} />
+      {!isTOSPage && !isYamlGeneratorPage && !isHomePage &&
+        <Header navigation={navigation} />
       }
 
       {isHomePage && <HomePage />}
       {isPricingPage && <PricingPage />}
       {isYamlGeneratorPage && <YamlGenerator />}
 
-      {isEventsPage &&
-      <div className="relative mx-auto flex max-w-6xl justify-center sm:px-2 lg:px-8 xl:px-12">
-        <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">
-          <article>
-            {(title || section) && (
-              <header className="mb-9 space-y-1">
-                {section && (
-                  <p className="font-display text-sm font-medium text-sky-500">
-                    {section.title}
-                  </p>
-                )}
-                {title && (
-                  <h1 className="font-display text-3xl tracking-tight text-slate-900 dark:text-white">
-                    {title}
-                  </h1>
-                )}
-              </header>
-            )}
-            <Prose>{children}</Prose>
-          </article>
-        </div>
-      </div>
-      }
+      {isEventsPage && <EventsPage title={title} section={section}>{children}</EventsPage>}
 
       {isTOSPage &&
         <Prose className="m-16 max-w-4xl">{children}</Prose>
       }
 
-      {isBlogPage &&
-      <div className="relative mx-auto flex max-w-6xl justify-center sm:px-2 lg:px-8 xl:px-12">
-        <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">
-          <article>
-            {(title || section) && (
-              <header className="mb-9 space-y-1">
-                {section && (
-                  <p className="font-display text-sm font-medium text-sky-500">
-                    {section.title}
-                  </p>
-                )}
-                {title && (
-                  <>
-                  <h1 className="font-display text-3xl tracking-tight text-slate-900 dark:text-white mb-2">
-                    {title}
-                  </h1>
-                  {isBlogSubPage &&
-                  <div className="flex">
-                    <div className='flex items-center py-2'>
-                      <img className="inline-block h-12 w-12 rounded-full" alt={author} src={authorAvatar} />
-                      <h5 className="pl-2 text-slate-900 dark:text-white font-medium">{author}</h5>
-                    </div>
-                    {coAuthor &&
-                    <div className='flex items-center py-2 pl-8'>
-                      <img className="inline-block h-12 w-12 rounded-full" alt={coAuthor} src={coAuthorAvatar} />
-                      <h5 className="pl-2 text-slate-900 dark:text-white font-medium">{coAuthor}</h5>
-                    </div>
-                    }
-                  </div>
-                  }
-                  <div className="text-slate-900 dark:text-white">{date}</div>
-                  </>
-                )}
-              </header>
-            )}
-            {image &&
-            <img alt={`${imageAuthor - imageURL}`} src={`/${image}`} className="lg:h-96 object-contain w-full"/>
-            }
-            <Prose className="mt-16">{children}</Prose>
-          </article>
-          {isBlogSubPage &&
-          <>
-            <div className="relative py-16">
-              <div className="absolute inset-0 flex items-center" aria-hidden="true">
-                <div className="w-full border-t border-gray-300" />
-              </div>
-            </div>
-            <h3 className='font-medium text-lg'>More from our blog</h3>
-            <div className='flex mt-8'>
-              <img src="/clickops.png" className="w-48 object-contain"></img>
-              <div className='ml-2'>
-                <h2 className="mb-2 font-medium underline"><a href="/blog/clickops-over-gitops">Clickops over gitops</a></h2>
-                <div className="prose mt-2.5 text-gray-600 dark:text-gray-300 leading-tight"><p>Doing cloud operations by clicking on a dashboard that generates a stream of infrastructure as code changes.</p></div>
-              </div>
-            </div>
-            <div className='flex mt-8'>
-              <img src="/why-hetzner.png" className="w-48 object-contain"></img>
-              <div className='ml-2'>
-                <h2 className="mb-2 font-medium underline"><a href="/blog/announcing-the-gimlet-saas-early-access">The how and why we built our SaaS platform on Hetzner and Kubernetes</a></h2>
-                <div className="prose mt-2.5 text-gray-600 dark:text-gray-300 leading-tight"><p>Hetzner is 5 times cheaper for us than the hyperscalers. This blog posts enumerates the how and why we built our SaaS on a discount bare metal provider. Gotchas included.</p></div>
-              </div>
-            </div>
-            <div className='flex mt-8'>
-              <img src="/saas-early-access.png" className="w-48 object-contain"></img>
-              <div className='ml-2'>
-                <h2 className="mb-2 font-medium underline"><a href="/blog/announcing-the-gimlet-saas-early-access">Announcing the Gimlet SaaS Early Access</a></h2>
-                <div className="prose mt-2.5 text-gray-600 dark:text-gray-300 leading-tight"><p>We have something really exciting to share with you: Gimlet is going SaaS. In other words, you will be able to use Gimlet&apos;s unparalleled Kubernetes deploy experience with even fewer clicks than before.</p></div>
-              </div>
-            </div>
-            <div className='flex mt-8'>
-              <img src="/gitops-broke-cicd.jpg" className="w-48 object-contain"></img>
-              <div className='ml-2'>
-                <h2 className="mb-2 font-medium underline"><a href="/blog/how-flux-broke-the-cicd-feedback-loop-and-how-we-pieced-it-back-together">How Flux broke the CI/CD feedback loop, and how we pieced it back together</a></h2>
-                <div className="prose mt-2.5 text-gray-600 dark:text-gray-300 leading-tight"><p>A green build used to mean a successful deploy. But then gitops came and broke this heuristic.</p></div>
-              </div>
-            </div>
-            <div className='flex mt-8'>
-              <img src="/introducing-kyverno.png" className="w-48 object-contain"></img>
-              <div className='ml-2'>
-                <h2 className="mb-2 font-medium underline"><a href="/blog/are-you-sure-none-of-your-containers-run-as-root">Are you sure none of your containers run as root?</a></h2>
-                <div className="prose mt-2.5 text-gray-600 dark:text-gray-300 leading-tight"><p>The Kyverno policy engine just arrived in Gimlet Stack. Let&apos;s see how you can be certain that none of the containers run as root in your Kubernetes cluster.</p></div>
-              </div>
-            </div>
-
-            
-
-          </>
-          }
-        </div>
-        <div className="hidden xl:sticky xl:top-[4.5rem] xl:block xl:h-[calc(100vh-4.5rem)] xl:flex-none xl:overflow-y-auto xl:py-16">
-          <nav aria-labelledby="on-this-page-title" className="w-56">
-            {tableOfContents.length > 0 && (
-              <>
-                <h2
-                  id="on-this-page-title"
-                  className="font-display text-sm font-medium text-slate-900 dark:text-white"
-                >
-                  On this page
-                </h2>
-                <ul className="mt-4 space-y-3 text-sm">
-                  {tableOfContents.map((section) => (
-                    <li key={section.id}>
-                      <h3>
-                        <Link href={`#${section.id}`}>
-                          <a
-                            className={clsx(
-                              isActive(section)
-                                ? 'text-sky-500'
-                                : 'font-normal text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300'
-                            )}
-                          >
-                            {section.title}
-                          </a>
-                        </Link>
-                      </h3>
-                      {section.children.length > 0 && (
-                        <ul className="mt-2 space-y-3 pl-5 text-slate-500 dark:text-slate-400">
-                          {section.children.map((subSection) => (
-                            <li key={subSection.id}>
-                              <Link href={`#${subSection.id}`}>
-                                <a
-                                  className={
-                                    isActive(subSection)
-                                      ? 'text-sky-500'
-                                      : 'hover:text-slate-600 dark:hover:text-slate-300'
-                                  }
-                                >
-                                  {subSection.title}
-                                </a>
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </>
-            )}
-          </nav>
-        </div>
-      </div>
+      {isBlogPage && <BlogPage
+        title={title} section={section}
+        pageProps={pageProps} tableOfContents={tableOfContents}
+        >{children}</BlogPage>
       }
 
-      {isDocsPage &&
-      <div className="relative mx-auto flex max-w-8xl justify-center sm:px-2 lg:px-8 xl:px-12">
-        <div className="hidden lg:relative lg:block lg:flex-none">
-          <div className="absolute inset-y-0 right-0 w-[50vw] bg-slate-50 dark:hidden" />
-          <div className="sticky top-[4.5rem] -ml-0.5 h-[calc(100vh-4.5rem)] overflow-y-auto py-16 pl-0.5">
-            <div className="absolute top-16 bottom-0 right-0 hidden h-12 w-px bg-gradient-to-t from-slate-800 dark:block" />
-            <div className="absolute top-28 bottom-0 right-0 hidden w-px bg-slate-800 dark:block" />
-            <Navigation
-              navigation={navigation}
-              className="w-64 pr-8 xl:w-72 xl:pr-16"
-            />
-          </div>
-        </div>
-        <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">
-          <article>
-            {(title || section) && (
-              <header className="mb-9 space-y-1">
-                {section && (
-                  <p className="font-display text-sm font-medium text-sky-500">
-                    {section.title}
-                  </p>
-                )}
-                {title && (
-                  <h1 className="font-display text-3xl tracking-tight text-slate-900 dark:text-white">
-                    {title}
-                  </h1>
-                )}
-              </header>
-            )}
-            <Prose>{children}</Prose>
-          </article>
-          <dl className="mt-12 flex border-t border-slate-200 pt-6 dark:border-slate-800">
-            {previousPage && (
-              <div>
-                <dt className="font-display text-sm font-medium text-slate-900 dark:text-white">
-                  Previous
-                </dt>
-                <dd className="mt-1">
-                  <Link href={previousPage.href}>
-                    <a className="text-base font-semibold text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300">
-                      &larr; {previousPage.title}
-                    </a>
-                  </Link>
-                </dd>
-              </div>
-            )}
-            {nextPage && (
-              <div className="ml-auto text-right">
-                <dt className="font-display text-sm font-medium text-slate-900 dark:text-white">
-                  Next
-                </dt>
-                <dd className="mt-1">
-                  <Link href={nextPage.href}>
-                    <a className="text-base font-semibold text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300">
-                      {nextPage.title} &rarr;
-                    </a>
-                  </Link>
-                </dd>
-              </div>
-            )}
-          </dl>
-        </div>
-        <div className="hidden xl:sticky xl:top-[4.5rem] xl:-mr-6 xl:block xl:h-[calc(100vh-4.5rem)] xl:flex-none xl:overflow-y-auto xl:py-16 xl:pr-6">
-          <nav aria-labelledby="on-this-page-title" className="w-56">
-            {tableOfContents.length > 0 && (
-              <>
-                <h2
-                  id="on-this-page-title"
-                  className="font-display text-sm font-medium text-slate-900 dark:text-white"
-                >
-                  On this page
-                </h2>
-                <ul className="mt-4 space-y-3 text-sm">
-                  {tableOfContents.map((section) => (
-                    <li key={section.id}>
-                      <h3>
-                        <Link href={`#${section.id}`}>
-                          <a
-                            className={clsx(
-                              isActive(section)
-                                ? 'text-sky-500'
-                                : 'font-normal text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300'
-                            )}
-                          >
-                            {section.title}
-                          </a>
-                        </Link>
-                      </h3>
-                      {section.children.length > 0 && (
-                        <ul className="mt-2 space-y-3 pl-5 text-slate-500 dark:text-slate-400">
-                          {section.children.map((subSection) => (
-                            <li key={subSection.id}>
-                              <Link href={`#${subSection.id}`}>
-                                <a
-                                  className={
-                                    isActive(subSection)
-                                      ? 'text-sky-500'
-                                      : 'hover:text-slate-600 dark:hover:text-slate-300'
-                                  }
-                                >
-                                  {subSection.title}
-                                </a>
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </>
-            )}
-          </nav>
-        </div>
-      </div>
+      {isDocsPage && <DocsPage 
+          title={title} section={section}
+          navigation={navigation} tableOfContents={tableOfContents}
+        >{children}</DocsPage>
       }
     </>
   )
-}
-
-function useTableOfContents(tableOfContents) {
-  let [currentSection, setCurrentSection] = useState(tableOfContents[0]?.id)
-
-  let getHeadings = useCallback(() => {
-    function* traverse(node) {
-      if (Array.isArray(node)) {
-        for (let child of node) {
-          yield* traverse(child)
-        }
-      } else {
-        let el = document.getElementById(node.id)
-        if (!el) return
-
-        let style = window.getComputedStyle(el)
-        let scrollMt = parseFloat(style.scrollMarginTop)
-
-        let top = window.scrollY + el.getBoundingClientRect().top - scrollMt
-        yield { id: node.id, top }
-
-        for (let child of node.children ?? []) {
-          yield* traverse(child)
-        }
-      }
-    }
-
-    return Array.from(traverse(tableOfContents))
-  }, [tableOfContents])
-
-  useEffect(() => {
-    let headings = getHeadings()
-    if (tableOfContents.length === 0 || headings.length === 0) return
-    function onScroll() {
-      let sortedHeadings = headings.concat([]).sort((a, b) => a.top - b.top)
-
-      let top = window.pageYOffset
-      let current = sortedHeadings[0].id
-      for (let i = 0; i < sortedHeadings.length; i++) {
-        if (top >= sortedHeadings[i].top) {
-          current = sortedHeadings[i].id
-        }
-      }
-      setCurrentSection(current)
-    }
-    window.addEventListener('scroll', onScroll, {
-      capture: true,
-      passive: true,
-    })
-    onScroll()
-    return () => {
-      window.removeEventListener('scroll', onScroll, {
-        capture: true,
-        passive: true,
-      })
-    }
-  }, [getHeadings, tableOfContents])
-
-  return currentSection
 }

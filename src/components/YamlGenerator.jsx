@@ -1,18 +1,45 @@
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router'
 import HelmUI from "helm-react-ui";
 import { ThemeSelector } from './ThemeSelector';
 import YAML from "json-to-pretty-yaml";
-import * as schema from '@/components/values.schema.json'
-import { helmUIJson } from '@/components/helmUIJson'
+import * as onechartSchema from '@/components/values.schema.json'
+import * as staticSchema from '@/components/static-values.schema.json'
+import * as cronjobSchema from '@/components/cronjob-values.schema.json'
+import { onechartUISchema, staticUISchema, cronjobUISchema } from '@/components/helmUI'
 import axios from "axios";
 import CopyButton from './CopyButton';
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import clsx from 'clsx'
+import Link from 'next/link'
+import * as Fathom from "fathom-client";
 
 export function YamlGenerator() {
   const [values, setValues] = useState({})
   const [nonDefaultValues, setNonDefaultValues] = useState({})
   const [kubernetesYaml, setKubernetesYaml] = useState("")
+
+  const router = useRouter()
+  const ref = router.pathname.slice(1).replaceAll("/", "-")
+  const [charts, setCharts] = useState([
+    { title: "Web application", current: true, name: "onechart" },
+    { title: "Static sites", current: false, name: "static-site" },
+    { title: "Cron job", current: false, name: "cron-job" }
+  ]);
+  const selected = 'border-zinc-200 bg-white text-zinc-900 shadow-sm';
+  const notSelected = 'border-transparent text-zinc-700';
+
+  useEffect(() => {
+   const handleKeyDown = (event) => {
+      var ctrlDown = event.ctrlKey || event.metaKey // Mac support
+      if (ctrlDown && event.key === 'c') {
+        Fathom.trackGoal("32GVHPPE", 0)
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, []);
 
   function validationCallback(errors) {
     if (errors) {
@@ -20,12 +47,29 @@ export function YamlGenerator() {
     }
   };
 
+  const chartHandler = (chartName) => {
+    setCharts(charts.map(chart => {
+      if (chart.name === chartName) {
+        return { ...chart, current: true }
+      } else {
+        return { ...chart, current: false }
+      }
+    }))
+  }
+
   function valuesSetter(values, nonDefaultValues) {
     setValues(values);
     setNonDefaultValues(nonDefaultValues);
   }
 
   useEffect(() => {
+    const url = new URL(window.location.href);
+    const chartFromParams = url.searchParams.get("chart");
+    
+    if (chartFromParams) {
+      chartHandler(chartFromParams)
+    }
+
     const stateString = window.location.hash.substr(1); // remove the '#'
 
     if (stateString) {
@@ -39,26 +83,27 @@ export function YamlGenerator() {
   useEffect(() => {
     const nonDefaultValuesString = JSON.stringify(nonDefaultValues)
     const base64ObjectState = btoa(nonDefaultValuesString)
-    const newUrl = window.location.origin + window.location.pathname + '#' + base64ObjectState;
+    const newUrl = window.location.origin + window.location.pathname + window.location.search + '#' + base64ObjectState;
     if (nonDefaultValuesString !== "{}") {
       window.history.pushState(null, '', newUrl);
     }
   }, [nonDefaultValues]);
 
-
   useEffect(() => {
-    postWithAxios("https://yaml-generator.gimlet.io", nonDefaultValues).then(data => {
+    const chart = charts.find(chart => chart.current);
+    postWithAxios(`https://yaml-generator.gimlet.io/chart/${chart.name}`, nonDefaultValues).then(data => {
       setKubernetesYaml(data)
     }).catch(err => {
       console.error(`Error: ${err}`);
     });
-  }, [nonDefaultValues, kubernetesYaml]);
+  }, [nonDefaultValues, charts]);
 
+  const chart = charts.find(chart => chart.current);
   const diffBody = `cat << EOF > values.yaml
 ${YAML.stringify(nonDefaultValues)}EOF
 
 helm repo add onechart https://chart.onechart.dev
-helm template my-release onechart/onechart -f values.yaml`
+helm template my-release onechart/${chart.name} -f values.yaml`
 
   if (kubernetesYaml === "") {
     return null;
@@ -73,22 +118,55 @@ helm template my-release onechart/onechart -f values.yaml`
         <span className="mt-24 -ml-4 font-mono font-bold text-xs dark:text-slate-100">Shareable link!</span>
         </span>
       </div>
+      <div className="text-center pt-12 sm:pt-16">
+      <Link href={"/?ref="+ref}>
+        <a>
+          <span className="sr-only">Home page</span>
+          <img src="/logo.svg" alt="Gimlet" className='h-10 sm:h-16 inline' />
+        </a>
+      </Link>
+      </div>
       <div className="mx-auto p-2 sm:p-4 lg:p-6">
-        <header className="grid sm:grid-cols-3 items-center mt-36 mb-20">
-          <h1 className="text-gray-900 dark:text-slate-50 sm:text-4xl font-semibold text-center sm:col-start-2">Kubernetes YAML Generator</h1>
+        <header className="grid sm:grid-cols-3 items-center mt-8 mb-20">
+          <div className="text-gray-900 dark:text-slate-50 font-semibold sm:col-start-2">
+            <h1 className="sm:text-4xl text-center">Kubernetes YAML Generator</h1>
+            <p className="text-xs text-right">made by <a href={"/?ref="+ref} rel="noreferrer" target="_blank" className="underline">gimlet.io</a></p>
+          </div>
           <div className="col-start-3 justify-self-end mr-10">
             <ThemeSelector className="relative z-10 items-end" />
           </div>
         </header>
+        <div className="mx-auto mb-16 max-w-8xl sm:px-6 lg:px-8">
+          <div className="sm:align-center sm:flex sm:flex-col">
+            <div className="relative flex self-center rounded-lg bg-zinc-100 p-0.5">
+              {charts.map((chart) => (
+                <button
+                  key={chart.name}
+                  type="button"
+                  onClick={e => {
+                    chartHandler(chart.name)
+                    setValues({});
+                    setNonDefaultValues({});
+                    router.query.chart = chart.name
+                    router.push(router)
+                  }}
+                  className={(chart.current ? selected : notSelected) + ' relative w-1/2 whitespace-nowrap rounded-md py-2 text-sm font-medium focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-500 sm:w-auto sm:px-8'}
+                >
+                  {chart.title}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
         <div className="sm:align-center sm:flex sm:flex-col space-y-2">
           <div className="space-y-4 sm:grid sm:grid-cols-2 sm:gap-2 sm:space-y-0 xl:grid-cols-8">
             <div className="dark:bg-white border-2 p-4 rounded-md col-span-5">
               <HelmUI
-                schema={schema}
-                config={helmUIJson}
+                key={charts[0].current ? charts[0].name : charts[1].current ? charts[1].name : charts[2].name}
+                schema={charts[0].current ? onechartSchema : charts[1].current ? staticSchema : cronjobSchema}
+                config={charts[0].current ? onechartUISchema : charts[1].current ? staticUISchema :cronjobUISchema}
                 values={values}
                 setValues={valuesSetter}
-
                 validate={true}
                 validationCallback={validationCallback}
               />
@@ -97,6 +175,7 @@ helm template my-release onechart/onechart -f values.yaml`
               <CopyButton
                 text={kubernetesYaml}
                 style="light"
+                feedback={true}
               />
               <Highlight
                 {...defaultProps}
@@ -160,8 +239,8 @@ helm template my-release onechart/onechart -f values.yaml`
                 )}
               </Highlight>
             </div>
-            <p className='pt-16 text-base text-blue-500'>Are you new to Helm? Check out <a href="/concepts/the-sane-helm-guide" className="underline">our SANE Helm guide</a>.</p>
-            <p className='text-base text-blue-500'>Curious about onechart/onechart? See <a href="/concepts/the-sane-helm-guide" className="underline">the reference</a>.</p>
+            <p className='pt-16 text-base text-blue-500'>Are you new to Helm? Check out <a href="/concepts/the-sane-helm-guide?ref=yamlgenerator" className="underline">our SANE Helm guide</a>.</p>
+            <p className='text-base text-blue-500'>Curious about onechart/onechart? See <a href="/docs/onechart-reference?ref=yamlgenerator" className="underline">the reference</a>.</p>
           </div>
         </div>
       </div>

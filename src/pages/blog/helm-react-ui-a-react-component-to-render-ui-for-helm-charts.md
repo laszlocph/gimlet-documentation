@@ -1,7 +1,8 @@
 ---
-title: "Helm React UI: a React component to render UIs for Helm Charts"
-description: "Helm React UI generates a UI based on Helm schema files and allows you to configure Helm
-    Chart values in your browser."
+title: 'Helm React UI: a React component to render UIs for Helm Charts'
+description:
+  'Helm React UI generates a UI based on Helm schema files and allows you to configure Helm
+  Chart values in your browser.'
 ---
 
 Helm is the de-facto standard for packaging applications for Kubernetes. Its usage is ubiquitous and sentiment against its
@@ -15,12 +16,12 @@ It is a considerable effort to understand what a given chart bundles and what kn
 The practice to document these knobs is an extensive list of values that the user can set.
 Helm React UI is here to improve this practice.
 
-## Helm React UI is a project to allow the configuration of Helm values on a UI   
+## Helm React UI is a project to allow the configuration of Helm values on a UI
 
 Helm React UI generates a UI based on the [Helm schema file](https://helm.sh/docs/topics/charts/#schema-files) - if there is one available. It is for users
 to better discover the possible configuration options, and it also allows an alternative path to Helm.
 
-The project is hosted at [https://github.com/gimlet-io/helm-react-ui](https://github.com/gimlet-io/helm-react-ui) 
+The project is hosted at [https://github.com/gimlet-io/helm-react-ui](https://github.com/gimlet-io/helm-react-ui)
 
 A practical [example project](https://github.com/gimlet-io/helm-react-ui-test-bed) is available too. The project, that produced the following screen:
 
@@ -29,9 +30,9 @@ A practical [example project](https://github.com/gimlet-io/helm-react-ui-test-be
 ## It is a React component
 
 ```js
-import HelmUI from 'helm-react-ui';
+import HelmUI from 'helm-react-ui'
 
-<HelmUI
+;<HelmUI
   schema={schema}
   config={helmUIConfig}
   values={this.state.values}
@@ -41,7 +42,7 @@ import HelmUI from 'helm-react-ui';
 
 It takes
 
-- the schema as input, 
+- the schema as input,
 - a json object that helps to generate better UIs than the json schema would allow on its own
 - and you can feed in an existing Helm `values.json`
 
@@ -51,13 +52,12 @@ See the example code [here](https://github.com/gimlet-io/helm-react-ui-test-bed/
 
 ## The `helm-ui.json`
 
-Generating UIs from json schema is a practically doable task, but the schema alone doesn't allow the kind of fine-tuning 
+Generating UIs from json schema is a practically doable task, but the schema alone doesn't allow the kind of fine-tuning
 that is needed for useful UIs.
 
 When I set out to implement Helm React UI I was warned on Twitter.
 
 ![](/rjsf.png)
-
 
 Rightly so. Helm schemas are large, and rendering all fields at once results in UIs that are difficult to comprehend.
 
@@ -99,14 +99,14 @@ See a full example [here](https://github.com/gimlet-io/onechart/blob/master/char
 
 Eventually a `helm-ui.json` file will be part of the common Helm Charts, to allow Helm React UI to render them.
 
-## Putting Helm React UI in practice 
+## Putting Helm React UI in practice
 
 Besides the Helm React UI component, I also launch today a tool that packages it in a practical form: a CLI.
 
 It's the Gimlet CLI that has a `chart configure` command to generate a Helm values.yaml file for a given chart.
-                                                           
+
 It launches a browser tab where you can discover and set the deployment options.
- 
+
 ```
 $ gimlet chart configure onechart/onechart
 👩‍💻 Configure on http://127.0.0.1:28955
@@ -114,9 +114,7 @@ $ gimlet chart configure onechart/onechart
 Browser opened
 ```
 
-
 ![gimlet chart configure](/chart-configure.png)
-
 
 ```
 Browser closed
@@ -134,7 +132,7 @@ replicas: 2
 It works with any chart that has a JSON schema defined and an accompanying `helm-ui.json`.
 
 `onechart/onechart` is one such chart, and you can use it to see Helm React UI in action.
-It is also a handy 
+It is also a handy
 chart if you need to deploy something quickly, or looking for an alternative for the lengthy Kubernetes yaml format.
 
 ## Learn more

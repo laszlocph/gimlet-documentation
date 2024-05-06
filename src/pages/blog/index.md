@@ -2,6 +2,49 @@
 title: Blog
 ---
 
+{% post name="What’s Next for FluxCD - And Gimlet?" image="gimlet-io-whats-next-for-fluxcd-and-gimlet.jpg" link="/blog/whats-next-for-fluxcd-and-gimlet" date="2024-02-06" %}
+Weaveworks is shutting down and everybody’s wondering: what does the future hold for Flux, one of the most used gitops tool of platform builders?
+{% /post %}
+
+{% post name="Vercel VS Kubernetes" image="vercelvsk8s.png" link="/blog/vercel-vs-kubernetes" date="2024-02-06" %}
+Even the idea of comparison is wild, right?
+
+But we gave it a serious thought. Hear us out.
+
+We are going to keep scores! 🏀
+{% /post %}
+
+{% post name="Troubleshooting common Kubernetes pod error states" image="fire.png" link="/blog/troubleshooting-common-kubernetes-pod-error-states" date="2023-09-15" %}
+You can use this article as a reference for troubleshooting common Kubernetes pod error states. CrashLoopBackOff, CreateContainerConfigError, OOMKilled and more.
+{% /post %}
+
+{% post name="Your first three kubectl commands when troubleshooting Kubernetes applications" image="three-commands.png" link="/blog/your-first-three-kubectl-commands-when-troubleshooting-kubernetes-applications" date="2023-09-14" %}
+Learn Kubernetes troubleshooting with this step-by-step guide. List pods, analyze logs, describe pods, and monitor events in real-time. Master debugging Kubernetes based applications with confidence.
+{% /post %}
+
+{% post name="Budget managed Kubernetes options" image="budget-managed-k8s.png" link="/blog/budget-managed-kubernetes-options" date="2023-08-18" %}
+Managed Kubernetes starts at 5$ a month. With free control planes, they are now comparable with VPS options.
+{% /post %}
+
+{% post name="A 6.37 EUR a month single node Kubernetes cluster on Hetzner with vitobotta/hetzner-k3s" image="637.png" link="/blog/a-6-37-mo-single-node-kubernetes-cluster-on-hetzner-with-vitobotta-hetzner-k3s" date="2023-08-17" %}
+I recently did a live stream trying out Vito Botta's `hetzner-k3s` tool. This blog post is a follow up to the stream where I share my config for
+- starting up a single node cluster,
+- installing ingress controller,
+- and exposing it on port 80 and 443 to the world.
+{% /post %}
+
+{% post name="Our free tier" image="our-free-tier.png" link="/blog/our-free-tier" date="2023-08-03" %}
+We don't want to make you think.
+
+There is always a catch with SaaS pricing, but we want to avoid it as much as possible.
+{% /post %}
+
+{% post name="Running Kubernetes on your laptop with K3d" image="rocket.png" link="/blog/running-kubernetes-on-your-laptop-with-k3d" date="2023-07-12" %}
+Kubernetes has emerged as the go-to platform. But setting up a cluster on a laptop feels like a complex task for many developers.
+
+For this reason, we put together this blog post to show that with only a handful of commands you can go very far.
+{% /post %}
+
 {% post name="Error handling in HelmController - how to solve the infamous \"Upgrade retries exhausted\" error" image="annoyed-cat.png" link="/blog/error-handling-in-helm-controller-how-to-solve-the-infamous-upgrade-retries-exhausted-error" date="2023-05-12" %}
 A detailed analysis of how Flux's Helm Controller handles failure, its implications, errorstates and potential resolutions.
 
@@ -15,7 +58,7 @@ In this article, we'll explore different approaches to structuring your gitops r
 {% /post %}
 
 {% post name="Hosting static sites on kubernetes" image="agyuvalverebre.jpg" link="/blog/hosting-static-sites-on-kubernetes" date="2023-04-08" %}
-There is a meme here somewhere. But as kubernetes is becoming *the* deployment platform, there are legitimate cases to deploy your static site on it. We show you how to.
+There is a meme here somewhere. But as kubernetes is becoming _the_ deployment platform, there are legitimate cases to deploy your static site on it. We show you how to.
 {% /post %}
 
 {% post name="Git: the ironclad system" image="git-ironclad.png" link="/blog/git-the-ironclad-system" date="2023-04-06" %}
@@ -36,6 +79,7 @@ Hetzner is five times cheaper for us than the hyperscalers. This blog posts enum
 
 {% post name="Options for Kubernetes pod autoscaling" image="autoscaling.png" link="/blog/options-for-kubernetes-pod-autoscaling" date="2023-01-23" %}
 The Gimlet.io team put together this blog to show common usecases of autoscaling:
+
 - based on CPU
 - custom Prometheus metrics
 - and RabbitMQ queue length.
@@ -72,8 +116,8 @@ See how you can mirror complete environments with gitops and rewrite host names 
 {% /post %}
 
 {% post name="6 paths to adopt Gimlet and be better off with Kubernetes" image="gimlet-k8s.png" link="/blog/6-paths-to-adopt-gimlet-and-be-better-off-with-kubernetes" date="2021-03-17" %}
- Gimlet was made to be modular. It meets you where you are and helps you to be better off with Kubernetes. 
-    This post collects six avenues to adopt Gimlet.  
+Gimlet was made to be modular. It meets you where you are and helps you to be better off with Kubernetes.
+This post collects six avenues to adopt Gimlet.  
 {% /post %}
 
 {% post name="Announcing GimletD, the gitops release manager" image="gimletd-with-gitops.png" link="/blog/announcing-gimletd-the-gitops-release-manager" date="2021-03-16" %}
@@ -87,6 +131,7 @@ This document is a design proposal for GimletD, a server-side release manager co
 {% /post %}
 
 {% post name="The last-mile problem with Kubernetes" image="randy-laybourne-06P0tprVDvY-unsplash.jpg" link="/blog/the-last-mile-problem-with-kubernetes" date="2020-06-23" %}
+
 > Transporting goods via freight rail networks and container ships is often the most efficient and cost-effective manner of shipping.
 >
 > However, when goods arrive at a high-capacity freight station or port, they must then be transported to their final destination. This last leg of the supply chain is often less efficient, comprising up to 41% of the total cost to move goods.
@@ -100,9 +145,8 @@ This week's update is about resource management.
 Learn about the new CPU/Memory widgets and how you can configure them appropriately to keep cluster resources in check.
 {% /post %}
 
-
 {% post name="The cluster admin struggle, and ways to keep Kubernetes Resource Requests and Limits in check" image="pascal-meier-2hkYgCchEhk-unsplash.jpg" link="/blog/the-cluster-admin-struggle-and-ways-to-keep-kubernetes-resource-requests-and-limits-in-check" date="2020-06-15" %}
-Learn how you can teach and remind developers of setting good Kubernetes Resource Requests and Limits. Enforce it if you must, and a bonus. 
+Learn how you can teach and remind developers of setting good Kubernetes Resource Requests and Limits. Enforce it if you must, and a bonus.
 {% /post %}
 
 {% post name="How to implement a gitops platform with Flux and Helm" image="leafs.jpg" link="/blog/how-to-implement-a-gitops-platform-with-flux-and-helm" date="2020-06-09" %}

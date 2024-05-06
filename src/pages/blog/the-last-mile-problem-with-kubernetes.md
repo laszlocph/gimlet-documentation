@@ -1,6 +1,6 @@
 ---
 title: The last-mile problem with Kubernetes
-date: "2020-06-23"
+date: '2020-06-23'
 image: randy-laybourne-06P0tprVDvY-unsplash.jpg
 image_author: Randy Laybourne
 image_url: https://unsplash.com/photos/06P0tprVDvY
@@ -46,8 +46,8 @@ The two are interchangable - the UI is great when you are getting started, the y
 
 The Master Template is a generic Kustomize template that Gimlet dynamically generates, based on the configuration parameters.
 
-The `questions.yaml` file is what holds the template together. It specifies every configuration option, 
-the technical details and the explanation text as well that shows up on the UI.  
+The `questions.yaml` file is what holds the template together. It specifies every configuration option,
+the technical details and the explanation text as well that shows up on the UI.
 
 ```yaml
 baseline: v0.4.6
@@ -76,7 +76,7 @@ questions:
     type: string
     group: basic
     required: true
-    default: "${COMMIT_SHA:0:8}"
+    default: '${COMMIT_SHA:0:8}'
   - variable: replicas
     label: Replicas
     description: The number of instances to run
@@ -91,7 +91,7 @@ questions:
 ```
 
 Providing these values to Gimlet - through the UI or in a `gimlet.yaml` file, it will generate the Kustomize template.
- 
+
 During deployment, Gimlet unfolds the Kustomize template to the gitops repository, where pure Kubernetes resources are stored.
 You too can track the changes in the Kubernetes reources upon a deploy.
 
@@ -102,21 +102,23 @@ Just like the name, namespace and replica fields, the ingress configuration too 
 In addition to the common fields, it specifies the `resource` field, which tells Gimlet to add the `ingress.yaml` to the generated Kustomize resource file list.
 
 questions.yaml
+
 ```yaml
-  - variable: ingress
-    label: Ingress
-    description: Exposes the application on a public URL, behind a firewall
-    type: complex
-    group: networking
-    resource: ingress.yaml
-    subquestions:
-      - variable: subdomain
-        label: Subdomain
-        description: Specifies the subdomain your app is going to be exposed on <<subdomain>>.staging.xxx.com
-        type: string
+- variable: ingress
+  label: Ingress
+  description: Exposes the application on a public URL, behind a firewall
+  type: complex
+  group: networking
+  resource: ingress.yaml
+  subquestions:
+    - variable: subdomain
+      label: Subdomain
+      description: Specifies the subdomain your app is going to be exposed on <<subdomain>>.staging.xxx.com
+      type: string
 ```
 
 ingress.yaml
+
 ```yaml
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
@@ -141,8 +143,9 @@ spec:
 ```
 
 Since the Master Template lives in FlyCorp's company gitops repo, they extended it with two new options:
- - production URls
- - and optional HTTP basic authentication
+
+- production URls
+- and optional HTTP basic authentication
 
 ## Production URL support
 
@@ -178,6 +181,7 @@ questions.yaml
 The overlay is a standard Kustomize JSON patch, which will overwrite the ingress host name to the production URL schema
 
 ingress-hostname.yaml
+
 ```yaml
 - op: replace
   path: /spec/rules/0/host
@@ -197,6 +201,7 @@ FlyCorp then added another variable to the `questions.yaml` file, to determine w
 If enabled they apply another `patchesJson6902` on the ingress resource.
 
 questions.yaml
+
 ```diff
 +  - variable: basicauth
 +    label: Basic Auth
@@ -215,13 +220,13 @@ The Kustomize patch that adds the annotations to enable basic auth:
 
 ```yaml
 - op: add
-  path: "/metadata/annotations/ingress.appscode.com~1auth-realm"
+  path: '/metadata/annotations/ingress.appscode.com~1auth-realm'
   value: Authentication Required
 - op: add
-  path: "/metadata/annotations/nginx.ingress.kubernetes.io~1auth-type"
+  path: '/metadata/annotations/nginx.ingress.kubernetes.io~1auth-type'
   value: basic
 - op: add
-  path: "/metadata/annotations/nginx.ingress.kubernetes.io~1auth-secret"
+  path: '/metadata/annotations/nginx.ingress.kubernetes.io~1auth-secret'
   value: kube-system/auth
 ```
 
@@ -229,7 +234,7 @@ The Kustomize patch that adds the annotations to enable basic auth:
 
 With the custom fields, FlyCorp was able to provide standardized options to their developers.
 
-Prior to adopting Gimlet, they documented the possibilities in their company wiki, 
+Prior to adopting Gimlet, they documented the possibilities in their company wiki,
 but developers didn't fully know what features were available for them to use. With Gimlet, they see it now on the UI.
 
 To have your team features codified, check out the full reference of the [Gimlet Master Template](https://docs.gimlet.io/setup/master-template/) and check out [Gimlet](https://gimlet.io) too.

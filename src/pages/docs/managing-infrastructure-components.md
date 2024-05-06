@@ -7,15 +7,15 @@ On this page you can learn how to manage infrastructure components of an environ
 
 ## On the dashboard
 
-Navigate to the environment you want to edit. Like in case of an environment called `deleteme`, navigate to *Environments > deleteme > Infrastructure components* and locate the desired component to edit.
+Navigate to the environment you want to edit. Like in case of an environment called `deleteme`, navigate to _Environments > deleteme > Infrastructure components_ and locate the desired component to edit.
 
 ![Step 1 screenshot](https://images.tango.us/public/screenshot_74d34c1d-a951-4114-b984-5d8ed568fc92.png?crop=focalpoint&fit=crop&fp-x=0.3250&fp-y=0.2505&fp-z=2.5296&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=3840%3A1960)
 
-On the *Config* tab enable it and provide the necessary configuration.
+On the _Config_ tab enable it and provide the necessary configuration.
 
 ![Step 2 screenshot](https://images.tango.us/public/edited_image_69245999-ad79-4170-bce1-8156ea96d7a2.png?crop=focalpoint&fit=crop&fp-x=0.4107&fp-y=0.4383&fp-z=2.0000&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=3840%3A1960)
 
-Hit *Save components* and inspect the gitops commit Gimlet makes in your infrastructure configuration gitops repository.
+Hit _Save components_ and inspect the gitops commit Gimlet makes in your infrastructure configuration gitops repository.
 
 You can monitor the components as they come up:
 
@@ -30,13 +30,13 @@ ingress-nginx-controller-66455d768d-v8pgh        1/1     Running   0            
 ### Reconfiguring infrastructure componentes
 
 When you run `gimlet stack configure` and configure components on the UI, the configuration options are stored in a file
-called `stack.yaml`. 
+called `stack.yaml`.
 
 Next time you run `gimlet stack configure` the configuration options are read from `stack.yaml` and you can reconfigure your settings. The `stack.yaml` file contains the full configuration of your stack, and you should version it in your stack repository.
 
 ### Always re-generate after you reconfigured
 
-`stack.yaml` is Gimlet's own format, therefore for your configuration changes to be effective on the cluster, 
+`stack.yaml` is Gimlet's own format, therefore for your configuration changes to be effective on the cluster,
 make sure to run `gimlet stack generate` every time you make changes to the `stack.yaml` file. Be that changes through the UI or manually.
 
 Once you ran `gimlet stack generate`, make a git commit and push it. You should see the changes on your cluster.
@@ -46,7 +46,6 @@ Once you ran `gimlet stack generate`, make a git commit and push it. You should 
 `stack.yaml` points to the stack template in the `stack.repository` field. It points to a git repository where the stack files are maintained.
 
 By default, it is locked to a particular version, therefore every time you run `gimlet stack generate` it works with the same stack version and generates Kubernetes resources accordingly.
-
 
 ```yaml
 ---
@@ -68,13 +67,13 @@ running `gimlet stack update` will update `stack.yaml` to the latest stack versi
 ```bash
 $ gimlet stack update
 
-⏳  Stack version is updating to v0.3.0... 
-✔️   Config updated. 
-⚠️   Run `gimlet stack generate` to render resources with the updated stack. 
+⏳  Stack version is updating to v0.3.0...
+✔️   Config updated.
+⚠️   Run `gimlet stack generate` to render resources with the updated stack.
 
 📚  Change log:
 
-   - v0.3.0 
+   - v0.3.0
       • Cert Manager - Just a bugfix release
       • Grafana to 8.0.1 🎉
         • Plenty of goodies, see for yourself: [https://grafana.com/docs/grafana
@@ -93,7 +92,7 @@ Important that you run `gimlet stack generate` to generate the updated Kubernete
 
 Make sure to
 
-- inspect the changeset 
+- inspect the changeset
 - resolve possible [conflicts with custom changes](#custom-changes-that-conflict)
 - push to git
 
@@ -111,7 +110,6 @@ It
 ![Stack updater Github Action](/stack-updater.png)
 
 See the action in an [example workflow](https://github.com/gimlet-io/gimlet-stack-updater-action/blob/main/.github/workflows/demo.yml).
-
 
 ## Making custom changes to a stack
 

@@ -9,18 +9,18 @@ You will learn how to create a stack template from scratch and how your users ca
 
 ## Prerequisites
 
-- To complete this tutorial, make sure you understood the end-user flows of Gimlet Stack, 
-and you understand the [concepts](/concepts/gimlet-stack-concepts) thoroughly.
+- To complete this tutorial, make sure you understood the end-user flows of Gimlet Stack,
+  and you understand the [concepts](/concepts/gimlet-stack-concepts) thoroughly.
 
 - An empty public git repository
 
 ## What defines a stack
 
-- a stack lives in a dedicated git repository 
+- a stack lives in a dedicated git repository
 - a stack is a mix of Kubernetes resources, configmaps, HelmRelease resources placed in the git repo's root
 - the resources are Golang templates, and can resolve variables that are defined in the stack.yaml by the end-user
 - a stack has a `stack-definition.yaml` in the git repository root
-  - that contains the stack meta data 
+  - that contains the stack meta data
   - component metadata, name, version, and a one-pager per component that helps the user getting started with the component
   - component schema that is a subset of the component's Helm Chart's `values.schema.json`
   - the ui-schema, that is a helm-ui.json schema file described in this blog post: https://gimlet.io/blog/helm-react-ui-a-react-component-to-render-ui-for-helm-charts/#the-helm-ui.jso
@@ -70,7 +70,7 @@ This repository holds a minimal stack with a single Nginx component:
 
 The values end-users specify in the `stack.yaml` file are available in the stack template to drive rendering.
 
-The bellow example shows that the ingress-nginx HelmRelease only rendered if `.nginx.enabled` is set to true, and 
+The bellow example shows that the ingress-nginx HelmRelease only rendered if `.nginx.enabled` is set to true, and
 it also adds the `.nginx.host` variable as an annotation.
 
 ```yaml
@@ -108,7 +108,7 @@ The `stack-definition.yaml` holds all stack components, their description and al
 name: Gimlet Stack Minimal
 description: A minimal stack that we can use to experience the stack authoring process
 categories:
-  - name: "⬅️Ingress"
+  - name: '⬅️Ingress'
     id: ingress
 components:
   - name: Nginx
@@ -116,7 +116,8 @@ components:
     category: ingress
     logo: https://raw.githubusercontent.com/gimlet-io/gimlet-stack-reference/main/assets/nginx.png
     description: ''
-    onePager: An Nginx proxy server that routes traffic to your applications based on
+    onePager:
+      An Nginx proxy server that routes traffic to your applications based on
       the host name or path.
     schema: |-
       ...
@@ -124,7 +125,8 @@ components:
       ...
 ```
 
-The components are 
+The components are
+
 - organized in `categories`
 - they have a `name`, `logo` and other meta information
 - and they define a JSON `schema` for their values
@@ -279,6 +281,7 @@ for Loki all we did is that we told the UI to render the `enabled` property that
 In order to test the extended stack, make a commit and push the stack to git.
 
 Then you can verify the generated UI with, just make sure you point it to your git repository
+
 ```bash
 gimlet stack configure \
   --stack-repo git@github.com:gimlet-io/gimlet-stack-minimal.git

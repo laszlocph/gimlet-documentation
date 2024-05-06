@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Mirroring environments with gitops and Kyverno"
-date: "2021-04-26"
+title: 'Mirroring environments with gitops and Kyverno'
+date: '2021-04-26'
 description: See how you can mirror complete environments with gitops and rewrite host names with Kyverno's mutating admission controllers.
 topic: Ecosystem
 image: gitops-kyverno2.png
@@ -12,7 +12,7 @@ tags: [posts]
 
 One of the benefits of gitops that we often cite is the ability to recreate environments in case of a disaster recovery situation.
 
-Git being the source of truth in gitops, the recovery does not differ from normal deployment scenarios: we point the gitops controller to the 
+Git being the source of truth in gitops, the recovery does not differ from normal deployment scenarios: we point the gitops controller to the
 git repository that holds the deployment manifests, and it syncs the state onto the cluster.
 
 Or clusters. Actually, nothing prevents us from syncing one git repository to multiple clusters.
@@ -46,8 +46,8 @@ Twitter to the rescue. Turned out the coming (now merged) version of Kyverno wil
 {% tweet link="https://twitter.com/stefanprodan/status/1369619082379726852?ref_src=twsrc%5Etfw" %}
 {% /tweet %}
 
-Kyverno is a Kubernetes Admission Controller that you can use to mandate certain policies on your cluster, like not allowing root user on it, 
-or set defaults to applications if the author forgot to set them. 
+Kyverno is a Kubernetes Admission Controller that you can use to mandate certain policies on your cluster, like not allowing root user on it,
+or set defaults to applications if the author forgot to set them.
 
 With the most recent version, I could use a string replace function on the Ingress hostname, making my mirrored environment accessible on its unique host name:
 
@@ -63,7 +63,7 @@ spec:
       match:
         resources:
           kinds:
-          - Ingress
+            - Ingress
       mutate:
         patchesJson6902: |-
           - op: replace
@@ -80,7 +80,7 @@ There was just one thing that kept bugging me: if I use gitops, and I store comp
 
 In a strict interpretation I think it breaks it.
 
-What gives me some comfort is the fact that the Kyverno mutating rule is also stored in git, 
+What gives me some comfort is the fact that the Kyverno mutating rule is also stored in git,
 and I can think of this approach as if the environment knows what URL it is really bound to. And as long as I don't have too many of these special rules, it should be fine.
 
 ## Gitops made it transparent to create mirrored environments

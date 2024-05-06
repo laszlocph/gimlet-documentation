@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Are you sure none of your containers run as root?"
-date: "2021-11-24"
+title: 'Are you sure none of your containers run as root?'
+date: '2021-11-24'
 description: |
-    The Kyverno policy engine just arrived in Gimlet Stack. Let's see how you can be certain that none of the containers run as root in your Kubernetes cluster.
+  The Kyverno policy engine just arrived in Gimlet Stack. Let's see how you can be certain that none of the containers run as root in your Kubernetes cluster.
 topic: Gimlet Stack
 image: introducing-kyverno.png
 tags: [posts]
@@ -40,7 +40,7 @@ If it is running as root, Kyverno sends a rejection response in the validating a
 
 Gimlet Stack is a CLI tool that you can use to bootstrap curated stacks on your Kubernetes cluster. Making it an application platform from day one.
 
-Things that would take you hours to set up, should be just there from the get go. Policy engines is typically a day two thing to set  up for a Kubernetes cluster. There is just so many other things to get right before cluster admins get to policies.
+Things that would take you hours to set up, should be just there from the get go. Policy engines is typically a day two thing to set up for a Kubernetes cluster. There is just so many other things to get right before cluster admins get to policies.
 
 But not anymore.
 
@@ -75,33 +75,33 @@ spec:
   validationFailureAction: audit
   background: true
   rules:
-  - name: check-containers
-    match:
-      resources:
-        kinds:
-        - Pod
-    validate:
-      message: >-
-        Running as root is not allowed. The fields spec.securityContext.runAsNonRoot,
-        spec.containers[*].securityContext.runAsNonRoot, and
-        spec.initContainers[*].securityContext.runAsNonRoot must be `true`.        
-      anyPattern:
-      - spec:
-          securityContext:
-            runAsNonRoot: true
-          containers:
-          - =(securityContext):
-              =(runAsNonRoot): true
-          =(initContainers):
-          - =(securityContext):
-              =(runAsNonRoot): true
-      - spec:
-          containers:
-          - securityContext:
-              runAsNonRoot: true
-          =(initContainers):
-          - securityContext:
-              runAsNonRoot: true
+    - name: check-containers
+      match:
+        resources:
+          kinds:
+            - Pod
+      validate:
+        message: >-
+          Running as root is not allowed. The fields spec.securityContext.runAsNonRoot,
+          spec.containers[*].securityContext.runAsNonRoot, and
+          spec.initContainers[*].securityContext.runAsNonRoot must be `true`.
+        anyPattern:
+          - spec:
+              securityContext:
+                runAsNonRoot: true
+              containers:
+                - =(securityContext):
+                    =(runAsNonRoot): true
+              =(initContainers):
+                - =(securityContext):
+                    =(runAsNonRoot): true
+          - spec:
+              containers:
+                - securityContext:
+                    runAsNonRoot: true
+              =(initContainers):
+                - securityContext:
+                    runAsNonRoot: true
 ```
 
 The above `ClusterPolicy` is checking if the deployed `Deployments` have the `runAsNonRoot: true` flag in their pod specification. If not, then it will not pass this policy.

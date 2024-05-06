@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Git: the ironclad system"
-date: "2023-04-04"
+title: 'Git: the ironclad system'
+date: '2023-04-04'
 image: git-ironclad.png
-description: "Git is the most feared tool amongst the tools we use everyday. Over the years I developed an ironclad approach to git, to not get into trouble, and if I did, how to get out of it."
+description: 'Git is the most feared tool amongst the tools we use everyday. Over the years I developed an ironclad approach to git, to not get into trouble, and if I did, how to get out of it.'
 ---
 
 Hello everyone, Laszlo here from Gimlet.io 👋.
@@ -55,7 +55,8 @@ Changes not staged for commit:
 	modified:   src/pages/blog/git-the-ironclad-system.md
 ```
 
-In this more complex situation I tried to rebase my branch on main, but there were conflicts. Git is giving me very specific instructions on how I can 
+In this more complex situation I tried to rebase my branch on main, but there were conflicts. Git is giving me very specific instructions on how I can
+
 - resolve the conflict and continue the rebase
 - or abort the change.
 
@@ -74,9 +75,9 @@ Could not apply 7aab195... conflict
 
 Knowing the basics of git's data model will help you in your everyday git operations.
 
-Git history is a tree. Its root is a single commit and all commits descend from it. Each commit knows its parent, and what diff it introduces to it. **
+Git history is a tree. Its root is a single commit and all commits descend from it. Each commit knows its parent, and what diff it introduces to it. \*\*
 
-(**UPDATE: Kind Reddit people highlighted that technically git stores new versions of the files you change in a commit. Diff is calculated on the fly. For a mental model though, thinking of commits as a tree of diffs is still useful.)
+(\*\*UPDATE: Kind Reddit people highlighted that technically git stores new versions of the files you change in a commit. Diff is calculated on the fly. For a mental model though, thinking of commits as a tree of diffs is still useful.)
 
 When you branch out, you just create a new commit that has the same parent as another commit on another tree branch.
 
@@ -124,19 +125,21 @@ Git lola is my second most used command after git status.
 ### Remote state
 
 Git users often use `git pull` to get the latest version. But git pull does two things:
+
 - it fetches the remote state
 - then tries to bring your working copy up to date with the latest remote state by doing a merge.
 
-It is much less error prone if instead of using git pull, you run `git fetch` first,then decide on the strategy to move your working copy version to the latest version. 
+It is much less error prone if instead of using git pull, you run `git fetch` first,then decide on the strategy to move your working copy version to the latest version.
 
-`git fetch` fits better the ironclad system as it answers the *where am I question* and just that. Git pull on the other hand does not allow you to orient yourself before modifying your working copy and you may end up in states you didn't intend to.
+`git fetch` fits better the ironclad system as it answers the _where am I question_ and just that. Git pull on the other hand does not allow you to orient yourself before modifying your working copy and you may end up in states you didn't intend to.
 
 I always run
+
 - `git fetch` to get the remote state
 - then a quick `git status` and `git lola` just to orient myself
 - and for quick fast-forward situations, I call `git pull --rebase` to get the latest version
 
-There is another problem with using `git pull` to get remote changes. If you and your colleague work on the same feature branch, git pull will do a git merge every time you get your colleague's commits. This complicates an otherwise straight line of commits with placing merge commits in the history. 
+There is another problem with using `git pull` to get remote changes. If you and your colleague work on the same feature branch, git pull will do a git merge every time you get your colleague's commits. This complicates an otherwise straight line of commits with placing merge commits in the history.
 
 ![git pull](/gitpull.png)
 
@@ -146,7 +149,7 @@ If you use `git pull --rebase`, git puts your unpushed commits on top of your co
 
 ## What do I want to do?
 
-When you oriented yourself with `git status` and `git lola` and you know *what you want to do*, it is good if you have a couple of plans to get there. This section highlights a few lesser known techniques to extend your options.
+When you oriented yourself with `git status` and `git lola` and you know _what you want to do_, it is good if you have a couple of plans to get there. This section highlights a few lesser known techniques to extend your options.
 
 ### Navigating
 
@@ -161,7 +164,7 @@ If you are on a branch and you want that branch to have the exact same state as 
 
 If you have various working copy changes and want to start over, you run `git reset --hard HEAD`. It resets your branch to the latest commit hash, thus throwing away working copy changes.
 
-If you made a few commits locally on a *feature-branch*, but you realized it is a moot effort, you run `git reset --hard origin/feature-branch`. This throws away the commits that you recently made, and you can continue from the state that you have in the remote.
+If you made a few commits locally on a _feature-branch_, but you realized it is a moot effort, you run `git reset --hard origin/feature-branch`. This throws away the commits that you recently made, and you can continue from the state that you have in the remote.
 
 I use `git reset` and its `--hard` flag in versatile situations. There is just one thing to keep in mind. If a commit is not reachable from any pointer, aka branch or tag, that commit is gone. You can't get it back.
 
@@ -182,7 +185,7 @@ There are two ways to bring code from one branch to another: merging and rebasin
 
 #### Merging
 
-Merge is the straightforward way. You have two code tree lines, and they become one in the form of a merge commit. 
+Merge is the straightforward way. You have two code tree lines, and they become one in the form of a merge commit.
 
 ![Merge commit](/merge-commit.png)
 
@@ -205,6 +208,7 @@ I often rebase when I am working alone on my branches, and historical correctnes
 There are edge cases when rebasing is a pain to use. Since rebase puts a branch on top of another branch commit by commit, you may have to resolve conflicts in every one of those commits. Sometimes you even have to resolve conflicts that happened earlier in your branch's life and are not part of the latest version. In those cases I just use git merge, and resolve the conflicts that exist in my final version of code.
 
 #### Cherry picking
+
 When I only want to integrate a single commit with another branch, sometimes I just take that one commit and place it on top of the target branch.
 
 `git cherry-pick <hash>` is a quick way to integrate a single commit.
@@ -228,7 +232,7 @@ Remember, git is trying to help. The output of `git status` often contains possi
 Even in the most complex rebase operations, git status suggests an option how to start over:
 
 ```
-hint: To abort and get back to the state before "git rebase", 
+hint: To abort and get back to the state before "git rebase",
   run "git rebase --abort".
 ```
 
@@ -243,7 +247,7 @@ If you have uncommitted changes, and you care about them, commit them first.
 
 If you have everything committed, but you are doing branching operations you are not sure about, best to make a backup pointer to your current HEAD. `git branch backup` will create a restore point. Should you mess up something, you can git reset your current branch to the backup spot by `git reset --hard backup`.
 
-##  Assumptions
+## Assumptions
 
 This blog post worked with several assumptions. These are fairly known, but let me run through them so you better understand the context this system was meant to be used in.
 

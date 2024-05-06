@@ -34,6 +34,9 @@ module.exports = {
       },
       rotate: {
         '225': '139deg',
+      },
+      left: {
+        '3/5': "calc(-40vw + 50%)",
       }
     },
   },

@@ -11,9 +11,9 @@ This is possible as in the Gimlet step CI passes a large chunk of metadata (call
 
 ![Step 1 screenshot](https://images.tango.us/public/edited_image_a6e4652d-8775-4353-87e5-5ff4bc1b276b.png?crop=focalpoint&fit=crop&fp-x=0.5000&fp-y=0.5000&fp-z=1.0000&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=2405%3A255)
 
-To make an ad-hoc deployment, click the *Deploy* dropdown on a commit and pick an environment to deploy to.
+To make an ad-hoc deployment, click the _Deploy_ dropdown on a commit and pick an environment to deploy to.
 
-The rollout widget displays references to the gitops commits that Gimlet made to fulfill your deploy request, 
+The rollout widget displays references to the gitops commits that Gimlet made to fulfill your deploy request,
 
 ![Step 3 screenshot](https://images.tango.us/public/screenshot_037a06c8-0ea1-45ee-8137-312a920d59c7.png?crop=focalpoint&fit=crop&fp-x=0.8464&fp-y=0.1156&fp-z=2.0741&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=3840%3A1960)
 
@@ -31,7 +31,7 @@ Once you added the Gimlet step in your CI workflow, every commit becomes deploya
 
 ### Listing the releasable artifacts
 
-To see all the releasable versions, run 
+To see all the releasable versions, run
 
 ```bash
 gimlet artifact list --repo gimlet-io/demo-app
@@ -66,8 +66,8 @@ $ gimlet release make \
   --env staging \
   --artifact gimlet-io/demo-app-4d6db203-5a18-471e-8e58-ad9e6402d1cf
 
-🙆‍♀️ Release is now added to the release queue with ID fc495037-523b-44fd-a1ff-d68c828ee361                                                                    
-Track it with:                                                                                                                                                
+🙆‍♀️ Release is now added to the release queue with ID fc495037-523b-44fd-a1ff-d68c828ee361
+Track it with:
 gimlet release track fc495037-523b-44fd-a1ff-d68c828ee361
 ```
 

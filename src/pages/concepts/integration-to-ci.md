@@ -1,7 +1,7 @@
 ---
 title: Integration to CI
 pageTitle: Gimlet - Integration to CI
-description: "Gimlet fits well into your existing CI pipelines. Learn how Gimlet integrates with CI"
+description: 'Gimlet fits well into your existing CI pipelines. Learn how Gimlet integrates with CI'
 ---
 
 CI pipelines today lint, test, build and then deploy applications.
@@ -19,6 +19,7 @@ Let's explore the deploy step so we know what it takes to deploy to a gitops env
 - CI pushes the gitops commits
 
 Besides the happy path, CI pipelines take care of
+
 - concurrent write issues when multiple applications are being deployed at the same time
 - special workflow steps like rollbacks
 - gitops repo clone/write speed optimizations
@@ -48,6 +49,7 @@ Practically they look like this Github Action:
 You can keep organizing your CI workflows as you desire, and call Gimlet's API whenever you need to perform a gitops operation.
 
 With Gimlet's centralized approach you gain
+
 - standardization by design
 - better control on gitops write operations (halt them, or update them at once)
 - a [better gitops deploy history](http://localhost:3001/blog/three-problems-with-gitops-as-deployment-history-and-how-we-overcome-them)

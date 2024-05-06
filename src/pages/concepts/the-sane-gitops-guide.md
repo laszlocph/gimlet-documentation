@@ -6,11 +6,11 @@ description: Gitops means many things to many people. Let's clear that up.
 
 Gitops means many things to many people.
 
-What they all agree on is that gitops is a form of *Infrastructure as Code* where the infrastructure configuration is stored in a git repository - being the single source of truth - and some automation delivers it to the target system.
+What they all agree on is that gitops is a form of _Infrastructure as Code_ where the infrastructure configuration is stored in a git repository - being the single source of truth - and some automation delivers it to the target system.
 
-The term was [coined](https://www.weave.works/blog/gitops-operations-by-pull-request) in 2017 by CEO of Weave Works. Their definition enumerates the benefits of this approach, and it is rather permissive allowing many existing tools to be called as gitops tools, including Terraform, Ansible and also their gitops controller FluxCD. 
+The term was [coined](https://www.weave.works/blog/gitops-operations-by-pull-request) in 2017 by CEO of Weave Works. Their definition enumerates the benefits of this approach, and it is rather permissive allowing many existing tools to be called as gitops tools, including Terraform, Ansible and also their gitops controller FluxCD.
 
-But this permissive definiton doesn't help us in our day-to-day communication. It is not clear what others mean when they talk about gitops, plus there is a disturbing thought: we already had a handful of terms defining something similar many years prior. 
+But this permissive definiton doesn't help us in our day-to-day communication. It is not clear what others mean when they talk about gitops, plus there is a disturbing thought: we already had a handful of terms defining something similar many years prior.
 
 Therefor this guide uses a more restrictive definition.
 
@@ -45,7 +45,7 @@ The presented flow is just the opposite of a what you find in CI based automatio
 
 CI **pushes** changes to a target system, while FluxCD **pulls** changes from git and applies it on the environment it is running in.
 
-While this looks odd at first sight, it allows for 
+While this looks odd at first sight, it allows for
 
 - a fine-grained access management. No central component knows the credentials of all target systems
 - more robust error handling. Since the controller is a long running process in the target environment, it allows for a more versatile state reconsiliation, (the process when the controller tries to get the target system into the desired state), and it is better equipped to solve complex failure modes.
@@ -61,7 +61,7 @@ While this looks odd at first sight, it allows for
 
 ## Congratulations
 
-You now know 
+You now know
 
 - what role the gitops controller has
 - what is the gitops repository

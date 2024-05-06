@@ -55,11 +55,11 @@ Gitops is only as fun as the applications you are deploying with it. Let's confi
 
 Run `gimlet stack configure` to bring up the configuration screen and locate Nginx among the components.
 
-On the *Config* tab enable Nginx and provide the domain this environment will receive traffic on. Gimlet works with a wildcard DNS entry and puts all applications under the specified domain. Set `deleteme.yourcompany.com` as the domain name.
+On the _Config_ tab enable Nginx and provide the domain this environment will receive traffic on. Gimlet works with a wildcard DNS entry and puts all applications under the specified domain. Set `deleteme.yourcompany.com` as the domain name.
 
 ![Step 2 screenshot](https://images.tango.us/public/edited_image_69245999-ad79-4170-bce1-8156ea96d7a2.png?crop=focalpoint&fit=crop&fp-x=0.4107&fp-y=0.4383&fp-z=2.0000&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=3840%3A1960)
 
-Once you enabled the component write the configuration with the red *Close tab & Write values* button.
+Once you enabled the component write the configuration with the red _Close tab & Write values_ button.
 
 This will not just write the stack configuration to the console, but also to the `stack.yaml` file which holds the complete configuration of your stack.
 
@@ -109,13 +109,13 @@ Once you pushed the generated manifests and the stack.yaml to git, the gitops wo
 ### Verify the installed stack
 
 ```bash
-➜  kubectl get helmreleases.helm.toolkit.fluxcd.io -n infrastructure 
+➜  kubectl get helmreleases.helm.toolkit.fluxcd.io -n infrastructure
 NAME             READY   STATUS                             AGE
 ingress-nginx    True    Release reconciliation succeeded   4m29s
 ```
 
 ```bash
-➜  kubectl get pods -n infrastructure                               
+➜  kubectl get pods -n infrastructure
 NAME                                             READY   STATUS    RESTARTS   AGE
 ingress-nginx-controller-569b78f477-pdssw        1/1     Running   0          5m1s
 ```
@@ -125,7 +125,9 @@ Should you not see the HelmReleases or pods, it is always a good practice to che
 ```bash
 kubectl logs -n flux-system -f deploy/source-controller
 ```
+
 and
+
 ```bash
 kubectl logs -n flux-system -f deploy/kustomize-controller
 ```
@@ -156,20 +158,19 @@ Now that you have the ingress infrastructure in place, let's switch gears and en
 
 At the end of this chapter you will have Grafana running on `https://grafana.deleteme.yourcompany.com` with logs and metrics coming from your cluster.
 
-- Enable Cert Manager in *Cert Manager > Config*
+- Enable Cert Manager in _Cert Manager > Config_
 - Provide an email address that will be used to inform you about expiring certificates
 
 ![Step 1 screenshot](https://images.tango.us/public/screenshot_003ad589-2f11-4eeb-a463-93e2134a56c7.png?crop=focalpoint&fit=crop&fp-x=0.3993&fp-y=0.3167&fp-z=2.1881&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=3840%3A1960)
 
-
-- Enable Loki in *Loki > Config* to gather all cluster logs
+- Enable Loki in _Loki > Config_ to gather all cluster logs
 - Set Loki's retention days to 10
 
 ![Step 2 screenshot](https://images.tango.us/public/screenshot_8969754e-45ab-4a91-b626-a04ed73e1a7b.png?crop=focalpoint&fit=crop&fp-x=0.2956&fp-y=0.4429&fp-z=2.8161&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=3840%3A1960)
 
-- And finally, enable Prometheus in *Prometheus > Config* to gather all cluster metrics
+- And finally, enable Prometheus in _Prometheus > Config_ to gather all cluster metrics
 
-Hit *Save components* and inspect the gitops commit Gimlet made in the `your-org/gitops-deleteme-infra` repository.
+Hit _Save components_ and inspect the gitops commit Gimlet made in the `your-org/gitops-deleteme-infra` repository.
 
 You can monitor the pods as they come up:
 
@@ -181,11 +182,12 @@ $ kubectl get pods -n infrastructure -w
 
 You can start using the built-in Grafana dashboards on the `https://grafana.deleteme.yourcompany.com` address.
 
-The log in information is stored in a kubernetes secret, and you can get it if you follow the one-pager in Gimlet under * Loki > Getting Started*
+The log in information is stored in a kubernetes secret, and you can get it if you follow the one-pager in Gimlet under _ Loki > Getting Started_
 
 ![Step 1 screenshot](https://images.tango.us/public/screenshot_92e22b3b-26a5-4447-9971-d4b4b582e87c.png?crop=focalpoint&fit=crop&fp-x=0.5000&fp-y=0.5362&fp-z=2.0021&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=3840%3A1960)
 
 Use the username `admin` and get the password with this one-liner:
+
 ```
 kubectl get secret grafana --namespace infrastructure --template='{{ index .data "admin-password"}}' | base64 -d
 ```
@@ -193,14 +195,15 @@ kubectl get secret grafana --namespace infrastructure --template='{{ index .data
 ## Cleanup
 
 Congratulations, now you've learnt
+
 - how to create a new Gimlet environment
 - how to install and manage cluster components
 - and you have great tooling to operate your applications.
 
-
 Once you are confident in your knowledge, you can delete the dummy environment you created in this tutotrial and start applying your knowledge in managing your testing and production environments.
 
 To clean up
+
 - delete your dummy cluster
 - delete your `your-org/gitops-deleteme-infra` git repository
 - delete your `your-org/gitops-deleteme-apps` git repository

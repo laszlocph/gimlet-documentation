@@ -1,9 +1,9 @@
 ---
 layout: post
 title: The how and why we built our SaaS platform on Hetzner and Kubernetes
-date: "2023-03-08"
+date: '2023-03-08'
 image: why-hetzner.png
-description: "Hetzner is five times cheaper for us than the hyperscalers. This blog posts enumerates the how and why we built our SaaS on a discount bare metal provider. Gotchas included."
+description: 'Hetzner is five times cheaper for us than the hyperscalers. This blog posts enumerates the how and why we built our SaaS on a discount bare metal provider. Gotchas included.'
 ---
 
 Hello everyone, Laszlo here, the founder of Gimlet.io 👋. In this blog post I try to address various aspects of how and why we built our SaaS platform on Hetzner and Kubernetes and not on one of the hyperscaler cloud providers.
@@ -19,6 +19,7 @@ I don't want to drag it out too long: it is price.
 We built our compute nodes on the EX43 model, the newest staple machine of Hetzner. The hexa-core, Alder Lake CPU with 64GB RAM and 2x512GB NVMe SSD comes in at 52.1 EUR in one of Hetzner's German datacenter. No VAT in our case.
 
 Comparing this to
+
 - AWS's `m6a.2xlarge` and `m6i.2xlarge` instances costing $281 and $312 respectively in `eu-west-1`
 - and Google Cloud's `c3-standard-8` and `n2-standard-8` comes in $277 and $311 in `europe-west4`
 
@@ -85,6 +86,7 @@ The first Ansible playbooks we wrote were the node hardening ones. Unattended up
 By default Hetzner assigns a public IP to nodes, and hands out root SSH access for you to start using the nodes. Also, every port you open is open to the internet. No private networks, or security groups by default. So we started by building one.
 
 How we built our network:
+
 - There is basic VLAN support in Hetzner, we could connect our nodes with an unmetered, internal network connection.
 - We also built a Wireguard based VPN mesh on this internal network. Essentially encrypting all traffic between our nodes.
 - We installed a firewall on all nodes, and bound only port 80 and 443 to the public network IP addresses.
@@ -110,8 +112,7 @@ Now judging a good enough uptime comes down to the reader as Gimlet does not pro
 
 - A 99,5% availability, an industry wide standard for SaaS platforms, means a yearly 1.83 days of downtime. A 99% availability means a 3.65 days downtime a year. This last one practically means that our whole team could be on vacation in the jungles of Brazil, travel back to Europe, open their laptops and do the database failover and we would still be faster than three days. It goes without saying that we are not planning to travel to the jungles of Brazil without anyone being on call.
 
-- It is good to look up at this point what [SLA](https://aws.amazon.com/rds/sla/) Amazon's RDS database provides. They are kind of mushy on the topic: *"AWS will use commercially reasonable efforts"* and if they fail, they give your money back in credits. Ten percent if they are between 99-99.95% availability, 25% percent if they are between 95 and 99 percent, and all the money otherwise. In practical terms, they can be down for 18 days a year and you only get back one fourth of your money.
-
+- It is good to look up at this point what [SLA](https://aws.amazon.com/rds/sla/) Amazon's RDS database provides. They are kind of mushy on the topic: _"AWS will use commercially reasonable efforts"_ and if they fail, they give your money back in credits. Ten percent if they are between 99-99.95% availability, 25% percent if they are between 95 and 99 percent, and all the money otherwise. In practical terms, they can be down for 18 days a year and you only get back one fourth of your money.
 
 ### Gitops: drinking our own champagne
 
@@ -138,6 +139,7 @@ During our platform building efforts we rebuilt the whole stack numerous times f
 We encrypt data in numerous places.
 
 In transit:
+
 - We encrypt all traffic on our internal Wireguard based VPN mesh.
 - We use SSL between our applications and Postgresql.
 - Between our services.
@@ -146,6 +148,7 @@ In transit:
 - Between Cloudflare and endusers.
 
 At rest:
+
 - We encrypt our node disks.
 - We encrypt our backups.
 - Gimlet instances encrypt sensitive database fields in the database.

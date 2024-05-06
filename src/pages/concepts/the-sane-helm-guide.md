@@ -1,7 +1,7 @@
 ---
 title: The SANE Helm guide
 pageTitle: Gimlet - The SANE Helm guide
-description: "Helm is the most thrown around term in the Kubernetes ecosystem and perhaps one of the most divisive one as well. In this guide, you will get practical knowledge about using Helm."
+description: 'Helm is the most thrown around term in the Kubernetes ecosystem and perhaps one of the most divisive one as well. In this guide, you will get practical knowledge about using Helm.'
 ---
 
 Kubernetes has a powerful deployment manifest, or "the yaml" as people often call it.
@@ -35,6 +35,7 @@ helm install my-redis bitnami/redis
 ```
 
 to more tailored setups:
+
 ```bash
 helm repo add bitnami https://charts.bitnami.com/bitnami
 helm install my-redis bitnami/redis -f values.yaml
@@ -56,15 +57,16 @@ But Helm does two things well:
 
 In this guide, you will get practical knowledge about using Helm, focusing on those use-cases, namely packaging and templating, that also underpin Gimlet.
 
-This guide emphasizes simplicity and ease of use. Being an exhaustive guide of Helm features is a non-goal. Instead, the goal is to get you from *"Helm, wtf?"* to *"Helm, this ain't so bad"* under five minutes.
+This guide emphasizes simplicity and ease of use. Being an exhaustive guide of Helm features is a non-goal. Instead, the goal is to get you from _"Helm, wtf?"_ to _"Helm, this ain't so bad"_ under five minutes.
 
 Let's get to it, shall we?
 
 ## Prerequisites
+
 - You have access to a Kubernetes cluster. Use [k3d](https://github.com/rancher/k3d#get), if you don't have one.
 - You have `kubectl` installed. Follow [this guide](https://kubernetes.io/docs/tasks/tools/install-kubectl/), if you don't have it.
-- You have Helm installed. Install it with 
-`curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash` <br /> or look for installation alternatives at [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/)
+- You have Helm installed. Install it with
+  `curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash` <br /> or look for installation alternatives at [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/)
 
 ## Helm as a source of packaged infrastructure components
 
@@ -74,7 +76,7 @@ Charts also give you good enough default settings as well. Good enough for testi
 
 ### Let's see how this works with the PostgreSQL database!
 
-- First you need to find the Helm chart for PostgreSQL. The official website of PostgreSQL is a good starting point, but I usually go with a Google search, *"PostgreSQL Helm chart"*
+- First you need to find the Helm chart for PostgreSQL. The official website of PostgreSQL is a good starting point, but I usually go with a Google search, _"PostgreSQL Helm chart"_
 - You can typically find the Helm chart in the Github organization of the software you want to install. With PostgreSQL however, there is only a community chart available, so Google pointed me to the [bitnami/charts repo on Github](https://github.com/bitnami/charts/tree/master/bitnami/postgresql).
 - Judging the trustworthiness of community charts is often not easy. You may get help on slack channels, or judge the maintainer activity on Github. In this particular case I know that Bitnami's charts are often good, so I will go with it.
 - Follow the steps on the `bitnami/charts` repo and install PostrgreSQL with the followingtwo liner::
@@ -106,7 +108,6 @@ To connect to your database from outside the cluster execute the following comma
     kubectl port-forward --namespace default svc/my-postgres-postgresql 5432:5432 &
     PGPASSWORD="$POSTGRES_PASSWORD" psql --host 127.0.0.1 -U postgres -d postgres -p 5432
 ```
-
 
 This is usually the way to install any Helm chart. First register the chart repository in your local Helm registry, then call helm install with the name of the release and the Helm chart.
 
@@ -176,6 +177,7 @@ postgresqlUsername: postgres
 postgresqlPassword: 543e9a6bf104ccb7249715991831f3a0
 EOF
 ```
+
 then let's upgrade the installation with
 
 ```
@@ -210,7 +212,6 @@ Congratulations, now you are able to configure Helm installations with a declara
 
 Now that you are able to install and upgrade Helm charts, it's time to complete your must-have Helm knowledge by looking at the other thing that Helm does well: templating.
 
-
 ## Templating - the anatomy of a Helm chart
 
 To fully understand Helm, and the configuration values you used in previous chapters, you are going to learn about how Helm charts look inside.
@@ -221,7 +222,7 @@ kind: Deployment
 metadata:
   name: my-deployment
 spec:
-  replicas: {{ .Values.replicas }}
+  replicas: { { .Values.replicas } }
   template:
     metadata:
     spec:
@@ -234,7 +235,6 @@ The above snippet is a Kubernetes Deployment resource with its replica count tem
 
 This is how Helm charts look inside: they are Golang template files that are able to render variables at predefined placeholders.
 Just much more convoluted in real life, thanks to the many generic use-cases they have to serve.
-
 
 To round up your Helm intro, in the remaining chapters you will
 
@@ -293,7 +293,7 @@ Plenty of files and quite a structure, but let's focus on the templates folder.
 
 The templates folder is where the Golang template files are placed and this is where you will make a change.
 
-- Locate the `replicas: {{ .Values.replicaCount }}` line in the deployment.yaml file 
+- Locate the `replicas: {{ .Values.replicaCount }}` line in the deployment.yaml file
 - and change it to `replicas: {{ .Values.replicas }}` to simplify the naming a bit.
 
 Save the file and template the chart to see that your change manifests in the result:
@@ -314,7 +314,6 @@ While editing charts is not a common thing to do as a developer, it is important
 ## Closing thoughts
 
 This is what you have learnt:
-
 
 - you know how to install off-the-shelf charts
 - you know how to configure them after installation

@@ -11,6 +11,7 @@ This is the command line variation of the [Deploy your first app to Kubernetes](
 ---
 
 ## Prerequisites
+
 - A running Gimlet installation.
 - An application hosted on Github.
 - A Github Action workflow, or CircleCI pipeline, that builds a container image from your source code.
@@ -30,7 +31,7 @@ After signing in to Gimlet, navigate to your profile settings
 
 ![Step 1 screenshot](https://images.tango.us/public/edited_image_2d7c9021-62ef-45da-9d9b-156c35db93db.png?crop=focalpoint&fit=crop&fp-x=0.7079&fp-y=0.2030&fp-z=3.0000&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=3840%3A926)
 
-Run the code snippet located in * Profile > Gimlet CLI access* to configure the CLI to access the Gimlet API server.
+Run the code snippet located in _ Profile > Gimlet CLI access_ to configure the CLI to access the Gimlet API server.
 
 ![Step 2 screenshot](https://images.tango.us/public/edited_image_a832ccf5-34c3-4c6c-baf8-c774a3dd0472.png?crop=focalpoint&fit=crop&fp-x=0.4205&fp-y=0.6813&fp-z=2.0000&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=3840%3A1279)
 
@@ -38,7 +39,7 @@ Run the code snippet located in * Profile > Gimlet CLI access* to configure the 
 
 Gimlet captures the deployment configuration in your source code repository. The Gimlet environment manifest files that are stored in the `.gimlet` folder, each capture the complete configuration of a given environment. It is a declarative format to configure which Helm chart, what chart version, and what parameters should be deployed to an environment.
 
-In this tutorial, you are going to deploy your application to your testing environment. The tutorial will deploy the `gimlet-io/demo-app` application to the `staging` environment, you can pick your testing environment from the configured environments on the Gimlet dashboard's *Environments* tab. Replace the values to match your setup.
+In this tutorial, you are going to deploy your application to your testing environment. The tutorial will deploy the `gimlet-io/demo-app` application to the `staging` environment, you can pick your testing environment from the configured environments on the Gimlet dashboard's _Environments_ tab. Replace the values to match your setup.
 
 Start the environment configuration by creating the Gimlet environment manifest file first.
 
@@ -69,9 +70,9 @@ chart:
   name: onechart
   version: 0.38.0
 values: {}
-strategicMergePatches: ""
+strategicMergePatches: ''
 json6902Patches: []
-manifests: ""
+manifests: ''
 ```
 
 {% callout title="What namespace to deploy to" %}
@@ -114,6 +115,7 @@ You can still continue this tutorial, use the CNCF's testing image, `ghcr.io/pod
 {% /callout %}
 
 ### Watch out for the container port
+
 Time to set the port your application is serving traffic on. It is a common mistake that developers not setting the right port in the deployment configuraton and when they try to open the deployed app in the browser, they get a HTTP 503.
 
 The demo-app serves traffic on port 9000. Set your own port.
@@ -162,36 +164,36 @@ jobs:
     name: 👷 Build
     runs-on: ubuntu-latest
     steps:
-    - name: ⬇️ Check out
-      uses: actions/checkout@v1
-      with:
-        fetch-depth: 1
-    - name: 🐋 Set up Docker Buildx
-      uses: docker/setup-buildx-action@v1
-    - name: Login to GitHub Container Registry
-      uses: docker/login-action@v1
-      with:
-        registry: ghcr.io
-        username: ${{ github.repository_owner }}
-        password: ${{ secrets.PAT }}
-    - name: 🐋 Build and push docker image
-      uses: docker/build-push-action@v2
-      with:
-        context: .
-        file: Dockerfile
-        platforms: linux/amd64
-        push: true
-        tags: |
-          ghcr.io/gimlet-io/demo-app:${{ github.sha }}
-    - name: 🚀 Deploy / Staging
-      uses: gimlet-io/gimlet-artifact-shipper-action@v0.8.0
-      with:
-        DEPLOY: "true"
-        ENV: "staging"
-        APP: "demo-app"
-      env:
-        GIMLET_SERVER: ${{ secrets.GIMLET_SERVER }}
-        GIMLET_TOKEN: ${{ secrets.GIMLET_TOKEN }}
+      - name: ⬇️ Check out
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+      - name: 🐋 Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.PAT }}
+      - name: 🐋 Build and push docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: Dockerfile
+          platforms: linux/amd64
+          push: true
+          tags: |
+            ghcr.io/gimlet-io/demo-app:${{ github.sha }}
+      - name: 🚀 Deploy / Staging
+        uses: gimlet-io/gimlet-artifact-shipper-action@v0.8.0
+        with:
+          DEPLOY: 'true'
+          ENV: 'staging'
+          APP: 'demo-app'
+        env:
+          GIMLET_SERVER: ${{ secrets.GIMLET_SERVER }}
+          GIMLET_TOKEN: ${{ secrets.GIMLET_TOKEN }}
 ```
 
 ### Integrate CircleCI
@@ -218,9 +220,9 @@ workflows:
           name: 🚀 Deploy / Staging
           context:
             - Gimlet
-          deploy: "true"
-          env: "staging"
-          app: "demo-app"
+          deploy: 'true'
+          env: 'staging'
+          app: 'demo-app'
           requires:
             - build_docker
 ```
@@ -234,7 +236,7 @@ For the CI deploy steps to work, you need to provide access to the Gimlet API. Y
 - Set `GIMLET_SERVER` to https://gimletd.<<yourcompany.com>>
 - Set `GIMLET_TOKEN` to a Gimlet API key
 
-To create a Gimlet API key navigate to *Profile* > *Create a new user* in Gimlet and add a user for this integration.
+To create a Gimlet API key navigate to _Profile_ > _Create a new user_ in Gimlet and add a user for this integration.
 
 ![Step 2 screenshot](https://images.tango.us/public/screenshot_f01e4201-f15b-4562-8201-4230c685169f.png?crop=focalpoint&fit=crop&fp-x=0.4961&fp-y=0.8102&fp-z=1.2375&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=3840%3A1960)
 
@@ -247,13 +249,13 @@ CI will call the Gimlet API, and Gimlet will make a gitops based deployment of y
 ```
 Deploying..
 Deployment ID is: ff11eb64-2f94-49c3-ac07-e9274735096c
-👉 Request (ff11eb64-2f94-49c3-ac07-e9274735096c) is new 
+👉 Request (ff11eb64-2f94-49c3-ac07-e9274735096c) is new
 	⏳ The release is not processed yet...
-👉 Request (ff11eb64-2f94-49c3-ac07-e9274735096c) is processed 
+👉 Request (ff11eb64-2f94-49c3-ac07-e9274735096c) is processed
 	📖 demo-app -> staging, gitops hash 176da9babbd7647fc68f3c5268a86a1d5fc6669a, status is NotReconciled
-👉 Request (ff11eb64-2f94-49c3-ac07-e9274735096c) is processed 
+👉 Request (ff11eb64-2f94-49c3-ac07-e9274735096c) is processed
 	📖 demo-app -> staging, gitops hash 176da9babbd7647fc68f3c5268a86a1d5fc6669a, status is DependencyNotReady
-👉 Request (ff11eb64-2f94-49c3-ac07-e9274735096c) is processed 
+👉 Request (ff11eb64-2f94-49c3-ac07-e9274735096c) is processed
 	📖 demo-app -> staging, gitops hash 176da9babbd7647fc68f3c5268a86a1d5fc6669a, status is ReconciliationSucceeded
 ```
 

@@ -9,7 +9,7 @@ In this guide, you will learn how to set up preview environments with Gimlet's m
 
 ## Gimlet environments recap
 
-The Gimlet environment manifest file is a declarative format to configure which Helm chart, what chart version, and what parameters should be deployed to an environment. 
+The Gimlet environment manifest file is a declarative format to configure which Helm chart, what chart version, and what parameters should be deployed to an environment.
 
 ```yaml
 # .gimlet/staging.yaml
@@ -140,12 +140,6 @@ For all other possibilities, please refer to the [Gimlet manifest reference](/do
 
 If you deploy preview apps with dynamic names, like with the branch name in the app name, you can use Gimlet's cleanup policies to clean them up once you don't need them anymore.
 
-{% callout type="warning" title="Configure Gimletd for cleaning up" %}
-This feature works only if you [enabled the Github integration](/docs/gimletd-configuration-reference#github-integration) in GimletD.
-{% /callout %}
-
-### Cleanup policy
-
 ```diff
 # .gimlet/preview.yaml
 app: myapp-{{ .BRANCH | sanitizeDNSName }}
@@ -171,8 +165,9 @@ values:
   gitSha: "{{ .SHA }}"
 ```
 
-The above snippet has a cleanup section that is triggered 
-- on the `branchDeleted` event, 
+The above snippet has a cleanup section that is triggered
+
+- on the `branchDeleted` event,
 - if the branch that is deleted matches the `feature/*` pattern.
 
 Once the policy triggers, it deletes applications that are matching the `myapp-{{ .BRANCH | sanitizeDNSName }}` pattern.
@@ -183,8 +178,6 @@ All three fields are mandatory.
 
 Please note that only the `{{ .BRANCH }}` variable is available for the `branchDeleted` event.
 
-At the time of deletion the shipped artifacts and their extensive 
+At the time of deletion the shipped artifacts and their extensive
 variable set is not available, only the branch name is known that got deleted.
 {% /callout %}
-
-

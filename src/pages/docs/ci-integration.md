@@ -10,6 +10,7 @@ Gimlet assumes the gitops deployment tasks from your CI pipeline and runs them i
 Gimlet is able to perform the gitops deployment tasks centrally, as once you added the Gimlet deploy step in your CI workflow, CI passes a large chunk of metadata (called the Gimlet artifact) to the Gimlet API, so Gimlet knows everything about the commit to deploy it.
 
 There are two modes of operation in Gimlet's CI integration:
+
 - you can use it as a deploy API. You can keep organizing your CI pipelines as you desire and call Gimlet's deploy API whenever you need to perform a gitops operation.
 - or you can use Gimlet as a release manager. This mode of operation you use CI only to build your software, then delegate deploy actions to Gimlet's policy engine.
 
@@ -40,36 +41,36 @@ jobs:
     name: 👷 Build
     runs-on: ubuntu-latest
     steps:
-    - name: ⬇️ Check out
-      uses: actions/checkout@v1
-      with:
-        fetch-depth: 1
-    - name: 🐋 Set up Docker Buildx
-      uses: docker/setup-buildx-action@v1
-    - name: Login to GitHub Container Registry
-      uses: docker/login-action@v1
-      with:
-        registry: ghcr.io
-        username: ${{ github.repository_owner }}
-        password: ${{ secrets.PAT }}
-    - name: 🐋 Build and push docker image
-      uses: docker/build-push-action@v2
-      with:
-        context: .
-        file: Dockerfile
-        platforms: linux/amd64
-        push: true
-        tags: |
-          ghcr.io/gimlet-io/demo-app:${{ github.sha }}
-    - name: 🚀 Deploy / Staging
-      uses: gimlet-io/gimlet-artifact-shipper-action@v0.8.0
-      with:
-        DEPLOY: "true"
-        ENV: "staging"
-        APP: "demo-app"
-      env:
-        GIMLET_SERVER: ${{ secrets.GIMLET_SERVER }}
-        GIMLET_TOKEN: ${{ secrets.GIMLET_TOKEN }}
+      - name: ⬇️ Check out
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+      - name: 🐋 Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.PAT }}
+      - name: 🐋 Build and push docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: Dockerfile
+          platforms: linux/amd64
+          push: true
+          tags: |
+            ghcr.io/gimlet-io/demo-app:${{ github.sha }}
+      - name: 🚀 Deploy / Staging
+        uses: gimlet-io/gimlet-artifact-shipper-action@v0.8.0
+        with:
+          DEPLOY: 'true'
+          ENV: 'staging'
+          APP: 'demo-app'
+        env:
+          GIMLET_SERVER: ${{ secrets.GIMLET_SERVER }}
+          GIMLET_TOKEN: ${{ secrets.GIMLET_TOKEN }}
 ```
 
 ### Integrate CircleCI
@@ -96,9 +97,9 @@ workflows:
           name: 🚀 Deploy / Staging
           context:
             - Gimlet
-          deploy: "true"
-          env: "staging"
-          app: "demo-app"
+          deploy: 'true'
+          env: 'staging'
+          app: 'demo-app'
           requires:
             - build_docker
 ```
@@ -112,7 +113,7 @@ For the CI deploy steps to work, you need to provide access to the Gimlet API. Y
 - Set `GIMLET_SERVER` to https://gimletd.<<yourcompany.com>>
 - Set `GIMLET_TOKEN` to a Gimlet API key
 
-To create a Gimlet API key navigate to *Profile* > *Create a new user* in Gimlet and add a user for this integration.
+To create a Gimlet API key navigate to _Profile_ > _Create a new user_ in Gimlet and add a user for this integration.
 
 ![Step 2 screenshot](https://images.tango.us/public/screenshot_f01e4201-f15b-4562-8201-4230c685169f.png?crop=focalpoint&fit=crop&fp-x=0.4961&fp-y=0.8102&fp-z=1.2375&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=3840%3A1960)
 
@@ -125,13 +126,13 @@ CI will call the Gimlet API, and Gimlet will make a gitops based deployment of y
 ```
 Deploying..
 Deployment ID is: ff11eb64-2f94-49c3-ac07-e9274735096c
-👉 Request (ff11eb64-2f94-49c3-ac07-e9274735096c) is new 
+👉 Request (ff11eb64-2f94-49c3-ac07-e9274735096c) is new
 	⏳ The release is not processed yet...
-👉 Request (ff11eb64-2f94-49c3-ac07-e9274735096c) is processed 
+👉 Request (ff11eb64-2f94-49c3-ac07-e9274735096c) is processed
 	📖 demo-app -> staging, gitops hash 176da9babbd7647fc68f3c5268a86a1d5fc6669a, status is NotReconciled
-👉 Request (ff11eb64-2f94-49c3-ac07-e9274735096c) is processed 
+👉 Request (ff11eb64-2f94-49c3-ac07-e9274735096c) is processed
 	📖 demo-app -> staging, gitops hash 176da9babbd7647fc68f3c5268a86a1d5fc6669a, status is DependencyNotReady
-👉 Request (ff11eb64-2f94-49c3-ac07-e9274735096c) is processed 
+👉 Request (ff11eb64-2f94-49c3-ac07-e9274735096c) is processed
 	📖 demo-app -> staging, gitops hash 176da9babbd7647fc68f3c5268a86a1d5fc6669a, status is ReconciliationSucceeded
 ```
 
@@ -220,6 +221,7 @@ values:
     host: myapp.staging.mycompany.com
     tlsEnabled: true
 ```
+
 {% callout title="Full set of supported policies" %}
 For a full set of supported policies, head over to the [Gimlet manifest reference](/docs/gimlet-manifest-reference#policy-based-releases) page.
 {% /callout %}

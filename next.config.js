@@ -22,6 +22,11 @@ const redirects = {
   async redirects() {
     return [
       {
+        source: '/concepts/components',
+        destination: '/docs/concepts',
+        permanent: false,
+      },
+      {
         source: '/signup',
         destination: 'https://accounts.gimlet.io/signup/',
         permanent: false,
@@ -47,7 +52,6 @@ const redirects = {
         destination: '/concepts/gitops-conventions',
         permanent: true,
       },
-
       {
         source: '/concepts/onechart-concepts/',
         destination: '/docs/onechart-reference',
@@ -56,6 +60,21 @@ const redirects = {
       {
         source: '/concepts/onechart-concepts',
         destination: '/docs/onechart-reference',
+        permanent: true,
+      },
+      {
+        source: '/onechart/getting-started',
+        destination: '/docs/onechart-reference',
+        permanent: true,
+      },
+      {
+        source: '/onechart/getting-started/',
+        destination: '/docs/onechart-reference',
+        permanent: true,
+      },
+      {
+        source: '/docs/gimlet-agent-configuration-reference',
+        destination: '/docs/gimlet-configuration-reference',
         permanent: true,
       },
     ];
