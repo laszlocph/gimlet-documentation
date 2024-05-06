@@ -1,0 +1,18 @@
+app: gimlet-documentation-preview
+env: classic-river
+preview: true
+namespace: default
+chart:
+  name: https://github.com/gimlet-io/onechart.git?branch=simplified-schema&path=/charts/onechart/
+values:
+  gitRepository: gimlet-io/gimlet-documentation
+  gitSha: '{{ .SHA }}'
+  image:
+    registry: builtInRegistry
+    repository: 127.0.0.1:32447/gimlet-documentation-preview
+    strategy: buildpacks
+    tag: '{{ .SHA }}'
+  ingress:
+    host: gimlet-documentation-preview.gimlet.app
+  resources:
+    ignoreLimits: true
