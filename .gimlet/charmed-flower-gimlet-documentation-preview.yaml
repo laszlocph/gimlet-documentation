@@ -1,0 +1,14 @@
+app: gimlet-documentation-preview
+env: charmed-flower
+preview: true
+namespace: default
+chart:
+  name: https://github.com/gimlet-io/onechart.git?branch=simplified-schema&path=/charts/onechart/
+values:
+  containerPort: 80
+  image:
+    registry: builtInRegistry
+    repository: nginx
+    strategy: static
+    tag: 1.19.3
+  replicas: 1
