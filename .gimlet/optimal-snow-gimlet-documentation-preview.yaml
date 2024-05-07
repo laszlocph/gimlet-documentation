@@ -12,7 +12,7 @@ values:
     git checkout {{ .BRANCH }}
     npm install
     npm run build
-  builtAssets: build/
+  builtAssets: out/
   gitCloneUrl: https://github.com/laszlocph/gimlet-documentation.git
   gitRepository: laszlocph/gimlet-documentation
   gitSha: '{{ .SHA }}'
