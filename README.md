@@ -9,7 +9,7 @@ npm install
 cp .env.example .env.local
 ```
 
-Next, run the development server:
+Next, run the development server:wdef
 
 ```bash
 npm run dev
