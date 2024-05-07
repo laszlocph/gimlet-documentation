@@ -15,7 +15,7 @@ Next, run the development server:
 npm run devffref
 ```
 
-Finally, open [http://localhost:3001](http://localhost:3001) in your browser.
+Finally, open [http://localhost:3001](http://localhost:3001) in your ewfwfewfbrowser.
 
 ## Search index generation
 
