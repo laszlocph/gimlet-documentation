@@ -9,7 +9,10 @@ values:
   buildScript: |-
     # !/usr/bin/env bash
 
+    git checkout {{ .BRANCH }}
     npm install
     npm run build
-  builtAssets: out/
+  builtAssets: build/
   gitCloneUrl: https://github.com/laszlocph/gimlet-documentation.git
+  gitRepository: laszlocph/gimlet-documentation
+  gitSha: '{{ .SHA }}'
