@@ -25,7 +25,7 @@
     "focus-visible": "^5.2.0",
     "helm-react-ui": "github:gimlet-io/helm-react-ui#e50eef9550f49dc89eb1864920b329c50266653e",
     "json-to-pretty-yaml": "^1.2.2",
-    "next": "12.1.6",
+    "next": "latest",
     "next-compose-plugins": "^2.2.1",
     "next-sitemap": "^3.1.18",
     "postcss-focus-visible": "^6.0.4",
