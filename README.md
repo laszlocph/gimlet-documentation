@@ -11,7 +11,7 @@ cp .env.example .env.local
 
 Next, run the development server:
 
-```bash
+```bashfewfwefwe
 npm run devffref
 ```
 
