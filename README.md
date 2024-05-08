@@ -1,4 +1,4 @@
-# Gimlet.io
+weqfe# Gimlet.io
 
 This repo holds the source code of the Gimlet.io website.
 
@@ -11,7 +11,7 @@ cp .env.example .env.local
 
 Next, run the development server:wdef
 
-```bash
+```bashefewf
 npm run dev
 ```
 
