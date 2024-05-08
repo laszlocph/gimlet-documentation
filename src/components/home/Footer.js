@@ -48,7 +48,7 @@ export function Footer() {
                     {items.map((item) => (
                       <li key={item.href}>
                         <Link href={item.href}>
-                          <a className="flex items-center hover:text-zinc-900 dark:hover:text-zinc-300">
+                          <span className="flex items-center hover:text-zinc-900 dark:hover:text-zinc-300">
                             {item.logo && (
                               <div className="mr-1 cursor-pointer">
                                 {item.logo}
@@ -57,7 +57,7 @@ export function Footer() {
                             <div>
                               {item.title}
                             </div>
-                          </a>
+                          </span>
                         </Link>
                       </li>
                     ))}
@@ -69,11 +69,11 @@ export function Footer() {
         </div>
         <div className="mt-16 pt-10">
           <Link href="/">
-            <a className="block lg:w-auto">
+            <span className="block lg:w-auto">
               <span className="sr-only">Home page</span>
               <img src="/logo2.svg" alt="Gimlet" className='h-8 sm:h-10 w-auto block dark:hidden' />
               <img src="/logo-dark.svg" alt="Gimlet" className='h-8 sm:h-10 w-auto hidden dark:block' />
-            </a>
+            </span>
           </Link>
         </div>
       </div>

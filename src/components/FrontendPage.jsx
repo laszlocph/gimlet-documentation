@@ -32,11 +32,9 @@ export function FrontendPage() {
         <nav className="mx-auto flex max-w-6xl items-center justify-between p-4" aria-label="Global">
           <div className="flex lg:flex-1">
             <Link href="/">
-              <a>
-                <span className="sr-only">Home page</span>
-                <img src="/logo2.svg" alt="Gimlet" className='h-10 sm:h-12 inline dark:hidden' />
-                <img src="/logo-dark.svg" alt="Gimlet" className='h-10 sm:h-12 inline hidden dark:inline' />
-              </a>
+              <span className="sr-only">Home page</span>
+              <img src="/logo2.svg" alt="Gimlet" className='h-10 sm:h-12 inline dark:hidden' />
+              <img src="/logo-dark.svg" alt="Gimlet" className='h-10 sm:h-12 inline hidden dark:inline' />
             </Link>
             <button className="text-zinc-900 dark:text-white text-xl font-bold whitespace-nowrap ml-10">
               <Dropdown />

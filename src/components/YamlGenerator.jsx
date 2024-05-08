@@ -120,10 +120,10 @@ helm template my-release onechart/${chart.name} -f values.yaml`
       </div>
       <div className="text-center pt-12 sm:pt-16">
       <Link href={"/?ref="+ref}>
-        <a>
+        <span>
           <span className="sr-only">Home page</span>
           <img src="/logo.svg" alt="Gimlet" className='h-10 sm:h-16 inline' />
-        </a>
+        </span>
       </Link>
       </div>
       <div className="mx-auto p-2 sm:p-4 lg:p-6">
