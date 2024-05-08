@@ -3,19 +3,22 @@ env: charmed-flower
 preview: true
 namespace: default
 chart:
-  name: https://github.com/gimlet-io/onechart.git?branch=simplified-schema&path=/charts/static-site/
+  name: >-
+    https://github.com/gimlet-io/onechart.git?branch=simplified-schema&path=/charts/onechart/
 values:
-  buildImage: node:latest
-  buildScript: |-
-    # !/usr/bin/env bash
-
-    npm install
-    npm run build
-  builtAssets: out/
+  image:
+    repository: 127.0.0.1:32447/{{ .APP }}
+    tag: '{{ .SHA }}'
+    dockerfile: Dockerfile
+    strategy: dockerfile
+    registry: builtInRegistry
   gitBranch: '{{ .BRANCH }}'
   gitCloneUrl: https://github.com/gimlet-io/gimlet-documentation.git
   gitRepository: gimlet-io/gimlet-documentation
   gitSha: '{{ .SHA }}'
+  resources:
+    ignoreLimits: true
+  containerPort: 3000
   ingress:
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt
