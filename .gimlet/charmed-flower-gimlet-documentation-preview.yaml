@@ -1,0 +1,24 @@
+app: gimlet-documentation-preview
+env: charmed-flower
+preview: true
+namespace: default
+chart:
+  name: https://github.com/gimlet-io/onechart.git?branch=simplified-schema&path=/charts/static-site/
+values:
+  buildImage: node:latest
+  buildScript: |-
+    # !/usr/bin/env bash
+
+    npm install
+    npm run build
+  builtAssets: out/
+  gitBranch: '{{ .BRANCH }}'
+  gitCloneUrl: https://github.com/gimlet-io/gimlet-documentation.git
+  gitRepository: gimlet-io/gimlet-documentation
+  gitSha: '{{ .SHA }}'
+  ingress:
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt
+      kubernetes.io/ingress.class: nginx
+    host: gimlet-documentation-preview.gimlet.io
+    tlsEnabled: true
