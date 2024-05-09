@@ -10,7 +10,7 @@ cp .env.example .env.local
 ```ewfgwefe
 
 Next, run the development server:
-
+erwgregreger
 ```bash
 npm run dev
 ```
