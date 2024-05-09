@@ -2,7 +2,7 @@
 
 This repo holds the source code of the Gimlet.io website.ssss
 
-## Getting started
+## Getting startedsss
 sssssss
 ```bashssss
 npm installgrgrddwwddwfewfewfw
