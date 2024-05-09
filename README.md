@@ -7,7 +7,7 @@ This repo holds the source code of the Gimlet.io website.
 ```bash
 npm install
 cp .env.example .env.local
-```
+```ewfgwefe
 
 Next, run the development server:
 
