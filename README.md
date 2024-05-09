@@ -11,7 +11,7 @@ cp .env.example .env.local
 fdsfdsfsd
 Next, run the development server:
 erwgregreger
-```bash
+```bashdwdwd
 npm run dev
 ```
 
