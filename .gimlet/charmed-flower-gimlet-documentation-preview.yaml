@@ -7,11 +7,11 @@ chart:
     https://github.com/gimlet-io/onechart.git?branch=simplified-schema&path=/charts/onechart/
 values:
   image:
-    repository: 127.0.0.1:32447/{{ .APP }}
+    repository: ghcr.io/laszlocph/{{ .APP }}
     tag: '{{ .SHA }}'
     dockerfile: Dockerfile
     strategy: dockerfile
-    registry: builtInRegistry
+    registry: ghcrRegistry
   gitBranch: '{{ .BRANCH }}'
   gitCloneUrl: https://github.com/gimlet-io/gimlet-documentation.git
   gitRepository: gimlet-io/gimlet-documentation
