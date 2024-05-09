@@ -10,7 +10,7 @@ values:
   gitRepository: laszlocph/gimlet-documentation
   gitSha: '{{ .SHA }}'
   image:
-    dockerfile: Dockerfile1
+    dockerfile: Dockerfile
     registry: builtInRegistry
     repository: 127.0.0.1:32447/{{ .APP }}
     strategy: dockerfile
