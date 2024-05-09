@@ -19,6 +19,8 @@ values:
   resources:
     ignoreLimits: true
   containerPort: 3000
+  imagePullSecrets:
+  - gimlet-documentation-docker-build-ghcrregistry-pullsecret
   ingress:
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt
