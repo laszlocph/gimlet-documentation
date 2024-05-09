@@ -1,0 +1,21 @@
+app: gimlet-documentation
+env: optimal-snow
+namespace: default
+chart:
+  name: https://github.com/gimlet-io/onechart.git?branch=simplified-schema&path=/charts/onechart/
+values:
+  containerPort: 80
+  gitRepository: laszlocph/gimlet-documentation
+  gitSha: '{{ .SHA }}'
+  image:
+    registry: builtInRegistry
+    repository: nginx
+    strategy: static
+    tag: 1.19.3
+  ingress:
+    host: laszlocph-gimlet-documentation-1135960c.gimlet.app
+    tlsEnabled: true
+  replicas: 1
+  resources:
+    ignoreLimits: true
+  vars: {}
