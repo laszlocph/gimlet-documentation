@@ -1,0 +1,36 @@
+app: gimlet-documentation-preview
+env: optimal-snow
+preview: true
+namespace: default
+chart:
+  name: https://github.com/gimlet-io/onechart.git?branch=simplified-schema&path=/charts/onechart/
+values:
+  containerPort: 3000
+  gitBranch: '{{ .BRANCH }}'
+  gitRepository: laszlocph/gimlet-documentation
+  gitSha: '{{ .SHA }}'
+  image:
+    dockerfile: Dockerfile
+    registry: builtInRegistry
+    repository: 127.0.0.1:32447/{{ .APP }}
+    strategy: dockerfile
+    tag: '{{ .SHA }}'
+  ingress:
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt
+      kubernetes.io/ingress.class: nginx
+    host: gimlet-documentation-preview.gimlet.app
+    tlsEnabled: true
+  replicas: 1
+  resources:
+    ignore: false
+    ignoreLimits: true
+    limits:
+      cpu: 200m
+      memory: 200Mi
+    requests:
+      cpu: 200m
+      memory: 200Mi
+  sealedSecrets: {}
+  vars: {}
+  volumes: []
