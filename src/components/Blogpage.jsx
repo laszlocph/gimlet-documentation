@@ -47,10 +47,8 @@ export function BlogPage({ children, className, tabs, code, language, title, sec
     <>
     <div className="text-center pt-12 sm:pt-16">
       <Link href={"/?ref="+ref}>
-        <a>
-          <span className="sr-only">Home page</span>
-          <img src="/logo.svg" alt="Gimlet" className='h-10 sm:h-16 inline' />
-        </a>
+        <span className="sr-only">Home page</span>
+        <img src="/logo.svg" alt="Gimlet" className='h-10 sm:h-16 inline' />
       </Link>
     </div>
     <div className="relative mx-auto flex max-w-8xl justify-center sm:px-2 xl:grid xl:grid-cols-12 gap-16 pb-32">
@@ -165,7 +163,7 @@ export function BlogPage({ children, className, tabs, code, language, title, sec
                     <li key={section.id}>
                       <h3>
                         <Link href={`#${section.id}`}>
-                          <a
+                          <span
                             className={clsx(
                               isActive(section)
                                 ? 'text-sky-500'
@@ -173,7 +171,7 @@ export function BlogPage({ children, className, tabs, code, language, title, sec
                             )}
                           >
                             {section.title}
-                          </a>
+                          </span>
                         </Link>
                       </h3>
                       {section.children.length > 0 && (
@@ -181,7 +179,7 @@ export function BlogPage({ children, className, tabs, code, language, title, sec
                           {section.children.map((subSection) => (
                             <li key={subSection.id}>
                               <Link href={`#${subSection.id}`}>
-                                <a
+                                <span
                                   className={
                                     isActive(subSection)
                                       ? 'text-sky-500'
@@ -189,7 +187,7 @@ export function BlogPage({ children, className, tabs, code, language, title, sec
                                   }
                                 >
                                   {subSection.title}
-                                </a>
+                                </span>
                               </Link>
                             </li>
                           ))}
@@ -222,23 +220,23 @@ function Backpack() {
             <ul className="pl-5 list-disc text-red-500">
                 <li key='k3d'>
                   <Link href="/blog/running-kubernetes-on-your-laptop-with-k3d?ref=starterpack">
-                    <a className='hover:text-red-600 dark:hover:text-slate-300'>
+                    <span className='hover:text-red-600 dark:hover:text-slate-300'>
                       Running Kubernetes on your laptop with K3d
-                    </a>
+                    </span>
                   </Link>
                 </li>
                 <li key='hetzner'>
                   <Link href="/blog/a-6-37-mo-single-node-kubernetes-cluster-on-hetzner-with-vitobotta-hetzner-k3s?ref=starterpack">
-                    <a className='hover:text-red-600 dark:hover:text-slate-300'>
+                    <span className='hover:text-red-600 dark:hover:text-slate-300'>
                       A 6.37 EUR a month single node Kubernetes cluster on Hetzner
-                    </a>
+                    </span>
                   </Link>
                 </li>
                 <li key='k3d'>
                   <Link href="/blog/budget-managed-kubernetes-options?ref=starterpack">
-                    <a className='hover:text-red-600 dark:hover:text-slate-300'>
+                    <span className='hover:text-red-600 dark:hover:text-slate-300'>
                       Budget managed Kubernetes options
-                    </a>
+                    </span>
                   </Link>
                 </li>
             </ul>
@@ -248,30 +246,30 @@ function Backpack() {
             <ul className="pl-5 text-red-500 list-disc">
                 <li key='k3d'>
                   <Link href="/k8s-yaml-generator?ref=starterpack">
-                    <a className='hover:text-red-600 dark:hover:text-slate-300'>
+                    <span className='hover:text-red-600 dark:hover:text-slate-300'>
                       YAML Generator
-                    </a>
+                    </span>
                   </Link>
                 </li>
                 <li key='hetzner'>
                   <Link href="/concepts/the-sane-gitops-guide?ref=starterpack">
-                    <a className='hover:text-red-600 dark:hover:text-slate-300'>
+                    <span className='hover:text-red-600 dark:hover:text-slate-300'>
                       The SANE gitops guide
-                    </a>
+                    </span>
                   </Link>
                 </li>
                 <li key='k3d'>
                   <Link href="/concepts/the-sane-helm-guide?ref=starterpack">
-                    <a className='hover:text-red-600 dark:hover:text-slate-300'>
+                    <span className='hover:text-red-600 dark:hover:text-slate-300'>
                       The SANE Helm guide
-                    </a>
+                    </span>
                   </Link>
                 </li>
                 <li key='static'>
                   <Link href="/blog/hosting-static-sites-on-kubernetes?ref=starterpack">
-                    <a className='hover:text-red-600 dark:hover:text-slate-300'>
+                    <span className='hover:text-red-600 dark:hover:text-slate-300'>
                       Hosting static sites on kubernetes
-                    </a>
+                    </span>
                   </Link>
                 </li>
             </ul>

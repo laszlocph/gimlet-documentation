@@ -31,12 +31,10 @@ export function AIPage() {
       <div className="relative isolate pt-12">
         <nav className="mx-auto flex max-w-6xl items-center justify-between p-4" aria-label="Global">
           <div className="flex lg:flex-1">
-            <Link href="/">
-              <a>
-                <span className="sr-only">Home page</span>
-                <img src="/logo-dark.svg" alt="Gimlet" className='h-10 sm:h-12 inline' />
-              </a>
-            </Link>
+            <a>
+              <span className="sr-only">Home page</span>
+              <img src="/logo-dark.svg" alt="Gimlet" className='h-10 sm:h-12 inline' />
+            </a>
             <button className="text-white text-xl font-bold whitespace-nowrap ml-10">
               <Dropdown />
             </button>

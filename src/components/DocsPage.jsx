@@ -33,11 +33,11 @@ export function DocsPage({ children, tableOfContents, className, tabs, code, lan
         <div className="hidden lg:relative lg:block lg:flex-none">
           <div className="-ml-0.5 py-16 pl-0.5">
             <Link href={"/?ref="+ref}>
-              <a className="block lg:w-auto">
+              <span className="block lg:w-auto">
                 <span className="sr-only">Home page</span>
                 <img src="/logo2.svg" alt="Gimlet" className='h-8 sm:h-10 w-auto block dark:hidden' />
                 <img src="/logo-dark.svg" alt="Gimlet" className='h-8 sm:h-10 w-auto hidden dark:block' />
-              </a>
+              </span>
             </Link>
             <Navigation
               navigation={navigation}
@@ -72,9 +72,9 @@ export function DocsPage({ children, tableOfContents, className, tabs, code, lan
                 </dt>
                 <dd className="mt-1">
                   <Link href={previousPage.href}>
-                    <a className="text-base font-semibold text-zinc-500 hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300">
+                    <span className="text-base font-semibold text-zinc-500 hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300">
                       &larr; {previousPage.title}
-                    </a>
+                    </span>
                   </Link>
                 </dd>
               </div>
@@ -86,9 +86,9 @@ export function DocsPage({ children, tableOfContents, className, tabs, code, lan
                 </dt>
                 <dd className="mt-1">
                   <Link href={nextPage.href}>
-                    <a className="text-base font-semibold text-zinc-500 hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300">
+                    <span className="text-base font-semibold text-zinc-500 hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300">
                       {nextPage.title} &rarr;
-                    </a>
+                    </span>
                   </Link>
                 </dd>
               </div>
@@ -110,7 +110,7 @@ export function DocsPage({ children, tableOfContents, className, tabs, code, lan
                     <li key={section.id}>
                       <h3>
                         <Link href={`#${section.id}`}>
-                          <a
+                          <span
                             className={clsx(
                               isActive(section)
                                 ? 'text-sky-500'
@@ -118,7 +118,7 @@ export function DocsPage({ children, tableOfContents, className, tabs, code, lan
                             )}
                           >
                             {section.title}
-                          </a>
+                          </span>
                         </Link>
                       </h3>
                       {section.children.length > 0 && (
@@ -126,7 +126,7 @@ export function DocsPage({ children, tableOfContents, className, tabs, code, lan
                           {section.children.map((subSection) => (
                             <li key={subSection.id}>
                               <Link href={`#${subSection.id}`}>
-                                <a
+                                <span
                                   className={
                                     isActive(subSection)
                                       ? 'text-sky-500'
@@ -134,7 +134,7 @@ export function DocsPage({ children, tableOfContents, className, tabs, code, lan
                                   }
                                 >
                                   {subSection.title}
-                                </a>
+                                </span>
                               </Link>
                             </li>
                           ))}

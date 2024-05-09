@@ -31,13 +31,11 @@ export function BackendPage() {
       <div className="relative isolate pt-12">
         <nav className="mx-auto flex max-w-6xl items-center justify-between p-4" aria-label="Global">
           <div className="flex lg:flex-1">
-            <Link href="/">
-              <a>
-                <span className="sr-only">Home page</span>
-                <img src="/logo2.svg" alt="Gimlet" className='h-10 sm:h-12 inline dark:hidden' />
-                <img src="/logo-dark.svg" alt="Gimlet" className='h-10 sm:h-12 inline hidden dark:inline' />
-              </a>
-            </Link>
+            <a href="/">
+              <span className="sr-only">Home page</span>
+              <img src="/logo2.svg" alt="Gimlet" className='h-10 sm:h-12 inline dark:hidden' />
+              <img src="/logo-dark.svg" alt="Gimlet" className='h-10 sm:h-12 inline hidden dark:inline' />
+            </a>
             <button className="text-zinc-900 dark:text-white text-xl font-bold whitespace-nowrap ml-10">
               <Dropdown />
             </button>
