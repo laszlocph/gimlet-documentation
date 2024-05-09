@@ -39,11 +39,11 @@ export function Header({ navigation }) {
       </div>
       <div className="relative flex flex-grow basis-0 items-center">
         <Link href="/">
-          <a className="block lg:w-auto">
+          <span className="block lg:w-auto">
             <span className="sr-only">Home page</span>
             <img src="/logo2.svg" alt="Gimlet" className='h-8 sm:h-10 w-auto block dark:hidden' />
             <img src="/logo-dark.svg" alt="Gimlet" className='h-8 sm:h-10 w-auto hidden dark:block' />
-          </a>
+          </span>
         </Link>
       </div>
      

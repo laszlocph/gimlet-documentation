@@ -11,11 +11,11 @@ It is built on the de-facto tools of the ecosystem - Helm and Flux - and provide
 
 {% link-grid %}
 
-{% link-grid-link title="Installation" icon="installation" href="/docs/installation" description="Step-by-step guides to set up Gimlet in your environment." /%}
+{% link-grid-link title="Installation" icon="installation" href="/docs/overview/quick-start" description="Step-by-step guides to set up Gimlet in your environment." /%}
 
 {% link-grid-link title="Core Concepts" icon="presets" href="/concepts/components" description="Key topics and concepts at a fairly high level that provide useful information and explanation when you are starting out." /%}
 
-{% link-grid-link title="Manifest reference" icon="theming" href="/docs/gimlet-manifest-reference" description="A comprehensive list of all the options you have to configure your service for deployment." /%}
+{% link-grid-link title="Manifest reference" icon="theming" href="/docs/reference" description="A comprehensive list of all the options you have to configure your service for deployment." /%}
 
 {% /link-grid %}
 

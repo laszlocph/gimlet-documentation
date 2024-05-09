@@ -86,10 +86,8 @@ export function PricingPage() {
       <div>
         <div className="text-center pt-12 sm:pt-16">
           <Link href="/">
-            <a>
-              <span className="sr-only">Home page</span>
-              <img src="/logo.svg" alt="Gimlet" className='h-10 sm:h-16 inline' />
-            </a>
+            <span className="sr-only">Home page</span>
+            <img src="/logo.svg" alt="Gimlet" className='h-10 sm:h-16 inline' />
           </Link>
         </div>
         <div className="mx-auto max-w-8xl pt-12 px-4 sm:px-6 lg:px-8">
