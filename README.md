@@ -9,7 +9,7 @@ npm installgrgrddwwddwfewfewfwssssewfewfwdwdwd
 cp .env.example .env.localregergefewfewffefefe
 ```sswswswkoodewdwewdwdwefefef
 fewfewffefewfewdededddededwdwdwdefewfrewfefefefefefefgregreg
-Next, run the development server:gerregre
+Next, run the development server:gerregreefef
 fwefewgergregfwefewfewwdwdwdefwefew
 ```bashewfewfewf
 npm run devefrefer
