@@ -20,7 +20,7 @@ values:
     ignoreLimits: true
   containerPort: 3000
   imagePullSecrets:
-  - {{ .APP }}-ghcrregistry-pullsecret
+  - '{{ .APP }}-ghcrregistry-pullsecret'
   ingress:
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt
