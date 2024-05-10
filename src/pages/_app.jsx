@@ -47,6 +47,7 @@ const navigation = [
       { title: 'Infrastructure management', href: '/docs/deployment-settings/infrastructure-management' },
       { title: 'Chat notifications', href: '/docs/deployment-settings/chat-notifications' },
       { title: 'Resource Usage', href: '/docs/deployment-settings/resource-usage' },
+      { title: 'Volumes', href: '/docs/kubernetes-resources/volumes' },
     ],
   },
   {
@@ -74,7 +75,6 @@ const navigation = [
       { title: 'Kubernetes essentials', href: '/docs/kubernetes-resources/kubernetes-essentials' },
       { title: 'Troubleshooting', href: '/docs/kubernetes-resources/troubleshooting' },
       { title: 'Gimlet manifest reference', href: '/docs/kubernetes-resources/gimlet-manifest-reference' },
-      { title: 'Volumes', href: '/docs/kubernetes-resources/volumes' },
     ],
   },
   {

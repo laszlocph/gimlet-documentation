@@ -1,21 +1,22 @@
 # Build With Gimlet
 
-You can build any source code with Gimlet.
+You can build any source code with Gimlet, depending on what kind of template you're using within Gimlet. These are the two options:
 
-There are four options:
-- Static tag images
-- Dynamic tag images
-- Automatic image building
-- Build from Dockerfile
-## Static tag images
+- **Web Application Template:** Deploy multiple containers. Several image configuration options are available:
+    - Static tag images
+    - Dynamic tag images
+    - Automatic image building
+    - Build from Dockerfile
+- **Static Website Template:** Static website hosted in an Nginx container. No image options are available.
 
-Selecting specific tags for images - usually with a semantic tag, such as `1.0.0`.
-## Dynamic tag images
+## Helm Charts
 
-Dynamic tags are appropriate for images that are pushed to a registry as the final step of a continuous integration pipeline. A few examples of dynamic tags are `latest` and `stable`.
-## Automatic image building
+Templates in Gimlet are made with Helm charts under the hood.
 
-Automatic building is useful for deployments of source code not managed in git repositories.
-## Build from Dockerfile
+Helm is a Kubernetes package manager that are used to simplify deployments. Helm charts consist of manifests and templates. Manifests define resources and the values that are applied in the templates of the Helm chart.
 
-To build an image from a Dockerfile, it's necessary to have one located in the code's source.
+When you deploy your application with Gimlet, it generates a Helm chart using OneChart, an open-source generic use chart made by us. You can find out more about OneChart in the [reference]() or its [GitHub page](https://github.com/gimlet-io/onechart).
+
+## Custom Templates
+
+You're also able to add custom charts as templates...

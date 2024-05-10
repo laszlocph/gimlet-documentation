@@ -31,7 +31,11 @@ Services enable network communication to the pods.
 
 ### Namespaces
 
-Namespaces are used to divide resources between multiple users. You can assign namespaces to deployments for resource allocation when you use Gimlet.
+Namespaces are used to divide resources between multiple users, teams, architecture, or any entity you can think of. You can assign namespaces to deployments for resource allocation when you use Gimlet.
+
+**Namespace best practices:**
+- Use `default` when you use Gimlet,
+- Or ask your cluster admin if you already have a namespace, and use it in Gimlet.
 
 ### Volumes
 

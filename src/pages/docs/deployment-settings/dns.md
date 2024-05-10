@@ -1,40 +1,20 @@
 # DNS
 
-You can use DNS settings to make your application available on the internet. This tutorial will help you with the whole process.
-## Setting Up an Nginx Ingress Controller
+DNS configuration is necessary when you're trying to access your application from a custom domain. In this documentation, you'll see how to configure a domain for such use cases.
 
-Nginx on a publicly accessible IP address is responsible for routing incoming traffic to your application. It's an open-source tool and it's supported by Gimlet.
+Preview deployments come with an app.gimlet.io URL, so DNS configuration isn't necessary in this case.
 
-In this section, you are going to use Gimlet to install Nginx.
+// we need to describe how to configure Gimlet managed persistent clusters with domain providers
 
-Navigate to the "Environments" tab to get started.
-### Convert to a gitops environment to be able to make changes
+## Ingress
 
-Gimlet generated a dummy environment at first start. You used that environment so far to deploy applications.
+Ingress is the incoming traffic to your application. Ingress controllers are responsible for routing HTTP and HTTPS traffic incoming to, and between containers running in a cluster.
 
-You are going to continue using this dummy environment in this tutorial and set up Nginx in it. But before you can make changes to this built-in environment, you have to convert it to a gitops environment. Practically, you have to push the "convert it to a gitops environment" link in the notice below.
+You can configure Nginx with Gimlet to route traffic incoming to your application, as seen below:
 
-It will create two repositories on Github, one for application manifests, and one for infrastructure manifests. It is a good time to inspect the contents now. These are the manifests that are synchronized to Kubernetes on every commit.
+![screenshot from platform for ingress things](/src/pages/docs/screenshots/gimlet-documentation-ingress-settings.png)
 
-![](https://gimlet.io/convert.png)
-
-### Enabling Nginx
-
-Enable Nginx under Environments > Brief-Pond > Infrastructure components tab > Nginx > Config tab, where brief-pond is the name of my dummy environment.
-
-Set your domain name in the "Host" field.
-
-Gimlet is using wildcard DNS entries to simplify DNS management, so if you dedicate every subdomain under `test.mycompany.com` to Gimlet, set this value in the Host field.
-
-I don't have a real domain name for this tutorial, so I will set the value `tbd` for now and will update to a nip.io domain later in this tutorial once the external IP of Nginx is known.
-
-![](https://gimlet.io/nginx-tbd.png)
-
-Save the configuration with the "Save componentes" button. Inspect and merge the pull request that is created by Gimlet.
-
-Once you merge the pull request, the changes will be synchronized to your cluster. You can track the synchronization status on the bottom toolbar.
-
-![](https://gimlet.io/gitops-status.png)
+Host name is the the custom domain that you'd like to use to access the application. Turn on the HTTPS toggle to get HTTPS certification for secure connection. Gimlet uses Let's Encrypt to generate HTTPS certification.
 
 ### Locate the external IP address
 
