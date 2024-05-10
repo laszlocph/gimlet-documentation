@@ -8,7 +8,7 @@ sssssss
 npm installgrgrddwwddwfewfewfwssss
 cp .env.example .env.localregergefewfewffefefe
 ```sswswswkoodewdwe
-fewfewffefewfewdededddededwdwdwdefewfrew
+fewfewffefewfewdededddededwdwdwdefewfrewfefefe
 Next, run the development server:gerregre
 fwefewgergregfwefewfewwdwdwdefwefew
 ```bashewfewfewf
