@@ -10,7 +10,7 @@ cp .env.example .env.localregergefewfewffefefe
 ```sswswswkoodewdwewdwdwefefef
 fewfewffefewfewdededddededwdwdwdefewfrewfefefefefefefgregreg
 Next, run the development server:gerregreefef
-fwefewgergregfwefewfewwdwdwdefwefew
+fwefewgergregfwefewfewwdwdwdefwefewfeffee
 ```bashewfewfewf
 npm run devefreferedede
 ```
