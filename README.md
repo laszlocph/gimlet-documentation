@@ -12,7 +12,7 @@ fewfewffefewfewdededddededwdwdwdefewfrewfefefefefefefgregreg
 Next, run the development server:gerregreefef
 fwefewgergregfwefewfewwdwdwdefwefew
 ```bashewfewfewf
-npm run devefrefer
+npm run devefreferedede
 ```
 
 Finally, open [http://localhost:3001](http://localhost:3001) in your browser.
