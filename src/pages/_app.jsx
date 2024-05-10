@@ -47,7 +47,7 @@ const navigation = [
       { title: 'Infrastructure management', href: '/docs/deployment-settings/infrastructure-management' },
       { title: 'Chat notifications', href: '/docs/deployment-settings/chat-notifications' },
       { title: 'Resource Usage', href: '/docs/deployment-settings/resource-usage' },
-      { title: 'Volumes', href: '/docs/kubernetes-resources/volumes' },
+      { title: 'Volumes', href: '/docs/deployment-settings/volumes' },
     ],
   },
   {
