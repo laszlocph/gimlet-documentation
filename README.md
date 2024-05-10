@@ -5,7 +5,7 @@ This repo holds the source code of the Gimlet.io website.ssss
 ## Getting startedsss
 sssssss
 ```bashssssfewfewfwdwdw
-npm installgrgrddwwddwfewfewfwssssewfewfwdwdwdded
+npm installgrgrddwwddwfewfewfwssssewfewfwdwdwddedewfwefew
 cp .env.example .env.localregergefewfewffefefe
 ```sswswswkoodewdwewdwdwefefef
 fewfewffefewfewdededddededwdwdwdefewfrewfefefefefefefgregregedded
