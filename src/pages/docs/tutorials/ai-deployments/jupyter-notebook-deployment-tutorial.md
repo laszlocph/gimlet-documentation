@@ -2,48 +2,47 @@
 
 ## Step 1: Getting Started with Gimlet
 
-Log in to Gimlet by connecting your GitHub or GitLab account. If all is well, you should see the repositories you have access to in Gimlet.
+Log in to Gimlet by connecting your GitHub or GitLab account. If all is well, you should see the repositories you have access to in Gimlet. Select the repository that contains the Jupyter Notebook you'd like to deploy.
 
 ## Step 2: Create Deployment Settings
 
-There are several methods to deploy. The most straightforward approach involves using a Dockerfile.
+Select Web Application template to be able to pick Dockerfile deployment as a container image option. If you don't have a Dockerfile in your repository, you can use the example below.
 
-For this deployment method, ensure you have a Dockerfile available in your repository.
+```
+FROM python:3.11.9-slim
 
-Choose the repository in Gimlet and opt for the Dockerfile deployment option as shown below:
+WORKDIR /app
 
-![screenshot](https://www.phind.com/agent?cache=cluuxl8sy000eii084alq04xz)
+RUN apt-get update && apt-get install -y gcc python3-dev nodejs npm
 
-Define the Dockerfile's path and the port that is exposed, which should match the port specified in the Dockerfile, as shown below.
+COPY . /app/
 
-Confirm your settings by clicking save.
+RUN pip install jupyterlab
+RUN jupyter lab build --dev-build=True --minimize=True
+
+EXPOSE 8080
+
+CMD ["jupyter", "lab", "--port", "8080", "--allow-root"]
+```
+
+After selecting the container image method, select the ghcrRegistry option under Registry settings, and add change the Port to `8080`.
+
+Edit the domain to your liking, but Cloud users should get a domain generated. You can opt to turn on HTTPS for secure connection with the toggle.
 
 ## Step 3: Deploy
 
-Once the deployment settings are saved, a `Deploy` button will appear on the repository's page in Gimlet.
+Once the deployment settings are specified, you can deploy by clicking the `Deploy` button.
 
-Proceed with the deployment by clicking the `Deploy` button.
+The log should show up, and when deployment turns successful, you'll see confetti raining in Gimlet's browser tab, and a link will appear where you'll be able to access the Jupyter Notebook.
 
 ## Step 4: Accessing Jupyter Notebook
 
-After the deployment is completed, your Jupyter Notebook is not yet accessible from the internet. You'll need to use port-forward first.  
-  
-Generate a port-forward command using the button seen below.  
-  
-[image]  
-  
-Copy and paste the command in your terminal. The command should look like this:  
-  
-```  
-port-forward command  
-```  
-  
-Now enter the URL in your browser. To log into your Jupyter Notebook, you’ll need a token, which you can obtain by running the command below:  
-  
-```  
-k logs deploy/jupiter-lab-sample | grep token  
-```  
-  
+To log into your Jupyter Notebook, you’ll need a token, which you can obtain by running the command below:
+
+```
+k logs deploy/jupiter-lab-sample | grep token
+```
+
 The output should be the token. Copy and paste it in the notebook’s login screen.
 
 ## Use Cases
