@@ -45,6 +45,8 @@ k logs deploy/jupiter-lab-sample | grep token
 
 The output should be the token. Copy and paste it in the notebook’s login screen.
 
+![](/src/pages/docs/screenshots/jupyter-notebook-documentation/jupyter-notebook-auth-screen.png)
+
 ## Use Cases
 
 If you're working with Jupyter Notebooks, Gimlet offers several advantages:
