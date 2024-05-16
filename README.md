@@ -20,7 +20,7 @@ Finally, open [http://localhost:3001](http://localhost:3001) in your browser.
 ## Search index generation
 
 We use Algolia for search.
-
+fef
 ### Automatic index generation
 
 A Github Action runs daily that regenerates the search index from the live gimlet.io site.
