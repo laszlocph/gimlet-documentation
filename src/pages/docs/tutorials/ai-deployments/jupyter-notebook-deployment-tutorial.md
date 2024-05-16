@@ -25,7 +25,9 @@ EXPOSE 8080
 CMD ["jupyter", "lab", "--port", "8080", "--allow-root"]
 ```
 
-After selecting the container image method, select the ghcrRegistry option under Registry settings, and add change the Port to `8080`.
+After selecting the container image method, select the ghcrRegistry option under Registry settings, and add change the Port to `8080`. You can see the settings in the screenshot below:
+
+![Jupyter Notebook deployment settings with Dockerfile and port set.](/src/pages/docs/screenshots/jupyter-notebook-deployment/jupyter-notebook-deployment-config.png)
 
 Edit the domain to your liking, but Cloud users should get a domain generated. You can opt to turn on HTTPS for secure connection with the toggle.
 
@@ -34,6 +36,8 @@ Edit the domain to your liking, but Cloud users should get a domain generated. Y
 Once the deployment settings are specified, you can deploy by clicking the `Deploy` button.
 
 The log should show up, and when deployment turns successful, you'll see confetti raining in Gimlet's browser tab, and a link will appear where you'll be able to access the Jupyter Notebook.
+
+![Repository preview of Jupyter Notebook in Gimlet with a link where a user can access the deployed notebook.](/src/pages/docs/screenshots/jupyter-notebook-deployment/jupyter-notebook-repository-view.png)
 
 ## Step 4: Accessing Jupyter Notebook
 
