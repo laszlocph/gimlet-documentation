@@ -1,5 +1,5 @@
 app: gimlet-documentation-preview
-env: charmed-flower
+env: driven-shape
 preview: true
 namespace: default
 chart:
@@ -25,5 +25,5 @@ values:
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt
       kubernetes.io/ingress.class: nginx
-    host: gimlet-documentation-preview.gimlet.io
+    host: gimlet-documentation-preview.gimlet.app
     tlsEnabled: true
