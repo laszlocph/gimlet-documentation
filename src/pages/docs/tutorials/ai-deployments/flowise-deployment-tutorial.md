@@ -45,7 +45,9 @@ EXPOSE 3000
 CMD [ "pnpm", "start" ]
 ```
 
-In Gimlet, now select the ghcrRegistry option under Registry settings, and set Port value to 3000. Then specify a custom domain if you'd like to use one, but Gimlet generates a URL where you'll be able to access Flowise after deployment.
+In Gimlet, now select the ghcrRegistry option under Registry settings, and set Port value to 3000. Then specify a custom domain if you'd like to use one, but Gimlet generates a URL where you'll be able to access Flowise after deployment. See config settings in the screenshot below:
+
+![Flowise deployment settings in Gimlet. ghcrRegistry is selected, and the exposed port value is set at 3000](/src/pages/docs/screenshots/flowise-deployment/flowise-deployment-configuration.png)
 
 **Note:** make sure the name is lowercase, otherwise Kaniko won't be able to build the image.
 
@@ -58,6 +60,12 @@ Keep in mind that Flowise is a fairly large container, so it'll take a few minut
 ## Step 4: Try Flowise in Your Browser
 
 Navigate back to the repository preview by clicking the repo's name. In the card's Address section there will be a clickable link, which you can open to access and share Flowise.
+
+![Flowise repository card in the repo preview. The card has a clickable link under the Address section.](/src/pages/docs/screenshots/flowise-deployment/flowise-repository-view-card.png)
+
+Here's how Flowise should look in your browser:
+
+![Flowise UI after successful deployment.](/src/pages/docs/screenshots/flowise-deployment/flowise-screenshot.png)
 
 ## Use Cases
 
