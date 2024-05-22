@@ -1,61 +1,33 @@
-# How to Deploy React Applications Using Gimlet
+# How to Deploy React Applications With Gimlet
 
 ## Step 1: Getting Started with Gimlet
-Sign in with your GitHub or GitLab account.
 
-![screenshot of sign in page]()
+Log in to Gimlet by connecting your GitHub or GitLab account. You should see your repositories listed, but if you can't find the repo where your React app is located, you can use the search bar to find it.
 
-After signing in, your repositories should be listed on Gimlet. Pick the repository of the React application.
+Click the Import button to add the repository to Gimlet, then click the I am done importing button to save added repositories.
 
-![screenshot of repo selection page]()
+## Step 2: Deploy React
 
-## Step 2: Start Deploying React Application
+Click on the repository's card to select the repo. Click the New deployment button.
 
-Click `Add deployment configuration`.
+To deploy a React frontend, just select Static Site template. Check if any of the settings are needed to be changed.
 
-![screenshot with add deployment configuration button]()
+You can use a custom domain, but Gimlet will generate one for you, which you can use to share your app after deployment.
 
-Choose the static site template and enter the repo’s URL.
+If everything looks alright, click the Deploy button. Gimlet will build the application and run it as an Nginx container.
 
-`Built assets` should be `/out`, and make sure that your `next.config.js` file has `output: 'export'` set.
+## Step 3: Check Out Your React App
 
-![screenshot with template selection and config settings]()
-
-Click save.
-
-## Step 3: Deploy
-
-When configuration is ready, Gimlet will create a pull request in the repository of the React app. Merge the pull request to continue.
-
-![screenshot of GitHub pull request]()
-
-Navigate back to Gimlet, and click the deploy button to start the deployment process. When status turns `running`, your React application should be deployed successfully.
-
-![screenshot of status page]()
-
-## Step 4: Port-Forwarding
-
-At this point, your application still won’t be accessible on the internet. Follow the steps of port-forwarding below.
-
-Click on the `Port-forward command` button next to the app’s address to generate the command.
-
-Run it in the terminal. Here’s an example:
-
-```
-// deploy is an example namespace
-// nextjs-app is the example app’s name
-kubectl port-forward deploy/nextjs-app 10081:80
-```
-
-Enter the application’s address in your browser, and copy paste `:10081` at the end. Press Enter. Now you should be able to access your React application.
+After a successful deployment, a clickable link should appear next to deployment status. Click it to open it in your browser.
 
 ## Use Cases
 
-Here are a few examples of why hosting your React application with Gimlet is for you:
+Here are a few examples of why you should host your React frontend with Gimlet:
 
-- **OAuth & HTTPS/SSL:** Add social authentication and secure your React application.   
-- **Branch previews:** Test changes and share previews on real environments.
-- **Advanced deployment capabilities:** Roll back to previous versions and automate deployments. 
+- **Social Login:** Share your React application with social login and HTTPS certification added.
+- **Branch previews:** Test and share changes in your frontend with preview deployments.
+- **Advanced deployment capabilities:** Roll back and automated deployments of new changes.
+
 ## Try Now
 
-> Try Gimlet now with your React application for free here.
+> Try Gimlet now with your React application for free.
