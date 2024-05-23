@@ -1,5 +1,7 @@
 # How to Deploy React Applications With Gimlet
 
+React is a JavaScript library for building user interfaces, enabling developers to create dynamic and interactive web applications efficiently.
+
 ## Step 1: Getting Started with Gimlet
 
 Log in to Gimlet by connecting your GitHub or GitLab account. You should see your repositories listed, but if you can't find the repo where your React app is located, you can use the search bar to find it.

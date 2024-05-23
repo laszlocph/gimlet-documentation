@@ -1,6 +1,6 @@
 # How to Deploy Remix Frontends with Gimlet
 
-Remix is a Javascript framework for frontend applications. You can deploy it with Gimlet.
+Remix is a React framework for frontend applications. You can deploy it with Gimlet.
 
 ## Step 1: Getting Started with Gimlet
 
