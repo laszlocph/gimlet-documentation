@@ -16,7 +16,7 @@ Navigate to deployment settings by clicking the card of the repository.
 
 You can deploy the Next.js frontend as a Web Application Template, and you'll need to select the Dockerfile container image option.
 
-Select the GitHub Container Registry option in the Registry section.
+Select the Gimlet Registry option in the Registry section.
 
 Make sure that your `next.config.js` file has `output: 'export'` set, and that the exposed port matches the value specified in the Dockerfile.
 

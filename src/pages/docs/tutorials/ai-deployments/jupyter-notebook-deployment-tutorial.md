@@ -25,7 +25,7 @@ EXPOSE 8080
 CMD ["jupyter", "lab", "--port", "8080", "--allow-root"]
 ```
 
-After selecting the container image method, select the ghcrRegistry option under Registry settings, and add change the Port to `8080`. You can see the settings in the screenshot below:
+After selecting the container image method, select the Gimlet Registry option under Registry settings, and add change the Port to `8080`. You can see the settings in the screenshot below:
 
 ![Jupyter Notebook deployment settings with Dockerfile and port set.](/src/pages/docs/screenshots/jupyter-notebook-deployment/jupyter-notebook-deployment-config.png)
 

@@ -12,7 +12,7 @@ After saving the repository, you can navigate to deployment settings by clicking
 
 In the deployment settings, you should select Web Application template to be able to choose the Dockerfile container image option. You'll need a Dockerfile in the repository for this method, and if you don't have one, you can get it from [here](https://github.com/YoucefGuichi/django-sample-app/blob/main/Dockerfile).
 
-Select the GitHub Container Registry option under Registry settings, and make sure that the exposed port is corresponding to the one specified in the Dockerfile.
+Select the Gimlet Registry option under Registry settings, and make sure that the exposed port is corresponding to the one specified in the Dockerfile.
 
 You can add a custom domain if you use one, but Gimlet will generate a URL for you, which you can share with your teammates after a successful deployment.
 

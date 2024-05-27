@@ -34,7 +34,7 @@ HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
 ENTRYPOINT ["streamlit", "run", "st.py", "--server.port=8501", "--server.address=0.0.0.0"]
 ```
 
-In the platform, set ghcrRegistry for the Registry opton, and enter 8501 for the port value to expose it.
+In the platform, set Gimlet Registry for the Registry opton, and enter 8501 for the port value to expose it.
 
 ![Streamlit repository preview after successful deployment on Gimlet.](/src/pages/docs/screenshots/streamlit-deployment/gimlet-streamlit-configuration.png)
 

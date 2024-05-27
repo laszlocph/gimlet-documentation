@@ -45,7 +45,7 @@ EXPOSE 3000
 CMD [ "pnpm", "start" ]
 ```
 
-In Gimlet, now select the ghcrRegistry option under Registry settings, and set Port value to 3000. Then specify a custom domain if you'd like to use one, but Gimlet generates a URL where you'll be able to access Flowise after deployment. See config settings in the screenshot below:
+In Gimlet, now select the Gimlet Registry option under Registry settings, and set Port value to 3000. Then specify a custom domain if you'd like to use one, but Gimlet generates a URL where you'll be able to access Flowise after deployment. See config settings in the screenshot below:
 
 ![Flowise deployment settings in Gimlet. ghcrRegistry is selected, and the exposed port value is set at 3000](/src/pages/docs/screenshots/flowise-deployment/flowise-deployment-configuration.png)
 

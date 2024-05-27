@@ -16,7 +16,7 @@ Pick the Web Application deployment template, so you're able to select the Docke
 
 If you don't have a Dockerfile, you can get yours [here](https://github.com/gerimate/remix-gimlet-test/blob/main/Dockerfile).
 
-Select the GitHub Container Registry option under Registry settings, and make sure that the port is the same as the `server.js` file specifies.
+Select the Gimlet Registry option under Registry settings, and make sure that the port is the same as the `server.js` file specifies.
 
 You can also set a custom domain if you use one, but Gimlet will generate one for you.
 

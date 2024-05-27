@@ -10,7 +10,7 @@ Connect your GitHub or GitLab account with Gimlet. The repositories you have acc
 
 In order to be able to deploy Dockerfiles, you'll need to select the Web Application template, and then the Dockerfile container image setting.
 
-Then select ghcrRegistry option under Registry settings if you use GitHub. This way Gimlet will be able to use the Dockerfile to build the deployable application.
+Then select Gimlet Registry option under Registry settings if you use GitHub. This way Gimlet will be able to use the Dockerfile to build the deployable application.
 
 You can configure several settings, but one thing you need to check in the Dockerfile if a port is defined to be exposed. If there's such value, make sure it's also specified in Gimlet.
 

@@ -14,6 +14,8 @@ When you have the Dockerfile ready in the git repository, pick the Web Applicati
 
 ![screenshot]()
 
+Under Registry settings, select the Gimlet Registry option.
+
 Set up deployment configuration settings according to the Dockerfile's content, especially port if the Dockerfile defines any exposed ports. If you use a custom domain, enter it.
 
 ## Step 3: Deploy
