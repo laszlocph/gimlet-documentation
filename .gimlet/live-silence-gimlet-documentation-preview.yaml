@@ -1,5 +1,5 @@
 app: gimlet-documentation-preview
-env: driven-shape
+env: live-silence
 preview: true
 namespace: default
 chart:
@@ -7,11 +7,11 @@ chart:
     https://github.com/gimlet-io/onechart.git?branch=simplified-schema&path=/charts/onechart/
 values:
   image:
-    repository: ghcr.io/laszlocph/{{ .APP }}
+    repository: registry.gimlet:30003/gimlet-ioumrzojdj/{{ .APP }}
     tag: '{{ .SHA }}'
     dockerfile: Dockerfile
     strategy: dockerfile
-    registry: ghcrRegistry
+    registry: customRegistry
   gitBranch: '{{ .BRANCH }}'
   gitCloneUrl: https://github.com/gimlet-io/gimlet-documentation.git
   gitRepository: gimlet-io/gimlet-documentation
