@@ -6,9 +6,9 @@ Remix is a React framework for frontend applications. You can deploy it with Gim
 
 Log in to Gimlet and connect your GitHub or GitLab account. You should see the repositories you have access to listed. If you can't see the repo that contains the Remix application, use the search bar to find it.
 
-Click the Import button next to the repository, then the I'm done importing button to add the repo in Gimlet.
+Click the Import button next to the repository, then the I am done importing button to add the repo in Gimlet.
 
-Select the repository by clicking on its card.
+Select the repository by clicking on its card to navigate to deployment settings.
 
 ## Step 2: Remix Deployment Configuration
 

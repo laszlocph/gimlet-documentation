@@ -6,7 +6,13 @@ Flowise is a drag & drop style AI workflow builder. Here's how you can deploy it
 
 Log in to Gimlet by connecting your GitHub or GitLab account. You should see your repositories listed. Use the search bar if the repository with Flowise won't appear.
 
+After connecting your account, the repositories available should be listed in Gimlet. If you can't find the repo with Flowise in it, you can use the search bar to find it.
+
+Click the Import button next to the repository. You can add multiple repos the same way. When all the repositories are selected, click I am done importing to save the added repos.
+
 ## Step 2: Deployment Settings for Flowise
+
+Click on the repo's card to navigate to deployment settings.
 
 For Flowise's deployment, you can select the Web Application template, and then pick the Dockerfile image container option. In case you don't have a Dockerfile, you can use Flowise' official one, as seen below, or fork the [repository](https://github.com/FlowiseAI/Flowise/).
 

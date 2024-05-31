@@ -6,7 +6,11 @@ vLLM is an inference for large language models (LLMs) that you can deploy with G
 
 Connect your GitHub or GitLab account with Gimlet. Upon successful connection, your repositories should be listed. If you can't find the vLLM repo, you can use the search bar to find it.
 
+Click the Import button next to the repository of vLLM, and then click the I am done importing button to save the added repositories.
+
 ## Step 2: Deployment Settings for vLLM
+
+Navigate to deployment settings by clicking the card of the repository.
 
 There are multiple ways to deploy with Gimlet. For vLLM deployments select the Web Application template, then choose Static image tag for container image.
 
@@ -19,15 +23,11 @@ You can see it all in the screenshot below:
 
 ![Deployment settings for vLLM, an inference for large language models (LLMs).](/src/pages/docs/screenshots/vllm-deployment/vllm-deployment-configuration.png)
 
-## Step 3: Deploy
+## Step 3: Deploy vLLM
 
 When you're ready with making the changes in settings, you can click the Deploy button.
 
 The image should be pulled, and the container should be started in a few moments.
-
-## Step 4: Try vLLM
-
-???
 
 ## Use Cases
 
