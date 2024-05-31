@@ -1,9 +1,9 @@
 export function Dropdown() {
   return (
     <div className="group relative dropdown cursor-pointer">
-      <a className="flex items-center text-center gap-1 text-white font-bold rounded">
+      <a className="flex items-center text-center gap-1 rounded">
         Use cases
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="3" stroke="currentColor" className="w-3 h-3 group-hover:-rotate-180 transition-all duration-300 ease-in-out">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="3" stroke="currentColor" className="w-3 h-3 group-hover:-rotate-180 transition-all ease-in-out">
           <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
         </svg>
       </a>

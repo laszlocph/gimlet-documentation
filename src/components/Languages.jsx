@@ -24,7 +24,7 @@ export default function Languages() {
     <div className="mx-auto max-w-4xl px-6 lg:px-8">
       <div className="mx-auto lg:text-center">
         <p className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-          Deploy your favorite stack
+          Get started with your favorite stack
         </p>
       </div>
       <div className="mx-auto mt-16 sm:mt-20 lg:mt-24 lg:max-w-none space-y-16">

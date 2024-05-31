@@ -29,8 +29,7 @@ export function DeployButton() {
         Fathom.trackGoal('VEWYCI7B', 0)
         window.location.replace("/accounts/githubAuth")
       }}
-      className="flex items-center justify-center bg-green-700 hover:bg-green-600 ring-1 ring-green-800 text-white font-medium py-2 px-4 rounded-full text-lg">
-      Start deploying
+      className="inline-block rounded-lg bg-indigo-600 px-8 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700">      Start deploying
     </a>
   )
 }
@@ -41,8 +40,8 @@ export function DemoButton() {
       href="https://calendly.com/laszlo-i6m4/30min"
       rel="noreferrer" target="_blank"
       // onClick={() => Fathom.trackGoal('B', 0)}
-      className="flex items-center justify-center bg-neutral-700 hover:bg-neutral-600 ring-1 ring-neutral-500 text-white font-medium py-2 px-4 rounded-full text-lg">
-      Book a demo
+      className="mt-4 md:mt-0 inline-block rounded-lg px-4 py-1.5 text-base font-semibold leading-7 text-gray-900 dark:text-gray-300 ring-1 ring-gray-900/10 dark:ring-gray-100/10 hover:ring-gray-900/20 dark:hover:bg-neutral-800">
+              Book a demo
     </a>
   )
 }
