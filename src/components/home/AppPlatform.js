@@ -75,14 +75,14 @@ export function AppPlatform() {
           <svg
             fill="none"
             aria-hidden="true"
-            className="text-slate-400 dark:text-stone-400 h-8 w-8"
+            className="text-slate-400 dark:text-neutral-400 h-8 w-8"
             stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"
           >
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <path d="M7 16a4.6 4.4 0 0 1 0 -9a5 4.5 0 0 1 11 2h1a3.5 3.5 0 0 1 0 7h-12"></path>
             <line x1="5" y1="20" x2="19" y2="20"></line>
           </svg>
-          <h2 className="mt-2 font-semibold text-slate-500 dark:text-stone-400">
+          <h2 className="mt-2 font-semibold text-slate-500 dark:text-neutral-400">
             Application Platform
           </h2>
           <p className="mt-4 text-3xl sm:text-4xl text-slate-900 font-extrabold tracking-tight dark:text-slate-50">

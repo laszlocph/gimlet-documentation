@@ -7,43 +7,43 @@ import How from './How'
 import { CTA } from './CallToAction'
 import { Dropdown } from './Usecases'
 
-export function HomePage({ className, tabs, code, language }) {
+export function HomePage() {
   return (
     <>
       <div className="relative isolate pt-12">
         <nav className="mx-auto flex max-w-6xl items-center justify-between p-4" aria-label="Global">
-          <div className="flex lg:flex-1">
+          <div className="flex lg:flex-1 space-x-6">
             <Link href="/">
               <span className="sr-only">Home page</span>
               <img src="/logo2.svg" alt="Gimlet" className='h-10 sm:h-12 inline dark:hidden' />
               <img src="/logo-dark.svg" alt="Gimlet" className='h-10 sm:h-12 inline hidden dark:inline' />
             </Link>
-            <button className="text-zinc-900 dark:text-white text-xl font-bold whitespace-nowrap ml-10">
+            <button className="text-neutral-900 dark:text-white text-xl font-bold whitespace-nowrap">
               <Dropdown />
             </button>
             <button>
-              <a href="/pricing" className="text-zinc-900 dark:text-white text-xl font-bold ml-4">
+              <a href="/pricing" className="text-neutral-900 dark:text-white text-xl font-bold">
                 Pricing
               </a>
             </button>
             <button>
-              <a href="/blog" className="text-zinc-900 dark:text-white text-xl font-bold ml-4">
+              <a href="/blog" className="text-neutral-900 dark:text-white text-xl font-bold">
                 Blog
               </a>
             </button>
             <button>
-              <a href="/docs" className="text-zinc-900 dark:text-white text-xl font-bold ml-4">
+              <a href="/docs" className="text-neutral-900 dark:text-white text-xl font-bold">
                 Docs
               </a>
             </button>
           </div>
           <div className="hidden sm:flex lg:flex-1 lg:justify-end gap-x-2">
-            <Link href="https://accounts.gimlet.io/signup">
-              <button className="text-zinc-900 dark:text-white font-bold py-2 px-4 rounded">
+            <Link href="/accounts/githubAuth">
+              <button className="text-neutral-900 dark:text-white font-bold py-2 px-4 rounded">
                 Sign up
               </button>
             </Link>
-            <Link href="https://accounts.gimlet.io">
+            <Link href="/accounts/githubAuth">
               <button className="bg-orange-400 hover:bg-orange-700 text-white font-semibold hover:text-white py-2 px-4 border border-orange-500 hover:border-transparent rounded">
                 Log in
               </button>
@@ -69,7 +69,7 @@ export function HomePage({ className, tabs, code, language }) {
           list={["Cross OAuth & TLS off your to-do list", "Auto-deployments, previews & rollbacks", "Every language supported", "Migrate from Gimlet anytime"]}
         />
       </div>
-      <div className="text-center px-2 md:px-16 py-4 lg:py-32 text-zinc-900 dark:text-zinc-200 text-2xl sm:text-3xl font-bold">
+      <div className="text-center px-2 md:px-16 py-4 lg:py-32 text-neutral-900 dark:text-neutral-200 text-2xl sm:text-3xl font-bold">
         <p>Get help, show support!</p>
         <p className="pt-8">Join our <a href="https://discord.com/invite/ZwQDxPkYzE" className="underline">{discordLogo} Discord</a> and star us on <a href="https://github.com/gimlet-io/gimlet" className="underline">{githubLogo}Github</a></p>
       </div>

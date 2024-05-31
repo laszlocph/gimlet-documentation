@@ -11,7 +11,7 @@ export function Gitops() {
           <svg
             fill="none"
             aria-hidden="true"
-            className="text-slate-400 dark:text-stone-400 h-8 w-8"
+            className="text-slate-400 dark:text-neutral-400 h-8 w-8"
             stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"
           >
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -24,7 +24,7 @@ export function Gitops() {
             <path d="M10.5 20.4l-6.9 -6.9c-.781 -.781 -.781 -2.219 0 -3l6.9 -6.9c.781 -.781 2.219 -.781 3 0l6.9 6.9c.781 .781 .781 2.219 0 3l-6.9 6.9c-.781 .781 -2.219 .781 -3 0z"></path>
 
           </svg>
-          <h2 className="mt-2 font-semibold text-slate-500 dark:text-stone-400">
+          <h2 className="mt-2 font-semibold text-slate-500 dark:text-neutral-400">
             Gitops
           </h2>
           <p className="mt-4 text-3xl sm:text-4xl text-slate-900 font-extrabold tracking-tight dark:text-slate-50">

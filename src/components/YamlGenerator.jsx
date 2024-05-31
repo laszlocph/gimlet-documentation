@@ -26,8 +26,8 @@ export function YamlGenerator() {
     { title: "Static sites", current: false, name: "static-site" },
     { title: "Cron job", current: false, name: "cron-job" }
   ]);
-  const selected = 'border-zinc-200 bg-white text-zinc-900 shadow-sm';
-  const notSelected = 'border-transparent text-zinc-700';
+  const selected = 'border-neutral-200 bg-white text-neutral-900 shadow-sm';
+  const notSelected = 'border-transparent text-neutral-700';
 
   useEffect(() => {
    const handleKeyDown = (event) => {
@@ -138,7 +138,7 @@ helm template my-release onechart/${chart.name} -f values.yaml`
         </header>
         <div className="mx-auto mb-16 max-w-8xl sm:px-6 lg:px-8">
           <div className="sm:align-center sm:flex sm:flex-col">
-            <div className="relative flex self-center rounded-lg bg-zinc-100 p-0.5">
+            <div className="relative flex self-center rounded-lg bg-neutral-100 p-0.5">
               {charts.map((chart) => (
                 <button
                   key={chart.name}

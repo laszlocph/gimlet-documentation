@@ -305,12 +305,12 @@ export function YamlAuthoring() {
           <svg
             fill="none"
             aria-hidden="true"
-            className="text-slate-400 dark:text-stone-400 h-8 w-8"
+            className="text-slate-400 dark:text-neutral-400 h-8 w-8"
             stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
           </svg>
-          <h2 className="mt-2 font-semibold text-slate-500 dark:text-stone-400">
+          <h2 className="mt-2 font-semibold text-slate-500 dark:text-neutral-400">
             Yaml Authoring
           </h2>
           <p className="mt-4 text-3xl sm:text-4xl text-slate-900 font-extrabold tracking-tight dark:text-slate-50">

@@ -34,7 +34,7 @@ const footerNav = [
 export function Footer() {
   return (
     <footer className="pb-16 text-sm leading-6">
-      <div className="max-w-7xl mx-auto divide-y divide-zinc-200 px-4 sm:px-6 md:px-8 dark:divide-zinc-700 text-gray-600 dark:text-gray-300">
+      <div className="max-w-7xl mx-auto divide-y divide-neutral-200 px-4 sm:px-6 md:px-8 dark:divide-neutral-700 text-gray-600 dark:text-gray-300">
         <div className="flex">
           {footerNav.map((sections) => (
             <div
@@ -43,12 +43,12 @@ export function Footer() {
             >
               {Object.entries(sections).map(([title, items]) => (
                 <div key={title} className="lg:flex-none lg:w-1/2">
-                  <h2 className="font-semibold text-zinc-900 dark:text-zinc-100">{title}</h2>
+                  <h2 className="font-semibold text-neutral-900 dark:text-neutral-100">{title}</h2>
                   <ul className="mt-3 space-y-2">
                     {items.map((item) => (
                       <li key={item.href}>
                         <Link href={item.href}>
-                          <span className="flex items-center hover:text-zinc-900 dark:hover:text-zinc-300">
+                          <span className="flex items-center hover:text-neutral-900 dark:hover:text-neutral-300">
                             {item.logo && (
                               <div className="mr-1 cursor-pointer">
                                 {item.logo}

@@ -36,28 +36,28 @@ export function FrontendPage() {
               <img src="/logo2.svg" alt="Gimlet" className='h-10 sm:h-12 inline dark:hidden' />
               <img src="/logo-dark.svg" alt="Gimlet" className='h-10 sm:h-12 inline hidden dark:inline' />
             </Link>
-            <button className="text-zinc-900 dark:text-white text-xl font-bold whitespace-nowrap ml-10">
+            <button className="text-neutral-900 dark:text-white text-xl font-bold whitespace-nowrap ml-10">
               <Dropdown />
             </button>
             <button>
-              <a href="/pricing" className="text-zinc-900 dark:text-white text-xl font-bold ml-4">
+              <a href="/pricing" className="text-neutral-900 dark:text-white text-xl font-bold ml-4">
                 Pricing
               </a>
             </button>
             <button>
-              <a href="/blog" className="text-zinc-900 dark:text-white text-xl font-bold ml-4">
+              <a href="/blog" className="text-neutral-900 dark:text-white text-xl font-bold ml-4">
                 Blog
               </a>
             </button>
             <button>
-              <a href="/docs" className="text-zinc-900 dark:text-white text-xl font-bold ml-4">
+              <a href="/docs" className="text-neutral-900 dark:text-white text-xl font-bold ml-4">
                 Docs
               </a>
             </button>
           </div>
           <div className="hidden sm:flex lg:flex-1 lg:justify-end gap-x-2">
             <Link href="https://accounts.gimlet.io/signup">
-              <button className="text-zinc-900 dark:text-white font-bold py-2 px-4 rounded">
+              <button className="text-neutral-900 dark:text-white font-bold py-2 px-4 rounded">
                 Sign up
               </button>
             </Link>
@@ -80,11 +80,11 @@ export function FrontendPage() {
       </div>
       <div className="py-16 sm:py-48 mx-auto max-w-3xl">
         <div className="px-6 py-32 lg:px-8">
-          <div className="text-base leading-7 text-zinc-900 dark:text-white space-y-8">
+          <div className="text-base leading-7 text-neutral-900 dark:text-white space-y-8">
             <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl text-center">
               Add Social Sign-In To Your Project Without Next Auth PhD
             </h1>
-            <p className="mt-6 text-lg leading-8 text-zinc-900 dark:text-white text-center">
+            <p className="mt-6 text-lg leading-8 text-neutral-900 dark:text-white text-center">
               Deploy frontend with social media platform integrations for user authentication.
             </p>
             {Object.entries(sections).map(([title, items]) => (
@@ -178,7 +178,7 @@ export function FrontendPage() {
           list={["Social sign-in to your app", "Next.js, React, Remix, you name it - you can deploy it", "One-time annual payment. No hidden fees and TOS traps", "Migrate from Gimlet anytime"]}
         />
       </div>
-      <div className="text-center px-2 md:px-16 py-4 lg:py-32 text-zinc-900 dark:text-zinc-200 text-2xl sm:text-3xl font-bold">
+      <div className="text-center px-2 md:px-16 py-4 lg:py-32 text-neutral-900 dark:text-neutral-200 text-2xl sm:text-3xl font-bold">
         <p>Get help, show support!</p>
         <p className="pt-8">Join our <a href="https://discord.com/invite/ZwQDxPkYzE" className="underline">{discordLogo} Discord</a> and star us on <a href="https://github.com/gimlet-io/gimlet" className="underline">{githubLogo}Github</a></p>
       </div>

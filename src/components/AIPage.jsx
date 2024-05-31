@@ -180,7 +180,7 @@ export function AIPage() {
           list={["Hugging Face, Streamlit, and other technologies are supported", "Lowered Kubernetes entry-point", "Migrate from Gimlet anytime"]}
         />
       </div>
-      <div className="text-center px-2 md:px-16 py-4 lg:py-32 text-zinc-200 text-2xl sm:text-3xl font-bold">
+      <div className="text-center px-2 md:px-16 py-4 lg:py-32 text-neutral-200 text-2xl sm:text-3xl font-bold">
         <p>Get help, show support!</p>
         <p className="pt-8">Join our <a href="https://discord.com/invite/ZwQDxPkYzE" className="underline">{discordLogo} Discord</a> and star us on <a href="https://github.com/gimlet-io/gimlet" className="underline">{githubLogo}Github</a></p>
       </div>

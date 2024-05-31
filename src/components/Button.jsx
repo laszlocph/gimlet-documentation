@@ -24,21 +24,13 @@ export function ButtonLink({ variant = 'primary', className, href, ...props }) {
 export function DeployButton() {
   return (
     <a
-      href="/docs/installation?ref=hero"
-      onClick={() => Fathom.trackGoal('VEWYCI7B', 0)}
+      href="#"
+      onClick={() => {
+        Fathom.trackGoal('VEWYCI7B', 0)
+        window.location.replace("/accounts/githubAuth")
+      }}
       className="flex items-center justify-center bg-green-700 hover:bg-green-600 ring-1 ring-green-800 text-white font-medium py-2 px-4 rounded-full text-lg">
       Start deploying
-    </a>
-  )
-}
-
-export function AppDownButton() {
-  return (
-    <a
-      href="#"
-      // onClick={() => Fathom.trackGoal('', 0)}
-      className="flex items-center justify-center bg-red-700 hover:bg-red-600 ring-1 ring-red-800 text-white font-medium py-2 px-4 rounded-full text-lg">
-      My app’s down
     </a>
   )
 }
@@ -46,7 +38,8 @@ export function AppDownButton() {
 export function DemoButton() {
   return (
     <a
-      href="#"
+      href="https://calendly.com/laszlo-i6m4/30min"
+      rel="noreferrer" target="_blank"
       // onClick={() => Fathom.trackGoal('B', 0)}
       className="flex items-center justify-center bg-neutral-700 hover:bg-neutral-600 ring-1 ring-neutral-500 text-white font-medium py-2 px-4 rounded-full text-lg">
       Book a demo
