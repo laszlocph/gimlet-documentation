@@ -36,7 +36,7 @@ const footerNav = [
 
 export function Footer() {
   return (
-    <footer className="pb-16 text-sm leading-6">
+    <footer className="py-16 text-sm leading-6">
       <div className="max-w-7xl mx-auto divide-y divide-neutral-200 px-4 sm:px-6 md:px-8 dark:divide-neutral-700 text-gray-600 dark:text-gray-300">
         <div className="flex">
           {footerNav.map((sections) => (
@@ -71,7 +71,7 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-16 pt-10">
+        <div className="mt-16">
           <Link href="/">
             <span className="block lg:w-auto">
               <span className="sr-only">Home page</span>

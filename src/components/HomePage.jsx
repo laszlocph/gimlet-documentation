@@ -26,7 +26,7 @@ export function HomePage() {
           list={["Cross OAuth & TLS off your to-do list", "Auto-deployments, previews & rollbacks", "Every language supported", "Migrate from Gimlet anytime"]}
         />
       </div>
-      <div className="bg-white dark:bg-neutral-700 pt-8">
+      <div className="bg-white dark:bg-neutral-700">
         <Footer />
       </div>
     </>

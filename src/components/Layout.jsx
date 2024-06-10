@@ -31,7 +31,9 @@ export function Layout({ children, title, navigation, tableOfContents, pageProps
 
   return (
     <>
-      <Header navigation={navigation} />
+      {!isYamlGeneratorPage &&
+        <Header navigation={navigation} />
+      }
 
       {isHomePage && <HomePage />}
       {isPricingPage && <PricingPage />}

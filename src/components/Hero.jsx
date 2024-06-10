@@ -28,7 +28,7 @@ export function Hero() {
                     Start deploying
                   </a>
                   <a
-                    href="/docs/"
+                    href="https://calendly.com/laszlo-i6m4/30min"
                     className="secondaryCtaButton !px-6 !py-3"
                     onClick={() => Fathom.trackGoal('VEWYCI7B', 0)}
                   >

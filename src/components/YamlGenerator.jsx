@@ -203,7 +203,6 @@ helm template my-release onechart/${chart.name} -f values.yaml`
             </div>
           </div>
           <div className="container max-w-5xl mx-auto dark:text-slate-50 py-32 font-medium text-xl">
-            <p className="">This is not magic.</p>
             <p className="pt-4">
               The YAML is generated with a Helm chart.<br />
               A Helm chart that you can also use on your terminal.
