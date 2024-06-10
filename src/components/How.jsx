@@ -35,10 +35,10 @@ export default function How() {
 
   return (
     <div className="mx-auto max-w-5xl px-6 lg:px-8">
-      <div className="mx-auto lg:text-center">
-        <p className="text-3xl mx-auto max-w-3xl font-bold tracking-tight text-white sm:text-4xl">
-          Add social login and TLS encryption to your project
-        </p>
+      <div className="mx-auto max-w-3xl">
+        <h3 className="subheading">
+          Add Github OAuth and TLS encryption to your project
+        </h3>
       </div>
       <div className="mx-auto mt-16 sm:mt-20 lg:mt-24 lg:max-w-none">
         <div className="grid max-w-xl grid-cols-1 gap-6 lg:max-w-none lg:grid-cols-3">

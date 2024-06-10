@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import Link from 'next/link'
 
-
 export function Header({ navigation }) {
   let [isScrolled, setIsScrolled] = useState(false)
   let router = useRouter()
@@ -26,9 +25,9 @@ export function Header({ navigation }) {
   return (
     <header
       className={clsx(
-        'sticky top-0 z-50 flex flex-wrap items-center justify-between bg-white px-4 py-5 shadow-md shadow-slate-900/5 transition duration-500 dark:shadow-none sm:px-6 lg:px-8, block lg:hidden',
+        'sticky top-0 z-50 max-w-8xl mx-auto flex flex-wrap items-center justify-between bg-white px-4 py-5 shadow-md shadow-slate-900/5 transition duration-500 dark:shadow-none sm:px-6 lg:px-8 block',
         {
-          'dark:bg-slate-900/95 dark:backdrop-blur dark:[@supports(backdrop-filter:blur(0))]:bg-slate-900/75':
+          'dark:bg-teal-900/50 dark:backdrop-blur dark:[@supports(backdrop-filter:blur(0))]:bg-teal-900/75':
             isScrolled,
           'dark:bg-transparent': !isScrolled,
         }
@@ -46,60 +45,64 @@ export function Header({ navigation }) {
           </span>
         </Link>
       </div>
-     
-      {/* <div className="-my-5 mr-6 sm:mr-8 md:mr-0">
+        
+      <div>
         { isDocsPage &&
         <Search />
         }
         { !isDocsPage &&
-        <ul className="hidden sm:flex space-x-8 text-slate-700 font-semibold text-lg dark:text-slate-200">
-          <li>
-            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/docs">Docs</a>
+        <ul className="hidden sm:flex space-x-8 font-semibold text-lg">
+          <li className='hover:text-teal-200'>
+            <Dropdown />
           </li>
-          <li>
-            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/pricing">Pricing</a>
+          <li className='hover:text-teal-200'>
+            <a href="/pricing">Pricing</a>
           </li>
-          <li>
-            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/events">Events</a>
+          <li className='hover:text-teal-200'>
+            <a href="/events">Events</a>
           </li>
-          <li>
-            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/blog">Blog</a>
+          <li className='hover:text-teal-200'>
+            <a href="/blog">Blog</a>
           </li>
-          <li className="hidden lg:block">
-            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="/k8s-yaml-generator">YAML Generator</a>
-          </li>
-          <li>
-            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="https://github.com/gimlet-io#jobs">Jobs</a>
+          <li className='hover:text-teal-200'>
+            <a href="/docs">Docs</a>
           </li>
         </ul>
         }
-      </div> */}
+      </div>
       
       <div className="relative flex basis-0 justify-end space-x-6 sm:space-x-8 md:flex-grow">
-       
-        {/* <ul className="hidden sm:flex items-center space-x-4 text-slate-700 font-semibold text-sm leading-6 dark:text-slate-200">
+        <ul className="hidden sm:flex items-center space-x-4">
           <li>
-            <a className="hover:text-orange-500 dark:hover:text-orange-400" href="https://accounts.gimlet.io/login/">Log in</a>
+            <a href="https://app.gimlet.io" className="secondaryCtaButton" rel="noreferrer" target="_blank">Log in</a>
           </li>
-        </ul> */}
-        
-        {/* <ThemeSelector className="relative z-10" /> */}
-        <a
-          href="https://github.com/gimlet-io/gimlet"
-          className="group flex slate-500"
-        >
-          <span className="sr-only">GitHub</span>
-          <svg
-            aria-hidden="true"
-            viewBox="0 0 16 16"
-            className="h-6 w-6 fill-slate-500 group-hover:fill-slate-500 dark:group-hover:fill-slate-300"
-          >
-            <path d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z" />
-          </svg>
-          <div className="hidden lg:block font-semibold text-gray-600 ml-1">gimlet-io/gimlet</div>
-        </a>        
-        
+          <li>
+            <a href="https://app.gimlet.io" className="ctaButton" rel="noreferrer" target="_blank">Signup</a>
+          </li>
+        </ul>        
       </div>
     </header>
+  )
+}
+
+function Dropdown() {
+  return (
+    <div className="group relative dropdown cursor-pointer">
+      <a className="flex items-center text-center gap-1 rounded">
+        Use cases
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="3" stroke="currentColor" className="w-3 h-3 group-hover:-rotate-180 transition-all ease-in-out">
+          <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+        </svg>
+      </a>
+      <div className="group-hover:block absolute hidden h-auto -right-1/2" id="headlessui-popover-panel-:r1h:" tabIndex="-1" data-headlessui-state="open">
+        <div className="my-4 dropdown-menu p-6 rounded-3xl backdrop-blur-3xl bg-neutral-900/30 ring-1 ring-white/10">
+          <ul className="top-0 w-48 text-base">
+            <li><a className="block px-2 py-2 hover:text-neutral-200 bg-[radial-gradient(ellipse_at_center_200px,_var(--tw-gradient-stops))] hover:from-teal-400" data-headlessui-state="open" href="/frontend">Frontend</a></li>
+            <li><a className="block px-2 py-2 hover:text-neutral-200 bg-[radial-gradient(ellipse_at_center_200px,_var(--tw-gradient-stops))] hover:from-teal-400" data-headlessui-state="open" href="/backend">Backend</a></li>
+            <li><a className="block px-2 py-2 hover:text-neutral-200 bg-[radial-gradient(ellipse_at_center_200px,_var(--tw-gradient-stops))] hover:from-teal-400" data-headlessui-state="open" href="/ai-deployment">AI Deployment</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   )
 }

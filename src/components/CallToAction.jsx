@@ -1,9 +1,7 @@
-import { DeployButton, DemoButton } from "./Button"
-
 export function CTA({title, list}) {
   return (
     <div className="mx-auto max-w-5xl items-center">
-      <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+      <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-white/10">
         <div className="absolute inset-0 opacity-25 w-2/3 h-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:32px_32px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_60%,transparent_100%)]"></div>
         <div className="w-full h-full flex justify-between my-8">
           <div className="relative px-6 py-6 sm:px-16 my-auto">
@@ -11,9 +9,22 @@ export function CTA({title, list}) {
             <h2 className="text-3xl space-y-2 font-bold tracking-tight text-neutral-100 sm:text-4xl my-auto">
               <div className="relative space-y-4">
                 <span>{title}</span>
-                <div className="grid max-w-sm grid-cols-2 gap-x-2">
-                  <DeployButton />
-                  <DemoButton />
+                <div className="flex gap-x-4">
+                  <a
+                    href="https://app.gimlet.io"
+                    onClick={() => {
+                      Fathom.trackGoal('VEWYCI7B', 0)
+                      window.location.replace("/accounts/githubAuth")
+                    }}
+                    className="ctaButton dark:bg-blue-500 dark:hover:bg-blue-400 dark:text-white"
+                    rel="noreferrer" target="_blank"
+                    >Start deploying</a>
+                  <a
+                    href="https://calendly.com/laszlo-i6m4/30min"
+                    rel="noreferrer" target="_blank"
+                    // onClick={() => Fathom.trackGoal('B', 0)}
+                    className="secondaryCtaButton dark:bg-neutral-600 dark:hover:bg-neutral-500 dark:text-white">Book a demo
+                  </a>
                 </div>
               </div>
             </h2>

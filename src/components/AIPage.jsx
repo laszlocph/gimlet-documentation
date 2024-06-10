@@ -2,8 +2,6 @@ import { Footer } from './home/Footer'
 import Link from 'next/link'
 import { languages } from './Languages'
 import { CTA } from './CallToAction'
-import { Dropdown } from './Usecases'
-import { githubLogo, discordLogo } from './HomePage'
 import { recommendation } from './Testimonial'
 
 const sections = {
@@ -28,46 +26,6 @@ const sections = {
 export function AIPage() {
   return (
     <div className="bg-purple-500">
-      <div className="relative isolate pt-12">
-        <nav className="mx-auto flex max-w-6xl items-center justify-between p-4" aria-label="Global">
-          <div className="flex lg:flex-1">
-            <a>
-              <span className="sr-only">Home page</span>
-              <img src="/logo-dark.svg" alt="Gimlet" className='h-10 sm:h-12 inline' />
-            </a>
-            <button className="text-white text-xl font-bold whitespace-nowrap ml-10">
-              <Dropdown />
-            </button>
-            <button>
-              <a href="/pricing" className="text-white text-xl font-bold ml-4">
-                Pricing
-              </a>
-            </button>
-            <button>
-              <a href="/blog" className="text-white text-xl font-bold ml-4">
-                Blog
-              </a>
-            </button>
-            <button>
-              <a href="/docs" className="text-white text-xl font-bold ml-4">
-                Docs
-              </a>
-            </button>
-          </div>
-          <div className="hidden sm:flex lg:flex-1 lg:justify-end gap-x-2">
-            <Link href="https://accounts.gimlet.io/signup">
-              <button className="text-white font-bold py-2 px-4 rounded">
-                Sign up
-              </button>
-            </Link>
-            <Link href="https://accounts.gimlet.io">
-              <button className="bg-orange-400 hover:bg-orange-700 text-white font-semibold hover:text-white py-2 px-4 border border-orange-500 hover:border-transparent rounded">
-                Log in
-              </button>
-            </Link>
-          </div>
-        </nav>
-      </div>
       <div className="py-16 sm:py-48 mx-auto max-w-6xl">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <div className="mx-auto lg:text-center">
@@ -179,10 +137,6 @@ export function AIPage() {
           title="Try with your model now, for free."
           list={["Hugging Face, Streamlit, and other technologies are supported", "Lowered Kubernetes entry-point", "Migrate from Gimlet anytime"]}
         />
-      </div>
-      <div className="text-center px-2 md:px-16 py-4 lg:py-32 text-neutral-200 text-2xl sm:text-3xl font-bold">
-        <p>Get help, show support!</p>
-        <p className="pt-8">Join our <a href="https://discord.com/invite/ZwQDxPkYzE" className="underline">{discordLogo} Discord</a> and star us on <a href="https://github.com/gimlet-io/gimlet" className="underline">{githubLogo}Github</a></p>
       </div>
       <div className="bg-white dark:bg-neutral-700 pt-8">
         <Footer />

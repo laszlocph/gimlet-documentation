@@ -92,7 +92,7 @@ export default function Testimonials() {
             <div className="relative h-[25rem] w-[30rem] flex flex-col justify-between rounded-2xl border border-white/5 bg-white/5 hover:bg-white/10 px-8 py-6">
               <div className="pb-4 font-light text-white/75">{testimonial.body}</div>
               <div className="flex items-center gap-4">
-                <img src={testimonial.author.imageUrl} className="h-9 w-9 rounded-full" />
+                <img src={testimonial.author.imageUrl} className="h-12 w-12 rounded-full" />
                 <div className="flex flex-col text-sm">
                   <div className="text-white">{testimonial.author.name}</div>
                   <div className="text-white/75">{testimonial.author.handle}</div>

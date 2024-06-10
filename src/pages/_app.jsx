@@ -204,7 +204,7 @@ export default function App({ Component, pageProps }) {
         <meta content="Gimlet" property="og:site_name" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
         <meta content={pageTitle} property="og:title"/>
         {isYamlGeneratorPage &&
           <meta

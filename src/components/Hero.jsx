@@ -21,15 +21,15 @@ export function Hero() {
                 </h1>
                 <div className="pt-16 pb-2 md:flex md:space-x-4 space-x-2 sm:justify-center">
                   <a
-                    href="/docs/installation?ref=hero"
-                    className="ctaButton"
+                    href="https://app.gimlet.io"
+                    className="ctaButton !px-6 !py-3"
                     onClick={() => Fathom.trackGoal('VEWYCI7B', 0)}
                   >
                     Start deploying
                   </a>
                   <a
                     href="/docs/"
-                    className="secondaryCtaButton"
+                    className="secondaryCtaButton !px-6 !py-3"
                     onClick={() => Fathom.trackGoal('VEWYCI7B', 0)}
                   >
                     Book a demo

@@ -22,16 +22,16 @@ export const languages = {
 export default function Languages() {
   return (
     <div className="mx-auto max-w-4xl px-6 lg:px-8">
-      <div className="mx-auto lg:text-center">
-        <p className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+      <div className="mx-auto max-w-3xl">
+        <h3 className="subheading">
           Get started with your favorite stack
-        </p>
+        </h3>
       </div>
       <div className="mx-auto mt-16 sm:mt-20 lg:mt-24 lg:max-w-none space-y-16">
         {Object.entries(languages).map(([title, items]) => {
           return (
             <div key={title}>
-              <h1 className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">{title}</h1>
+              <h4 className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">{title}</h4>
               <dl className="grid max-w-xl grid-cols-1 gap-6 lg:max-w-none lg:grid-cols-3 mt-4">
                 {items.map(i => {
                   return (
@@ -61,7 +61,7 @@ export default function Languages() {
           )
         })}
       </div>
-      <div className="text-3xl font-bold tracking-tight sm:text-4xl text-neutral-900 dark:text-neutral-100 text-center mt-16 sm:mt-20">
+      <div className="subheading mt-16 sm:mt-20">
         ...besides everything else
       </div>
     </div>
