@@ -19,19 +19,23 @@ export const languages = {
   ]
 };
 
-export default function Languages() {
+export default function Languages(props) {
+  const {headline, groups} = props
+
   return (
     <div className="mx-auto max-w-4xl px-6 lg:px-8">
       <div className="mx-auto max-w-3xl">
         <h3 className="subheading">
-          Get started with your favorite stack
+          {headline}
         </h3>
       </div>
       <div className="mx-auto mt-16 sm:mt-20 lg:mt-24 lg:max-w-none space-y-16">
-        {Object.entries(languages).map(([title, items]) => {
+        {groups.map(group => {
+          const title = group
+          const items = languages[group]
           return (
             <div key={title}>
-              <h4 className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">{title}</h4>
+              {groups.length > 1 && <h4 className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">{title}</h4>}
               <dl className="grid max-w-xl grid-cols-1 gap-6 lg:max-w-none lg:grid-cols-3 mt-4">
                 {items.map(i => {
                   return (
@@ -60,9 +64,6 @@ export default function Languages() {
             </div>
           )
         })}
-      </div>
-      <div className="subheading mt-16 sm:mt-20">
-        ...besides everything else
       </div>
     </div>
   )

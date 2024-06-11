@@ -1,146 +1,118 @@
 import { Footer } from './home/Footer'
-import Link from 'next/link'
-import { languages } from './Languages'
 import { CTA } from './CallToAction'
-import { recommendation } from './Testimonial'
-
-const sections = {
-  "Remote Resources": [
-    { title: "Remote NVIDIA GPU Containers", desc: "Utilize remote GPU resources when working on your AI project from your local setup." },
-    { title: "File syncing", desc: "Keep code and data consistent with your local laptop with file syncing utilities." },
-  ],
-  "Production Deployments": [
-    { title: "Hybrid Cloud Compatibility", desc: "Deploy and manage models across hybrid, cloud, and on-premises environments." },
-    { title: "Optimized Resource Allocation", desc: "Kubernetes to automatically scale your infrastructure to match your model's demands." },
-  ],
-  "Model Version Management": [
-    { title: "Centralized Version Control", desc: "Track, preview, and deploy your model versions with ease." },
-    { title: "Advanced Deployment Capabilities", desc: "Rollbacks and automated deployments to even hundreds of models." },
-  ],
-  "Monitoring": [
-    { title: "Grafana & Prometheus Compatibility", desc: "Track and visualize memory and GPU use of your deployed models." },
-    { title: "Fine-Tune Your Infrastructure", desc: "Identify and address performance bottlenecks based on monitoring data." },
-  ],
-};
+import Testimonials from './Testimonial'
+import Languages from './Languages'
+import How from './How'
 
 export function AIPage() {
   return (
-    <div className="bg-purple-500">
+    <div className="bg-purple-100 dark:bg-purple-800">
       <div className="py-16 sm:py-48 mx-auto max-w-6xl">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <div className="mx-auto lg:text-center">
-            <p className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Introducing Kubernetes to Your AI Project
-            </p>
+            <h1 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-center sm:text-4xl">
+            Introduce Kubernetes to Your AI Project
+            </h1>
           </div>
         </div>
       </div>
       <div className="mx-auto max-w-3xl">
         <img src="/placeholder.png" alt="Gimlet" className='' />
       </div>
-      <div className="pb-16 sm:pb-48 mx-auto max-w-3xl">
-        <div className="px-6 py-32 lg:px-8">
-          <div className="text-base leading-7 text-white space-y-8">
-            <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl text-center">
-              Effortless Social Login and TLS Encryption
-            </h1>
-            <ul className="list-disc px-4">
-              <li>Integrate social media platforms for user authentication.</li>
-              <li>Ensure data protection with industry-standard encryption.</li>
-            </ul>
-            {Object.entries(sections).map(([title, items]) => (
-              <div key={title} className="mt-10 max-w-2xl">
-                <h1 className="text-xl font-bold tracking-tight sm:text-3xl">
-                  {title}
-                </h1>
-                <ul>
-                  {items.map((item) => (
-                    <li key={item.title}>
-                      <span>
-                        <strong className="font-semibold">{item.title}:</strong> {item.desc}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-      <div className="py-16 sm:py-48 mx-auto max-w-6xl">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8">
-          <div className="mx-auto lg:text-center">
-            <p className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Experiment with the most popular AI frameworks and technologies.
-            </p>
-          </div>
-          <div className="mx-auto mt-16 sm:mt-20 lg:mt-24 lg:max-w-none space-y-8">
-            <dl className="grid max-w-xl grid-cols-1 gap-6 lg:max-w-none lg:grid-cols-3 mt-4">
-              {languages["AI"].map(i => {
-                return (
-                  <div key={i.title}
-                    className="group flex flex-col justify-between overflow-hidden rounded-xl [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]"
-                  >
-                    <div className="pointer-events-none z-10 flex flex-col gap-1 p-6">
-                      <img src={i.source} alt={i.title} className="h-14 w-14 object-scale-down origin-left text-neutral-700" />
-                      <h3 className="text-xl font-semibold text-neutral-300">{i.title}</h3>
-                      <p className="max-w-lg text-neutral-200">{i.description}</p>
-                    </div>
-                    <div className="pointer-events-none bottom-0 flex w-full flex-row items-center p-4 mt-auto">
-                      <a
-                        href={i.link}
-                        className="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition text-neutral-900 hover:text-neutral-700 dark:text-neutral-100 dark:hover:text-neutral-300 pointer-events-auto underline"
-                      >
-                        {i.deploy}
-                        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" className="mt-0.5 h-5 w-5 relative top-px -mr-1"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" d="m11.5 6.5 3 3.5m0 0-3 3.5m3-3.5h-9"></path></svg>
-                      </a>
-                    </div>
-                    <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-neutral-800/10"></div>
-                  </div>
-                )
-              })}
-            </dl>
-          </div>
-        </div>
-      </div>
-      <div className="py-16 sm:py-48 mx-auto max-w-6xl">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8">
-          <div className="mx-auto lg:text-center">
-            <p className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Already proven its worth in emerging AI businesses
-            </p>
-          </div>
-          <div className="mx-auto mt-16 sm:mt-20 lg:mt-24 lg:max-w-none grid grid-cols-3">
+      <div className="py-16 sm:py-32 p-4">
+        <How 
+          headline="Use Remote GPUs"
+          features = {[
             {
-              recommendation.map((r, idx) => (
-                <div key={idx} className="h-full px-2.5">
-                  <div className="flex flex-col justify-between rounded-2xl border border-white/5 bg-white/5 hover:bg-white/10 px-8 py-6">
-                    <div className="pb-4 font-light text-white/75">
-                      {`“${r.body}”`}
-                    </div>
-                    <div className="flex items-center gap-4">
-                      <img src={r.author.imageUrl} className="h-9 w-9 rounded-full" />
-                      <div className="flex flex-col text-sm">
-                        <div className="text-white">{r.author.name}</div>
-                        <div className="text-white/75">{r.author.handle}</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))
-            }
-          </div>
+              name: 'Remote NVIDIA GPU Containers',
+              description: 'Use remote GPU resources from your laptop.',
+              image: <svg className="h-5 w-5 fill-white/10 text-white" width="24" height="24" strokeWidth="1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/><path d="M14.3333 19V17.137C14.3583 16.8275 14.3154 16.5163 14.2073 16.2242C14.0993 15.9321 13.9286 15.6657 13.7067 15.4428C15.8 15.2156 18 14.4431 18 10.8989C17.9998 9.99256 17.6418 9.12101 17 8.46461C17.3039 7.67171 17.2824 6.79528 16.94 6.01739C16.94 6.01739 16.1533 5.7902 14.3333 6.97811C12.8053 6.57488 11.1947 6.57488 9.66666 6.97811C7.84666 5.7902 7.05999 6.01739 7.05999 6.01739C6.71757 6.79528 6.69609 7.67171 6.99999 8.46461C6.35341 9.12588 5.99501 10.0053 5.99999 10.9183C5.99999 14.4366 8.19999 15.2091 10.2933 15.4622C10.074 15.6829 9.90483 15.9461 9.79686 16.2347C9.68889 16.5232 9.64453 16.8306 9.66666 17.137V19" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/><path d="M9.66667 17.7018C7.66667 18.3335 6 17.7018 5 15.7544" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+            },
+            {
+              name: 'File syncing',
+              description: 'Keep code and data consistent with your laptop with file syncing utilities.',
+              image: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-5 w-5 fill-white/10 text-white"><path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" /></svg>,
+            },
+            {
+              name: 'Any cloud supported',
+              description: 'Wherever Kubernetes is available.',
+              image: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-5 w-5 fill-white/10 text-white"><path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" /></svg>,
+            },
+          ]}
+        />
+      </div>
+      <div className="py-16 p-4">
+        <How 
+          headline="Put Your Models To Production"
+          features = {[
+            {
+              name: 'Scale Your Training Infrastructure',
+              description: "Kubernetes automatically scales to match your models' needs.",
+              image: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-5 w-5 fill-white/10 text-white"><path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" /></svg>,
+            },
+            {
+              name: 'Any cloud supported',
+              description: 'Wherever Kubernetes is available.',
+              image: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-5 w-5 fill-white/10 text-white"><path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" /></svg>,
+            },
+            {
+              name: 'Compatible With Your Company',
+              description: 'Built on Gitops and Kubernetes. Uses all the open-source tools that your colleagues are using.',
+              image: <svg className="h-5 w-5 fill-white/10 text-white" width="24" height="24" strokeWidth="1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/><path d="M14.3333 19V17.137C14.3583 16.8275 14.3154 16.5163 14.2073 16.2242C14.0993 15.9321 13.9286 15.6657 13.7067 15.4428C15.8 15.2156 18 14.4431 18 10.8989C17.9998 9.99256 17.6418 9.12101 17 8.46461C17.3039 7.67171 17.2824 6.79528 16.94 6.01739C16.94 6.01739 16.1533 5.7902 14.3333 6.97811C12.8053 6.57488 11.1947 6.57488 9.66666 6.97811C7.84666 5.7902 7.05999 6.01739 7.05999 6.01739C6.71757 6.79528 6.69609 7.67171 6.99999 8.46461C6.35341 9.12588 5.99501 10.0053 5.99999 10.9183C5.99999 14.4366 8.19999 15.2091 10.2933 15.4622C10.074 15.6829 9.90483 15.9461 9.79686 16.2347C9.68889 16.5232 9.64453 16.8306 9.66666 17.137V19" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/><path d="M9.66667 17.7018C7.66667 18.3335 6 17.7018 5 15.7544" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+            },
+            {
+              name: 'Grafana & Prometheus Compatibility',
+              description: "Track and visualize memory and GPU use of your deployed models.",
+              image: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-5 w-5 fill-white/10 text-white"><path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" /></svg>,
+            },
+            {
+              name: 'Fine-Tune Your Infrastructure',
+              description: 'Identify and address performance bottlenecks based on monitoring data.',
+              image: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-5 w-5 fill-white/10 text-white"><path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" /></svg>,
+            },
+          ]}
+        />
+      </div>
+      <div className="py-16 p-4">
+        <How 
+          headline="Model Version Management"
+          features = {[
+            {
+              name: 'Centralized Version Control',
+              description: "Track, preview, and deploy your model versions with ease.",
+              image: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-5 w-5 fill-white/10 text-white"><path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" /></svg>,
+            },
+            {
+              name: 'Advanced Deployment Capabilities',
+              description: 'Rollbacks and automated deployments to even hundreds of models.',
+              image: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-5 w-5 fill-white/10 text-white"><path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" /></svg>,
+            },
+          ]}
+        />
+      </div>
+      <div className="py-16 sm:py-32 p-4">
+        <Languages 
+          headline="Experiment with the most popular AI frameworks and technologies."
+          groups={["AI"]}
+        />
+      </div>
+      <div className="py-16 sm:py-32 px-4 sm:px-0">
+        <div className="mx-auto max-w-4xl">
+          <h3 id="testimonials" className="subheading">
+          Already proven its worth in emerging AI businesses
+          </h3>
+        </div>
+        <div className="pt-8 sm:pt-16 lg:pt-24">
+          <Testimonials />
         </div>
       </div>
-      <div className="py-16 sm:py-48 mx-auto max-w-6xl">
+      <div className="py-16 sm:py-32 sm:pb-56 p-4">
         <CTA
           title="Try with your model now, for free."
           list={["Hugging Face, Streamlit, and other technologies are supported", "Lowered Kubernetes entry-point", "Migrate from Gimlet anytime"]}
         />
       </div>
-      <div className="bg-white dark:bg-neutral-700 pt-8">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   )
 }

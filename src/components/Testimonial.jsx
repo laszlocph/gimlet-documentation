@@ -55,7 +55,31 @@ const testimonials = [
   },
 ]
 
-//“
+export default function Testimonials() {
+  return (
+    <div className="relative flex max-w-[100vw] overflow-hidden py-5">
+      <div className="flex w-max animate-marquee [--duration:60s] hover:[animation-play-state:paused]">
+        {[...testimonials, ...testimonials].map((testimonial, index) => (
+          <div key={index} className="h-full px-2.5">
+            <div className="relative h-[25rem] w-[30rem] flex flex-col justify-between rounded-2xl border border-neutral-900 dark:border-white/5 bg-neutral-900/90 dark:bg-white/5 hover:bg-neutral-700 dark:hover:bg-white/10 px-8 py-6">
+              <div className="pb-4 font-light text-neutral-200 dark:text-white/75">{testimonial.body}</div>
+              <div className="flex items-center gap-4">
+                <img src={testimonial.author.imageUrl} className="h-12 w-12 rounded-full" />
+                <div className="flex flex-col text-sm">
+                  <div className="text-white">{testimonial.author.name}</div>
+                  <div className="text-neutral-200 dark:text-white/75">{testimonial.author.handle}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-white/30 dark:from-neutral-900/75"></div>
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-white/30 dark:from-neutral-900/75"></div>
+    </div>
+  )
+}
+
 export const recommendation = [
   {
     body: "Accelerate QA with self-service previews and rollbacks of your branches and repositories to the latest stable version.",
@@ -82,28 +106,3 @@ export const recommendation = [
     }
   },
 ];
-
-export default function Testimonials() {
-  return (
-    <div className="relative flex max-w-[100vw] overflow-hidden py-5">
-      <div className="flex w-max animate-marquee [--duration:60s] hover:[animation-play-state:paused]">
-        {[...testimonials, ...testimonials].map((testimonial, index) => (
-          <div key={index} className="h-full px-2.5">
-            <div className="relative h-[25rem] w-[30rem] flex flex-col justify-between rounded-2xl border border-neutral-900 dark:border-white/5 bg-neutral-900/90 dark:bg-white/5 hover:bg-neutral-700 dark:hover:bg-white/10 px-8 py-6">
-              <div className="pb-4 font-light text-neutral-200 dark:text-white/75">{testimonial.body}</div>
-              <div className="flex items-center gap-4">
-                <img src={testimonial.author.imageUrl} className="h-12 w-12 rounded-full" />
-                <div className="flex flex-col text-sm">
-                  <div className="text-white">{testimonial.author.name}</div>
-                  <div className="text-neutral-200 dark:text-white/75">{testimonial.author.handle}</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-white/30 dark:from-neutral-900/75"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-white/30 dark:from-neutral-900/75"></div>
-    </div>
-  )
-}

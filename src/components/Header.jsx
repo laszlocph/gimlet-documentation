@@ -10,6 +10,23 @@ export function Header({ navigation }) {
   let router = useRouter()
   let isDocsPage = router.pathname.startsWith('/docs') || router.pathname.startsWith('/concepts')
   let isHomePage = router.pathname === '/'
+  let isFrontendPage = router.pathname === '/frontend'
+  let isBackendPage = router.pathname === '/backend'
+  let isAIPage = router.pathname === '/ai-deployment'
+
+  let bg = ''
+  let barbglight='bg-teal-100'
+  let barbgscrolled='dark:bg-teal-900/50 dark:[@supports(backdrop-filter:blur(0))]:bg-teal-900/75'
+  if (isFrontendPage) {
+    bg='bg-teal-100 dark:bg-teal-800'
+    barbglight='bg-teal-100 dark:bg-teal-800'
+    barbgscrolled='bg-neutral-100/75 dark:bg-teal-900/50 dark:[@supports(backdrop-filter:blur(0))]:bg-teal-900/75'
+  }
+  if (isAIPage) {
+    bg='bg-purple-100 dark:bg-purple-800'
+    barbglight='bg-purple-100 dark:bg-purple-800'
+    barbgscrolled='bg-gray-300 dark:bg-purple-900/50 dark:[@supports(backdrop-filter:blur(0))]:bg-purple-900/75'
+  }
 
   useEffect(() => {
     function onScroll() {
@@ -23,13 +40,14 @@ export function Header({ navigation }) {
   }, [])
 
   return (
+    <div className={`sticky top-0 z-50 ${bg}`}>
     <header
       className={clsx(
-        'sticky top-0 z-50 max-w-8xl mx-auto flex flex-wrap items-center justify-between bg-teal-100 px-4 py-5 shadow-md shadow-slate-900/5 transition duration-500 dark:shadow-none sm:px-6 lg:px-8 block',
+        'max-w-8xl mx-auto flex flex-wrap items-center justify-between ' + barbglight + ' dark:shadow-none shadow-neutral-900/5 transition duration-500 px-4 py-5 sm:px-6 lg:px-8',
         {
-          'dark:bg-teal-900/50 dark:backdrop-blur dark:[@supports(backdrop-filter:blur(0))]:bg-teal-900/75':
-            isScrolled,
-          'dark:bg-transparent': !isScrolled,
+          ['dark:backdrop-blur ' + barbgscrolled]: isScrolled,
+          'bg-transparent': !isScrolled,
+          'shadow-md': isScrolled,
         }
       )}
     >
@@ -82,6 +100,7 @@ export function Header({ navigation }) {
         </ul>        
       </div>
     </header>
+    </div>
   )
 }
 

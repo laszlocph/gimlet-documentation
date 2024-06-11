@@ -3,7 +3,7 @@ import * as Fathom from "fathom-client";
 export function Hero() {
 
   return (
-    <div className="overflow-hidden text-neutral-600 dark:text-neutral-300">
+    <div className="overflow-hidden">
       <main>
         <div className="relative px-6 lg:px-8">
           <div className="mx-auto max-w-4xl">

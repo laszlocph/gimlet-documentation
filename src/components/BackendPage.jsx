@@ -134,9 +134,7 @@ export function BackendPage() {
           list={["Separate provisioning and management for different environments", "Consistent and advanced deployments", "Observability with Grafana and Prometheus stack", "Migrate from Gimlet anytime"]}
         />
       </div>
-      <div className="bg-white dark:bg-neutral-700 pt-8">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   )
 }
