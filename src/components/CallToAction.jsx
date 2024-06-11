@@ -1,7 +1,7 @@
 export function CTA({title, list}) {
   return (
     <div className="mx-auto max-w-5xl items-center">
-      <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-white/10">
+      <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-neutral-900/90 dark:bg-white/10">
         <div className="absolute inset-0 opacity-25 w-2/3 h-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:32px_32px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_60%,transparent_100%)]"></div>
         <div className="w-full h-full flex justify-between my-8">
           <div className="relative px-6 py-6 sm:px-16 my-auto">
@@ -23,7 +23,7 @@ export function CTA({title, list}) {
                     href="https://calendly.com/laszlo-i6m4/30min"
                     rel="noreferrer" target="_blank"
                     // onClick={() => Fathom.trackGoal('B', 0)}
-                    className="secondaryCtaButton dark:bg-neutral-600 dark:hover:bg-neutral-500 dark:text-white">Book a demo
+                    className="secondaryCtaButton bg-neutral-600 hover:bg-neutral-500 dark:bg-neutral-600 dark:hover:bg-neutral-500 !text-neutral-100 !ring-0">Book a demo
                   </a>
                 </div>
               </div>
