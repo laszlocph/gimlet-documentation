@@ -29,8 +29,19 @@ export function Layout({ children, title, navigation, tableOfContents, pageProps
     section.links.find((link) => link.href === router.pathname)
   )
 
+  let bg = 'bg-white dark:bg-neutral-900'
+  if (isFrontendPage) {
+    bg='bg-teal-100 dark:bg-teal-800'
+  }
+  if (isAIPage) {
+    bg='bg-purple-100 dark:bg-purple-800'
+  }
+  if (isBackendPage) {
+    bg='bg-amber-100 dark:bg-amber-800'
+  }
+
   return (
-    <>
+    <div className={bg}>
       {!isYamlGeneratorPage &&
         <Header navigation={navigation} />
       }
@@ -61,6 +72,6 @@ export function Layout({ children, title, navigation, tableOfContents, pageProps
           {children}
         </DocsPage>
       }
-    </>
+    </div>
   )
 }

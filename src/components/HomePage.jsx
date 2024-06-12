@@ -8,7 +8,11 @@ import { CTA } from './CallToAction'
 export function HomePage() {
   return (
     <>
-      <div className="py-16 sm:py-64 mx-auto max-w-6xl">
+      <div className="py-16 sm:py-32 sm:my-32 mx-auto max-w-6xl relative">
+        <img
+          src="/ffflux.svg"
+          className="absolute top-0 h-full w-full object-cover opacity-25"
+        />
         <Hero />
       </div>
       <div className="py-16 sm:py-32 p-4">

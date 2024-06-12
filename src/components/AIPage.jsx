@@ -6,8 +6,8 @@ import How from './How'
 
 export function AIPage() {
   return (
-    <div className="bg-purple-100 dark:bg-purple-800">
-      <div className="py-16 sm:py-48 mx-auto max-w-6xl">
+    <div>
+      <div className="py-16 sm:py-64 mx-auto max-w-6xl">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <div className="mx-auto lg:text-center">
             <h1 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-center sm:text-4xl">

@@ -11,7 +11,7 @@ export default function How(props) {
       <div className="mx-auto mt-16 sm:mt-20 lg:mt-24 lg:max-w-none">
         <div className="grid max-w-xl grid-cols-1 gap-6 lg:max-w-none lg:grid-cols-3">
           {features.map((feature) => (
-            <div key={feature.name} className="border rounded-lg dark:border-white/10 p-4 dark:hover:border-white/20 dark:hover:bg-white/5 transition duration-300">
+            <div key={feature.name} className="border rounded-lg border-neutral-400 dark:border-white/10 p-4 dark:hover:border-white/20 dark:hover:bg-white/5 transition duration-300">
               <div className="flex items-center">
                 <div className="rounded bg-neutral-700 p-1">
                   {feature.image}

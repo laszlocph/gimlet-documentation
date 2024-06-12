@@ -6,7 +6,7 @@ import How from './How'
 
 export function FrontendPage() {
   return (
-    <div className="bg-teal-100 dark:bg-teal-800">
+    <div>
       <div className="py-16 sm:py-64 mx-auto max-w-6xl">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <div className="mx-auto lg:text-center">
@@ -35,12 +35,12 @@ export function FrontendPage() {
             },
             {
               name: 'Share Securely',
-              description: "Share your app on a URL with TLS provided by Let's Encrypt.",
+              description: "Share your app on a URL with TLS encryption provided by Let's Encrypt.",
               image: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-5 w-5 fill-white/10 text-white"><path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" /></svg>,
             },
             {
               name: 'All Frameworks and Languages Supported',
-              description: "If you have a Dockerfile, you can deploy.",
+              description: "If you have a Dockerfile, you can deploy. Sometimes even without it.",
               image: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-5 w-5 fill-white/10 text-white"><path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" /></svg>,
             },
             {

@@ -14,18 +14,19 @@ export function Header({ navigation }) {
   let isBackendPage = router.pathname === '/backend'
   let isAIPage = router.pathname === '/ai-deployment'
 
-  let bg = ''
   let barbglight='bg-teal-100'
   let barbgscrolled='dark:bg-teal-900/50 dark:[@supports(backdrop-filter:blur(0))]:bg-teal-900/75'
   if (isFrontendPage) {
-    bg='bg-teal-100 dark:bg-teal-800'
     barbglight='bg-teal-100 dark:bg-teal-800'
     barbgscrolled='bg-neutral-100/75 dark:bg-teal-900/50 dark:[@supports(backdrop-filter:blur(0))]:bg-teal-900/75'
   }
   if (isAIPage) {
-    bg='bg-purple-100 dark:bg-purple-800'
     barbglight='bg-purple-100 dark:bg-purple-800'
     barbgscrolled='bg-gray-300 dark:bg-purple-900/50 dark:[@supports(backdrop-filter:blur(0))]:bg-purple-900/75'
+  }
+  if (isBackendPage) {
+    barbglight='bg-amber-100 dark:bg-amber-800'
+    barbgscrolled='bg-gray-300 dark:bg-amber-900/50 dark:[@supports(backdrop-filter:blur(0))]:bg-amber-900/75'
   }
 
   useEffect(() => {
@@ -40,7 +41,7 @@ export function Header({ navigation }) {
   }, [])
 
   return (
-    <div className={`sticky top-0 z-50 ${bg}`}>
+    <div className="sticky top-0 z-50">
     <header
       className={clsx(
         'max-w-8xl mx-auto flex flex-wrap items-center justify-between ' + barbglight + ' dark:shadow-none shadow-neutral-900/5 transition duration-500 px-4 py-5 sm:px-6 lg:px-8',
