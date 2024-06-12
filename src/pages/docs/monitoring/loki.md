@@ -1,42 +1,25 @@
 # Loki
 
-Loki is an open-source log aggregation tool. In this guide, you can see how you can query it in case you need to investigate logs.
-## Querying
+Loki is an open-source log aggregation tool. In this tutorial, you can see how you can query it in case you need to investigate logs.
 
-### Querying Basics
+**Step 1:** Navigate to your environment's config screen by clicking the Environments button on top, and selecting the environment by clicking on its card.
 
-In Loki's [LogQL](https://grafana.com/docs/loki/latest/logql/log_queries/) first you select a log stream, then pipe it with various filter criteria.
+**Step 2:** In the menu on the left-side, navigate to Logging. Loki settings should appear on top.
 
-Grafana's Explore view is the place to try out your queries.
-#### Selecting a log stream
+**Step 3:** Turn on the Enabled toggle.
 
-In Loki, the log stream has no name, you can start writing the label selectors. Copy:
+## Loki Settings
 
-```
-{namespace="default"}
-```
-#### Then pipe in further criteria[​](https://book.gimlet.io/docs/platform-components/observability/loki#then-pipe-in-further-criteria "Direct link to heading")
+**Storage:** You can select the type of the storage that you use to store logs. Volume is the default setting.
 
-The query below selects logs from the default namespace and filters the logs to return only the ones that contain the "Exception" string. Copy:
+**Retention (in days):** You can specify how many days you'd like to store Loki logs for.
 
-```
-{namespace="default"} |= "Exception"
-```
+**Persistence:** Turn persistent metrics storage on and off with this toggle.
 
-You can find the well-known operators in LogQL too:
+**Peristent Volume Size (in GB):** Persistent storage will be able to store the amount of data specified by you.
 
-- `|=`: Log line contains string.
-- `!=`: Log line does not contain string.
-- `|~`: Log line contains a match to the regular expression.
-- `!~`: Log line does not contain a match to the regular expression.
+### S3 Bucket Settings
 
-### Simplified Log Querying With Gimlet Stack Dash
+**S3 URL:** The address where your S3 is available. Follow this format: `s3://<access_key>:<uri-encoded-secret-access-key>@<region>`.
 
-If you install Loki with Gimlet Stack, a Logs dashboard is also installed. On this dashboard, you can query logs without much knowledge of LogQL.
-
-It has a namespace, a container filter built in, and two querying fields:
-
-- In the raw query field, you can type standard Loki LogQL queries.
-- In the simple query field, you can type any string which is going to be matched like the following regex: `.*$simple_query.*`, basically meaning every log line where the given string is present.
-
-![Loki logs in Grafana](https://book.gimlet.io/assets/images/logs-a8baced798862c9d1eff6817f7fbd0ae.png)
+**Bucket Name:** The name of the bucket that'll be used in the yaml that contains Loki configuration.
