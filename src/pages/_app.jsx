@@ -230,7 +230,7 @@ export default function App({ Component, pageProps }) {
           />
         }
         <meta content="website" property="og:type" />
-        <meta content={`https://gimlet.io/${image}`} property="og:image" />
+        <meta content={`https://api.placid.app/u/ghvjld730lsgd?title[text]=${encodeURI(pageTitle)}`} property="og:image" />
         <meta content={description} property="og:description" />
 
         <meta name="twitter:card" content="summary_large_image" />
