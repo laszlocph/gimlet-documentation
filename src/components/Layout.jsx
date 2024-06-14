@@ -15,7 +15,6 @@ import { BackendPage } from './BackendPage'
 export function Layout({ children, title, navigation, tableOfContents, pageProps }) {
   let router = useRouter()
   let isDocsPage = router.pathname.startsWith('/docs') || router.pathname.startsWith('/concepts')
-  let isEventsPage = router.pathname.startsWith('/events')
   let isBlogPage = router.pathname.startsWith('/blog')
   let isTOSPage = router.pathname === '/tos'
   let isPricingPage = router.pathname === '/pricing'
@@ -52,7 +51,6 @@ export function Layout({ children, title, navigation, tableOfContents, pageProps
       {isFrontendPage && <FrontendPage />}
       {isBackendPage && <BackendPage />}
       {isAIPage && <AIPage />}
-      {isEventsPage && <EventsPage title={title} section={section}>{children}</EventsPage>}
       {isTOSPage && <Prose className="m-16 max-w-4xl">{children}</Prose>}
 
       {isBlogPage &&

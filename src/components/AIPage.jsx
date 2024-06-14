@@ -96,7 +96,7 @@ export function AIPage() {
           groups={["AI"]}
         />
       </div>
-      <div className="py-16 sm:py-32 px-4 sm:px-0">
+      <div className="py-16 sm:py-32 px-4 sm:px-0 hidden sm:block">
         <div className="mx-auto max-w-4xl">
           <h3 id="testimonials" className="subheading">
           Already proven its worth in emerging AI businesses

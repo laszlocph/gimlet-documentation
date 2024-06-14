@@ -44,13 +44,6 @@ export function BlogPage({ children, className, tabs, code, language, title, sec
   }
 
   return (
-    <>
-    <div className="text-center pt-12 sm:pt-16">
-      <Link href={"/?ref="+ref}>
-        <span className="sr-only">Home page</span>
-        <img src="/logo.svg" alt="Gimlet" className='h-10 sm:h-16 inline' />
-      </Link>
-    </div>
     <div className="relative mx-auto flex max-w-8xl justify-center sm:px-2 xl:grid xl:grid-cols-12 gap-16 pb-32">
         <div className="hidden xl:sticky xl:top-[4.5rem] xl:block xl:h-[calc(100vh-4.5rem)] xl:flex-none xl:overflow-y-hidden xl:py-16 xl:col-span-3">
           <nav aria-labelledby="on-this-page-title">
@@ -201,7 +194,6 @@ export function BlogPage({ children, className, tabs, code, language, title, sec
           </nav>
         </div>
       </div>
-      </>
   )
 }
 

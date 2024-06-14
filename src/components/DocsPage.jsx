@@ -31,14 +31,7 @@ export function DocsPage({ children, tableOfContents, className, tabs, code, lan
   return (
     <div className="relative mx-auto flex max-w-8xl justify-center sm:px-2 lg:px-8 xl:px-12">
         <div className="hidden lg:relative lg:block lg:flex-none">
-          <div className="-ml-0.5 py-16 pl-0.5">
-            <Link href={"/?ref="+ref}>
-              <span className="block lg:w-auto">
-                <span className="sr-only">Home page</span>
-                <img src="/logo2.svg" alt="Gimlet" className='h-8 sm:h-10 w-auto block dark:hidden' />
-                <img src="/logo-dark.svg" alt="Gimlet" className='h-8 sm:h-10 w-auto hidden dark:block' />
-              </span>
-            </Link>
+          <div className="pb-16">
             <Navigation
               navigation={navigation}
               isDocsPage={true}
@@ -46,7 +39,7 @@ export function DocsPage({ children, tableOfContents, className, tabs, code, lan
             />
           </div>
         </div>
-        <div className="min-w-0 max-w-2fxl flex-auto px-4 py-16 lg:max-w-none 2xl:px-16">
+        <div className="min-w-0 max-w-2fxl flex-auto px-4 pt-16 pb-48 lg:max-w-none 2xl:px-16">
           <article>
             {(title || section) && (
               <header className="mb-9 space-y-1">

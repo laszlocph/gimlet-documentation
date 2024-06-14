@@ -27,15 +27,6 @@ export function Navigation({ navigation, className, isDocsPage }) {
             </span>
           </Link>
         </li>
-        {/* <li key="events" className="relative">
-          <Link href="/events">
-            <a
-              className="block w-full font-bold before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full text-neutral-500 before:hidden before:bg-neutral-300 hover:text-neutral-600 hover:before:block dark:text-neutral-400 dark:before:bg-neutral-700 dark:hover:text-neutral-300"
-            >
-              Events
-            </a>
-          </Link>
-        </li> */}
         <li key="blog" className="relative">
           <Link href="/blog">
             <span
@@ -45,15 +36,33 @@ export function Navigation({ navigation, className, isDocsPage }) {
             </span>
           </Link>
         </li>
-        {/* <li key="jobs" className="relative">
-          <Link href="https://github.com/gimlet-io/#jobs">
-            <a
+        <li key="frontend" className="relative">
+          <Link href="/frontend">
+            <span
               className="block w-full font-bold before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full text-neutral-500 before:hidden before:bg-neutral-300 hover:text-neutral-600 hover:before:block dark:text-neutral-400 dark:before:bg-neutral-700 dark:hover:text-neutral-300"
             >
-              Jobs
-            </a>
+              Use-case: Frontend
+            </span>
           </Link>
-        </li> */}
+        </li>
+        <li key="backend" className="relative">
+          <Link href="/backend">
+            <span
+              className="block w-full font-bold before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full text-neutral-500 before:hidden before:bg-neutral-300 hover:text-neutral-600 hover:before:block dark:text-neutral-400 dark:before:bg-neutral-700 dark:hover:text-neutral-300"
+            >
+              Use-case: Backend
+            </span>
+          </Link>
+        </li>
+        <li key="ai" className="relative">
+          <Link href="/ai-deployment">
+            <span
+              className="block w-full font-bold before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full text-neutral-500 before:hidden before:bg-neutral-300 hover:text-neutral-600 hover:before:block dark:text-neutral-400 dark:before:bg-neutral-700 dark:hover:text-neutral-300"
+            >
+              Use-case: AI
+            </span>
+          </Link>
+        </li>
         </ul>
         {navigation.map((section) => (
           <li key={section.title}>

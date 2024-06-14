@@ -2,7 +2,7 @@ export default function How(props) {
   const {headline, features} = props
 
   return (
-    <div className="mx-auto max-w-5xl px-6 lg:px-8">
+    <div className="mx-auto max-w-5xl px-4 lg:px-8">
       <div className="mx-auto max-w-3xl">
         <h3 className="subheading">
           {headline}

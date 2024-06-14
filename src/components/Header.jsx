@@ -78,9 +78,6 @@ export function Header({ navigation }) {
             <a href="/pricing">Pricing</a>
           </li>
           <li className='hover:text-teal-500 dark:hover:text-teal-200'>
-            <a href="/events">Events</a>
-          </li>
-          <li className='hover:text-teal-500 dark:hover:text-teal-200'>
             <a href="/blog">Blog</a>
           </li>
           <li className='hover:text-teal-500 dark:hover:text-teal-200'>

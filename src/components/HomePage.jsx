@@ -11,7 +11,7 @@ export function HomePage() {
       <div className="py-16 sm:py-32 sm:my-32 mx-auto max-w-6xl relative">
         <img
           src="/ffflux.svg"
-          className="absolute top-0 h-full w-full object-cover opacity-25"
+          className="absolute top-0 h-full w-full object-cover opacity-25 dark:opacity-50"
         />
         <Hero />
       </div>
@@ -59,7 +59,7 @@ export function HomePage() {
           groups={["Frontend", "Backend", "AI"]}
         />
       </div>
-      <div className="py-16 sm:py-32 px-4 sm:px-0">
+      <div className="py-16 sm:py-32 px-4 sm:px-0 hidden sm:block">
         <div className="mx-auto max-w-4xl">
           <div className="subheading">
             ...besides everything else

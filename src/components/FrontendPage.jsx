@@ -40,7 +40,7 @@ export function FrontendPage() {
             },
             {
               name: 'All Frameworks and Languages Supported',
-              description: "If you have a Dockerfile, you can deploy. Sometimes even without it.",
+              description: "If you have a Dockerfile, you can deploy. Sometimes even without it, using Buildpacks",
               image: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-5 w-5 fill-white/10 text-white"><path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" /></svg>,
             },
             {
@@ -74,7 +74,7 @@ export function FrontendPage() {
           groups={["Frontend"]}
         />
       </div>
-      <div className="py-16 sm:py-32 px-4 sm:px-0">
+      <div className="py-16 sm:py-32 px-4 sm:px-0 hidden sm:block">
         <div className="mx-auto max-w-4xl">
           <h3 id="testimonials" className="subheading">
           Already proven its worth in emerging AI businesses

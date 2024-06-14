@@ -23,7 +23,7 @@ export default function Languages(props) {
   const {headline, groups} = props
 
   return (
-    <div className="mx-auto max-w-4xl px-6 lg:px-8">
+    <div className="mx-auto max-w-4xl px-4 lg:px-8">
       <div className="mx-auto max-w-3xl">
         <h3 className="subheading">
           {headline}

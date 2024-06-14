@@ -146,7 +146,15 @@ export default function App({ Component, pageProps }) {
   let title = pageProps.markdoc?.frontmatter.title
 
   const router = useRouter()
+  let isDocsPage = router.pathname.startsWith('/docs') || router.pathname.startsWith('/concepts')
+  let isBlogPage = router.pathname.startsWith('/blog')
+  let isTOSPage = router.pathname === '/tos'
+  let isPricingPage = router.pathname === '/pricing'
   let isYamlGeneratorPage = router.pathname === '/k8s-yaml-generator'
+  let isHomePage = router.pathname === '/'
+  let isFrontendPage = router.pathname === '/frontend'
+  let isBackendPage = router.pathname === '/backend'
+  let isAIPage = router.pathname === '/ai-deployment'
 
   let pageTitle = 'Gimlet'
   if (pageProps.markdoc?.frontmatter.title) {
@@ -175,6 +183,15 @@ export default function App({ Component, pageProps }) {
     pageTitle = "Kubernetes YAML Generator";
     description = "Generate Kubernetes YAML files for web application deployments. Uses a generic Helm chart, because no one can remember the Kubernetes yaml syntax."
     image = "yaml-generator.png"
+  }
+  if (isFrontendPage) {
+    description = "Host Your Frontend Without Billing Surprises"
+  }
+  if (isBackendPage) {
+    description = "Deploy Containerized Backend Services"
+  }
+  if (isAIPage) {
+    description = "Introduce Kubernetes to Your AI Project"
   }
 
   useEffect(() => {
@@ -223,23 +240,12 @@ export default function App({ Component, pageProps }) {
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={`https://gimlet.io/${image}`} />
 
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-        <meta name="msapplication-TileColor" content="#da532c" />
-        <meta name="theme-color" content="#ffffff" />
 
         <link rel="canonical" href={currentUrl} />
         <meta content={currentUrl} property="og:url" />
-
-        {/* <script
-          src="https://cdn.usefathom.com/script.js"
-          data-site="TOOENNXR"
-          data-excluded-domains="localhost,127.0.0.1"
-          defer>
-        </script> */}
       </Head>
       <Layout
         navigation={navigation}

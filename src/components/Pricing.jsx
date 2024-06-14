@@ -83,14 +83,7 @@ export function PricingPage() {
 
   return (
     <>
-      <div>
-        <div className="text-center pt-12 sm:pt-16">
-          <Link href="/">
-            <span className="sr-only">Home page</span>
-            <img src="/logo.svg" alt="Gimlet" className='h-10 sm:h-16 inline' />
-          </Link>
-        </div>
-        <div className="mx-auto max-w-8xl pt-12 px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-8xl pt-12 sm:pt-16 px-4 sm:px-6 lg:px-8">
           <div className="sm:align-center sm:flex sm:flex-col">
             <h1 className="text-5xl font-bold tracking-tight text-neutral-900 sm:text-center dark:text-neutral-50">Pricing Plans</h1>
             <p className="mt-5 text-xl text-neutral-500 sm:text-center dark:text-neutral-300">
@@ -186,7 +179,6 @@ export function PricingPage() {
           </div>
         </div>
         </div>
-      </div>
       <div className="pt-32">
         <Footer />
       </div>
