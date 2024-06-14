@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import { useState, useEffect } from "react";
 
 import { HomePage } from '@/components/HomePage'
 import { PricingPage } from '@/components/Pricing'
@@ -38,9 +39,35 @@ export function Layout({ children, title, navigation, tableOfContents, pageProps
   if (isBackendPage) {
     bg='bg-amber-100 dark:bg-amber-800'
   }
+  
+  const [cookieConsent, setCookieConsent] = useState();
+
+  useEffect(() => {
+    const value = window.localStorage.getItem("cookieConsent")
+    if (value !== null) {
+      setCookieConsent(value);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (cookieConsent !== undefined) {
+      window.localStorage.setItem("cookieConsent", cookieConsent);
+    }
+  }, [cookieConsent]);
 
   return (
     <div className={bg}>
+      { cookieConsent === undefined &&
+      <div className='fixed bottom-8 left-8 rounded bg-neutral-300 text-neutral-900 space-x-4 p-2 text-sm z-40'>
+        <span>We use cookies to help us improve gimlet.io</span>
+        <span><a href="/tos" className='underline'>Learn more</a></span>
+        <span
+          className='bg-neutral-900 text-neutral-100 p-1 px-2 rounded cursor-pointer'
+          onClick={() => setCookieConsent(true)}>
+            OK
+        </span>
+      </div>
+      }
       {!isYamlGeneratorPage &&
         <Header navigation={navigation} />
       }
