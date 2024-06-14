@@ -238,7 +238,7 @@ export default function App({ Component, pageProps }) {
         <meta name="twitter:creator" content="@gimlet_io" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={`https://gimlet.io/${image}`} />
+        <meta name="twitter:image" content={`https://api.placid.app/u/ghvjld730lsgd?title[text]=${encodeURI(pageTitle)}`} />
 
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
