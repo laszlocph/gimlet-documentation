@@ -39,7 +39,7 @@ export function DocsPage({ children, tableOfContents, className, tabs, code, lan
             />
           </div>
         </div>
-        <div className="min-w-0 max-w-2fxl flex-auto px-4 pt-16 pb-48 lg:max-w-none 2xl:px-16">
+        <div className="min-w-0 max-w-2fxl flex-auto px-4 py-16 lg:max-w-none 2xl:px-16">
           <article>
             {(title || section) && (
               <header className="mb-9 space-y-1">
