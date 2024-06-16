@@ -58,11 +58,11 @@ export function Layout({ children, title, navigation, tableOfContents, pageProps
   return (
     <div className={bg}>
       { cookieConsent === undefined &&
-      <div className='fixed bottom-8 left-8 rounded bg-neutral-300 text-neutral-900 space-x-4 p-2 text-sm z-40'>
-        <span>We use cookies to help us improve gimlet.io</span>
+      <div className='fixed bottom-0 left-0 m-8 rounded bg-neutral-300 text-neutral-900 sm:space-x-4 p-2 text-sm z-40'>
+        <span className='block sm:inline'>We use cookies to help us improve gimlet.io</span>
         <span><a href="/tos" className='underline'>Learn more</a></span>
         <span
-          className='bg-neutral-900 text-neutral-100 p-1 px-2 rounded cursor-pointer'
+          className='bg-neutral-900 text-neutral-100 ml-2 sm:ml-0 p-1 px-2 rounded cursor-pointer'
           onClick={() => setCookieConsent(true)}>
             OK
         </span>
