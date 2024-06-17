@@ -13,7 +13,7 @@ Next, run the development server:
 
 ```bash
 npm run devdfdfdf
-```s
+```
 
 Finally, open [http://localhost:3001](http://localhost:3001) in your browser.
 
