@@ -37,7 +37,7 @@ const navigation = [
     title: 'Deployment settings',
     links: [
       { title: 'Deployment settings', href: '/docs/deployment-settings' },
-      { title: 'Build with Gimlet', href: '/docs/deployment-settings/build-with-gimlet' },
+      { title: 'Container Image Settings', href: '/docs/deployment-settings/image-settings' },
       { title: 'Social authentication', href: '/docs/deployment-settings/social-authentication' },
       { title: 'DNS', href: '/docs/deployment-settings/dns' },
       { title: 'Port-forwarding', href: '/docs/deployment-settings/port-forwarding' },
