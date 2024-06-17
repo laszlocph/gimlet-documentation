@@ -12,7 +12,7 @@ cp .env.example .env.local
 Next, run the development server:
 
 ```bash
-npm run devdfdfdf
+npm run dev
 ```
 
 Finally, open [http://localhost:3001](http://localhost:3001) in your browser.
