@@ -10,7 +10,7 @@ cp .env.example .env.local
 ```
 
 Next, run the development server:
-
+ergreg
 ```bash
 npm run devwdwd
 ```
