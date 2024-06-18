@@ -51,3 +51,7 @@
 .subheading {
   @apply text-2xl font-bold tracking-tight sm:text-center sm:text-3xl
 }
+
+#docsearch-label {
+  display: none;
+}
