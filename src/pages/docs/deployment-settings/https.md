@@ -1,25 +1,15 @@
 # HTTPS
 
-HTTPS utilizes SSL/TLS encryption to secure connection between your application and users.
+You can set up HTTPS certification for your applications by configuring cert-manager. It's an open-source certification issuer specifically made for Kubernetes.
 
-To get free HTTPS certification, you can use Let's Encrypt with Gimlet as described below.
-## Install Cert-Manager
+## Configure Cert-Manager
 
-Navigate to Environments, where you need to select the environment where your application is running.
+You can set up cert-manager by navigating to environment settings. You can do this by clicking the Environments button in the menu bar on top, then selecting the environment by clicking on its card.
 
-After selection, navigate to Cert-Manager, and look for the Config tab.
+In the settings, select Ingress tab in the menu bar on the left side, and look for the cert-manager section.
 
-Save components, then merge the pull request in your git repository.
-## Reconfigure App Ingress to Use Cert-Manager
+Enable cert-manager, and specify an email address where Let's Encrypt will email you about expiring certificates.
 
-HTTPS certifications come with an expiration date. You can set up the Cert-Manager to provision new SSL certificates for your application. For this, you need to edit the application deployment configuration.
+## Turn on HTTPS for Your Application
 
-On the Ingress tab toggle the HTTPS field, then add an annotation with key `cert-manager.io/cluster-issuer` and value `letsencrypt`.
-
-Save the configuration, merge the pull request then redeploy the application.
-
-Open the application now on the configured domain name, (example: `https://reactjs-test-app.100.200.0.2.nip.io`), this time over a secured connection.
-
-It takes about a minute for Cert-Manager to provision the certificate, so don't worry if the certification is still missing on first try. Anything more indicates an issue.
-
-**Note:** Let's Encrypt doesn't issue certificates for nip.io domains.
+After you configured cert-manager, you can just use a toggle right above the Deploy button in deployment settings to turn on HTTPS certification any time you deploy an application.
