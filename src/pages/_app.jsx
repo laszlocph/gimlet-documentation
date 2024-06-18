@@ -193,6 +193,10 @@ export default function App({ Component, pageProps }) {
   if (isAIPage) {
     description = "Introduce Kubernetes to Your AI Project"
   }
+  if (isPricingPage) {
+    pageTitle = "Pricing";
+    description = "One Price Tag, One Year Access"
+  }
 
   useEffect(() => {
     Fathom.load('TOOENNXR', {
@@ -230,7 +234,7 @@ export default function App({ Component, pageProps }) {
           />
         }
         <meta content="website" property="og:type" />
-        <meta content={`https://api.placid.app/u/hnfyyjp6tqajg?title[text]=${encodeURI(pageTitle)}`} property="og:image" />
+        <meta content={`https://api.placid.app/u/hnfyyjp6tqajg?title[text]=${encodeURI(description)}`} property="og:image" />
         <meta content={description} property="og:description" />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -238,7 +242,7 @@ export default function App({ Component, pageProps }) {
         <meta name="twitter:creator" content="@gimlet_io" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={`https://api.placid.app/u/hnfyyjp6tqajg?title[text]=${encodeURI(pageTitle)}`} />
+        <meta name="twitter:image" content={`https://api.placid.app/u/hnfyyjp6tqajg?title[text]=${encodeURI(description)}`} />
 
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />

@@ -6,7 +6,7 @@ const tiers = [
     name: 'Self-Hosted',
     href: 'https://accounts.gimlet.io/signup/',
     priceMonthly: "Free",
-    priceYearly: "300/yr",
+    priceYearly: "$300/yr",
     description: 'Self-host Gimlet for private and non-profit use without limitations.',
     includedFeatures: [
       'All Gimlet features.',
