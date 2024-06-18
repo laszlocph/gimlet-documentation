@@ -1,184 +1,116 @@
 import { Footer } from './home/Footer'
 import { CheckIcon } from '@heroicons/react/solid'
-import { useState } from 'react'
-import Link from 'next/link'
 
 const tiers = [
   {
-    name: 'Personal / Trial',
+    name: 'Self-Hosted',
     href: 'https://accounts.gimlet.io/signup/',
     priceMonthly: "Free",
-    priceYearly: "Free",
-    description: 'The perfect tier to test-drive Gimlet without commitments. Unlimited usage for individuals and non-profits.',
+    priceYearly: "300/yr",
+    description: 'Self-host Gimlet for private and non-profit use without limitations.',
     includedFeatures: [
       'All Gimlet features.',
       'Unlimited users.', 
-      'x',
+      'Up to 100 deployed services.',
       'Community support.'
     ],
+    responsibilities: [
+      'Hosting Gimlet',
+      'Updating Gimlet for Access to Newest Features',
+      'Keeping Your Applications & Infrastructure Secure',
+    ]
   },
   {
-    name: 'Startup',
+    name: 'Gimlet Cloud',
     href: 'https://accounts.gimlet.io/signup/',
     priceMonthly: "$99/mo",
-    priceYearly: "$999/yr",
-    description: 'Use Gimlet to deploy your first services. Upgrade when you build more.',
-    includedFeatures: [
-      'All Gimlet features.',
-      'Unlimited users.',
-      'Up to 10 deployed services.',
-      'Community support.'
-    ],
-  },
-  {
-    name: 'Growth',
-    href: 'https://accounts.gimlet.io/signup/',
-    priceMonthly: "$299/mo",
-    priceYearly: "$2999/yr",
-    description: 'Things are getting serious. Let\'s roll out Gimlet for your growing team. 🚀',
-    includedFeatures: [
-      'All Gimlet features.',
-      'Unlimited users.',
-      'Up to 50 deployed services.',
-      'Slack support in business-hours.',
-      '4 hours dedicated onboarding.',
-    ],
-  },
-  {
-    name: 'Scale',
-    href: 'https://accounts.gimlet.io/signup/',
-    priceMonthly: "$399/mo",
-    priceYearly: "$3999/yr",
-    description: 'For established teams.',
+    priceYearly: "$300/yr",
+    description: 'One-year access to all existing and upcoming Gimlet features.',
     includedFeatures: [
       'All Gimlet features.',
       'Unlimited users.',
       'Up to 100 deployed services.',
-      'Slack support in business-hours.',
-      '4 hours dedicated onboarding.',
+      'Community support.'
     ],
-  },
-  {
-    name: 'Enterprise',
-    href: 'mailto:laszlo@gimlet.io',
-    priceMonthly: "Let's talk",
-    priceYearly: "Let's talk",
-    description: 'Unlimited usage, bespoke consultancy.',
-    includedFeatures: [
-      'All Gimlet features.',
-      'Unlimited users.',
-      'Deploy without limits.',
-      '24/7 Slack support.',
-      'Dedicated onboarding.',
-      'May include bespoke cloud consultancy.',
-      'Gimlet hosted in your cloud, by us.'
-    ],
+    responsibilities: [
+      'Keeping Your Applications and Infrastructure Secure'
+    ]
   },
 ]
 export function PricingPage() {
-  const [monthly, setMonthly] = useState(true)
-
-  const selected = 'border-neutral-200 bg-white text-neutral-900 shadow-sm';
-  const notSelected = 'border-transparent text-neutral-700';
-
   return (
     <>
-        <div className="mx-auto max-w-8xl pt-12 sm:pt-16 px-4 sm:px-6 lg:px-8">
-          <div className="sm:align-center sm:flex sm:flex-col">
-            <h1 className="text-5xl font-bold tracking-tight text-neutral-900 sm:text-center dark:text-neutral-50">Pricing Plans</h1>
-            <p className="mt-5 text-xl text-neutral-500 sm:text-center dark:text-neutral-300">
-              Evaluate Gimlet for free, then upgrade to add more services as you roll out. All plans include all features.
-            </p>
-            <div className="relative mt-24 flex self-center rounded-lg bg-neutral-100 p-0.5">
-              <button
-                type="button"
-                onClick={e => setMonthly(true)}
-                className={(monthly ? selected : notSelected) + ' relative w-1/2 whitespace-nowrap rounded-md py-2 text-sm font-medium focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-500 sm:w-auto sm:px-8'}
-              >
-                Monthly billing
-              </button>
-              <button
-                type="button"
-                onClick={e => setMonthly(false)}
-                className={(!monthly ? selected : notSelected) + ' ml-0.5 relative w-1/2 whitespace-nowrap rounded-md py-2 text-sm font-medium focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-500 sm:w-auto sm:px-8'}
-              >
-                Yearly billing
-              </button>
-            </div>
-          </div>
-          <div className="mt-8 space-y-4 sm:mt-8 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:mx-auto lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-5">
-            {tiers.map((tier) => (
-              <div key={tier.name} className="divide-y divide-neutral-200 dark:divide-neutral-600 rounded-lg border border-neutral-200 dark:border-neutral-600 shadow-sm">
-                <div className="p-6">
-                  <h2 className="text-lg font-medium leading-6 text-neutral-900 dark:text-neutral-50">{tier.name}</h2>
-                  <p className="mt-4 text-sm text-neutral-500 h-16 dark:text-neutral-300">{tier.description}</p>
-                  <p className="mt-8">
-                    <span className="text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50">{monthly ? tier.priceMonthly : tier.priceYearly}</span>
-                  </p>
-                  {tier.priceMonthly !== 'Let\'s talk' &&
-                  <a
-                    href={tier.href}
-                    className="mt-10 block w-full rounded-md border border-indigo-600 bg-indigo-600 py-2 text-center text-sm font-semibold text-white hover:bg-neutral-900"
-                  >
-                    Get Started
-                  </a>
-                  }
-                  {tier.priceMonthly === 'Let\'s talk' &&
-                  <a
-                    href={tier.href}
-                    className="mt-10 block w-full rounded-md border border-indigo-600 bg-indigo-600 py-2 text-center text-sm font-semibold text-white hover:bg-neutral-900"
-                  >
-                    Get in touch
-                  </a>
-                  }
-                </div>
-                <div className="px-6 pt-6 pb-8">
-                  <h3 className="text-sm font-medium text-neutral-900 dark:text-neutral-50">What&apos;s included</h3>
-                  <ul role="list" className="mt-6 space-y-4">
-                    {tier.includedFeatures.map((feature) => {
-                      if (feature === 'x') {
-                        return (
-                          <li key={feature} className="flex space-x-3">
-                            <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" aria-hidden="true" />
-                            <span className="text-sm text-neutral-500 dark:text-neutral-300">3 deployed services, or free, unlimited use for personal projects with our <a href="/blog/our-free-tier" className='underline'>DON&apos;T MAKE ME THINK</a> pledge for individuals and non-profits</span>
-                          </li>
-                        )
-                      }                      
-
-
-                      return (
-                      <li key={feature} className="flex space-x-3">
-                        <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" aria-hidden="true" />
-                        <span className="text-sm text-neutral-500 dark:text-neutral-300">{feature}</span>
-                      </li>
-                      )
-                    })}
-                  </ul>
-                </div>
+      <div className="mx-auto max-w-8xl pt-12 sm:pt-16 px-4 sm:px-6 lg:px-8">
+        <div className="sm:align-center sm:flex sm:flex-col">
+          <h1 className="text-5xl font-bold tracking-tight text-neutral-900 sm:text-center dark:text-neutral-50">One Price Tag, One Year Access</h1>
+          <p className="mt-5 text-xl text-neutral-500 sm:text-center dark:text-neutral-300">
+          For $300 a year, you’ll get every existing and brand new feature without usage restrictions.
+          </p>
+          <p className="text-xl text-neutral-500 sm:text-center dark:text-neutral-300">
+          Within technical limitations that is. If you need even more freedom, reach out to us.
+          </p>
+        </div>
+        <div className="mt-8 sm:mt-16 space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 sm:space-x-8 sm:mx-auto lg:max-w-4xl">
+          {tiers.map((tier) => (
+            <div key={tier.name} className="divide-y divide-neutral-200 dark:divide-neutral-600 rounded-lg border border-neutral-200 dark:border-neutral-600 shadow-sm">
+              <div className="p-6">
+                <h2 className="text-lg font-medium leading-6 text-neutral-900 dark:text-neutral-50">{tier.name}</h2>
+                <p className="mt-4 text-sm text-neutral-500 h-16 dark:text-neutral-300">{tier.description}</p>
+                <p className="mt-8">
+                  <span className="text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50">{tier.priceYearly}</span>
+                </p>
               </div>
-            ))}
-          </div>
-          <div className="relative mx-auto mt-8 max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-md lg:max-w-4xl my-8">
-            <div className="flex flex-col gap-6 rounded-3xl p-8 ring-1 ring-neutral-900/10 dark:ring-neutral-100/10 m:p-10 lg:flex-row lg:items-center lg:gap-8">
-              <div className="lg:min-w-0 lg:flex-1">
-                <h3 className="text-lg font-semibold leading-8 tracking-tight text-indigo-600">Self-host</h3>
-                <div className="mt-2 text-base leading-7 text-neutral-600 dark:text-neutral-300">
-                  You get all Gimlet features without limitations if you self-host.
-                </div>
+              <div className="px-6 pt-6 pb-8">
+                <h3 className="text-sm font-medium text-neutral-900 dark:text-neutral-50">What&apos;s included</h3>
+                <ul role="list" className="mt-6 space-y-2">
+                  {tier.includedFeatures.map((feature) => {
+                    return (
+                    <li key={feature} className="flex space-x-3">
+                      <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" aria-hidden="true" />
+                      <span className="text-sm text-neutral-500 dark:text-neutral-300">{feature}</span>
+                    </li>
+                    )
+                  })}
+                </ul>
               </div>
-              <div>
-                <a
-                  href="/docs/installation"
-                  className="inline-block rounded-lg bg-indigo-50 px-4 py-2.5 text-center text-sm font-semibold leading-5 text-indigo-700 hover:bg-indigo-100"
-                >
-                  Install Gimlet now<span aria-hidden="true">&rarr;</span>
-                </a>
+              <div className="px-6 pt-6 pb-8">
+                <h3 className="text-sm font-medium text-neutral-900 dark:text-neutral-50">You’re Responsible For</h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {tier.responsibilities.map((feature) => {
+                    return (
+                    <li key={feature} className="flex space-x-3">
+                      <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" aria-hidden="true" />
+                      <span className="text-sm text-neutral-500 dark:text-neutral-300">{feature}</span>
+                    </li>
+                    )
+                  })}
+                </ul>
               </div>
             </div>
-          </div>
+          ))}
         </div>
+        <div className="relative mx-auto mt-8 max-w-7xl px-6 lg:px-8">
         </div>
+      </div>
+      <div className="mx-auto max-w-4xl px-2 sm:px-0">
+        <h2 className='subheading !text-left pb-4 pt-6'>About Our Pricing and License</h2>
+        <p>We considered our options, and decided that $300 is the most optimal price tag for our tool.</p>
+        <p className='mt-6'>For organizations, it's a budget-friendly price tag compared to the value it offers. Organizations burn substantially more money on the daily developing their in-house solutions, while Gimlet is designed to provide off-the-shelf deployment experience ready to support the most common use cases.</p>
+        <p className='mt-6'>For us, it's money, which we can use to deliver new features, host Gimlet for you and provide support when needed.</p>
+      </div>
+      <div className="mx-auto max-w-4xl px-2 sm:px-0">
+        <h2 className='subheading !text-left pb-4 pt-6'>Once a year payment</h2>
+        <p>Gimlet has one-time annual payments. This means that you'll get access to every new feature we publish in the 12 months after your purchase.</p>
+        <p className='mt-6'>You'll start with a 7-day trial to evaluate if Gimlet is helpful for you, and if we live up to our promise of delivering the best deployment experience.</p>
+        <p className='mt-6'>Your license will expire a year after your purchase.</p>
+        <p className='mt-6'>On the technical level, you'll start off with an ephemeral infrastructure provided by us for the trial period and can't connect any real clusters until you purchase the license.</p>
+        <p className='mt-6'>After your purchase, your instance will be moved to a permanent infrastructure, and you can connect new environments to your Gimlet.</p>
+        <p className='mt-6'>If you decide to not purchase Gimlet, all of your data from the trial period, including git repository connections, deployed applications, and so on, will be removed and won't be recoverable after the trial.</p>
+      </div>
+      <div className="mx-auto max-w-4xl px-2 sm:px-0">
+        <h2 className='subheading !text-left pb-4 pt-6'>BUSL License</h2>
+        <p>Business Use License (BUSL) allows us to monetize commercial use of Gimlet and leave the door open for free usage to individuals and non-profits if they decide to self-host.</p>
+      </div>
       <div className="pt-32">
         <Footer />
       </div>

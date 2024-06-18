@@ -18,15 +18,15 @@ export function Header({ navigation }) {
   let barbgscrolled='dark:bg-teal-900/50 dark:[@supports(backdrop-filter:blur(0))]:bg-teal-900/75'
   if (isFrontendPage) {
     barbglight='bg-teal-100 dark:bg-teal-800'
-    barbgscrolled='bg-neutral-100/75 dark:bg-teal-900/50 dark:[@supports(backdrop-filter:blur(0))]:bg-teal-900/75'
+    barbgscrolled='bg-neutral-100/90 dark:bg-teal-900/50 dark:[@supports(backdrop-filter:blur(0))]:bg-teal-900/75'
   }
   if (isAIPage) {
     barbglight='bg-purple-100 dark:bg-purple-800'
-    barbgscrolled='bg-gray-300 dark:bg-purple-900/50 dark:[@supports(backdrop-filter:blur(0))]:bg-purple-900/75'
+    barbgscrolled='bg-neutral-100/90 dark:bg-purple-900/50 dark:[@supports(backdrop-filter:blur(0))]:bg-purple-900/75'
   }
   if (isBackendPage) {
     barbglight='bg-amber-100 dark:bg-amber-800'
-    barbgscrolled='bg-gray-300 dark:bg-amber-900/50 dark:[@supports(backdrop-filter:blur(0))]:bg-amber-900/75'
+    barbgscrolled='bg-neutral-100/90 dark:bg-amber-900/50 dark:[@supports(backdrop-filter:blur(0))]:bg-amber-900/75'
   }
 
   useEffect(() => {
