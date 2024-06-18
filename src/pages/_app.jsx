@@ -175,27 +175,38 @@ export default function App({ Component, pageProps }) {
 
   const currentUrl = "https://gimlet.io" + router.pathname;
 
-  let description = "Need to deploy to Kubernetes, but not sure how to put things together? We got you covered. Gimlet is a gitops based developer platform that gives you the best of open-source out of the box."
+  let ogTitle = "Deploy and share your frontend, backend or AI project using open-source tooling and social auth."
+  let description = "Deploy and share your frontend, backend or AI project using open-source tooling and social auth."
   if (pageProps.markdoc?.frontmatter.description) {
+    ogTitle = pageProps.markdoc?.frontmatter.title
+    pageTitle = pageProps.markdoc?.frontmatter.title
     description = pageProps.markdoc?.frontmatter.description
   }
   if (isYamlGeneratorPage) {
-    pageTitle = "Kubernetes YAML Generator";
+    pageTitle = "Kubernetes YAML Generator"
+    ogTitle = "Kubernetes YAML Generator"
     description = "Generate Kubernetes YAML files for web application deployments. Uses a generic Helm chart, because no one can remember the Kubernetes yaml syntax."
     image = "yaml-generator.png"
   }
   if (isFrontendPage) {
+    pageTitle = "Frontend";
+    ogTitle = "Host Your Frontend Without Billing Surprises"
     description = "Host Your Frontend Without Billing Surprises"
   }
   if (isBackendPage) {
+    pageTitle = "Backend";
+    ogTitle = "Deploy Containerized Backend Services"
     description = "Deploy Containerized Backend Services"
   }
   if (isAIPage) {
+    pageTitle = "AI";
+    ogTitle = "Introduce Kubernetes to Your AI Project"
     description = "Introduce Kubernetes to Your AI Project"
   }
   if (isPricingPage) {
     pageTitle = "Pricing";
-    description = "One Price Tag, One Year Access"
+    ogTitle = "One Price Tag, One Year Access"
+    description = "For $300 a year, you’ll get every existing and brand new feature without usage restrictions."
   }
 
   useEffect(() => {
@@ -234,7 +245,7 @@ export default function App({ Component, pageProps }) {
           />
         }
         <meta content="website" property="og:type" />
-        <meta content={`https://api.placid.app/u/ghvjld730lsgd?title[text]=${encodeURI(description)}`} property="og:image" />
+        <meta content={`https://api.placid.app/u/ghvjld730lsgd?title[text]=${encodeURI(ogTitle)}`} property="og:image" />
         <meta content={description} property="og:description" />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -242,7 +253,7 @@ export default function App({ Component, pageProps }) {
         <meta name="twitter:creator" content="@gimlet_io" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={`https://api.placid.app/u/ghvjld730lsgd?title[text]=${encodeURI(description)}`} />
+        <meta name="twitter:image" content={`https://api.placid.app/u/ghvjld730lsgd?title[text]=${encodeURI(ogTitle)}`} />
 
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
