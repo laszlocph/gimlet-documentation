@@ -95,17 +95,17 @@ export function PricingPage() {
       <div className="mx-auto max-w-4xl px-2 sm:px-0">
         <h2 className='subheading !text-left pb-4 pt-6'>About Our Pricing and License</h2>
         <p>We considered our options, and decided that $300 is the most optimal price tag for our tool.</p>
-        <p className='mt-6'>For organizations, it's a budget-friendly price tag compared to the value it offers. Organizations burn substantially more money on the daily developing their in-house solutions, while Gimlet is designed to provide off-the-shelf deployment experience ready to support the most common use cases.</p>
-        <p className='mt-6'>For us, it's money, which we can use to deliver new features, host Gimlet for you and provide support when needed.</p>
+        <p className='mt-6'>For organizations, it&apos;s a budget-friendly price tag compared to the value it offers. Organizations burn substantially more money on the daily developing their in-house solutions, while Gimlet is designed to provide off-the-shelf deployment experience ready to support the most common use cases.</p>
+        <p className='mt-6'>For us, it&apos;s money, which we can use to deliver new features, host Gimlet for you and provide support when needed.</p>
       </div>
       <div className="mx-auto max-w-4xl px-2 sm:px-0">
         <h2 className='subheading !text-left pb-4 pt-6'>Once a year payment</h2>
-        <p>Gimlet has one-time annual payments. This means that you'll get access to every new feature we publish in the 12 months after your purchase.</p>
-        <p className='mt-6'>You'll start with a 7-day trial to evaluate if Gimlet is helpful for you, and if we live up to our promise of delivering the best deployment experience.</p>
+        <p>Gimlet has one-time annual payments. This means that you&apos;ll get access to every new feature we publish in the 12 months after your purchase.</p>
+        <p className='mt-6'>You&apos;ll start with a 7-day trial to evaluate if Gimlet is helpful for you, and if we live up to our promise of delivering the best deployment experience.</p>
         <p className='mt-6'>Your license will expire a year after your purchase.</p>
-        <p className='mt-6'>On the technical level, you'll start off with an ephemeral infrastructure provided by us for the trial period and can't connect any real clusters until you purchase the license.</p>
+        <p className='mt-6'>On the technical level, you&apos;ll start off with an ephemeral infrastructure provided by us for the trial period and can&apos;t connect any real clusters until you purchase the license.</p>
         <p className='mt-6'>After your purchase, your instance will be moved to a permanent infrastructure, and you can connect new environments to your Gimlet.</p>
-        <p className='mt-6'>If you decide to not purchase Gimlet, all of your data from the trial period, including git repository connections, deployed applications, and so on, will be removed and won't be recoverable after the trial.</p>
+        <p className='mt-6'>If you decide to not purchase Gimlet, all of your data from the trial period, including git repository connections, deployed applications, and so on, will be removed and won&apos;t be recoverable after the trial.</p>
       </div>
       <div className="mx-auto max-w-4xl px-2 sm:px-0">
         <h2 className='subheading !text-left pb-4 pt-6'>BUSL License</h2>
