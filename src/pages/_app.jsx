@@ -178,9 +178,11 @@ export default function App({ Component, pageProps }) {
   let ogTitle = "Deploy and share your frontend, backend or AI project using open-source tooling and social auth."
   let description = "Deploy and share your frontend, backend or AI project using open-source tooling and social auth."
   if (pageProps.markdoc?.frontmatter.description) {
+    description = pageProps.markdoc?.frontmatter.description
+  }
+  if (pageProps.markdoc?.frontmatter.title) {
     ogTitle = pageProps.markdoc?.frontmatter.title
     pageTitle = pageProps.markdoc?.frontmatter.title
-    description = pageProps.markdoc?.frontmatter.description
   }
   if (isYamlGeneratorPage) {
     pageTitle = "Kubernetes YAML Generator"
