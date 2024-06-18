@@ -1,10 +1,8 @@
 ---
-title: 'DNS | Deployment Settings'
+title: 'DNS'
 description: |
   Configuring DNS settings is necessary when you'd like to access your application from a custom domain.
 ---
-
-# DNS
 
 Configuring DNS settings is necessary when you'd like to access your application from a custom domain.
 

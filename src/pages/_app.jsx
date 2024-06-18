@@ -184,6 +184,9 @@ export default function App({ Component, pageProps }) {
     ogTitle = pageProps.markdoc?.frontmatter.title
     pageTitle = pageProps.markdoc?.frontmatter.title
   }
+  if (pageProps.markdoc?.frontmatter.ogTitle) {
+    ogTitle = pageProps.markdoc?.frontmatter.ogTitle
+  }
   if (isYamlGeneratorPage) {
     pageTitle = "Kubernetes YAML Generator"
     ogTitle = "Kubernetes YAML Generator"
