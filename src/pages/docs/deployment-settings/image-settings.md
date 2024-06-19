@@ -1,4 +1,8 @@
-# Container Image Settings
+---
+title: 'Container Image Settings'
+description: |
+  Gimlet deploys applications from registries and it can also build them for deployments. Find out how.
+---
 
 When you're setting an application up for deployment, you can select two types of templates:
 
