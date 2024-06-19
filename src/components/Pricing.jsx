@@ -101,11 +101,16 @@ export function PricingPage() {
       <div className="mx-auto max-w-4xl px-2 sm:px-0">
         <h2 className='subheading !text-left pb-4 pt-6'>Once a year payment</h2>
         <p>Gimlet has one-time annual payments. This means that you&apos;ll get access to every new feature we publish in the 12 months after your purchase.</p>
+        <h2 className='subheading !text-left pb-4 pt-6'>When you sign up to Gimlet Cloud</h2>
         <p className='mt-6'>You&apos;ll start with a 7-day trial to evaluate if Gimlet is helpful for you, and if we live up to our promise of delivering the best deployment experience.</p>
         <p className='mt-6'>Your license will expire a year after your purchase.</p>
         <p className='mt-6'>On the technical level, you&apos;ll start off with an ephemeral infrastructure provided by us for the trial period and can&apos;t connect any real clusters until you purchase the license.</p>
         <p className='mt-6'>After your purchase, your instance will be moved to a permanent infrastructure, and you can connect new environments to your Gimlet.</p>
         <p className='mt-6'>If you decide to not purchase Gimlet, all of your data from the trial period, including git repository connections, deployed applications, and so on, will be removed and won&apos;t be recoverable after the trial.</p>
+        <h2 className='subheading !text-left pb-4 pt-6'>When you self-host Gimlet</h2>
+        <p className='mt-6'>If you self-host Gimlet for commercial purposes, you need to purchase the license, which is $300 for a year. In this case, you’ll be responsible for hosting your Gimlet instance, and also securing it and the underlying infrastructure components.</p>
+        <p className='mt-6'>Non-profit and individual use for Gimlet is free and comes without usage limitations.</p>
+        <p className='mt-6'>When you self-host Gimlet consider technical limitations. Your infrastructure might impact Gimlet’s performance and you might need more Gimlet instances to sufficiently serve your needs.</p>
       </div>
       <div className="mx-auto max-w-4xl px-2 sm:px-0">
         <h2 className='subheading !text-left pb-4 pt-6'>BUSL License</h2>
