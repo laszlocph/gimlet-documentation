@@ -1,7 +1,7 @@
 ---
 title: 'Resource Usage'
 description: |
-  You can add encrypted secrets to applications you deploy with Gimlet.
+  You can configure resource usage definitions in Gimlet for your deployed applications.
 ---
 
 # Resource Usage
