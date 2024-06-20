@@ -6,7 +6,13 @@ description: |
 
 # Resource Usage
 
-You can specify resource requests and limits as you can see in the `Resources` settings of deployments.
+You can specify resource requests and limits as you can see in the **Resources** settings of deployments.
+
+To be able to change resource settings, you have to deploy the application first, then click the **Write configuration to Git** button.
+
+You'll be directed to the deployment's status screen, where you need to look for the (...) or meatballs menu, then click the **Edit** button.
+
+Once you're in the settings, click the Resources tab, where the following options will be listed.
 
 ## Requests
 
