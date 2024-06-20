@@ -1,7 +1,7 @@
 ---
 title: 'DNS'
 description: |
-  Configuring DNS settings is necessary when you'd like to access your application from a custom domain.
+  Configuring DNS settings in Gimlet is necessary when you'd like to access your application from a custom domain.
 ---
 
 Configuring DNS settings is necessary when you'd like to access your application from a custom domain.
@@ -31,3 +31,11 @@ Gimlet will generate a unique subdomain ending with `gimlet.app` for you. This w
 ## Set up Custom Subdomain for a Deployment
 
 In the deployment settings you can specify a subdomain for the custom domain you configured with one of the methods described above.
+
+## Change Domain After Deployment
+
+You can change the domain after you deployed the application. You can do this by navigating to deployment settings after a successful deployment.
+
+When you click the **Write configuration to Git** button, you'll be directed to the deployment's status screen. In the top right corner to the status, click on the (...) or meatballs menu, and then click the **Edit** button to enter deplopyment settings.
+
+When you're in the deployment settings, click the **Domain** button, where you can update the domain. You can turn HTTPS certification on and off here, as well. When you're done, you can give the changes you made in yaml format by clicking the **Review changes** button, then apply the changes by clicking the **Save** button.
