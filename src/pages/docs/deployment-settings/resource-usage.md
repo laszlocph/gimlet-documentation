@@ -1,6 +1,13 @@
+---
+title: 'Resource Usage'
+description: |
+  You can add encrypted secrets to applications you deploy with Gimlet.
+---
+
 # Resource Usage
 
 You can specify resource requests and limits as you can see in the `Resources` settings of deployments.
+
 ## Requests
 
 You can configure CPU and Memory requests. It's required to allocate resources for your application on the node.

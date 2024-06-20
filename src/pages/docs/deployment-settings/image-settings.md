@@ -76,3 +76,13 @@ npm run build
 ```
 
 **Build assets:** The location of the generated build assets. It's usually the `build/` folder in your repository's root.
+
+## Replicas
+
+After a successful deployment, you can configure replicas of your application.
+
+Go to the deployment's settings by clicking the (...) or meatballs menu's button, and click **Edit**. In the settings on the left side, choose the **Container Image** option, and scroll to the bottom of the settings.
+
+There should be a slider named **Replicas**, which you can use to set up the number of replicas you'd like to have for this application.
+
+You can if the replica changes are set if you click the **Review changes** button on top. If the changes are made in the yaml, click Save to apply the changes.
