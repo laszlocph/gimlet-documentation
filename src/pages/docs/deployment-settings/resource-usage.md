@@ -12,7 +12,7 @@ To be able to change resource settings, you have to deploy the application first
 
 You'll be directed to the deployment's status screen, where you need to look for the (...) or meatballs menu, then click the **Edit** button.
 
-Once you're in the settings, click the Resources tab, where the following options will be listed.
+Once you're in the settings, click the **Resources** tab, where the following options will be listed.
 
 ## Requests
 
