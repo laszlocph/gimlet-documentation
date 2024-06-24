@@ -7,7 +7,7 @@ chart:
     https://github.com/gimlet-io/onechart.git?branch=simplified-schema&path=/charts/onechart/
 values:
   image:
-    repository: registry.gimlet:30003/gimlet-ioxnxzouqr/{{ .APP }}
+    repository: registry.gimlet:30003/gimlet-ioehyeqlkc/{{ .APP }}
     tag: '{{ .SHA }}'
     dockerfile: Dockerfile
     strategy: dockerfile
