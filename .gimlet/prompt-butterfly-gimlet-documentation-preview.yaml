@@ -1,5 +1,5 @@
 app: gimlet-documentation-preview
-env: suitable-grass
+env: prompt-butterfly
 preview: true
 namespace: default
 chart:
@@ -25,5 +25,5 @@ values:
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt
       kubernetes.io/ingress.class: nginx
-    host: gimlet-documentation-preview-xnxzouqr.gimlet.app
+    host: gimlet-documentation-preview-ehyeqlkc.gimlet.app
     tlsEnabled: true
