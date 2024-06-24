@@ -4,6 +4,8 @@ description: |
   Django is a popular Python framework for web applications. Here's how you can deploy it with Gimlet.
 ---
 
+**Django is a Python framework that can be deployed with Gimlet.**
+
 ## Step 1: Log in to Gimlet
 
 Get started with Gimlet by connecting your GitHub or GitLab. After connecting your profile with Gimlet, the repositories available to you will be listed. If you can't find the repository of your Django project, you can use the search bar to find it.

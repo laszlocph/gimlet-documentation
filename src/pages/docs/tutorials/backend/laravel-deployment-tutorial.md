@@ -4,7 +4,7 @@ description: |
   Laravel is a popular PHP framework, which you can deploy with Gimlet.
 ---
 
-Laravel is a popular PHP framework, which you can deploy with Gimlet.
+**Laravel is a popular PHP framework, which you can deploy with Gimlet.**
 
 ## Step 1: Get Started with Gimlet
 

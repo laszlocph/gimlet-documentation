@@ -4,8 +4,7 @@ description: |
   If you self-host Gimlet, this guide will help you manage environment configuration using the application's manifest file.
 ---
 
-
-You can control environment configuration with the Gimlet environment manifest file.
+**You can control environment configuration with the Gimlet environment manifest file.**
 
 It pins down the release configuration to a target environment: the Helm chart to use, its version, and the configuration variables for a given environment.
 

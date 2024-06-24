@@ -4,7 +4,7 @@ description: |
   Configuring DNS settings in Gimlet is necessary when you'd like to access your application from a custom domain.
 ---
 
-Configuring DNS settings is necessary when you'd like to access your application from a custom domain.
+**Configuring DNS settings is necessary when you'd like to access your application from a custom domain.**
 
 ## Configure Nginx on Your Environment
 

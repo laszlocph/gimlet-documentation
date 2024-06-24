@@ -4,6 +4,8 @@ description: |
   Gimlet deploys applications from registries and it can also build them for deployments. Find out how.
 ---
 
+**Deploy applications from registries or build them for deployments.**
+
 When you're setting an application up for deployment, you can select two types of templates:
 
 - **Web Application Template**

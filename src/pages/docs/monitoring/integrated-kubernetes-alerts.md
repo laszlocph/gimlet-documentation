@@ -4,7 +4,7 @@ description: |
   There are Kubernetes alerts integrated into Gimlet to make troubleshooting easier when something goes wrong with your deployments.
 ---
 
-Integralt Kubernetes alertek vannak a Gimletben - ezek mar a k8s-es sectionben emlitve vannak, check v0.23.0 release notes, todo: screenshotok alertekrol
+**There are Kubernetes alerts integrated into Gimlet to make troubleshooting easier when something goes wrong with your deployments.**
 
 # Integrated Kubernetes Alerts
 

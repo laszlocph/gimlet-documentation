@@ -4,7 +4,7 @@ description: |
   Flowise is a drag & drop style AI workflow builder. Here's how you can deploy it with Gimlet.
 ---
 
-Flowise is a drag & drop style AI workflow builder. Here's how you can deploy it with Gimlet.
+**Flowise is a drag & drop style AI workflow builder. Here's how you can deploy it.**
 
 ## Step 1: Get Started with Gimlet
 

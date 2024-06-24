@@ -4,8 +4,6 @@ description: |
   Kubernetes troubleshooting guide describing the most common error messages and the solutions for them.
 ---
 
-# Troubleshooting
-
 Even though we're doing our best so you never have to interact with Kubernetes when you use Gimlet, it's inevitable that things go wrong sometimes. This troubleshooting guide is supposed to help with the most common failures you can expect.
 
 ## Understanding Your Environment

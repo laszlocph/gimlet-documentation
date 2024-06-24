@@ -4,7 +4,7 @@ description: |
   Collection of Kubernetes essential and troubleshooting guides, in case you need to fix something with your applications.
 ---
 
-# Kubernetes Resources
+**Collection of Kubernetes essential and troubleshooting guides, in case you need to fix something with your applications.**
 
 Gimlet abstracts away the use of Kubernetes. As much as we'd like to make issues resolvable on Gimlet's UI, it's not unexpected that you'll need outside-of-Gimlet troubleshooting one day. For this reason, you can find a comprehensive guide about getting started and fixing the most common issues when it comes to Kubernetes.
 

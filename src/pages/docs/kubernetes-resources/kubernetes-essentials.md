@@ -4,7 +4,7 @@ description: |
   Basic Kubernetes informations and commands you can use to manage a cluster.
 ---
 
-This is a brief guide for essential things about Kubernetes for sufficient introduction to the orchestrator.
+**This is a brief guide for essential things about Kubernetes for sufficient introduction to the orchestrator.**
 
 ## Get Familiar Locally with K3d
 

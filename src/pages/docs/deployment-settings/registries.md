@@ -4,7 +4,7 @@ description: |
   Gimlet supports any OCI (Open Container Initiative) compatible container registry.
 ---
 
-Gimlet supports any OCI (Open Container Initiative) compatible container registry.
+**Any OCI (Open Container Initiative) compatible container registries are supported.**
 
 ## Custom Registries
 

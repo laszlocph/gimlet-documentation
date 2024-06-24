@@ -4,7 +4,7 @@ description: |
   You can add social authentication to your application with Gimlet to secure access.
 ---
 
-You can add social authentication to your application with Gimlet to secure and restrict access to your app.
+**You can add social authentication to your application to secure and restrict access to your app.**
 
 ## Create OAuth Application on GitHub
 

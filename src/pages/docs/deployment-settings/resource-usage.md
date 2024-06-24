@@ -4,6 +4,8 @@ description: |
   You can configure resource usage definitions for requests and limitations in Gimlet.
 ---
 
+**You can configure resource usage definitions for requests and limitations.**
+
 You can specify resource requests and limits as you can see in the **Resources** settings of deployments.
 
 To be able to change resource settings, you have to deploy the application first, then click the **Write configuration to Git** button.

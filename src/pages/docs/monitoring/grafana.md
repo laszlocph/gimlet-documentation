@@ -4,7 +4,7 @@ description: |
   Integrate your Grafana Cloud account with Gimlet to visualize metrics about your deployed applications.
 ---
 
-Grafana is the de-facto dashboarding solution in the cloud native space. It visualizes metrics collected by Prometheus. You can integrate Grafana by following the instructions described below.
+**Grafana is the de-facto dashboarding solution in the cloud native space. It visualizes metrics collected by Prometheus. You can integrate Grafana by following the instructions described below.**
 
 **Step 1:** Navigate to your environment's config screen by clicking the Environments button on top, and selecting the environment by clicking on its card.
 
@@ -20,4 +20,4 @@ Grafana is the de-facto dashboarding solution in the cloud native space. It visu
 
 **User:** Your Grafana Cloud username.
 
-**Password / API Key:** 
+**Password / API Key:** Your Grafana Cloud password.

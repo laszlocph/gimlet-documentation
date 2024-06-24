@@ -4,9 +4,9 @@ description: |
   Gimlet holds many similarities with other deployment tools, like Vercel and Netlify. Find out why Gimlet is different from them.
 ---
 
-This page draws comparisons with common tools like Flux, ArgoCD, Terraform and more.
+**This page draws comparisons with commonly used tools like Vercel, Netlify Flux, ArgoCD, Terraform and more.**
 
-Also make sure to read the [concepts](https://gimlet.io/docs/concepts).
+Also make sure to read the [concepts](https://gimlet.io/docs/concepts) for better understanding of how Gimlet works.
 
 ## Platforms
 

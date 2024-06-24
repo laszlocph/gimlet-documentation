@@ -4,7 +4,7 @@ description: |
   You can track metrics of your applications deployed with Gimlet by integrating Prometheus with it.
 ---
 
-Prometheus is a monitoring tool that gathers metrics in your infrastructure. You can integrate it by following the steps below.
+**Prometheus is a monitoring tool that gathers metrics in your infrastructure. You can integrate it by following the steps below.**
 
 **Step 1:** Navigate to your environment's configuration screen. You can do this by navigating to Environments in the menu on top, and selecting the environment which you'd like to configure with Prometheus by clicking on its card.
 
