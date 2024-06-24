@@ -1,4 +1,8 @@
-# Next.js Deployment Tutorial
+---
+title: 'Deployments of Next.js Frontends'
+description: |
+  Next.js is a React framework which you can deploy with Gimlet. Add HTTPS certifice and social authentication to it with a few clicks.
+---
 
 Next.js is a React framework made by Vercel. It's one of the most popular frameworks for frontend applications. You can deploy it with Gimlet as documented below.
 

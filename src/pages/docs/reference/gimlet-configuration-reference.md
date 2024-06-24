@@ -1,4 +1,8 @@
-# Gimlet Configuration Reference
+---
+title: 'Gimlet Configuration Reference'
+description: |
+  This page is a full configuration reference should you need to adjust the configuration when self-hosting Gimlet.
+---
 
 This page is a full configuration reference should you need to adjust the configuration when self-hosting Gimlet.
 

@@ -1,4 +1,8 @@
-# Laravel Deployment with Gimlet
+---
+title: 'Deployments of Laravel Applications'
+description: |
+  Laravel is a popular PHP framework, which you can deploy with Gimlet.
+---
 
 Laravel is a popular PHP framework, which you can deploy with Gimlet.
 

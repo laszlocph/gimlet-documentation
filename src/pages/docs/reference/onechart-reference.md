@@ -1,4 +1,8 @@
-# OneChart Reference
+---
+title: 'OneChart Reference'
+description: |
+  OneChart is a generic Helm chart for your application deployments. These are the underlying yaml files of deployments made with Gimlet.
+---
 
 > One chart to rule them all
 

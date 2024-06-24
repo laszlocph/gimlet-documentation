@@ -1,3 +1,9 @@
+---
+title: 'HTTPS'
+description: |
+  Configure HTTPS certification and add it to your deployed applications with a single click.
+---
+
 # HTTPS
 
 You can set up HTTPS certification for your applications by configuring cert-manager. It's an open-source certification issuer specifically made for Kubernetes.

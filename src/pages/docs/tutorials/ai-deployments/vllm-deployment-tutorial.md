@@ -1,4 +1,8 @@
-# vLLM Deployment Tutorial
+---
+title: 'Deployment of vLLM'
+description: |
+  vLLM is an inference for language models. You can deploy it with Gimlet to the infrastructure of your choice.
+---
 
 vLLM is an inference for large language models (LLMs) that you can deploy with Gimlet. It's worth noting that this tutorial only describes how to set up vLLM on CUDA-capable resources, therefore you won't be able to test vLLM deployment with Gimlet's trial version.
 

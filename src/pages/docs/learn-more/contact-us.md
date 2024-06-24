@@ -1,4 +1,8 @@
-# Contact Us
+---
+title: 'Contact Us'
+description: |
+  Feel free to email us or join our Discord if you run into issues or have feedback when you use Gimlet.
+---
 
 ## Gimlet
 

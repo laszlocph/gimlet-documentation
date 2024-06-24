@@ -1,4 +1,9 @@
-# Gimlet Manifest Reference
+---
+title: 'Gimlet Manifest Reference'
+description: |
+  If you self-host Gimlet, this guide will help you manage environment configuration using the application's manifest file.
+---
+
 
 You can control environment configuration with the Gimlet environment manifest file.
 

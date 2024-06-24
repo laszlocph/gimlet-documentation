@@ -1,4 +1,8 @@
-# How to Deploy Remix Frontends with Gimlet
+---
+title: 'Deployments of Remix Frontends'
+description: |
+  Remix frontend applications can be deployed with Gimlet. Find out how to add HTTPS and social authentication to them, as well.
+---
 
 Remix is a React framework for frontend applications. You can deploy it with Gimlet.
 

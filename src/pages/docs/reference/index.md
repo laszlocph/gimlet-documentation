@@ -1,4 +1,8 @@
-# Reference
+---
+title: 'Reference'
+description: |
+  This is a collection of in-depth documentation for self-hosted Gimlet and Gimlet-related open-source tools.
+---
 
 This is a collection of in-depth documentation for self-hosted Gimlet and Gimlet-related open-source tools.
 

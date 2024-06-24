@@ -1,3 +1,9 @@
+---
+title: 'Quick Start'
+description: |
+  Get started with Gimlet. Here's how you can create a new account and deploy an application.
+---
+
 # Quick Start
 This is a very quick, step-by-step tutorial of deployments with Gimlet. Part of the reason why is to demonstrate how easy it is to deploy with this tool.
 

@@ -1,4 +1,8 @@
-# Dockerfile Deployment with Gimlet
+---
+title: 'Dockerfile Deployment with Gimlet'
+description: |
+  If you have a Dockerfile for your application, you can deploy it with Gimlet. Find out how.
+---
 
 Dockerfile deployment is the most common use case for deploying AI projects with Gimlet. As long as there's a functioning Dockerfile in the git repository you'd like to deploy, Gimlet can build and launch it in your cluster.
 

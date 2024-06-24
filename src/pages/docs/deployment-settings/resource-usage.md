@@ -1,7 +1,7 @@
 ---
 title: 'Resource Usage'
 description: |
-  You can configure resource usage definitions in Gimlet for your deployed applications.
+  You can configure resource usage definitions for requests and limitations in Gimlet.
 ---
 
 # Resource Usage

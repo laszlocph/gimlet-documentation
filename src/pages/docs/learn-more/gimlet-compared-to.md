@@ -1,9 +1,15 @@
-# Gimlet Compared to...
+---
+title: 'Gimlet Compared To...'
+description: |
+  Gimlet holds many similarities with other deployment tools, like Vercel and Netlify. Find out why Gimlet is different from them.
+---
 
 This page draws comparisons with common tools like Flux, ArgoCD, Terraform and more.
 
 Also make sure to read the [concepts](https://gimlet.io/docs/concepts).
+
 ## Platforms
+
 ### Vercel
 
 Vercel is one of the most popular platforms to host frontend applications. It's easy to use with great UX. However, it doesn't support containerized runtimes.
@@ -51,16 +57,19 @@ Kubernetes is the underlying orchestration platform of Gimlet. We chose to adopt
 - **Widely adopted:** Kubernetes have been considered the de-facto orchestration platform for a while.
 
 Therefore Gimlet and Kubernetes coexist. You can't use Gimlet without Kubernetes, but Kubernetes can't be used without Gimlet. What Gimlet does is that it abstracts away a bunch of complexity from Kubernetes that you'll never touch.
+
 ### Jenkins
 
 Jenkins is a CI/CD automation server that's been considered the go-to CI/CD tool of corporate users.
 
 While Gimlet offers overlapping capabilities of auto-deployments, Gimlet caters to users who are more familiar with contemporary UX approaches.
+
 ### GitHub Actions
 
 GitHub Actions is the go-to CI/CD platform utilizing yamls to automate workflows. It can be tailored to any use case.
 
 Gimlet can be integrated with GitHub, therefore Gimlet users can automate deployments of their applications managed in GitHub.
+
 ### Flux and ArgoCD
 
 Flux and ArgoCD are both gitops controllers that apply yaml from a git repository onto Kubernetes clusters.

@@ -1,7 +1,7 @@
 ---
 title: 'Secrets'
 description: |
-  You can add encrypted secrets to applications you deploy with Gimlet.
+  You can add encrypted secrets to applications you deploy with Gimlet. Gimlet uses Sealed Secrets to manage and encrypt secrets.
 ---
 
 Gimlet utilizes Sealed Secrets under the hood to encrypt and manage your secrets. It's open-source, you can take a better look at it [here](https://github.com/bitnami-labs/sealed-secrets).

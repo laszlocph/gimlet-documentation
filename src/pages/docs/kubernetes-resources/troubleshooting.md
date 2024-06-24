@@ -1,6 +1,13 @@
+---
+title: 'Troubleshooting'
+description: |
+  Kubernetes troubleshooting guide describing the most common error messages and the solutions for them.
+---
+
 # Troubleshooting
 
 Even though we're doing our best so you never have to interact with Kubernetes when you use Gimlet, it's inevitable that things go wrong sometimes. This troubleshooting guide is supposed to help with the most common failures you can expect.
+
 ## Understanding Your Environment
 
 First you'll have to get better understanding of what caused the problem. The commands below will help you do so.
@@ -111,6 +118,7 @@ Container networking issues prevent applications running in a pod from reaching 
 ### Verify It's Not an App Related Issue
 
 Run `kubectl exec -it pod-xxx bash`, where `pod-xxx` is the pod where the app you'd like to debug is running. Using this command, you can access the shell of the application, which will be necessary for debugging.
+
 #### Check DNS
 
 You can try DNS resolution by running `dig` or `nslookup`.

@@ -1,4 +1,8 @@
-# How to Deploy Django Applications
+---
+title: 'Deployments of Django Applications'
+description: |
+  Django is a popular Python framework for web applications. Here's how you can deploy it with Gimlet.
+---
 
 ## Step 1: Log in to Gimlet
 

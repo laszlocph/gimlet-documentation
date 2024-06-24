@@ -1,4 +1,8 @@
-# How to Deploy Models from Hugging Face
+---
+title: 'Deployments of Models Available on Hugging Face'
+description: |
+  Models available on Hugging Face can be deployed with Gimlet if you have a Dockerfile for them.
+---
 
 Hugging Face is GitHub for large language models. You can treat the models available there like git repositories.
 

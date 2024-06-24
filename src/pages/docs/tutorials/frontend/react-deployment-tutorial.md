@@ -1,4 +1,8 @@
-# How to Deploy React Applications With Gimlet
+---
+title: 'Deployments of React Frontends'
+description: |
+  React applications can be deployed with Gimlet, too. Find out how to add HTTPS and social authentication, as well.
+---
 
 React is a JavaScript library for building user interfaces, enabling developers to create dynamic and interactive web applications efficiently.
 

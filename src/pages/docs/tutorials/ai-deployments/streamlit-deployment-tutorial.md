@@ -1,4 +1,8 @@
-# Streamlit Deployment Tutorial
+---
+title: 'Deployments of Streamlit Applications'
+description: |
+  Streamlit is a popular Python framework for data and AI projects. Here's how you can deploy it with Gimlet.
+---
 
 Quick start tutorial for applications written in Streamlit, a popular Python framework for AI and data projects.
 

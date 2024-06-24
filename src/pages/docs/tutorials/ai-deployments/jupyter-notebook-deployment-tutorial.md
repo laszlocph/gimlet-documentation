@@ -1,4 +1,8 @@
-# Jupyter Notebook Deployment
+---
+title: 'Deployments of Jupyter Notebooks'
+description: |
+  You can deploy Jupyter Notebooks with Gimlet to collaborate with your teammates. Find out how.
+---
 
 ## Step 1: Getting Started with Gimlet
 

@@ -1,4 +1,8 @@
-# Deployment Settings
+---
+title: 'Deployment Settings'
+description: |
+  There are many ways to configure deployment settings with Gimlet. You can easily add HTTPS and social authentication to your application.
+---
 
 ## Build with Gimlet
 

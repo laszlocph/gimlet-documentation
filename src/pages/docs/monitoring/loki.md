@@ -1,4 +1,8 @@
-# Loki
+---
+title: 'Loki'
+description: |
+  Configuring DNS settings in Gimlet is necessary when you'd like to access your application from a custom domain.
+---
 
 Loki is an open-source log aggregation tool. In this tutorial, you can see how you can query it in case you need to investigate logs.
 

@@ -1,4 +1,8 @@
-# Introduction
+---
+title: 'Introduction'
+description: |
+  Gimlet is a deployment tool. Find out how to get started with it.
+---
 
 Gimlet is a deployment tool designed to offer the simplest ways of software delivery.
 
