@@ -7,7 +7,7 @@ const tiers = [
     href: 'https://accounts.gimlet.io/signup/',
     priceMonthly: "Free",
     priceYearly: "$300/yr",
-    description: 'Self-host Gimlet for private and non-profit use without limitations.',
+    description: 'One-year access to all existing and upcoming Gimlet features.',
     includedFeatures: [
       'All Gimlet features.',
       'Unlimited users.', 
@@ -16,7 +16,7 @@ const tiers = [
     ],
     responsibilities: [
       'Hosting Gimlet',
-      'Updating Gimlet for Access to Newest Features',
+      'Updating Gimlet to Access Newest Features',
       'Keeping Your Applications & Infrastructure Secure',
     ]
   },
@@ -33,7 +33,7 @@ const tiers = [
       'Community support.'
     ],
     responsibilities: [
-      'Keeping Your Applications and Infrastructure Secure'
+      'Keeping Your Applications and Cluster Secure'
     ]
   },
 ]
@@ -57,7 +57,17 @@ export function PricingPage() {
                 <h2 className="text-lg font-medium leading-6 text-neutral-900 dark:text-neutral-50">{tier.name}</h2>
                 <p className="mt-4 text-sm text-neutral-500 h-16 dark:text-neutral-300">{tier.description}</p>
                 <p className="mt-8">
-                  <span className="text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50">{tier.priceYearly}</span>
+                  {tier.name === "Self-Hosted" &&
+                    <>
+                      <span className="block text-2xl tracking-tight text-neutral-900 dark:text-neutral-50">For individuals and non-profits</span>
+                      <span className="text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50">Free</span>
+                      <span className="mt-6 block text-2xl tracking-tight text-neutral-900 dark:text-neutral-50">For commercial use</span>
+                      <span className="text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50">$300/yr</span>
+                    </>
+                  }
+                  {tier.name !== "Self-Hosted" &&
+                    <span className="text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50">{tier.priceYearly}</span>
+                  }
                 </p>
               </div>
               <div className="px-6 pt-6 pb-8">
@@ -96,25 +106,29 @@ export function PricingPage() {
         <h2 className='subheading !text-left pb-4 pt-6'>About Our Pricing and License</h2>
         <p>We considered our options, and decided that $300 is the most optimal price tag for our tool.</p>
         <p className='mt-6'>For organizations, it&apos;s a budget-friendly price tag compared to the value it offers. Organizations burn substantially more money on the daily developing their in-house solutions, while Gimlet is designed to provide off-the-shelf deployment experience ready to support the most common use cases.</p>
-        <p className='mt-6'>For us, it&apos;s money, which we can use to deliver new features, host Gimlet for you and provide support when needed.</p>
+        <p className='mt-6'>For us, it&apos;s money, which we can use to deliver new features, host Gimlet for you and provide community support.</p>
       </div>
       <div className="mx-auto max-w-4xl px-2 sm:px-0">
         <h2 className='subheading !text-left pb-4 pt-6'>Once a year payment</h2>
         <p>Gimlet has one-time annual payments. This means that you&apos;ll get access to every new feature we publish in the 12 months after your purchase.</p>
         <h2 className='subheading !text-left pb-4 pt-6'>When you sign up to Gimlet Cloud</h2>
-        <p className='mt-6'>You&apos;ll start with a 7-day trial to evaluate if Gimlet is helpful for you, and if we live up to our promise of delivering the best deployment experience.</p>
+        <p className='mt-6'>You&apos;ll start with a 7-day trial to evaluate if Gimlet is helpful for you.</p>
         <p className='mt-6'>Your license will expire a year after your purchase.</p>
         <p className='mt-6'>On the technical level, you&apos;ll start off with an ephemeral infrastructure provided by us for the trial period and can&apos;t connect any real clusters until you purchase the license.</p>
-        <p className='mt-6'>After your purchase, your instance will be moved to a permanent infrastructure, and you can connect new environments to your Gimlet.</p>
-        <p className='mt-6'>If you decide to not purchase Gimlet, all of your data from the trial period, including git repository connections, deployed applications, and so on, will be removed and won&apos;t be recoverable after the trial.</p>
+        <p className='mt-6'>After your purchase, you can connect your own Kubernetes clusters and move your applications to this permanent infrastructure.</p>
+        <p className='mt-6'>If you decide to not purchase Gimlet, your ephemeral environment will be removed and won&apos;t be recoverable after the trial.</p>
         <h2 className='subheading !text-left pb-4 pt-6'>When you self-host Gimlet</h2>
         <p className='mt-6'>If you self-host Gimlet for commercial purposes, you need to purchase the license, which is $300 for a year. In this case, you’ll be responsible for hosting your Gimlet instance, and also securing it and the underlying infrastructure components.</p>
         <p className='mt-6'>Non-profit and individual use for Gimlet is free and comes without usage limitations.</p>
         <p className='mt-6'>When you self-host Gimlet consider technical limitations. Your infrastructure might impact Gimlet’s performance and you might need more Gimlet instances to sufficiently serve your needs.</p>
       </div>
       <div className="mx-auto max-w-4xl px-2 sm:px-0">
-        <h2 className='subheading !text-left pb-4 pt-6'>BUSL License</h2>
-        <p>Business Use License (BUSL) allows us to monetize commercial use of Gimlet and leave the door open for free usage to individuals and non-profits if they decide to self-host.</p>
+        <h2 className='subheading !text-left pb-4 pt-6'>The Gimlet License</h2>
+        <p>Gimlet has a <a className="underline" href="https://en.wikipedia.org/wiki/Source-available_software">source-available</a> license and its source is hosted <a className="underline" href="https://github.com/gimlet-io/gimlet">on Github</a></p>
+      </div>
+      <div className="mx-auto max-w-4xl px-2 sm:px-0">
+        <h2 className='subheading !text-left pb-4 pt-6'>Gimlet Cloud Terms of Service</h2>
+        <p><a className="underline" href="/tos">Terms of Service</a></p>
       </div>
       <div className="pt-32">
         <Footer />
