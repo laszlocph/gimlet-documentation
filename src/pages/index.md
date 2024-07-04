@@ -1,3 +1,3 @@
 ---
-description: The fastest way to get a gitops platform on Flux and Kubernetes.
+description: Deploy and share your frontend, backend or AI project using open-source tooling and social auth
 ---
