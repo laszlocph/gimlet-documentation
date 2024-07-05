@@ -1,5 +1,5 @@
 app: gimlet-documentation-preview
-env: perfect-darkness
+env: capable-thunder
 preview: true
 namespace: default
 chart:
@@ -7,7 +7,7 @@ chart:
     https://github.com/gimlet-io/onechart.git?branch=simplified-schema&path=/charts/onechart/
 values:
   image:
-    repository: registry.gimlet:30003/gimlet-ioyeyzmtwi/{{ .APP }}
+    repository: registry.gimlet:30003/gimlet-ioemxxuioo/{{ .APP }}
     tag: '{{ .SHA }}'
     dockerfile: Dockerfile
     strategy: dockerfile
@@ -25,5 +25,5 @@ values:
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt
       kubernetes.io/ingress.class: nginx
-    host: gimlet-documentation-preview-yeyzmtwi.gimlet.app
+    host: gimlet-documentation-preview-emxxuioo.gimlet.app
     tlsEnabled: true
