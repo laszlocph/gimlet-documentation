@@ -96,7 +96,6 @@ const navigation = [
     title: 'Learn-more',
     links: [
       { title: 'Gimlet compared to', href: '/docs/learn-more/gimlet-compared-to' },
-      { title: 'ONCE/BUSL', href: '/docs/learn-more/once-busl' },
       { title: 'FAQ', href: '/docs/learn-more/faq' },
       { title: 'Contact us', href: '/docs/learn-more/contact-us' },
     ],
