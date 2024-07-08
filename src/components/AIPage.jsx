@@ -16,9 +16,11 @@ export function AIPage() {
           </div>
         </div>
       </div>
-      <div className="mx-auto max-w-7xl flex space-x-8">
-        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/pP32Ldaj-Kw?si=SWOGS0lHwWv9cB1J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/JCtnxbEpTGc?si=A6UsokbonxPO48Oq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div className="mx-auto max-w-7xl p-2">
+        <div className='mx-auto sm:flex sm:space-x-8 space-y-8 sm:space-y-0 w-fit'>
+          <iframe width="560" height="315" className='h-44 w-80 sm:w-[560px] sm:h-[315px]' src="https://www.youtube-nocookie.com/embed/pP32Ldaj-Kw?si=SWOGS0lHwWv9cB1J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe width="560" height="315" className='h-44 w-80 sm:w-[560px] sm:h-[315px]' src="https://www.youtube-nocookie.com/embed/JCtnxbEpTGc?si=A6UsokbonxPO48Oq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
       </div>
       <div className="py-16 sm:py-32 p-4">
         <How 
