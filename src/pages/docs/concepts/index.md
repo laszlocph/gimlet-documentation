@@ -3,6 +3,7 @@
 The purpose of this guide is to help you understand how Gimlet works by describing its components and how they interact with each other.
 
 ## Workflow
+![Gimlet workflow](/flow.svg)
 Continuous Integration (CI) pipelines lint, test, build and then push applications.
 
 CI workflow components aren't included in Gimlet's capabilities. It assumes tasks from your CI pipeline and runs them centralized. Integration pipelines can call the Gimlet API to deploy, therefore there's no need to script deployment in your workflow. We have CI plugins (actions, orbs) implemented for most platforms.
@@ -10,6 +11,7 @@ CI workflow components aren't included in Gimlet's capabilities. It assumes task
 Once the CI pipeline triggers Gimlet's API, Gimlet will execute the deployment by writing the deployment manifest to git. When it's done, Flux synchronizes the desired state from git to the cluster.
 
 ## Components
+![Gimlet components](/components.svg)
 ### Dashboard
 Gimlet's dashboard is where you get a comprehensive overview quickly.
 

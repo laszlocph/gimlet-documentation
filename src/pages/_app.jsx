@@ -74,13 +74,12 @@ const navigation = [
       { title: 'Kubernetes resources', href: '/docs/kubernetes-resources' },
       { title: 'Kubernetes essentials', href: '/docs/kubernetes-resources/kubernetes-essentials' },
       { title: 'Troubleshooting', href: '/docs/kubernetes-resources/troubleshooting' },
-      { title: 'Gimlet manifest reference', href: '/docs/kubernetes-resources/gimlet-manifest-reference' },
     ],
   },
   {
     title: 'Reference',
     links: [
-      { title: 'Reference', href: '/docs/reference' },
+      { title: 'Gimlet manifest reference', href: '/docs/reference/gimlet-manifest-reference' },
       { title: 'Gimlet configuration reference', href: '/docs/reference/gimlet-configuration-reference' },
       { title: 'Onechart reference', href: '/docs/reference/onechart-reference' },
       { title: 'Capacitor reference', href: '/docs/reference/capacitor-reference' },
