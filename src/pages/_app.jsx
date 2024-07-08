@@ -63,8 +63,7 @@ const navigation = [
   {
     title: 'CLI',
     links: [
-      { title: 'CLI', href: '/docs/cli' },
-      { title: 'Get started with CLI', href: '/docs/cli/get-started-with-cli' },
+      { title: 'Installation and Authentication', href: '/docs/cli' },
       { title: 'CLI Use-cases', href: '/docs/cli/cli-use-cases' },
     ],
   },
