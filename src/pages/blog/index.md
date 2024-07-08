@@ -130,6 +130,10 @@ See what GimletD brings to the gitops ecosystem.
 This document is a design proposal for GimletD, a server-side release manager component for GitOps workflows.
 {% /post %}
 
+{% post name="Helm React UI: a React component to render UIs for Helm Charts" image="helmreactui2.png" link="/blog/helm-react-ui-a-react-component-to-render-ui-for-helm-charts" date="2020-12-29" %}
+Helm React UI generates a UI based on Helm schema files and allows you to configure Helm Chart values in your browser.
+{% /post %}
+
 {% post name="The last-mile problem with Kubernetes" image="randy-laybourne-06P0tprVDvY-unsplash.jpg" link="/blog/the-last-mile-problem-with-kubernetes" date="2020-06-23" %}
 
 > Transporting goods via freight rail networks and container ships is often the most efficient and cost-effective manner of shipping.

@@ -48,6 +48,7 @@ const navigation = [
       { title: 'Chat notifications', href: '/docs/deployment-settings/chat-notifications' },
       { title: 'Resource Usage', href: '/docs/deployment-settings/resource-usage' },
       { title: 'Volumes', href: '/docs/deployment-settings/volumes' },
+      { title: 'Creating a custom template', href: '/docs/deployment-settings/custom-template' },
     ],
   },
   {

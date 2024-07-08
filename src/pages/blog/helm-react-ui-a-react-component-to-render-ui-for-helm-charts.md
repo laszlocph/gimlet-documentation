@@ -1,8 +1,12 @@
 ---
+layout: post
 title: 'Helm React UI: a React component to render UIs for Helm Charts'
+date: '2020-12-29'
 description:
   'Helm React UI generates a UI based on Helm schema files and allows you to configure Helm
   Chart values in your browser.'
+image: helmreactui2.png
+tags: [posts]
 ---
 
 Helm is the de-facto standard for packaging applications for Kubernetes. Its usage is ubiquitous and sentiment against its
