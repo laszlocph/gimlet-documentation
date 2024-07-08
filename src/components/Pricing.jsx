@@ -116,6 +116,7 @@ export function PricingPage() {
         <p className='mt-6'>Your license will expire a year after your purchase.</p>
         <p className='mt-6'>On the technical level, you&apos;ll start off with an ephemeral infrastructure provided by us for the trial period and can&apos;t connect any real clusters until you purchase the license.</p>
         <p className='mt-6'>After your purchase, you can connect your own Kubernetes clusters and move your applications to this permanent infrastructure.</p>
+        <iframe width="560" height="315" className='my-16' src="https://www.youtube-nocookie.com/embed/LCk25U7Gaj4?si=dWSzZ2ONoLK1VSTb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         <p className='mt-6'>If you decide to not purchase Gimlet, your ephemeral environment will be removed and won&apos;t be recoverable after the trial.</p>
         <h2 className='subheading !text-left pb-4 pt-6'>When you self-host Gimlet</h2>
         <p className='mt-6'>If you self-host Gimlet for commercial purposes, you need to purchase the license, which is $300 for a year. In this case, you’ll be responsible for hosting your Gimlet instance, and also securing it and the underlying infrastructure components.</p>

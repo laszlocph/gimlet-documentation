@@ -114,8 +114,12 @@ function Dropdown() {
       <div className="group-hover:block absolute hidden h-auto -right-1/2" id="headlessui-popover-panel-:r1h:" tabIndex="-1" data-headlessui-state="open">
         <div className="my-4 dropdown-menu p-6 rounded-3xl backdrop-blur-3xl text-neutral-200 bg-neutral-800 dark:bg-neutral-900/30 ring-1 ring-white/10">
           <ul className="top-0 w-48 text-base">
-            <li><a className="block px-2 py-2 hover:text-neutral-200 bg-[radial-gradient(ellipse_at_center_200px,_var(--tw-gradient-stops))] hover:from-teal-400" data-headlessui-state="open" href="/frontend">Frontend</a></li>
-            <li><a className="block px-2 py-2 hover:text-neutral-200 bg-[radial-gradient(ellipse_at_center_200px,_var(--tw-gradient-stops))] hover:from-teal-400" data-headlessui-state="open" href="/backend">Backend</a></li>
+            {
+            // <>
+            //   <li><a className="block px-2 py-2 hover:text-neutral-200 bg-[radial-gradient(ellipse_at_center_200px,_var(--tw-gradient-stops))] hover:from-teal-400" data-headlessui-state="open" href="/frontend">Frontend</a></li>
+            //   <li><a className="block px-2 py-2 hover:text-neutral-200 bg-[radial-gradient(ellipse_at_center_200px,_var(--tw-gradient-stops))] hover:from-teal-400" data-headlessui-state="open" href="/backend">Backend</a></li>
+            // </>
+            }
             <li><a className="block px-2 py-2 hover:text-neutral-200 bg-[radial-gradient(ellipse_at_center_200px,_var(--tw-gradient-stops))] hover:from-teal-400" data-headlessui-state="open" href="/ai-deployment">AI Deployment</a></li>
           </ul>
         </div>
