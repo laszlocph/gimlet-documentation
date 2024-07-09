@@ -57,10 +57,10 @@ This will delete the released application manifests from the gitops repository, 
 ### Getting a quick overview
 TODO
 
-### Then release
+### Release
 TODO
 
-### Then track the deployment status
+### Track the deployment status
 TODO
 
 ## Rollback
@@ -94,7 +94,7 @@ staging/my-app laszlocph/gimletd-test@d2d0a416e6 (1 week ago)
         https://github.com/owner/repo/commits/0017d995e
 ```
 
-### Then rollback
+### Rollback
 
 Once you identified the broken release, rollback to the preceding one. Gimlet will revert all commits made after the desired release.
 
