@@ -65,7 +65,7 @@ const navigation = [
     title: 'CLI',
     links: [
       { title: 'Installation and Authentication', href: '/docs/cli' },
-      { title: 'CLI Use-cases', href: '/docs/cli/cli-use-cases' },
+      { title: 'Use-cases', href: '/docs/cli/cli-use-cases' },
     ],
   },
   {
