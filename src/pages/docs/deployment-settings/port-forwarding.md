@@ -1,7 +1,7 @@
 ---
 title: 'Port Forwarding'
 description: |
-  You can add encrypted secrets to applications you deploy with Gimlet.
+  You can use port forwading with your applications deployed with Gimlet.
 ---
 
 **If you need port forwarding for your application, you can easily get a command for it after it's deployed.**

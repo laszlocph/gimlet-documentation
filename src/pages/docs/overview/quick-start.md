@@ -4,39 +4,34 @@ description: |
   Get started with Gimlet. Here's how you can create a new account and deploy an application.
 ---
 
-# Quick Start
-This is a very quick, step-by-step tutorial of deployments with Gimlet. Part of the reason why is to demonstrate how easy it is to deploy with this tool.
+This is a very quick, step-by-step tutorial of deployments with Gimlet.
 
-## Step 1: Sign In
-Sign in using your GitHub or GitLab account.
+## Step 1: Log In and Import Repositories
 
-Gimlet will ask for permission to certain privileges in your repositories. This is necessary to conduct the deployments with pull requests made by Gimlet.
+Sign in using your GitHub or GitLab account. After connecting your GitHub account to Gimlet, you'll see the repositories you have access to. If you don't find a certain repository on top of the list, use the search bar.
+
+You can import repositories by clicking the **Import** button next to them. Save imported repos by clicking the **I am done importing** button.
 
 ## Step 2: Select The Repo
-Pick the repository you’d like to deploy.
+
+Pick the repository you’d like to deploy. You can do this by clicking the repository's card. Click the **New Deployment** button to move forward.
 
 ## Step 3: Choose Deployment Method
-There are 4 ways to build images.
 
-- **Static image tag:** Select this if you have a specific version of your image you want to deploy.
-- **Dynamic image tag:** Choose this option if you have a Continuous Integration pipeline that builds an image and tags it with the git hash, tag, or other dynamic identifier.
-- **Automatic image building:** Pick automatic image building if you’d like to use Gimlet to build. We only recommend it to advanced users.
-- **Using a Dockerfile:** In case you have a Dockerfile in the repository you selected, this might be the ideal option.
+There are 4 ways to build images. The easiest way is to use a Dockerfile to deploy the application. This requires a Dockerfile located in your root folder, otherwise you need to enter the path to the Dockerfile in your repository.
 
-For this tutorial, we chose Dockerfile deployment.
+This tutorial demonstrates Dockerfile deployment.
 
-Make sure that the image settings look like the ones below.
+Make sure that the image settings look similar the ones below. This is the screenshot of a Streamlit application, so these settings apply to a Dockerfile suitable for deployments of Streamlit apps.
 
-![](screenshot of dockerfile image settings)
+![Deployment configuration for a Streamlit application deployed with a Dockerfile in Gimlet.](/src/pages/docs/screenshots/streamlit-deployment-configuration.png)
 
-Add a deployment configuration and save it.
-## Optionable Step: Merge Gimlet’s Pull Request
-An alternative way to incorporate deployments with Gimlet is to make the tool open a pull request in the application's repository. By default, this way is turned off, but you can turn it on if it's suitable to you. Here's how.
+## Step 4: Deploy The Application
 
-Navigate to the repository and merge the pull request.
-
-## Step 4: Deploy The Image
-A `Deploy` button will appear. Click and wait for deployment status to become `Running`.
+A **Deploy** button will appear under the settings. Click and wait for deployment status to become `Running`.
 
 ## Step 5: Check Your App in Browser
+
 After successful deployment, you should be able to check out the deployed application in your browser.
+
+If everything is working fine, click the **Write Configuration** in Git button.

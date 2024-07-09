@@ -14,6 +14,8 @@ description: |
 
 ## Grafana Cloud Settings
 
+![Grafana Cloud settings in Gimlet.](/src/pages/docs/screenshots/monitoring/gimlet-io-grafana-cloud-settings.png)
+
 **Cluster Name:** Specify a unique cluster name which you can use later for querying.
 
 **URL:** The URL of the Grafana Cloud dashboard you'd like to use with this environment.

@@ -12,13 +12,13 @@ Log in to Gimlet by connecting your GitHub or GitLab account. You should see you
 
 After connecting your account, the repositories available should be listed in Gimlet. If you can't find the repo with Flowise in it, you can use the search bar to find it.
 
-Click the Import button next to the repository. You can add multiple repos the same way. When all the repositories are selected, click I am done importing to save the added repos.
+Click the **Import** button next to the repository. You can add multiple repos the same way. When all the repositories are selected, click **I am done importing** to save the added repos.
 
 ## Step 2: Deployment Settings for Flowise
 
-Click on the repo's card to navigate to deployment settings.
+Click on the repo's card to navigate to deployment settings. Click **New deployment**.
 
-For Flowise's deployment, you can select the Web Application template, and then pick the Dockerfile image container option. In case you don't have a Dockerfile, you can use Flowise' official one, as seen below, or fork the [repository](https://github.com/FlowiseAI/Flowise/).
+For Flowise's deployment, you can select the **Web Application Template**, and then pick the **Using a Dockerfile** container image option. In case you don't have a Dockerfile, you can use Flowise' official one, as seen below, or fork the [GitHub repository](https://github.com/FlowiseAI/Flowise/).
 
 ```
 # Build local monorepo image
@@ -55,21 +55,21 @@ EXPOSE 3000
 CMD [ "pnpm", "start" ]
 ```
 
-In Gimlet, now select the Gimlet Registry option under Registry settings, and set Port value to 3000. Then specify a custom domain if you'd like to use one, but Gimlet generates a URL where you'll be able to access Flowise after deployment. See config settings in the screenshot below:
+In Gimlet, now select the **Gimlet Registry** option under **Registry** settings, and set **Port** value to 3000. Then specify a custom domain if you'd like to use one, but Gimlet generates a URL where you'll be able to access Flowise after deployment. See config settings in the screenshot below:
 
 ![Flowise deployment settings in Gimlet. ghcrRegistry is selected, and the exposed port value is set at 3000](/src/pages/docs/screenshots/flowise-deployment/flowise-deployment-configuration.png)
 
-**Note:** make sure the name is lowercase, otherwise Kaniko won't be able to build the image.
+**Note:** Variables defined in Gimlet are case sensitive, make sure it's corresponding with the Dockerfile name that can be found in the repository.
 
 ## Step 3: Deploy Flowise
 
-After all the settings are specified, click the Deploy button. Logs should appear rightaway, and when the deployment is successful, confetti will rain in your browser window.
+After all the settings are specified, click the **Deploy** button. Logs should appear rightaway, and when the deployment is successful, confetti will rain in your browser window.
 
 Keep in mind that Flowise is a fairly large container, so it'll take a few minutes to launch it with Gimlet.
 
 ## Step 4: Try Flowise in Your Browser
 
-Navigate back to the repository preview by clicking the repo's name. In the card's Address section there will be a clickable link, which you can open to access and share Flowise.
+You can give Flowise a look after container status turned **Running**. Just use the link next to the status.
 
 ![Flowise repository card in the repo preview. The card has a clickable link under the Address section.](/src/pages/docs/screenshots/flowise-deployment/flowise-repository-view-card.png)
 
@@ -84,7 +84,3 @@ Gimlet offers different advantages when you use Flowise to create AI workflows.
 - **Remote CUDA Resources:** If you don't have access to Nvidia GPUs locally, you can still utilize CUDA on the cloud.
 - **File Syncing:** Keep code consistent across your team and their machines.
 - **Easily Share Flowise:** Add social authentication and set up HTTPS connection between your Flowise and your teammates.
-
-## Choose Gimlet When You Work with Flowise
-
-> Give Gimlet a try now to deploy Flowise.

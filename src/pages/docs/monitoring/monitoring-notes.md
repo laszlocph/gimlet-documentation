@@ -8,7 +8,7 @@ description: |
 
 Here's what you can find in this section:
 
-- Integration Tutorials:
+- **Integration Tutorials:**
 	- **[Prometheus](/docs/monitoring/prometheus)**
 	- **[Grafana](/docs/monitoring/grafana)**
 	- **[Loki](/docs/monitoring/loki)**

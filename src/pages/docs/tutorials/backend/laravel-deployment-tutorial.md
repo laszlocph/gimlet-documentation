@@ -10,17 +10,19 @@ description: |
 
 Log in to Gimlet by connecting your account to your GitHub or GitLab.
 
-After successful connection, you should see repositories listed, which you can import. If you can't find the Laravel project's repository, use the search bar, then click the Import button next to it.
+After successful connection, you should see repositories listed, which you can import. If you can't find the Laravel project's repository, use the search bar, then click the **Import** button next to it.
 
-You can add multiple repositories, click I am done importing to save the added repos.
+You can add multiple repositories, click **I am done importing** to save the added repos.
 
 ## Step 2: Deployment Settings for Laravel
 
-To get started with the deployment process, navigate to the deployment settings by clicking the repo's card in the repository list.
+To get started with the deployment process, navigate to the deployment settings by clicking the repo's card in the repository list. Click **New deployment**.
 
-Select the Web Application template, and then the Dockerfile container image option. Under the Registry options, select the Gimlet registry setting.
+Select the **Web Application Template**, and then the **Using a Dockerfile** container image option. Under the Registry options, select the Gimlet registry setting.
 
-This method requires a Dockerfile located in the root folder of your project. If you don't have one, you can use the one below.
+This method requires a Dockerfile located in your repository. If you don't have one, you can use the one below.
+
+**Note:** The Dockerfile below is suitable for development and testing purposes, since it requires an `.env` file with an empty `APP_KEY` variable. If you know any production ready solution, feel free to open a pull request in the [repository](https://github.com/gerimate/laravel-gimlet-test).
 
 ```
 FROM php:8.2.19-alpine
@@ -44,4 +46,4 @@ You can specify a custom domain, but Gimlet will generate one for you, which you
 
 ## Step 3: Deploy and Check Your Laravel App
 
-When all the setting changes are made, you can click the Deploy button. Build and deployment logs should appear, and when container status turns running, you can use the clickable link next to it to see if the app is up and running without errors.
+When all the setting changes are made, you can click the **Deploy** button. Build and deployment logs should appear, and when container status turns running, you can use the clickable link next to it to see if the app is up and running without errors.

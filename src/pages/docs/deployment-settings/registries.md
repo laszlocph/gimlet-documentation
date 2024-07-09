@@ -37,6 +37,8 @@ Make sure to back up the token in a secure way, as it won't be recoverable after
 
 Once the token is ready for use, you can open Gimlet in your browser. After logging in, navigate to environment settings by clicking the Environments option in the menu bar on top, then selecting the environment you use by clicking its card.
 
+![GitHub Container Registry settings in Gimlet](/src/pages/docs/screenshots/registries/gimlet-io-github-container-registry.png)
+
 In the environment settings, choose the Container Registry tab on the left. Under the GitHub Container Registry settings, enter the following:
 
 - **Login:** Your GitHub username.
@@ -45,6 +47,8 @@ In the environment settings, choose the Container Registry tab on the left. Unde
 ## Add Docker Hub
 
 You can add your Docker Hub credentials to Gimlet to access both public and private registries.
+
+![Docker Hub settings in Gimlet](/src/pages/docs/screenshots/registries/gimlet-io-docker-hub-settings.png)
 
 ### Get Docker Hub Access Token
 

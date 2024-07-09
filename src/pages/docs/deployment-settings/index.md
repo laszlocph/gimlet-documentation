@@ -4,30 +4,35 @@ description: |
   There are many ways to configure deployment settings with Gimlet. You can easily add HTTPS and social authentication to your application.
 ---
 
-## Build with Gimlet
+## [Container Image Settings](/src/pages/docs/deployment-settings/image-settings)
 
-While it's not necessary, you can build images using Gimlet. The tool integrates [Buildpacks](), an open-source image builder tool.
-## Social Authentication
+Container Image Settings describes how you can set up an application for deployment, whether it has an image already available, or if it still needs to be built from code or using a Dockerfile.
 
-Add social authentication to your application with a few clicks.
+## [Registries](/src/pages/docs/deployment-settings/image-settings)
 
-## Port-Forwarding
+Any OCI compatible container registries can be added to Gimlet.
 
-Make your app accessible on the internet with port-forwarding. You can do it with Gimlet, no SSH needed.
+## [Social Authentication](/src/pages/docs/deployment-settings/social-authentication)
 
-## DNS
+You can configure and add social authentication with your deployed apps. Email and GitHub authentication is supported currently with more in progress.
 
-Configure DNS settings with Nginx to make your service accessible from custom domains.
+## [Port Forwarding](/src/pages/docs/deployment-settings/port-forwarding)
 
-## HTTPS
+Create port forward commands for your deployed applications.
 
-Add HTTPS certification to your application with Let's Encrypt to secure connection between the app and your users.
+## [DNS](/src/pages/docs/deployment-settings/dns)
+
+Configure DNS settings to make applications available on custom domains.
+
+## [HTTPS](/src/pages/docs/deployment-settings/https)
+
+Add HTTPS certificates with cert-manager to secure connection to deployed applications.
 
 ## Deployment Configuration
 
 Define deep-level configuration settings with Gimlet's UI instead of tinkering YAML files.
 
-## Secrets
+## [Secrets](/src/pages/docs/deployment-settings/secrets)
 
 Manage and seal secrets for referenced use in your code base with the help of Bitnami's Sealed Secrets.
 

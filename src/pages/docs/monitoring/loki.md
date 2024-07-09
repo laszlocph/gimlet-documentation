@@ -14,6 +14,8 @@ description: |
 
 ## Loki Settings
 
+![Loki settings in Gimlet's environment settings](/src/pages/docs/screenshots/monitoring/gimlet-io-loki-settings.png)
+
 **Storage:** You can select the type of the storage that you use to store logs. Volume is the default setting.
 
 **Retention (in days):** You can specify how many days you'd like to store Loki logs for.

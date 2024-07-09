@@ -31,6 +31,8 @@ When you create the new GitHub OAuth app copy and store these because you’ll n
 
 When the application is ready you can configure the OAuth Proxy settings in the environment settings.
 
+![OAuth2Proxy settings in Gimlet to configure social authentication.](/src/pages/docs/screenshots/social-authentication/gimlet-io-social-authentication-oauth2-settings.png)
+
 You can access environment settings by selecting the Environments option in the menu on top, and then selecting the environment for which you'd like to configure social authentication by clicking on its card.
 
 In the environment settings, select the Ingress settings in the menu on the left side, and scroll down to find Oauth2Proxy settings.
