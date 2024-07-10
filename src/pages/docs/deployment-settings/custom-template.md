@@ -10,11 +10,9 @@ For a recap, check [this introduction on deployment configuration](/docs/deploym
 
 ## Gimlet manifest
 
-TODO include the 3 section manifest explainer vizu
+![Gimlet Manifest components and their responsibilities.](/docs/gimlet-io-manifest-documentation.png)
 
-#### Deployment templates are Helm charts
-
-Templates in Gimlet are made with Helm charts under the hood.
+Deployment templates in Gimlet are made with Helm charts under the hood.
 
 Helm is a Kubernetes package manager that is used to package common deployment options. This package is called a Helm chart. A chart is a set of templates that are rendered using a set of values that are specific to your deployment.
 
