@@ -56,7 +56,7 @@ Building an image from source is the right choice when you don't have a registry
 
 **Step 2:** Enter your repository's URL.
 
-![Container image settings when you'd like to build image of an application from source in Gimlet.](screenshots/image-settings/gimlet-io-build-with-buildpacks-settings.png)
+![Container image settings when you'd like to build image of an application from source in Gimlet.](/docs/screenshots/image-settings/gimlet-io-build-with-buildpacks-settings.png)
 
 ### Using a Dockerfile
 
