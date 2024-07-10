@@ -14,7 +14,7 @@ In the environment settings, navigate to ingress settings by clicking the Ingres
 
 Under Nginx settings, enable Nginx and enter the domain where you'd like to host the deployed applications. When you're done, click Save to finish configuring Nginx.
 
-![Nginx configuration in Gimlet](docs/screenshots/dns/dns-nginx.png)
+![Nginx configuration in Gimlet](/docs/screenshots/dns/dns-nginx.png)
 
 ## Integrate Existing Ingress
 
@@ -24,7 +24,7 @@ You can navigate to these settings by following the instructions mentioned above
 
 After enabling the existing ingress variables, enter your custom domain where the ingress controller handles traffic, then enter ingress annotations.
 
-![Existing Ingress configuration settings in Gimlet.](docs/screenshots/dns/gimlet-io-dns-configure-existing-ingress.png)
+![Existing Ingress configuration settings in Gimlet.](/docs/screenshots/dns/gimlet-io-dns-configure-existing-ingress.png)
 
 Ingress annotations are environment variables. If you use Nginx, you can use `kubernetes.io/ingress.class: nginx`. 
 
@@ -42,6 +42,6 @@ You can change the domain after you deployed the application. You can do this by
 
 When you click the **Write configuration to Git** button, you'll be directed to the deployment's status screen. In the top right corner to the status, click on the (...) or meatballs menu, and then click the **Edit** button to enter deplopyment settings.
 
-![Domain settings for a deployed application in Gimlet.](docs/screenshots/dns/gimlet-io-custom-domain-after-deployment.png)
+![Domain settings for a deployed application in Gimlet.](/docs/screenshots/dns/gimlet-io-custom-domain-after-deployment.png)
 
 When you're in the deployment settings, click the **Domain** button, where you can update the domain. You can turn HTTPS certification on and off here, as well. When you're done, you can give the changes you made in yaml format by clicking the **Review changes** button, then apply the changes by clicking the **Save** button.

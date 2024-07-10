@@ -22,7 +22,7 @@ There are multiple ways you can deploy with Gimlet. The most straightforward way
 
 When you have the Dockerfile ready in the git repository, pick the Web Application template and select Dockerfile container image as seen below:
 
-![Dockerfile configuration settings in Gimlet](docs/screenshots/gimlet-io-dockerfile-configuration-settings.png)
+![Dockerfile configuration settings in Gimlet](/docs/screenshots/gimlet-io-dockerfile-configuration-settings.png)
 
 Under **Registry** settings, select the **Gimlet Registry** option.
 

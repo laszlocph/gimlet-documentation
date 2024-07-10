@@ -40,13 +40,13 @@ If the image is a publicly available image in Docker Hub, select the Public regi
 
 **Step 3:** Enter the tag of the image that you'd like to deploy.
 
-![Static image tag settings in Gimlet.](docs/screenshots/image-settings/gimlet-io-static-image-tag-settings.png)
+![Static image tag settings in Gimlet.](/docs/screenshots/image-settings/gimlet-io-static-image-tag-settings.png)
 
 ### Dynamic Tag Images
 
 Dynamic image tag option is useful when you're using some type of Continuous Integration (CI) pipeline. This way when CI builds an image with a git hash, tag or other dynamic identifier. You can configure the dynamic tag image option for deployment by selecting the Gimlet Registry option.
 
-![Gimlet container image settings when the image is built with CI.](docs/screenshots/image-settings/gimlet-io-build-with-ci-settings.png)
+![Gimlet container image settings when the image is built with CI.](/docs/screenshots/image-settings/gimlet-io-build-with-ci-settings.png)
 
 ### Build From Source
 
@@ -66,13 +66,13 @@ Deployments with Dockerfiles are the the right choice when you have a Dockerfile
 
 **Step 2:** Make sure the Dockerfile's name matches the actual Dockerfile located in the root folder of your repository in a case sensitive way. You can name and place your Dockerfile any way, just make sure the name is corresponding and the path is correct.
 
-![Dockerfile configuration settings in Gimlet](docs/screenshots/image-settings/gimlet-io-using-a-dockerfile-settings.png)
+![Dockerfile configuration settings in Gimlet](/docs/screenshots/image-settings/gimlet-io-using-a-dockerfile-settings.png)
 
 ## Static Website Template
 
 Static websites are deployed inside an Nginx container. No other container image options are available for these templates. There are many ways to customize static website templates, however.
 
-![Static website template settings in Gimlet](docs/screenshots/image-settings/gimlet-io-static-site-template-settings.png)
+![Static website template settings in Gimlet](/docs/screenshots/image-settings/gimlet-io-static-site-template-settings.png)
 
 **Namespace:** You can assign your application to a namespace. This is useful when you'd like to separate resources for this specific application.
 

@@ -25,7 +25,7 @@ Then enter the following:
 
 You can see it all in the screenshot below:
 
-![Deployment settings for vLLM, an inference for large language models (LLMs).](docs/screenshots/vllm-deployment/vllm-deployment-configuration.png)
+![Deployment settings for vLLM, an inference for large language models (LLMs).](/docs/screenshots/vllm-deployment/vllm-deployment-configuration.png)
 
 ## Step 3: Deploy vLLM
 

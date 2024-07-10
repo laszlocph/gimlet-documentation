@@ -35,7 +35,7 @@ CMD ["jupyter", "lab", "--port", "8080", "--allow-root"]
 
 After selecting the container image method, select the **Gimlet Registry** option under **Registry** settings, and add change the **Port** to `8080`. You can see the settings in the screenshot below:
 
-![Jupyter Notebook deployment settings with Dockerfile and port set.](docs/screenshots/jupyter-notebook-deployment/jupyter-notebook-deployment-config.png)
+![Jupyter Notebook deployment settings with Dockerfile and port set.](/docs/screenshots/jupyter-notebook-deployment/jupyter-notebook-deployment-config.png)
 
 Edit the domain to your liking if you use a custom one, but Gimlet generates a domain for your Jupyter Notebook by default.
 
@@ -45,7 +45,7 @@ Once the deployment settings are specified, you can deploy by clicking the **Dep
 
 Logs should show up, and when container status turns **Running**, you'll see confetti raining in Gimlet's browser tab, and a link will appear where you'll be able to access the Jupyter Notebook.
 
-![Repository preview of Jupyter Notebook in Gimlet with a link where a user can access the deployed notebook.](docs/screenshots/jupyter-notebook-deployment/jupyter-notebook-repository-view.png)
+![Repository preview of Jupyter Notebook in Gimlet with a link where a user can access the deployed notebook.](/docs/screenshots/jupyter-notebook-deployment/jupyter-notebook-repository-view.png)
 
 ## Step 4: Accessing Jupyter Notebook
 
@@ -57,7 +57,7 @@ k logs deploy/jupiter-lab-sample | grep token
 
 The output should be the token. Copy and paste it in the notebook’s login screen.
 
-![Log in screen of Jupyter Notebook in a web browser.](docs/screenshots/jupyter-notebook-deployment/jupyter-notebook-auth-screen.png)
+![Log in screen of Jupyter Notebook in a web browser.](/docs/screenshots/jupyter-notebook-deployment/jupyter-notebook-auth-screen.png)
 
 ## Use Cases
 

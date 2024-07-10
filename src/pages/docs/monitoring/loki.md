@@ -14,7 +14,7 @@ description: |
 
 ## Loki Settings
 
-![Loki settings in Gimlet's environment settings](docs/screenshots/monitoring/gimlet-io-loki-settings.png)
+![Loki settings in Gimlet's environment settings](/docs/screenshots/monitoring/gimlet-io-loki-settings.png)
 
 **Storage:** You can select the type of the storage that you use to store logs. Volume is the default setting.
 
