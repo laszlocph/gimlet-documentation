@@ -54,14 +54,74 @@ This will delete the released application manifests from the gitops repository, 
 
 ## Release
 
-### Getting a quick overview
-TODO
+### Getting an overview
+
+To release, first you have to find the commit and configuration you want to release. We call this an artifact.
+
+List the recent deploy artifacts with the command below:
+
+`gimlet artifact list --repo laszlocph/streamlit-app`
+
+```
+laszlocph/streamlit-app-40ec0584-2e13-48bf-98f8-d592999b601f
+b7c52909 - [Gimlet] Updating streamlit-app-civo gimlet manifest for the staging env (2 days ago) Gimlet
+laszlocph/streamlit-app@main
+  streamlit-app -> fleet-silence
+  streamlit-app3 -> fleet-silence
+
+laszlocph/streamlit-app-51c72b33-78bf-4940-bbf5-1f822a842eba
+2074ae9d - Update fleet-silence-streamlit-app3.yaml (yesterday) GitHub
+laszlocph/streamlit-app@main
+  streamlit-app -> fleet-silence
+  streamlit-app3 -> fleet-silence
+
+laszlocph/streamlit-app-22ce2f13-6847-470a-900b-9d1b84ec1b7e
+47102a81 - Update fleet-silence-streamlit-app3.yaml (yesterday) GitHub
+laszlocph/streamlit-app@main
+  streamlit-app -> fleet-silence
+  streamlit-app3 -> fleet-silence
+```
+
+{% callout %}
+You can filter deploy artifacts with various filters
+
+```
+$ gimlet artifact list --help                        
+
+OPTIONS:
+   --repository value, --repo value  filter artifacts to a git repository in owner/repo format
+   --branch value                    filter artifacts to a branch
+   --event value                     filter artifacts to a git event
+   --sourceBranch value              filter PR artifacts to a source branch
+   --sha value                       filter artifacts to a git SHA
+   --limit value                     limit the number of returned artifacts (default: 0)
+   --offset value                    offset the returned artifacts (default: 0)
+   --since value                     the RFC3339 format date to return the artifacts from (eg 2021-02-01T15:34:26+01:00)
+   --until value                     the RFC3339 format date to return the artifacts until (eg 2021-02-01T15:34:26+01:00)
+   --output value, -o value          output format, eg.: json
+   --reverse, -r                     reverse the chronological order of the displayed artifacts (default: false)
+```
+{% /callout %}
 
 ### Release
-TODO
+
+```
+$ gimlet release make \
+  --env fleet-silence
+  --artifact laszlocph/streamlit-app-22ce2f13-6847-470a-900b-9d1b84ec1b7e
+
+🙆‍♀️ Release is now added to the release queue with ID 64fadb48-3344-4e15-9c39-1a4c6d40ac4f
+Track it with:
+gimlet release track 64fadb48-3344-4e15-9c39-1a4c6d40ac4f
+```
 
 ### Track the deployment status
-TODO
+
+```
+$ gimlet release track 64fadb48-3344-4e15-9c39-1a4c6d40ac4f
+👉 Request (64fadb48-3344-4e15-9c39-1a4c6d40ac4f) is processed 
+	📖 streamlit-app -> fleet-silence, gitops hash c9dec0ee10f13f5ea9907ff1f77b875704691415, status is ReconciliationSucceeded
+```
 
 ## Rollback
 
@@ -135,9 +195,36 @@ Example:
 
 ```
 $ gimlet sync my-app laszlo-debug@default:/
+
+building file list ... 
+13 files to consider
+
+Number of files: 13
+Number of files transferred: 0
+Total file size: 9767 bytes
+Total transferred file size: 0 bytes
+Literal data: 0 bytes
+Matched data: 0 bytes
+File list size: 359
+File list generation time: 0.001 seconds
+File list transfer time: 0.000 seconds
+Total bytes sent: 375
+Total bytes received: 20
+
+sent 375 bytes  received 20 bytes  790.00 bytes/sec
+total size is 9767  speedup is 24.73
 ```
 
-TODO output
+{% callout %}
+Be aware that for sync to work, rsync should be installed in the pod.
+
+Either install it in your Dockerfile, or exec into the pod and install the package manually.
+
+```
+$ kubectl run -i -t laszlo-debug --image=debian:stable --restart=Never bash
+$ root@laszlo-debug:/# apt update && apt install rsync
+```
+{% /callout %}
 
 ## GitOps
 
