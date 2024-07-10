@@ -75,6 +75,10 @@ The Gimlet manifest pins down the release configuration to a target environment:
 - **its version,**
 - **and the configuration variables for a given environment.** These are the values fed into the Helm chart at the time of rendering.
 
+Here's a visualized explanation:
+
+![Gimlet Manifest components and their responsibilities.](/docs/gimlet-io-manifest-documentation.png)
+
 For the full structure:
 
 - See the [full manifest reference](/docs/reference/gimlet-manifest-reference).
