@@ -15,7 +15,7 @@ And you can also use your custom deployment template.
 
 This page describes the image build options of the built-in deployment templates.
 
-![Container image settings in Gimlet and application templates.](image-settings/gimlet-io-container-image-settings.png)
+![Container image settings in Gimlet and application templates.](/docs/screenshots/image-settings/gimlet-io-container-image-settings.png)
 
 ## Web Application Template
 
