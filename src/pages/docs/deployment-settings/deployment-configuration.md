@@ -13,7 +13,7 @@ When you're setting an application up for deployment, you select a deployment te
 
 But you can also refer to [your custom templates](docs/deployment-settings/custom-template).
 
-TODO: screenshot
+![Gimlet deployment templates.](/docs/screenshots/deployment-settings/gimlet-io-deployment-templates.png)
 
 Templates in Gimlet are made with Helm charts under the hood.
 
@@ -91,4 +91,4 @@ The two are interchangable for the most part, but the source code handles more f
 
 Before you save the configuration on the dashboard, you can inspect the diff that will be saved to your Gimlet manifest.
 
-TODO screenshot
+![Diffing Gimlet deployment configuration.](/docs/screenshots/deployment-settings/gimlet-io-diffing-deployment-config.png)
