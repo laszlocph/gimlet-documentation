@@ -69,8 +69,6 @@ chart:
 
 The above snippet is an example how to access a Helm chart hosted in a public git repository.
 
-For private git repos to work on Gimletd, make sure to [integrate Gimletd with Github](https://gimlet.io/docs/gimletd-configuration-reference#github-integration).
-
 On your laptop, you can use an SSH based git url in the `chart.name` field to access a private git repo. If you have your SSH agent running, Gimlet CLI will be able to pull the chart.
 
 ### Values

@@ -1,5 +1,5 @@
 ---
-title: 'Container Image Settings'
+title: 'Container Build Settings'
 description: |
   Gimlet deploys applications from registries and it can also build them for deployments. Find out how.
 ---

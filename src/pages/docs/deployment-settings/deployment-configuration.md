@@ -11,7 +11,7 @@ When you're setting an application up for deployment, you select a deployment te
 - **a generic web application template**
 - **and a static website template.**
 
-But you can also refer to [your custom templates](docs/deployment-settings/custom-template).
+But you can also refer to [your custom templates](/docs/deployment-settings/custom-template).
 
 ![Gimlet deployment templates.](/docs/screenshots/deployment-settings/gimlet-io-deployment-templates.png)
 
@@ -77,15 +77,16 @@ The Gimlet manifest pins down the release configuration to a target environment:
 
 For the full structure:
 
-- See the [full reference](/docs/reference/gimlet-manifest-reference).
+- See the [full manifest reference](/docs/reference/gimlet-manifest-reference).
 - See [manifest examples](https://github.com/gimlet-io/gimlet/tree/main/examples)
+- See the [full reference of the built-in deployment templates](/docs/reference/onechart-reference)
 - See what to do when [Helm is limiting you](/docs/reference/gimlet-manifest-reference#when-helm-is-limiting)
 
 ## Editing deployment configs
 
 You can edit deployment configurations on the dashboard, or edit the Gimlet manifest files directly in source code in the `.gimlet` folder.
 
-The two are interchangable for the most part, but the source code handles more fields. See the [full reference](/docs/reference/gimlet-manifest-reference). The dashboard handles it gracefully if you set a setting that is not known to it.
+The two are interchangable for the most part, but the source code handles more fields. See the [full manifest reference](/docs/reference/gimlet-manifest-reference) and the [full reference of the built-in deployment templates](/docs/reference/onechart-reference). The dashboard handles it gracefully if you set a setting that is not known to it.
 
 #### Inspecting the diff
 
