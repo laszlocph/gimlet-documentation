@@ -1,4 +1,8 @@
-# CLI Use Cases
+---
+title: 'CLI Use-Cases'
+description: |
+  Common actions you can do with the CLI
+---
 
 ## Working with deployments
 
