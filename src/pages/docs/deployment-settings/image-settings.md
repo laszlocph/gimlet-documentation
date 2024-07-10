@@ -6,17 +6,20 @@ description: |
 
 **Deploy applications from registries or build them for deployments.**
 
-Templates in Gimlet are made with Helm charts under the hood.
+When you're setting an application up for deployment, you select a deployment template. There are two built-in templates:
 
-Helm is a Kubernetes package manager that are used to simplify deployments. Helm charts consist of manifests and templates. Manifests define resources and the values that are applied in the templates of the Helm chart.
+- **a generic web application template**
+- **and a static website template.**
 
-When you deploy your application with Gimlet, it generates a Helm chart using OneChart, an open-source generic use chart made by us. You can find out more about OneChart in the [reference]() or its [GitHub page](https://github.com/gimlet-io/onechart).
+And you can also use your custom deployment template.
+
+This page describes the image build options of the built-in deployment templates.
 
 ![Container image settings in Gimlet and application templates.](image-settings/gimlet-io-container-image-settings.png)
 
 ## Web Application Template
 
-The web application template has 4 container image options.
+The web application template has four container image options.
 
 - **Static tag images**
 - **Dynamic tag images**
@@ -27,7 +30,7 @@ All four of these methods require you to give access to your GitHub using a pers
 
 ### Static Tag Images
 
-The static tag image option is ideal when you have a Docker Hub, or any other kind of registry where the image you'd like to deploy is already available. Here's how you can set up a static tag image for deployment:
+The static tag image option is ideal when you have a DockerHub, or any other kind of registry where the image you'd like to deploy is already available. Here's how you can set up a static tag image for deployment:
 
 **Step 1:** After selecting this option, choose the registry where the image is available. You can learn how to add registries to Gimlet in the Registry documentation.
 
