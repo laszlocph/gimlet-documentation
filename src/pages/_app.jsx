@@ -68,7 +68,6 @@ const navigation = [
   {
     title: 'Kubernetes resources',
     links: [
-      { title: 'Kubernetes resources', href: '/docs/kubernetes-resources' },
       { title: 'Kubernetes essentials', href: '/docs/kubernetes-resources/kubernetes-essentials' },
       { title: 'Troubleshooting', href: '/docs/kubernetes-resources/troubleshooting' },
     ],
