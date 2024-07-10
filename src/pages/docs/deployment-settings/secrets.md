@@ -14,7 +14,7 @@ If you'd like to add secrets to an app, deploy it first, then click the Write Co
 
 In the left side of the settings, select Secrets. To create a new secret, click the `+` button, where you can specify the secret variable's name and paste the secret next to it. When you're done, click the Encrypt button next to it.
 
-![Adding key-value pairs as secrets to Gimlet.](/src/pages/docs/screenshots/secrets/gimlet-io-secret-key-value-pair.png)
+![Adding key-value pairs as secrets to Gimlet.](docs/screenshots/secrets/gimlet-io-secret-key-value-pair.png)
 
 After encryption is done, click the Save button on top to apply the secret to the application.
 

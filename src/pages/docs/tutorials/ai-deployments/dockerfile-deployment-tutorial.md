@@ -20,11 +20,11 @@ In order to be able to deploy Dockerfiles, you'll need to select the **Web Appli
 
 Then select **Gimlet Registry** option under Registry settings if you use GitHub. This way Gimlet will be able to use the Dockerfile to build the deployable application.
 
-![Dockerfile template and container image settings.](/src/pages/docs/screenshots/gimlet-io-dockerfile-deployment-tutorial.png)
+![Dockerfile template and container image settings.](docs/screenshots/gimlet-io-dockerfile-deployment-tutorial.png)
 
 Several settings can be configured, but if there's an exposed port in the Dockerfile, it needs to be specified in Gimlet, as well.
 
-![Configuration settings for Dockerfile deployments in Gimlet.](/src/pages/docs/screenshots/gimlet-io-dockerfile-configuration-settings.png)
+![Configuration settings for Dockerfile deployments in Gimlet.](docs/screenshots/gimlet-io-dockerfile-configuration-settings.png)
 
 ## Step 3: Deploy With the Dockerfile
 

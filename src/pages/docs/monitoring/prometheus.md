@@ -14,7 +14,7 @@ description: |
 
 ## Prometheus settings
 
-![Prometheus settings in Gimlet.](/src/pages/docs/screenshots/monitoring/gimlet-io-prometheus-settings.png)
+![Prometheus settings in Gimlet.](docs/screenshots/monitoring/gimlet-io-prometheus-settings.png)
 
 **Include Alerts:** Turn generic alerts about resource usage (CPU, memory, disk) on and off with this toggle.
 

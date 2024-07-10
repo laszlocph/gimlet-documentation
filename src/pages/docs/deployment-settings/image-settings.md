@@ -12,7 +12,7 @@ Helm is a Kubernetes package manager that are used to simplify deployments. Helm
 
 When you deploy your application with Gimlet, it generates a Helm chart using OneChart, an open-source generic use chart made by us. You can find out more about OneChart in the [reference]() or its [GitHub page](https://github.com/gimlet-io/onechart).
 
-![Container image settings in Gimlet and application templates.](/docs/screenshots/image-settings/gimlet-io-container-image-settings.png)
+![Container image settings in Gimlet and application templates.](image-settings/gimlet-io-container-image-settings.png)
 
 ## Web Application Template
 
@@ -37,13 +37,13 @@ If the image is a publicly available image in Docker Hub, select the Public regi
 
 **Step 3:** Enter the tag of the image that you'd like to deploy.
 
-![Static image tag settings in Gimlet.](/src/pages/docs/screenshots/image-settings/gimlet-io-static-image-tag-settings.png)
+![Static image tag settings in Gimlet.](docs/screenshots/image-settings/gimlet-io-static-image-tag-settings.png)
 
 ### Dynamic Tag Images
 
 Dynamic image tag option is useful when you're using some type of Continuous Integration (CI) pipeline. This way when CI builds an image with a git hash, tag or other dynamic identifier. You can configure the dynamic tag image option for deployment by selecting the Gimlet Registry option.
 
-![Gimlet container image settings when the image is built with CI.](/src/pages/docs/screenshots/image-settings/gimlet-io-build-with-ci-settings.png)
+![Gimlet container image settings when the image is built with CI.](docs/screenshots/image-settings/gimlet-io-build-with-ci-settings.png)
 
 ### Build From Source
 
@@ -53,7 +53,7 @@ Building an image from source is the right choice when you don't have a registry
 
 **Step 2:** Enter your repository's URL.
 
-![Container image settings when you'd like to build image of an application from source in Gimlet.](/src/pages/docs/screenshots/image-settings/gimlet-io-build-with-buildpacks-settings.png)
+![Container image settings when you'd like to build image of an application from source in Gimlet.](screenshots/image-settings/gimlet-io-build-with-buildpacks-settings.png)
 
 ### Using a Dockerfile
 
@@ -63,13 +63,13 @@ Deployments with Dockerfiles are the the right choice when you have a Dockerfile
 
 **Step 2:** Make sure the Dockerfile's name matches the actual Dockerfile located in the root folder of your repository in a case sensitive way. You can name and place your Dockerfile any way, just make sure the name is corresponding and the path is correct.
 
-![](/src/pages/docs/screenshots/image-settings/gimlet-io-using-a-dockerfile-settings.png)
+![Dockerfile configuration settings in Gimlet](docs/screenshots/image-settings/gimlet-io-using-a-dockerfile-settings.png)
 
 ## Static Website Template
 
 Static websites are deployed inside an Nginx container. No other container image options are available for these templates. There are many ways to customize static website templates, however.
 
-![Static website template settings in Gimlet](/src/pages/docs/screenshots/image-settings/gimlet-io-static-site-template-settings.png)
+![Static website template settings in Gimlet](docs/screenshots/image-settings/gimlet-io-static-site-template-settings.png)
 
 **Namespace:** You can assign your application to a namespace. This is useful when you'd like to separate resources for this specific application.
 

@@ -57,7 +57,7 @@ CMD [ "pnpm", "start" ]
 
 In Gimlet, now select the **Gimlet Registry** option under **Registry** settings, and set **Port** value to 3000. Then specify a custom domain if you'd like to use one, but Gimlet generates a URL where you'll be able to access Flowise after deployment. See config settings in the screenshot below:
 
-![Flowise deployment settings in Gimlet. ghcrRegistry is selected, and the exposed port value is set at 3000](/src/pages/docs/screenshots/flowise-deployment/flowise-deployment-configuration.png)
+![Flowise deployment settings in Gimlet. ghcrRegistry is selected, and the exposed port value is set at 3000](docs/screenshots/flowise-deployment/flowise-deployment-configuration.png)
 
 **Note:** Variables defined in Gimlet are case sensitive, make sure it's corresponding with the Dockerfile name that can be found in the repository.
 
@@ -71,11 +71,11 @@ Keep in mind that Flowise is a fairly large container, so it'll take a few minut
 
 You can give Flowise a look after container status turned **Running**. Just use the link next to the status.
 
-![Flowise repository card in the repo preview. The card has a clickable link under the Address section.](/src/pages/docs/screenshots/flowise-deployment/flowise-repository-view-card.png)
+![Flowise repository card in the repo preview. The card has a clickable link under the Address section.](docs/screenshots/flowise-deployment/flowise-repository-view-card.png)
 
 Here's how Flowise should look in your browser:
 
-![Flowise UI after successful deployment.](/src/pages/docs/screenshots/flowise-deployment/flowise-screenshot.png)
+![Flowise UI after successful deployment.](docs/screenshots/flowise-deployment/flowise-screenshot.png)
 
 ## Use Cases
 
