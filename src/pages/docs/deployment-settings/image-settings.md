@@ -6,18 +6,13 @@ description: |
 
 **Deploy applications from registries or build them for deployments.**
 
-When you're setting an application up for deployment, you can select two types of templates:
-
-- **Web Application Template**
-- **Static Website Template**
-
 Templates in Gimlet are made with Helm charts under the hood.
 
 Helm is a Kubernetes package manager that are used to simplify deployments. Helm charts consist of manifests and templates. Manifests define resources and the values that are applied in the templates of the Helm chart.
 
 When you deploy your application with Gimlet, it generates a Helm chart using OneChart, an open-source generic use chart made by us. You can find out more about OneChart in the [reference]() or its [GitHub page](https://github.com/gimlet-io/onechart).
 
-![Container image settings in Gimlet and application templates.](/src/pages/docs/screenshots/image-settings/gimlet-io-container-image-settings.png)
+![Container image settings in Gimlet and application templates.](/docs/screenshots/image-settings/gimlet-io-container-image-settings.png)
 
 ## Web Application Template
 

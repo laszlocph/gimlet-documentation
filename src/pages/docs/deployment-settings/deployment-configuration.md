@@ -1,10 +1,33 @@
-# Deployment Configuration
+---
+title: 'Deployment Configuration'
+description: |
+  When you're setting an application up for deployment, you pick a deployment template. Templates in Gimlet are made with Helm charts under the hood and you can also bring your own.
+---
 
-You store Gimlet manifest files under the `.gimlet` folder of your application source code repository. One file per environment.
+## Deployment templates
 
-The following example shows two files, one for staging, and one for production.
+When you're setting an application up for deployment, you select a deployment template. There are two built-in templates:
 
-They only differ in the replica count. However, you can have a completely unique set of configs in your envs. The manifest files control it all.
+- **a generic web application template**
+- **and a static website template.**
+
+But you can also refer to [your custom templates](docs/deployment-settings/custom-template).
+
+TODO: screenshot
+
+Templates in Gimlet are made with Helm charts under the hood.
+
+Helm is a Kubernetes package manager that is used to package common deployment options. This package is called a Helm chart. A chart is a set of templates that are rendered using a set of values that are specific to your deployment.
+
+When you are done configuring, you write the configuration to your source code git repository. We call this configuration file the Gimlet manifest.
+
+## The Gimlet manifest
+
+Even if you are configuring your deployment on the dashboard, a configuration file is created which is called the Gimlet manifest.
+
+Gimlet manifest files are stored under the `.gimlet` folder of your application source code repository. One file per environment.
+
+The following example shows two files, one for staging, and one for production. They only differ in the replica count. However, you can have a completely unique set of configs in your envs. The manifest files control it all.
 
 ```
 # .gimlet/staging.yaml
@@ -44,20 +67,28 @@ values:
     tlsEnabled: true
 ```
 
+### Structure
+
+The Gimlet manifest pins down the release configuration to a target environment:
+
+- **the Helm chart to use,**
+- **its version,**
+- **and the configuration variables for a given environment.** These are the values fed into the Helm chart at the time of rendering.
+
+For the full structure:
+
+- See the [full reference](/docs/reference/gimlet-manifest-reference).
+- See [manifest examples](https://github.com/gimlet-io/gimlet/tree/main/examples)
+- See what to do when [Helm is limiting you](/docs/reference/gimlet-manifest-reference#when-helm-is-limiting)
+
 ## Editing deployment configs
 
-### On the dashboard
+You can edit deployment configurations on the dashboard, or edit the Gimlet manifest files directly in source code in the `.gimlet` folder.
 
-The _Repository_ view shows a single repository. You can see the list of git commits at the bottom of the screen and the list of your deployment environments on the top of the screen.
+The two are interchangable for the most part, but the source code handles more fields. See the [full reference](/docs/reference/gimlet-manifest-reference). The dashboard handles it gracefully if you set a setting that is not known to it.
 
-Pick the environment config you want to edit, and click the cog wheel icon.
+#### Inspecting the diff
 
-![Step 1 screenshot](https://images.tango.us/public/screenshot_2119e576-2300-4058-adec-f61e28dae01d.png?crop=focalpoint&fit=crop&fp-x=0.2518&fp-y=0.3092&fp-z=3.1715&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=3840%3A1960)
+Before you save the configuration on the dashboard, you can inspect the diff that will be saved to your Gimlet manifest.
 
-When you hit save, the changes you made are backed by a git commit. This is ClickOps 🙌
-
-![Step 12 screenshot](https://images.tango.us/public/edited_image_77a77279-4eb5-4d56-be72-892612f769e6.png?crop=focalpoint&fit=crop&fp-x=0.5000&fp-y=0.5000&fp-z=1.0000&w=1200&mark-w=0.2&mark-pad=0&mark64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmsucG5n&ar=3840%3A1878)
-
-You can inspect the diff
-
-Every time you save the configuration, you can inspect the diff of the environment configuration file in Gimlet.
+TODO screenshot

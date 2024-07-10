@@ -36,13 +36,12 @@ const navigation = [
   {
     title: 'Deployment settings',
     links: [
-      { title: 'Deployment settings', href: '/docs/deployment-settings' },
-      { title: 'Container Image Settings', href: '/docs/deployment-settings/image-settings' },
+      { title: 'Introduction', href: '/docs/deployment-settings/deployment-configuration' },
+      { title: 'Container Build Settings', href: '/docs/deployment-settings/image-settings' },
       { title: 'Social authentication', href: '/docs/deployment-settings/social-authentication' },
       { title: 'DNS', href: '/docs/deployment-settings/dns' },
       { title: 'Port-forwarding', href: '/docs/deployment-settings/port-forwarding' },
       { title: 'HTTPS', href: '/docs/deployment-settings/https' },
-      { title: 'Deployment configuration', href: '/docs/deployment-settings/deployment-configuration' },
       { title: 'Secrets', href: '/docs/deployment-settings/secrets' },
       { title: 'Infrastructure management', href: '/docs/deployment-settings/infrastructure-management' },
       { title: 'Chat notifications', href: '/docs/deployment-settings/chat-notifications' },
