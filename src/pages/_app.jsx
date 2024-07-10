@@ -12,7 +12,6 @@ const navigation = [
   {
     title: 'Overview',
     links: [
-      { title: 'Introduction', href: '/docs/overview/introduction' },
       { title: 'Quick start', href: '/docs/overview/quick-start' },
     ],
   },
@@ -27,7 +26,6 @@ const navigation = [
   {
     title: 'Deployments',
     links: [
-      { title: 'Deployments', href: '/docs/deployments' },
       { title: 'Preview deployments', href: '/docs/deployments/preview-deployments' },
       { title: 'Rollbacks', href: '/docs/deployments/rollbacks' },
       { title: 'Automated deployments', href: '/docs/deployments/automated-deployments' },
@@ -81,7 +79,6 @@ const navigation = [
       { title: 'Gimlet manifest reference', href: '/docs/reference/gimlet-manifest-reference' },
       { title: 'Gimlet configuration reference', href: '/docs/reference/gimlet-configuration-reference' },
       { title: 'Onechart reference', href: '/docs/reference/onechart-reference' },
-      { title: 'Capacitor reference', href: '/docs/reference/capacitor-reference' },
     ],
   },
   {
