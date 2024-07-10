@@ -1,6 +1,12 @@
+---
+title: 'CLI Installation and Authentication'
+description: |
+  Here's how you can install Gimlet CLI on Linux and Mac and authenticate to your Gimlet instance.
+---
+
 # CLI
 
-The Gimlet CLI covers most of the capabilities of the GUI, but it's rather designed to function as a complimentary tool to the GUI.
+The Gimlet CLI covers most of the capabilities of the GUI.
 
 ## Installation
 
