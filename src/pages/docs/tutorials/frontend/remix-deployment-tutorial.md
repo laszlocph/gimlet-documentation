@@ -22,6 +22,8 @@ If you don't have a Dockerfile, you can get yours [here](https://github.com/geri
 
 Select the **Gimlet Registry** option under **Registry** settings, and make sure that the port is the same as the `server.js` file specifies.
 
+![Remix deployment configuration settings in Gimlet.](/docs/screenshots/remix-deployment/remix-deployment-settings.png)
+
 You can also set a custom domain if you use one, but Gimlet will generate one for you.
 
 ## Step 3: Deploy
