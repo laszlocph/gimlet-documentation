@@ -16,13 +16,15 @@ Click the **Import** button next to it to add it to Gimlet, and click the **I am
 
 ## Step 2: Deployment Settings of a Next.js Application
 
-Navigate to deployment settings by clicking the card of the repository.
+Navigate to deployment settings by clicking the card of the repository. Click **New Deployment**.
 
 You can deploy the Next.js frontend as a **Web Application Template**, and you'll need to select **Using a Dockerfile** container image option.
 
 Select the **Gimlet Registry** option in the **Registry** section.
 
-Make sure that your `next.config.js` file has `output: 'export'` set, and that the exposed port matches the value specified in the Dockerfile.
+Make sure that your `next.config.js` file has `output: 'standalone'` set, and that the exposed port matches the value specified in the Dockerfile.
+
+![Deployment configuration settings for Next.js applications](/docs/screenshots/next-js-deployment/gimlet-io-next-js-deployment-settings.png)
 
 You can specify a custom domain, but Gimlet will generate a URL for you, which you can use later to share the deployed app.
 
