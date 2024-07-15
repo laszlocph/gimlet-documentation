@@ -4,7 +4,7 @@ description: |
   Deployments can be automated in Gimlet without using GitHub Actions or other continuous integration technology.
 ---
 
-You can automate deployments when you'd like to focus on writing code or fixing bugs instead of manually deploying changes to your application.
+**You can automate deployments when you'd like to focus on writing code or fixing bugs instead of manually deploying changes to your application.**
 
 No continuous integration or GitHub Action pipeline is necessary for this.
 
