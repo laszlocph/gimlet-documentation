@@ -32,4 +32,4 @@ description: |
 
 **Username / Instance ID:** You can get this from your Grafana Cloud Portal, as described [here](https://grafana.com/docs/grafana-cloud/send-data/traces/set-up/#:~:text=For%20the%20remote_write,Source%20settings.).
 
-**Password / API Key:** You can get this from your Grafana Cloud Portal, as described [here](https://grafana.com/docs/grafana-cloud/send-data/traces/set-up/#:~:text=For%20the%20remote_write,Source%20settings.).
+**Password / API Key:** Your Grafana Cloud password.
