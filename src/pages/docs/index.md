@@ -27,6 +27,6 @@ Feel free to reach out to us. We are committed to community support even when it
 
 Be that Gimlet, containers or cloud related, we are here to help. [Join our community Discord](https://discord.com/invite/ZwQDxPkYzE).
 
-## Supporting Gimlet
+## Support Gimlet
 
 Github stars may be a silly metric, but it opens doors for us in the ecosystem. [Hop over to Github](https://github.com/gimlet-io/gimlet) and give us a star if you like what we do.
