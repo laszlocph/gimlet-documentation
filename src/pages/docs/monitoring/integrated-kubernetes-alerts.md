@@ -6,8 +6,6 @@ description: |
 
 **There are Kubernetes alerts integrated into Gimlet to make troubleshooting easier when something goes wrong with your deployments.**
 
-# Integrated Kubernetes Alerts
-
 Gimlet has integrated alerts related to Kubernetes. These can show up:
 
 - **ImagePullBackOff:** It occurs when a pod fails to pull the image required for one of its containers.

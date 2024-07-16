@@ -26,9 +26,9 @@ const navigation = [
   {
     title: 'Deployments',
     links: [
-      { title: 'Preview deployments', href: '/docs/deployments/preview-deployments' },
+      { title: 'Preview Deployments', href: '/docs/deployments/preview-deployments' },
       { title: 'Rollbacks', href: '/docs/deployments/rollbacks' },
-      { title: 'Automated deployments', href: '/docs/deployments/automated-deployments' },
+      { title: 'Automated Deployments', href: '/docs/deployments/automated-deployments' },
     ],
   },
   {
@@ -36,26 +36,26 @@ const navigation = [
     links: [
       { title: 'Introduction', href: '/docs/deployment-settings/deployment-configuration' },
       { title: 'Container Build Settings', href: '/docs/deployment-settings/image-settings' },
-      { title: 'Social authentication', href: '/docs/deployment-settings/social-authentication' },
+      { title: 'Social Authentication', href: '/docs/deployment-settings/social-authentication' },
       { title: 'DNS', href: '/docs/deployment-settings/dns' },
-      { title: 'Port-forwarding', href: '/docs/deployment-settings/port-forwarding' },
+      { title: 'Port Forwarding', href: '/docs/deployment-settings/port-forwarding' },
       { title: 'HTTPS', href: '/docs/deployment-settings/https' },
       { title: 'Secrets', href: '/docs/deployment-settings/secrets' },
-      { title: 'Infrastructure management', href: '/docs/deployment-settings/infrastructure-management' },
-      { title: 'Chat notifications', href: '/docs/deployment-settings/chat-notifications' },
+      { title: 'Infrastructure Management', href: '/docs/deployment-settings/infrastructure-management' },
+      { title: 'Chat Notifications', href: '/docs/deployment-settings/chat-notifications' },
       { title: 'Resource Usage', href: '/docs/deployment-settings/resource-usage' },
       { title: 'Volumes', href: '/docs/deployment-settings/volumes' },
-      { title: 'Creating a custom template', href: '/docs/deployment-settings/custom-template' },
+      { title: 'Creating a Custom Template', href: '/docs/deployment-settings/custom-template' },
     ],
   },
   {
     title: 'Monitoring',
     links: [
-      { title: 'Monitoring notes', href: '/docs/monitoring/monitoring-notes' },
+      { title: 'Monitoring Notes', href: '/docs/monitoring/monitoring-notes' },
       { title: 'Loki', href: '/docs/monitoring/loki' },
       { title: 'Grafana', href: '/docs/monitoring/grafana' },
       { title: 'Prometheus', href: '/docs/monitoring/prometheus' },
-      { title: 'Integated Kubernetes alerts', href: '/docs/monitoring/integrated-kubernetes-alerts' },
+      { title: 'Integated Kubernetes Alerts', href: '/docs/monitoring/integrated-kubernetes-alerts' },
     ],
   },
   {
@@ -66,18 +66,18 @@ const navigation = [
     ],
   },
   {
-    title: 'Kubernetes resources',
+    title: 'Kubernetes Resources',
     links: [
-      { title: 'Kubernetes essentials', href: '/docs/kubernetes-resources/kubernetes-essentials' },
+      { title: 'Kubernetes Essentials', href: '/docs/kubernetes-resources/kubernetes-essentials' },
       { title: 'Troubleshooting', href: '/docs/kubernetes-resources/troubleshooting' },
     ],
   },
   {
     title: 'Reference',
     links: [
-      { title: 'Gimlet manifest reference', href: '/docs/reference/gimlet-manifest-reference' },
-      { title: 'Gimlet configuration reference', href: '/docs/reference/gimlet-configuration-reference' },
-      { title: 'Onechart reference', href: '/docs/reference/onechart-reference' },
+      { title: 'Gimlet Manifest Reference', href: '/docs/reference/gimlet-manifest-reference' },
+      { title: 'Gimlet Configuration Reference', href: '/docs/reference/gimlet-configuration-reference' },
+      { title: 'Onechart Reference', href: '/docs/reference/onechart-reference' },
     ],
   },
   {
@@ -89,7 +89,7 @@ const navigation = [
   {
     title: 'Learn-more',
     links: [
-      { title: 'Gimlet compared to', href: '/docs/learn-more/gimlet-compared-to' },
+      { title: 'Gimlet Compared to', href: '/docs/learn-more/gimlet-compared-to' },
       { title: 'FAQ', href: '/docs/learn-more/faq' },
       { title: 'Contact us', href: '/docs/learn-more/contact-us' },
     ],

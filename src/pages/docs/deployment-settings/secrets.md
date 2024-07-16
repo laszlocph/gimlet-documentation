@@ -24,4 +24,4 @@ Secret encryption is turned on by default. In case you'd like to turn it off, yo
 
 In the environment settings, choose the Secrets option on the left side. Look for the Encrypted Secrets section, and use the toggle to turn it off.
 
-![Secret settings in environment settings of Gimlet.](/src/pages/docs/screenshots/secrets/gimlet-io-secret-environment-settings.png)
+![Secret settings in environment settings of Gimlet.](/docs/screenshots/secrets/gimlet-io-secret-environment-settings.png)

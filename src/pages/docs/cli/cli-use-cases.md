@@ -1,7 +1,7 @@
 ---
-title: 'CLI Use-Cases'
+title: 'CLI Use Cases'
 description: |
-  Common actions you can do with the CLI
+  Common actions you can do with Gimlet CLI.
 ---
 
 ## Working with deployments

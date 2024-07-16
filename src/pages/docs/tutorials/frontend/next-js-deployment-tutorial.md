@@ -18,7 +18,7 @@ Click the **Import** button next to it to add it to Gimlet, and click the **I am
 
 Navigate to deployment settings by clicking the card of the repository. Click **New Deployment**.
 
-You can deploy the Next.js frontend as a **Web Application Template**, and you'll need to select **Using a Dockerfile** container image option.
+You can deploy the Next.js frontend as a **Web Application Template**, and you'll need to select **Using a Dockerfile** container image option. If you don't have a Dockerfile, you can get [this Dockerfile](https://github.com/gerimate/next-test/blob/main/Dockerfile) from GitHub.
 
 Select the **Gimlet Registry** option in the **Registry** section.
 

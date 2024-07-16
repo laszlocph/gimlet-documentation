@@ -638,7 +638,7 @@ prometheusRules:
 helm template my-release onechart/onechart -f values.yaml
 ```
 
-# Attaching a Sidecar
+## Attaching a Sidecar
 
 This section shows how you can add a sidecar container.
 
