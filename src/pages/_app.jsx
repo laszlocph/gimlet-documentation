@@ -87,7 +87,7 @@ const navigation = [
     ],
   },
   {
-    title: 'Learn-more',
+    title: 'Learn More',
     links: [
       { title: 'Gimlet Compared to', href: '/docs/learn-more/gimlet-compared-to' },
       { title: 'FAQ', href: '/docs/learn-more/faq' },

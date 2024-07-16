@@ -11,19 +11,19 @@ It is built on the de-facto tools of the ecosystem - Helm and Flux - and provide
 
 {% link-grid %}
 
-{% link-grid-link title="Installation" icon="installation" href="/docs/overview/quick-start" description="Step-by-step guides to set up Gimlet in your environment." /%}
+{% link-grid-link title="Quick Start" icon="installation" href="/docs/overview/quick-start" description="Step-by-step description to deploying applications in Gimlet." /%}
 
-{% link-grid-link title="Core Concepts" icon="presets" href="/concepts/components" description="Key topics and concepts at a fairly high level that provide useful information and explanation when you are starting out." /%}
+{% link-grid-link title="HTTPS" icon="presets" href="/docs/deployment-settings/https" description="HTTPS configuration options with Gimlet." /%}
 
-{% link-grid-link title="Manifest reference" icon="theming" href="/docs/reference" description="A comprehensive list of all the options you have to configure your service for deployment." /%}
+{% link-grid-link title="Social Authentication" icon="theming" href="/docs/deployment-settings/social-authentication" description="Add social authentication to your application to secure access." /%}
 
 {% /link-grid %}
 
 ---
 
-## Getting help
+## Contact Us
 
-We are committed to community support even when it is not strictly about Gimlet.
+Feel free to reach out to us. We are committed to community support even when it is not strictly about Gimlet.
 
 Be that Gimlet, containers or cloud related, we are here to help. [Join our community Discord](https://discord.com/invite/ZwQDxPkYzE).
 
