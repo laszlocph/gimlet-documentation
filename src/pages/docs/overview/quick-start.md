@@ -24,7 +24,7 @@ This tutorial demonstrates Dockerfile deployment.
 
 Make sure that the image settings look similar the ones below. This is the screenshot of a Streamlit application, so these settings apply to a Dockerfile suitable for deployments of Streamlit apps.
 
-![Deployment configuration for a Streamlit application deployed with a Dockerfile in Gimlet.](/src/pages/docs/screenshots/streamlit-deployment-configuration.png)
+![Deployment configuration for a Streamlit application deployed with a Dockerfile in Gimlet.](/docs/screenshots/streamlit-deployment-configuration.png)
 
 ## Step 4: Deploy The Application
 
