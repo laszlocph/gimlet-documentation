@@ -30,6 +30,6 @@ description: |
 
 **Remote Write Endpoint:** You can get this from your Grafana Cloud Portal, as described [here](https://grafana.com/docs/grafana-cloud/send-data/traces/set-up/#:~:text=For%20the%20remote_write,Source%20settings.).
 
-**Username / Instance ID:** You can get this from your Grafana Cloud Portal, as described [here](https://grafana.com/docs/grafana-cloud/send-data/traces/set-up/#:~:text=For%20the%20remote_write,Source%20settings.).
+**Username / Instance ID:** You can get the instance ID from your Grafana Cloud Portal, as described [here](https://grafana.com/docs/grafana-cloud/send-data/traces/set-up/#:~:text=For%20the%20remote_write,Source%20settings.).
 
 **Password / API Key:** Your Grafana Cloud password.
