@@ -14,31 +14,31 @@ Also make sure to read the [concepts](https://gimlet.io/docs/concepts) for bett
 
 Vercel is one of the most popular platforms to host frontend applications. It's easy to use with great UX. However, it doesn't support containerized runtimes.
 
-Gimlet is designed to offer Vercel-like experience of hosting all kinds of applications with fixed rates, as well. Deployments take place on Kubernetes clusters, to prevent vendor lock-in.
+Gimlet is designed to offer Vercel-like experience of hosting all kinds of containerized applications with fixed rates, as well. Deployments take place on Kubernetes clusters, to prevent vendor lock-in.
 
 ### Netlify
 
 Netlify is another popular platform to host containerized frontend apps. Compared to Vercel, it offers more flexibility for commercial use.
 
-Gimlet compared to Netlify is more flexible as you can deploy any application from a git repository and several container registries.
+Gimlet compared to Netlify is more flexible as you can deploy any containerized application from a git repository, not just front end applications.
 
 ### Fly.io
 
-Fly.io is popular for providing high-availability hosting services of containerized applications. It supports its own container registry.
+Fly.io is popular for providing high-availability hosting services of containerized applications. Recently they started to focus on Kubernetes, too.
 
-Gimlet is suitable for users looking for scalable hosting with testing capabilities attached, fixed pricing and multiple container registries supported.
+Gimlet is suitable for users who'd like to use their own infrastructure. Gimlet was also designed to be a Kubernetes native tool that unifies the open-source tooling of the orchestrator.
 
 ### Railway
 
-Railway is a platform that offers a wide range of deployment capabilities for all kinds of applications and utilizes their in-house Nixpacks tool to build images. Railway supports Docker Hub and GitHub Container Registry.
+Railway is a platform that offers a wide range of deployment capabilities for all kinds of applications and utilizes their in-house Nixpacks tool to build images.
 
-Compared to Railway, Gimlet supports **multiple registries, including...** and deploys applications to Kubernetes clusters to leave room for migrating services.
+Compared to Railway, Gimlet is a bring-your-own infrastructure deployment tool that utilizes Kubernetes as the underlying technology to achieve this.
 
 ### Render
 
 Render is a deployment platform that covers the most common use cases of deploying applications. It offers deployments to Kubernetes clusters hosted by Render.
 
-While Gimlet offers straightforward, fixed pricing, Render applies some usage based rates. You can also connect any Kubernetes cluster to Gimlet.
+In the meantime, Gimlet offers deployments to any Kubernetes cluster you use.
 
 ### In-house developer platforms
 
