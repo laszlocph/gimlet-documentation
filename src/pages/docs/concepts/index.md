@@ -1,39 +1,56 @@
-# Concepts
+---
+title: 'Concepts'
+description: |
+  See what Gimlet does and how it fits your workflow.
+---
 
-The purpose of this guide is to help you understand how Gimlet works by describing its components and how they interact with each other.
+Gimlet is a deployment tool built on Kubernetes to make the deploy, preview and rollback workflows accessible to everyone.
 
-## Workflow
-![Gimlet workflow](/flow.svg)
-Continuous Integration (CI) pipelines lint, test, build and then push applications.
+## Vision
 
-CI workflow components aren't included in Gimlet's capabilities. It assumes tasks from your CI pipeline and runs them centralized. Integration pipelines can call the Gimlet API to deploy, therefore there's no need to script deployment in your workflow. We have CI plugins (actions, orbs) implemented for most platforms.
+Kubernetes is percieved to have a high learning curve, complex machinery and only used by large companies for immense scale.
 
-Once the CI pipeline triggers Gimlet's API, Gimlet will execute the deployment by writing the deployment manifest to git. When it's done, Flux synchronizes the desired state from git to the cluster.
+In practice, Kubernetes is a 10 year old technology that is silently used by companies with as little as 10 developers with great success.
 
-## Components
-![Gimlet components](/components.svg)
-### Dashboard
-Gimlet's dashboard is where you get a comprehensive overview quickly.
+Familiarity with Kubernetes is widespread, tooling on the other hand is still built in-house. Gimlet is built to remove the tooling need from the common workflows.
 
-- It displays real-time Kubernetes information about your deployments.
-- It also displays real-time git information about your branches, commits and their build statuses.
-- You can initiate releases and rollbacks.
-- Configure your applications for deployment.
-- Create and manage environments.
+> To keep simple things simple, and complex things possible.
 
-Gimlet has write access to your repositories, and encompasses all logic related to making releases, rollbacks, and gathering audit logs.
+## Workflows
 
-Every action you take on the dashboard is backed by a git commit, turning your repository into a single source of truth. The integration is bi-directional, custom git or CLI actions also show up in the dashboard and don't break the UI.
-### CLI
-Gimlet CLI is a command line tool with some of the capabilities of Gimlet's GUI.
+### Like with Vercel or Netlify
 
-- You can create and manage environments.
-- Configure GitOps capabilities.
-### Agent
-Gimlet's agent runs in your clusters. It collects real time information about your deployments, and forwards it to Gimlet dashboard.
-### CI/CD
-Your CI/CD (standing for Continuous Integration/Continuous Delivery) pipelines are implemented with your preferred provider. Gimlet fits into your existing pipelines, replacing your deployment steps. See how [How Gimlet integrates to CI workflows](https://gimlet.io/docs/integrate-with-ci).
-### Flux
-Flux is the gitops controller under the hood of Gimlet. It pulls manifests from repositories and applies them on Kubernetes clusters.
-### Repository
-A repository is where your application's source code, or resource definitions are stored and managed.
+commits show up
+docker image build options
+automate deploys
+automate previews
+
+### Or integrate Gimlet to your CI workflows
+
+or if you have CI based processes, integrate it with
+keep docker build at CI
+benefit from rollback tooling and ad-hoc deploys
+
+## Clusters
+
+cloud gives you 7 days
+bring your own hardware
+cluster config
+upgrade stream
+cheap clusters like civo
+
+## Guides you in your path to master Kubernetes
+
+app debug
+cluster things
+deploy settings
+
+## Gitops
+
+flux
+observe flux
+
+## Extend Gimlet to your needs
+
+link to app template docs
+link to video to use gitops repos
