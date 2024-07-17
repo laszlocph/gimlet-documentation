@@ -8,13 +8,15 @@ const youtubeLogo = <svg className="inline" xmlns="http://www.w3.org/2000/svg" w
 const footerNav = [
   {
     'Getting Started': [
-      { title: 'Installation', href: '/docs/installation?ref=footer' },
-      { title: 'Deploy your first app', href: '/docs/deploy-your-first-app?ref=footer' },
-      { title: 'Concepts', href: '/docs/concepts?ref=footer' },
+      { title: 'Quickstart', href: '/docs/overview/quick-start' },
+      { title: 'Concepts', href: '/docs/concepts' },
+      { title: 'Frontend tutorials', href: '/docs/tutorials/frontend' },
+      { title: 'Backend tutorials', href: '/docs/tutorials/backend' },
+      { title: 'AI tutorials', href: '/docs/tutorials/ai-deployments' },
+
     ],
     'Navigation': [
       { title: 'Pricing', href: '/pricing?ref=footer' },
-      { title: 'Events', href: '/blog?ref=footer' },
       { title: 'Blog', href: '/blog?ref=footer' },
       { title: 'Docs', href: '/blog?ref=footer' },
       { title: 'YAML Generator', href: '/k8s-yaml-generator?ref=footer' },
