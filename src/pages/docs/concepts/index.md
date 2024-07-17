@@ -50,24 +50,114 @@ Learn more about the [CI plugins and integration options](/docs/reference/ci-plu
 
 ## Clusters
 
-cloud gives you 7 days
-bring your own hardware
-cluster config
-upgrade stream
-cheap clusters like civo
+Gimlet is a Bring Your Own Hardware platform. Each environment is deployed on its own Kubernetes cluster.
+
+Our cloud environment provides an ephemeral cluster for 7-days so you can skip ahead to deployment. 
+
+With rise of point Kubernetes clouds like [civo.com](https://civo.com) you can have a useful cluster for $20 a month, with swift setup experience.
+
+{% video src="https://www.youtube-nocookie.com/embed/LCk25U7Gaj4" /%}
+
+{% callout %}
+There is a possibility to map environments to Kubernetes namespaces, thus hosting multiple environments on the same cluster.
+
+Also, Gimlet works well on vclusters.
+
+[Join our Discord](https://discord.com/invite/ZwQDxPkYzE) to learn more.
+{% /callout %}
+
+### Cluster setup and maintenance
+
+Gimlet aids cluster setup with [preconfigured stacks](/docs/deployment-settings/infrastructure-management).
+
+With a marketplace-like experience you can configure common usecases:
+- SSL certificates
+- Metrics and dashboards
+- Secrets
+
+After you set up your cluster, Gimlet provides you an update stream for your cluster components - something that is often overlooked in marketplaces.
 
 ## Guides you in your path to master Kubernetes
 
-app debug
-cluster things
-deploy settings
+The Gimlet team has strong roots in cloud and application operations. Hence we want to aid you in your day-2 experience:
+
+- We have [preconfigured alerts](/docs/monitoring/integrated-kubernetes-alerts) for the most common application incidents and misconfigurations with guiding texts towards resolution.
+- You can check application state and logs from the dashboard while [troubleshooting](/docs/kubernetes-resources/troubleshooting)
+
+{% callout %}
+We pride ourselves to show you as little Kubernetes as little possible. Introducing you to deeper concepts only when you need to know about them.
+
+We don't want to completelly abstract away Kubernetes either. We know Kubernetes finds its way to the surface always. But you can learn slowly over the years.
+{% /callout %}
 
 ## Gitops
 
-flux
-observe flux
+Gimlet is not writing Kubernetes directly.
+
+Gimlet writes all manifests to git, then the [Flux](https://fluxcd.io/) project syncronizes the git state with Kubernetes.
+
+By convention, we maintain two git repositories per environment: one for application deployments and one for infrastructure components.
+
+```bash
+➜  projects tree gitops-optimal-snow-apps 
+gitops-optimal-snow-apps
+├── README.md
+├── chatbot-ui
+│   ├── deployment.yaml
+│   ├── release.json
+│   └── service.yaml
+├── flowise
+│   ├── deployment.yaml
+│   ├── ingress.yaml
+│   ├── release.json
+│   └── service.yaml
+├── flux
+│   ├── deploy-key-laszlocph-gitops-optimal-snow-apps.yaml
+│   ├── gitops-repo-builtin-apps.yaml
+│   └── notifications-builtin-apps.yaml
+```
+
+```bash
+$ tree gitops-optimal-snow-infra
+├── README.md
+├── dependencies
+│   └── namespace.yaml
+├── flux
+│   ├── deploy-key-laszlocph-gitops-optimal-snow-infra.yaml
+│   ├── flux.yaml
+│   └── gitops-repo-builtin-infra.yaml
+├── helm-releases
+│   ├── gimlet-agent.yaml
+│   ├── image-builder.yaml
+│   └── sealed-secrets.yaml
+├── helm-repositories
+│   ├── onechart.yaml
+│   └── sealed-secrets.yaml
+├── manifests
+│   ├── capacitor.yaml
+│   ├── customregistry-registrycert.yaml
+│   ├── customregistry-secret.yaml
+│   ├── docker-registry.yaml
+│   ├── dockerhubregistry-secret.yaml
+│   ├── ghcrregistry-secret.yaml
+│   └── oauth2-proxy.yaml
+└── stack.yaml
+```
+
+{% callout %}
+We are also the maintainers of the open-source [Capacitor project](https://github.com/gimlet-io/capacitor). A Flux dashboard.
+{% /callout %}
 
 ## Extend Gimlet to your needs
 
-link to app template docs
-link to video to use gitops repos
+Gimlet is built on top of the de-facto Kubernetes components:
+
+- ingress-nginx
+- cert-manager
+- Flux
+- Helm
+- Sealed Secrets
+
+Our deployment templates are built on the [gimlet-io/onechart](https://github.com/gimlet-io/onechart) Helm chart and they are [extensible](http://127.0.0.1:3001/docs/deployment-settings/custom-template)
+
+Our gitops repositories follow a basic structure that you can also use for your own purposes.
