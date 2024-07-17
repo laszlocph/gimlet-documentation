@@ -13,6 +13,7 @@ const navigation = [
     title: 'Overview',
     links: [
       { title: 'Quick start', href: '/docs/overview/quick-start' },
+      { title: 'Concepts', href: '/docs/concepts' },
     ],
   },
   {
@@ -78,12 +79,6 @@ const navigation = [
       { title: 'CI plugins Reference', href: '/docs/reference/ci-plugins' },
       { title: 'Gimlet Configuration Reference', href: '/docs/reference/gimlet-configuration-reference' },
       { title: 'Onechart Reference', href: '/docs/reference/onechart-reference' },
-    ],
-  },
-  {
-    title: 'Concepts',
-    links: [
-      { title: 'Concepts', href: '/docs/concepts' },
     ],
   },
   {
