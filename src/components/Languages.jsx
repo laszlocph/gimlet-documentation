@@ -39,6 +39,8 @@ export default function Languages(props) {
               <dl className="grid max-w-xl grid-cols-1 gap-6 lg:max-w-none lg:grid-cols-3 mt-4">
                 {items.map(i => {
                   return (
+                    <a
+                          href={i.link}>
                     <div key={i.title}
                       className="group flex flex-col p-6 justify-between overflow-hidden rounded-xl bg-white hover:bg-white/10 dark:bg-transparent dark:hover:bg-white/10 [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] cursor-pointer"
                     >
@@ -48,16 +50,17 @@ export default function Languages(props) {
                         {/* <p className="max-w-lg text-neutral-400">{i.description}</p> */}
                       </div>
                       <div className="pointer-events-none bottom-0 flex w-full flex-row items-center pt-4 mt-auto">
-                        <a
-                          href={i.link}
+                        <span
+                          // href={i.link}
                           className="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition text-neutral-900 dark:text-neutral-100 pointer-events-auto underline"
                         >
                           {i.deploy}
                           <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" className="mt-0.5 h-5 w-5 relative top-px -mr-1"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" d="m11.5 6.5 3 3.5m0 0-3 3.5m3-3.5h-9"></path></svg>
-                        </a>
+                        </span>
                       </div>
                       <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.05] group-hover:dark:bg-neutral-800/10"></div>
                     </div>
+                    </a>
                   )
                 })}
               </dl>
