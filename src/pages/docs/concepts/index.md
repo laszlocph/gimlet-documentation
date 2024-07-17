@@ -10,7 +10,7 @@ Gimlet is a deployment tool built on Kubernetes to make the deploy, preview and 
 
 Kubernetes is percieved to have a high learning curve, complex machinery and only used by large companies for immense scale.
 
-In practice, Kubernetes is a 10 year old technology that is silently used by companies with as little as 10 developers with great success.
+In practice, Kubernetes is a ten year old technology that is silently used by companies with as little as 10 developers with great success.
 
 Familiarity with Kubernetes is widespread, tooling on the other hand is still built in-house. Gimlet is built to remove the tooling need from the common workflows.
 
@@ -18,18 +18,35 @@ Familiarity with Kubernetes is widespread, tooling on the other hand is still bu
 
 ## Workflows
 
-### Like with Vercel or Netlify
+Gimlet is a tool for developers to use for their daily deploy, preview and rollback needs.
 
-commits show up
-docker image build options
-automate deploys
-automate previews
+- It fits common CI workflows
+- or you can connect to Github directly and Gimlet takes care of the full deployment process - including container image building.
+
+### Like Vercel or Netlify
+
+You can use Gimlet like you use Vercel or Netlify.
+
+- Once you integrate with Github, every commit shows up in Gimlet.
+- Based on your deployment settings, this can trigger an automated deployment or you can deploy any commit on-demand.
+- During deploys, Gimlet builds the container image based on the [set strategy](/docs/deployment-settings/image-settings) then deploys your application.
+
+You can also automate [branch based preview deployments](/docs/deployments/preview-deployments) or roll back when you have to.
 
 ### Or integrate Gimlet to your CI workflows
 
-or if you have CI based processes, integrate it with
-keep docker build at CI
-benefit from rollback tooling and ad-hoc deploys
+![](/flow.svg)
+
+Your CI pipeline
+- lints and tests the code then builds the container image.
+- Tthen the Gimlet CI plugin notifies Gimlet about the newly built software artifact.
+- Based on your [automated deployment settings](docs/deployments/automated-deployments) Gimlet may deploy your application.
+
+{% callout %}
+You can also initiate a deploy with the CI plugin. In this mode of operation you can have your CI workflows orchestrating deploys.
+
+Learn more about the [CI plugins and integration options](/docs/reference/ci-plugins).
+{% /callout %}
 
 ## Clusters
 

@@ -21,3 +21,5 @@ No continuous integration or GitHub Action pipeline is necessary for this.
 - pr: New pull requests will be automatically deployed.
 
 Additionally you can use the **Branch filter** setting if you'd like to configure automated deployments for a certain branch.
+
+TODO: add a section mentioning the CI plugin based workings, maybe with a callout

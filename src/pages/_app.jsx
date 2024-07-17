@@ -51,7 +51,6 @@ const navigation = [
   {
     title: 'Monitoring',
     links: [
-      { title: 'Monitoring Notes', href: '/docs/monitoring/monitoring-notes' },
       { title: 'Loki', href: '/docs/monitoring/loki' },
       { title: 'Grafana', href: '/docs/monitoring/grafana' },
       { title: 'Prometheus', href: '/docs/monitoring/prometheus' },
@@ -76,6 +75,7 @@ const navigation = [
     title: 'Reference',
     links: [
       { title: 'Gimlet Manifest Reference', href: '/docs/reference/gimlet-manifest-reference' },
+      { title: 'CI plugins Reference', href: '/docs/reference/ci-plugins' },
       { title: 'Gimlet Configuration Reference', href: '/docs/reference/gimlet-configuration-reference' },
       { title: 'Onechart Reference', href: '/docs/reference/onechart-reference' },
     ],
