@@ -36,7 +36,7 @@ You can also automate [branch based preview deployments](/docs/deployments/previ
 
 - Your CI pipeline lints and tests the code, then builds the container image.
 - Then the Gimlet CI plugin notifies Gimlet about the newly built software artifact.
-- Based on your [automated deployment settings](docs/deployments/automated-deployments) Gimlet may deploy your application.
+- Based on your [automated deployment settings](/docs/deployments/automated-deployments) Gimlet may deploy your application.
 
 {% callout %}
 You can also initiate a deploy with the CI plugin. In this mode of operation you can have your CI workflows orchestrating deployment.
