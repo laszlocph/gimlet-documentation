@@ -3,15 +3,15 @@ title: Welcome to the Gimlet universe!
 description: Turn your cluster into an application platform built on open standards. Deploy without the steep learning curve. 100% open-source.
 ---
 
-Gimlet will get you a developer platform on top of Kubernetes.
-
-It is built on the de-facto tools of the ecosystem - Helm and Flux - and provides you with a paved path, a set of best-practices, so you can focus on your task at hand. Without having to navigate the vast options the cloud native ecosystem offers you.
+Gimlet is a deployment tool built on Kubernetes to make the deploy, preview and rollback workflows accessible to everyone.
 
 {% .lead %}
 
 {% link-grid %}
 
 {% link-grid-link title="Quick Start" icon="installation" href="/docs/overview/quick-start" description="Step-by-step description to deploying applications in Gimlet." /%}
+
+{% link-grid-link title="Concepts" icon="lightbulb" href="docs/concepts" description="Key topics at a fairly high level that provide useful information and explanation when you are starting out." /%}
 
 {% link-grid-link title="HTTPS" icon="presets" href="/docs/deployment-settings/https" description="HTTPS configuration options with Gimlet." /%}
 
