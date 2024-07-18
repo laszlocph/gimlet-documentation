@@ -15,9 +15,7 @@ Kubernetes has emerged as the go-to platform. But setting up a cluster on a lapt
 
 For this reason, we put together this blog post to show that with only a handful of commands you can go very far.
 
-With k3d, our tool of choice for example, setting up a cluster takes only one command as shown here:
-
-[![asciicast](https://asciinema.org/a/AEph0rkQ8DmnfeJS9mVrbAIMD.svg)](https://asciinema.org/a/AEph0rkQ8DmnfeJS9mVrbAIMD)
+With k3d, our tool of choice for example, setting up a cluster takes only one command.
 
 ## Not Minikube, K3d
 
