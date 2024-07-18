@@ -1,6 +1,5 @@
 app: gimlet-documentation-preview
-env: capable-thunder
-preview: true
+env: optimal-snow
 namespace: default
 chart:
   name: >-
